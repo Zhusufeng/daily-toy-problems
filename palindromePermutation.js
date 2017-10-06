@@ -97,4 +97,29 @@ assert(canPermutePalindrome('bbbcceeccbbb'), true);
 assert(canPermutePalindrome('eecceccee'), true);
 assert(canPermutePalindrome('a'), true);
 assert(canPermutePalindrome('ab'), false);
-assert(canPermutePalindrome(''), false);  // Got true...
+assert(canPermutePalindrome(''), false);  // Got true...but this is an edge case. Not sure what they want..
+
+// My code's runtime beats 83.87% of javascript submissions
+
+// Here is code for one of the fastest runtimes:
+// var canPermutePalindrome = function(s) {
+//     var set = [];
+//     for(var i= 0; i < s.length; i++) {
+//         var index = set.indexOf(s[i]);
+//         if(index === -1) {
+//             set.push(s[i]);
+//         } else {
+//             set.splice(index, 1);
+//         }
+//     }
+
+//     return set.length <= 1;
+// };
+
+// The above code
+// If the char is not in the set, push it
+// If the char is in the set, splice it out
+// In the end, return if set has a length of 1 or less  (If 1 that means it had odd length!)
+
+// Time Complexity: Linear
+// Space Complexity: At worst, linear. At best, constant
