@@ -27,7 +27,7 @@ var canPermutePalindrome = function(s) {
 
   if (s.length % 2 === 0 && oddCount === 0) {
     return true;
-  } else if (s.length % 2 === 1 &&& oddCount === 1) {
+  } else if (s.length % 2 === 1 && oddCount === 1) {
     return true;
   } else {
     return false;
@@ -81,5 +81,20 @@ E:
 
 // Tests
 const assert = function(actual, expected) {
-
+  if (actual !== expected) {
+    console.log('Expected to get ' + expected + ' but instead got ' + actual);
+  } else {
+    console.log('Passed');
+  }
 };
+
+assert(canPermutePalindrome('code'), false);
+assert(canPermutePalindrome('aab'), true);
+assert(canPermutePalindrome('carerac'), true);
+assert(canPermutePalindrome('bbbcceccbbb'), true);
+assert(canPermutePalindrome('bbbcceccbb'), false);
+assert(canPermutePalindrome('bbbcceeccbbb'), true);
+assert(canPermutePalindrome('eecceccee'), true);
+assert(canPermutePalindrome('a'), true);
+assert(canPermutePalindrome('ab'), false);
+assert(canPermutePalindrome(''), false);  // Got true...
