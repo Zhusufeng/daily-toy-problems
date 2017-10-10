@@ -22,7 +22,19 @@ FOOD OPTIONS:
 */
 
 function orderFood(list) {
+  let order = {};
 
+  list.forEach((element) => {
+    if (element['meal']) {
+      if (!order[element['meal']]) {
+        order[element['meal']] = 1;
+      } else {
+        order[element['meal']]++;
+      }
+    }
+  });
+
+  return order;
 }
 
 /*
@@ -37,17 +49,17 @@ E:
   --------------------------------------------
   []                                   {}
   [
-    {meal: 'standard'},
-    {meal: 'standard'},
-    {meal: 'standard'},
-    {meal: 'standard'},
+    { meal: 'standard' },
+    { meal: 'standard' },
+    { meal: 'standard' },
+    { meal: 'standard' },
   ]                                    { standard: 4 }
 
   [
-    {meal: 'standard'},
-    {meal: 'vegan'},
-    {meal: 'standard'},
-    {meal: 'vegan'},
+    { meal: 'standard' },
+    { meal: 'vegan' },
+    { meal: 'standard' },
+    { meal: 'vegan' },
   ]                                    { standard: 2, vegan: 2 }
 
 
@@ -63,3 +75,32 @@ E:
         Increment order with key that is meal's value by 1
   Return order
 */
+
+const assert = function(actual, expected) {
+  if (actual !== expected) {
+    console.log('Expected ' + expected + 'but instead got ' + actual);
+  } else {
+    console.log('Passed');
+  }
+}
+
+// Tests
+assert(JSON.stringify(orderFood([])), JSON.stringify({}));
+assert(JSON.stringify(orderFood([{ meal: 'standard' }])), JSON.stringify({ standard: 1 }));
+assert(
+  JSON.stringify(
+    orderFood([
+      { meal: 'standard' },
+      { meal: 'vegetarian' },
+      { meal: 'vegan' },
+      { meal: 'diabetic' },
+      { meal: 'gluten-intolerant' }
+    ])),
+  JSON.stringify({
+    'standard': 1,
+    'vegetarian': 1,
+    'vegan': 1,
+    'diabetic': 1,
+    'gluten-intolerant': 1,
+  })
+);
