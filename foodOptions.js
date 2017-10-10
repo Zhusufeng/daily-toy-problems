@@ -26,5 +26,28 @@ function orderFood(list) {
 }
 
 /*
+O: Object
+I: Array of people objects
+C:
+  Time: Linear
+  Space: Constant
+E:
+  Examples:
+  INPUT                                OUTPUT
+  --------------------------------------------
+  []                                   {}
+  [
+    {meal: 'standard'},
+    {meal: 'standard'},
+    {meal: 'standard'},
+    {meal: 'standard'},
+  ]                                    { standard: 4 }
+
+  [
+    {meal: 'standard'},
+    {meal: 'vegan'},
+    {meal: 'standard'},
+    {meal: 'vegan'},
+  ]                                    { standard: 2, vegan: 2 }
 
 */
