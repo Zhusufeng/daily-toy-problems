@@ -50,4 +50,16 @@ E:
     {meal: 'vegan'},
   ]                                    { standard: 2, vegan: 2 }
 
+
+  General Plan/Pseudocode
+  -----------------------
+  (Using forEach)
+  Initialize order as empty object
+  Iterate through list (using forEach)
+    If current element has meal key
+      If order does not have a key that is meal's value
+        Create key in order that is meal's value and set to 1
+      Else
+        Increment order with key that is meal's value by 1
+  Return order
 */
