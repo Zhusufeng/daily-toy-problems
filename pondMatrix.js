@@ -54,6 +54,8 @@ Think of N-Queens algorithm. Toggle on/off to show if water element has been acc
 
 
 Idea #1
+Make number called totalPonds and set to 0
+
 Make empty object called waterAccountedFor
 Use waterAccountFor when you visit a water square and count it towards pond count
 
@@ -62,9 +64,19 @@ Iterate through matrix
   Iterate through each element in that array
     If element is 0, ignore?
     If element is 1,
-      Add matrix[i][j] as key with the
-
-
+      Check if [i][j] DOES NOT exist in waterAccountedFor
+        If it does not, add [i][j] as key with value of true in waterAccountedFor
+        Now iterate through the matrix/visit the next i at the same j and see if it is 1
+          Check if [i+1][j] DOES NOT exist in waterAccountedFor
+           If it does not, add [i+1][j] as key with value of true
+           If it is NOT 1
+             Break!
+        Now iterate through the array/visit the next j and see if it is 1
+          Check if [i+1][j] DOES NOT exist in waterAccountedFor
+            If it does not, add [i][j+1] as key with value of true
+            If it is NOT 1
+              Break!
+        Increment totalPonds
 
 PSEUDOCODE
 ----------
