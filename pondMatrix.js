@@ -46,6 +46,10 @@ E:
    [ 1, 0, 0, 0, 0],
    [ 0, 0, 1, 1, 0],
    [ 1, 0, 0, 1, 0]]              4
+  [[ 0, 0, 0, 1, 0],
+   [ 0, 0, 0, 1, 0],
+   [ 1, 1, 1, 1, 0]
+   [ 0, 0, 0, 1, 0],]              1
 
 
 BRAINSTORM
@@ -66,16 +70,34 @@ Iterate through matrix
     If element is 1,
       Check if [i][j] DOES NOT exist in waterAccountedFor
         If it does not, add [i][j] as key with value of true in waterAccountedFor
+        Run searchDown
+
+        searchDown
         Now iterate through the matrix/visit the next i at the same j and see if it is 1
           Check if [i+1][j] DOES NOT exist in waterAccountedFor
            If it does not, add [i+1][j] as key with value of true
            If it is NOT 1
              Break!
+          Run searchLeft
+          Run searchRight
+
+        searchRight
         Now iterate through the array/visit the next j and see if it is 1
           Check if [i+1][j] DOES NOT exist in waterAccountedFor
             If it does not, add [i][j+1] as key with value of true
             If it is NOT 1
               Break!
+          Run searchDown
+
+
+        searchLeft
+        Now iterate through the array/visit the j before and see if it is 1
+          Check if [i+1][j] DOES NOT exist in waterAccountedFor
+            If it does not, add [i][j+1] as key with value of true
+            If it is NOT 1
+              Break!
+            Run searchDown
+
         Increment totalPonds
 
 PSEUDOCODE
