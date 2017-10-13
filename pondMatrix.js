@@ -28,6 +28,9 @@ E:
    [0, 1]]                        1
   [[1, 0],
    [0, 1]]                        2
+  [[1, 1, 0],
+   [0, 1, 0],
+   [1, 1, 1]]                     1
   [[ 1, 1, 1, 1]]                 1
   [[ 1, 0, 1, 0]]                 2
   [[ 0, 1, 0, 0],
@@ -113,22 +116,46 @@ Create findPonds, which takes in matrix
         If [i][j] does NOT exist in waterAccountedFor
           Add [i][j] as key to waterAccountedFor, set value to true
           Call searchDown, pass in i, j
+          Call searchRight, pass in i, j
+        Increment totalPonds
 
   Create searchDown, which takes in i, j
     Iterate through matrix
-      If matrix[i][j] is equal to 1
-        If [i][j] does NOT exist in waterAccountedFor
-          Add [i][j] as key to waterAccountedFor, set value to true
+      If matrix[y][j] is equal to 1
+        If [y][j] does NOT exist in waterAccountedFor
+          Add [y][j] as key to waterAccountedFor, set value to true
+          Call searchRight, pass in y, j
+          Call searchLeft, pass in y, j
         If it is NOT 1
           Break!
 
-  Create searchRight
+  Create searchRight, which takes in i, j
+    Iterate through array (incrementing x)
+      If matrix[i][x] is equal to 1
+        If [i][x] does NOT exist in waterAccountedFor
+          Add [i][x] as key to waterAccountedFor, set value to true
+          Call searchDown, pass in i, x
+        If it is NOT 1
+          Break!
 
-  Create searchLeft
+  Create searchLeft, which takes in i, j
+    Iterate through array (decrementing x)
+      If matrix[i][x] is equal to 1
+        If [i][x] does NOT exist in waterAccountedFor
+          Add [i][x] as key to waterAccountedFor, set value to true
+          Call searchDown, pass in i, x
+        If it is NOT 1
+          Break!
+
+  Return totalPonds
 
 WALK THROUGH
 ------------
-
+  INPUT                         OUTPUT
+  ------------------------------------
+  [[1, 1, 0],
+   [0, 1, 0],
+   [1, 1, 1]]                     1
 
 */
 
