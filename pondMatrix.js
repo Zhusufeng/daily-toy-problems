@@ -103,6 +103,28 @@ Iterate through matrix
 PSEUDOCODE
 ----------
 
+Create findPonds, which takes in matrix
+  Create totalPonds and set to 0
+  Create waterAccountedFor and set to empty object
+
+  Iterate through matrix
+    Iterate through each array
+      If element is equal to 1
+        If [i][j] does NOT exist in waterAccountedFor
+          Add [i][j] as key to waterAccountedFor, set value to true
+          Call searchDown, pass in i, j
+
+  Create searchDown, which takes in i, j
+    Iterate through matrix
+      If matrix[i][j] is equal to 1
+        If [i][j] does NOT exist in waterAccountedFor
+          Add [i][j] as key to waterAccountedFor, set value to true
+        If it is NOT 1
+          Break!
+
+  Create searchRight
+
+  Create searchLeft
 
 WALK THROUGH
 ------------
