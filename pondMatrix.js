@@ -49,8 +49,8 @@ E:
    [ 1, 0, 0, 1, 0]]              4
   [[ 0, 0, 0, 1, 0],
    [ 0, 0, 0, 1, 0],
-   [ 1, 1, 1, 1, 0]
-   [ 0, 0, 0, 1, 0],]              1
+   [ 1, 1, 1, 1, 0],
+   [ 0, 0, 0, 1, 0]]              1
 
 
 BRAINSTORM
@@ -175,9 +175,9 @@ function countPonds(matrix) {
         if (!waterAccountedFor[key]) {
           waterAccountedFor[key] = true;
           searchDown(i, x);
-        } else {
-          break;
         }
+      } else {
+        break;
       }
     }
   }
@@ -189,9 +189,9 @@ function countPonds(matrix) {
         if (!waterAccountedFor[key]) {
           waterAccountedFor[key] = true;
           searchDown(i, x);
-        } else {
-          break;
         }
+      } else {
+        break;
       }
     }
   }
@@ -226,3 +226,23 @@ WALK THROUGH
 */
 
 // Testing
+// let firstMatrix =
+//   [[ 0, 0, 0, 1, 0],
+//    [ 0, 0, 0, 1, 0],
+//    [ 1, 1, 1, 1, 0]
+//    [ 0, 0, 0, 1, 0]];
+// console.log(countPonds(firstMatrix)); // 1
+
+// let secondMatrix =
+//   [[ 0, 1, 1, 0, 0],
+//    [ 1, 0, 0, 0, 0],
+//    [ 0, 0, 1, 1, 0],
+//    [ 1, 0, 0, 1, 0]]
+// console.log(countPonds(secondMatrix)); // 4
+
+let thirdMatrix =
+  [[ 1, 1, 1, 0, 0, 1, 1, 1],
+   [ 1, 0, 0, 0, 1],
+   [ 0, 0, 1, 1, 0],
+   [ 1, 0, 1, 0, 0, 1]]
+console.log(countPonds(thirdMatrix)); // 6
