@@ -154,7 +154,7 @@ function countPonds(matrix) {
   let waterAccountedFor = {};
 
   const searchDown = function(i, j) {
-    for (let y = 0; y < matrix.length; y++) {
+    for (let y = i + 1; y < matrix.length; y++) {
       if (matrix[y][j] === 1) {
         let key = y + ', ' + j;
         if (!waterAccountedFor[key]) {
@@ -167,6 +167,34 @@ function countPonds(matrix) {
       }
     }
   };
+
+  const searchRight = function(i, j) {
+    for (let x = j + 1; x < matrix[i].length; x++) {
+      if (matrix[i][x] === 1) {
+        let key = i + ', ' + x;
+        if (!waterAccountedFor[key]) {
+          waterAccountedFor[key] = true;
+          searchDown(i, x);
+        } else {
+          break;
+        }
+      }
+    }
+  }
+
+  const searchLeft = function(i, j) {
+    for (let x = j - 1; x >= 0; x--) {
+      if (matrix[i][x] === 1) {
+        let key = i + ', ' + x;
+        if (!waterAccountedFor[key]) {
+          waterAccountedFor[key] = true;
+          searchDown(i, x);
+        } else {
+          break;
+        }
+      }
+    }
+  }
 
   for (let i = 0; i < matrix.length; i++) {
     for (let j = 0; j < matrix[i].length; j++) {
@@ -182,6 +210,7 @@ function countPonds(matrix) {
     }
   }
 
+  return totalPonds;
 }
 
 /*
