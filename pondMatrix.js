@@ -153,6 +153,21 @@ function countPonds(matrix) {
   let totalPonds = 0;
   let waterAccountedFor = {};
 
+  const searchDown = function(i, j) {
+    for (let y = 0; y < matrix.length; y++) {
+      if (matrix[y][j] === 1) {
+        let key = y + ', ' + j;
+        if (!waterAccountedFor[key]) {
+          waterAccountedFor[key] = true;
+          searchRight(y, j);
+          searchLeft(y, j);
+        }
+      } else {
+        break;
+      }
+    }
+  };
+
   for (let i = 0; i < matrix.length; i++) {
     for (let j = 0; j < matrix[i].length; j++) {
       if (matrix[i][j] === 1) {
