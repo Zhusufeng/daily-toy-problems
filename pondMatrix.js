@@ -8,9 +8,7 @@ Ie. Where 1's are ponds
  [ 1, 0, 0, 1]] => 4
 */
 
-function countPonds(matrix) {
-
-}
+/* --------------------------------------------------------- */
 
 /*
 O: Number
@@ -148,6 +146,30 @@ Create findPonds, which takes in matrix
           Break!
 
   Return totalPonds
+
+*/
+
+function countPonds(matrix) {
+  let totalPonds = 0;
+  let waterAccountedFor = {};
+
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      if (matrix[i][j] === 1) {
+        let key = i + ', ' + j;
+        if (!waterAccountedFor[key]) {
+          waterAccountedFor[key] = true;
+          searchDown(i, j);
+          searchRight(i, j);
+          totalPonds++;
+        }
+      }
+    }
+  }
+
+}
+
+/*
 
 WALK THROUGH
 ------------
