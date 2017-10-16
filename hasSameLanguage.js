@@ -55,7 +55,7 @@ E:
 function isSameLanguage(list) {
   const language = list[0].language;
 
-  return list.every(function(person) {
+  return list.every((person) => {
     return (person.language === language);
   });
 }
