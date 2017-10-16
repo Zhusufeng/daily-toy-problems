@@ -25,7 +25,7 @@ Hi, could you please provide your <property name>.
 */
 
 function askForMissingDetails(list) {
-  var answer = list.filter(function(person) {
+  return list.filter((person) => {
     for (var key in person) {
       if (!person[key]) {
         person['question'] = 'Hi, could you please provide your ' + key + '.';
@@ -33,8 +33,6 @@ function askForMissingDetails(list) {
       }
     }
   });
-
-  return answer;
 };
 
 /*
