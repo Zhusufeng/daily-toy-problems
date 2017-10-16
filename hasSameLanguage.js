@@ -19,3 +19,33 @@ Notes:
 The strings representing a given language will always be formatted in the same way (e.g. 'JavaScript' will always be formatted will upper-case 'J' and 'S'
 The input array will always be valid and formatted as in the example above.
 */
+
+/*
+O: Boolean
+I: Array of objects
+C: Linear
+E:
+
+  INPUT                                               OUTPUT
+  ------------------------------------------------------------
+  []                                                  true
+  [
+    {language: 'Ruby'},
+    {language: 'Ruby'}
+  ]                                                    true
+  [
+    {language: 'Ruby'},
+    {language: 'JavaScript'}
+  ]                                                    false
+
+
+  GENERAL PLAN/BRAINSTORM
+  ------------------------
+  Iterate through given lost
+  Set language from first element as language
+  Use every to make sure all have same language
+
+  PSEUDOCODE
+  ----------
+
+*/
