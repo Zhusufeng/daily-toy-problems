@@ -47,5 +47,7 @@ E:
 
   PSEUDOCODE
   ----------
-
+  Set const language as list[0].language
+  Return every with a callback
+  The callback will return if element's language equals language
 */
