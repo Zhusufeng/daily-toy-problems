@@ -15,11 +15,25 @@ C:
 E:
   INPUT                                        OUTPUT
   ----------------------------------------------------
+  'a b c'                                      c
   'man i need a taxi up to ubud'               taxi
   'what time are we climbing up the volcano'   volcano
   'take me to semynak'                         semynak
 
 GENERAL PLAN
 -------------
-
+  Create variable let called words that is an empty obj
+  Create variable let called strArr that is a split string into array by space
+  Iterate through strArr
+    Create variable let called points
+    Iterate through each char in each word
+      Get charCodeAt for each char and add to points
+    Add word to words obj with value of points
+  Create variable let called highestValue which equals 0
+  Create variable let called highestPointWord which equals empty string
+  Iterate through words obj
+    If value at key is greater than highestValue
+      Value equals highestValue
+      highestPointWord equals key
+  Return highestPointWord
 */
