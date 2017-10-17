@@ -71,8 +71,6 @@ function high(x){
     words[strArr[i]] = points;
   }
 
-  console.log(words);
-
   for (let key in words) {
     if (words[key] > highestValue) {
       highestValue = words[key];
