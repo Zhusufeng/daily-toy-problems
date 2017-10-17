@@ -6,3 +6,20 @@ If two words score the same, return the word that appears earliest in the origin
 All letters will be lowercase and all inputs will be valid.
 */
 
+/*
+O: Word from string
+I: String made of words
+C:
+  Time Complexity: Linear
+  Space Complexity: Linear
+E:
+  INPUT                                        OUTPUT
+  ----------------------------------------------------
+  'man i need a taxi up to ubud'               taxi
+  'what time are we climbing up the volcano'   volcano
+  'take me to semynak'                         semynak
+
+GENERAL PLAN
+-------------
+
+*/
