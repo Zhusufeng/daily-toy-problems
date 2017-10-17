@@ -20,3 +20,18 @@ Merged tree:
    5   4   7
 Note: The merging process must start from the root nodes of both trees.
 */
+
+/*
+O: New binary tree
+I: 2 binary trees
+C:
+  Time: Linear as we iterate through the trees
+  Space: Constant
+E:
+
+INPUT                               OUTPUT
+--------------------------------------------
+
+
+
+*/
