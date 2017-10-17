@@ -55,3 +55,28 @@ PSEUDOCODE
   Return highestPointWord
 
 */
+
+function high(x){
+  let words = {};
+  let strArr = x.split(' ');
+  let highestValue = 0;
+  let highestPointWord = '';
+
+  for (let i = 0; i < strArr.length; i++) {
+    let points = 0;
+
+    for (let j = 0; j < strArr[i].length; j++) {
+      points += strArr[i].charCodeAt(j);
+    }
+    words[strArr[i]] = points;
+  }
+
+  for (let key in words) {
+    if (words[key] > highestValue) {
+      highestValue = words[key];
+      highestPointWord = key;
+    }
+  }
+
+  return highestPointWord;
+}
