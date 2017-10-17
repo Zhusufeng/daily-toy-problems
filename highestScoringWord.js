@@ -36,4 +36,22 @@ GENERAL PLAN
       Value equals highestValue
       highestPointWord equals key
   Return highestPointWord
+
+PSEUDOCODE
+-----------
+  let words = {};
+  let strArr = string.split(' ');
+  For loop through strArr incrementing i by 1
+    let points = 0;
+    For loop through word incrementing by 1
+      points += word.charCodeAt(j)
+    words[word] = points
+  let highestValue = 0
+  let highestPointWord = ''
+  For in loop through words
+    If value at key is greater than highestValue
+      highestValue = words[key]
+      highestPointWord = key
+  Return highestPointWord
+
 */
