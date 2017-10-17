@@ -66,10 +66,12 @@ function high(x){
     let points = 0;
 
     for (let j = 0; j < strArr[i].length; j++) {
-      points += strArr[i].charCodeAt(j);
+      points += strArr[i].charCodeAt(j) - 96;
     }
     words[strArr[i]] = points;
   }
+
+  console.log(words);
 
   for (let key in words) {
     if (words[key] > highestValue) {
@@ -80,3 +82,9 @@ function high(x){
 
   return highestPointWord;
 }
+
+// Test
+console.log(high('a b c'));  // c
+console.log(high('man i need a taxi up to ubud'));  // taxi
+console.log(high('what time are we climbing up the volcano'));  // volcano
+console.log(high('take me to semynak'));  // semynak
