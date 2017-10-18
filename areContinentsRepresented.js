@@ -22,18 +22,57 @@ The input array and continent names will always be valid and formatted as in the
 */
 
 /*
-O:
-I:
+O: Boolean
+I: Array of objects
 C:
+  Time: Quadratic..
+  Space: Constant
 E:
 
 INPUT                                OUTPUT
 ------------------------------------------------
+[
+  {continent: 'Africa'}
+]                                     False
+[
+  {continent: 'Africa'},
+  {continent: 'Africa'},
+  {continent: 'Africa'}
+]                                     False
+[
+  {continent: 'Africa'},
+  {continent: 'Americas'},
+  {continent: 'Asia'},
+  {continent: 'Europe'},
+  {continent: 'Oceania'}
+]                                     True
 
 GENERAL PLAN/BRAINSTORM
 -----------------------
+Create let currentContinents with 5 continents as keys with values of false
+Iterate over array (forEach)
+  Get element's continent and toggle currentContinents to true
+Iterate over currentContinents
+  If any are false
+    Return false
+Return true
+
 
 PSEUDOCODE
 ------------
+let currentContinents = {
+  Africa: false,
+  Americas: false,
+  Asia: false,
+  Europe: false,
+  Oceania: false
+}
+Iterate over list
+  Set currentContinent at key of element's continent property to true
+Iterate over currentContinents
+  If currentContinents at key is false
+    Return false
+Return true
 
 */
+
