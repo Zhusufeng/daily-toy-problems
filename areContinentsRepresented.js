@@ -25,7 +25,7 @@ The input array and continent names will always be valid and formatted as in the
 O: Boolean
 I: Array of objects
 C:
-  Time: Quadratic..
+  Time: Linear
   Space: Constant
 E:
 
@@ -76,3 +76,53 @@ Return true
 
 */
 
+function allContinents(list) {
+  let currentContinents = {
+    Africa: false,
+    Americas: false,
+    Asia: false,
+    Europe: false,
+    Oceania: false
+  };
+
+  list.forEach((person) => {
+    if (!currentContinents[person['continent']]) {
+      currentContinents[person['continent']] = true;
+    }
+  });
+
+  for (let key in currentContinents) {
+    if (!currentContinents[key]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+// TESTS
+console.log(allContinents([
+  {continent: 'Africa'}
+])); // f
+
+console.log(allContinents([
+  {continent: 'Africa'},
+  {continent: 'Africa'},
+  {continent: 'Africa'}
+])); // f
+
+console.log(allContinents([
+  {continent: 'Africa'},
+  {continent: 'Americas'},
+  {continent: 'Asia'},
+  {continent: 'Europe'},
+  {continent: 'Oceania'}
+])); // t
+
+console.log(allContinents([
+  { firstName: 'Fatima', lastName: 'A.', country: 'Algeria', continent: 'Africa', age: 25, language: 'JavaScript' },
+  { firstName: 'Agustín', lastName: 'M.', country: 'Chile', continent: 'Americas', age: 37, language: 'C' },
+  { firstName: 'Jing', lastName: 'X.', country: 'China', continent: 'Asia', age: 39, language: 'Ruby' },
+  { firstName: 'Laia', lastName: 'P.', country: 'Andorra', continent: 'Europe', age: 55, language: 'Ruby' },
+  { firstName: 'Oliver', lastName: 'Q.', country: 'Australia', continent: 'Oceania', age: 65, language: 'PHP' }
+])); // t
