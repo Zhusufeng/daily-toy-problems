@@ -65,3 +65,16 @@ Iterate through list (forEach)
 
 */
 
+function addUsername(list) {
+  const currYear = new Date().getFullYear();
+
+  list.forEach(function(person) {
+    const firstName = person.firstName.toLowerCase();
+    const lastName = person.lastName.toLowerCase();
+    const birthYear = currYear - person.age;
+    const username = firstName + lastName + birthYear;
+    element['username'] = username;
+  });
+
+  return list;
+}
