@@ -58,4 +58,13 @@ INPUT                          OUTPUT
   {age: 73}
 ]                              true
 
+GENERAL PLAN
+--------------
+const ages = ['teens', 'twenties', 'thirties', 'forties', 'fifties', 'sixties', 'seventies', 'eighties', 'nineties', 'centenarian']
+Iterate through the ages array and make sure every item is inside some of the persons array
+
 */
+
+function isAgeDiverse(list) {
+  const ages = ['teens', 'twenties', 'thirties', 'forties', 'fifties', 'sixties', 'seventies', 'eighties', 'nineties', 'centenarian'];
+}
