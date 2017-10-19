@@ -26,3 +26,36 @@ Lastname will always be one upper-cased letter followed by dot, e.g. 'N.'
 Order of the objects in the array should be maintained but order of the properties in the individual objects does not matter.
 */
 
+/*
+O: Nothing
+I: Array of objects
+C:
+  Time: Linear
+  Space: Constant
+E:
+INPUT:
+[
+  { firstName: 'Emily', lastName: 'N.', age: 30}
+]
+OUTPUT:
+[
+  { firstName: 'Emily', lastName: 'N.', age: 30, username: 'emilyn1990'}
+]
+
+
+GENERAL PLAN
+-------------
+Iterate through given list of people
+  Get firstName as lowercase
+  Get lastName's first letter as lowercase
+  Get currYear which you make a new Date and run getFullYear
+  Get birthYear which you do currYear - age
+  Create username = firstName + lastName + birthYear
+  Add username to element
+
+PSEUDOCODE
+-----------
+
+
+*/
+
