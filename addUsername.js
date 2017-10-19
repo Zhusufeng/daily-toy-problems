@@ -70,11 +70,18 @@ function addUsername(list) {
 
   list.forEach(function(person) {
     const firstName = person.firstName.toLowerCase();
-    const lastName = person.lastName.toLowerCase();
+    const lastName = person.lastName[0].toLowerCase();
     const birthYear = currYear - person.age;
     const username = firstName + lastName + birthYear;
-    element['username'] = username;
+    person['username'] = username;
   });
 
   return list;
 }
+
+// Test
+console.log(addUsername([{ firstName: 'Emily', lastName: 'N.', age: 30}]));
+console.log(addUsername([
+  { firstName: 'Emily', lastName: 'N.', country: 'Ireland', continent: 'Europe', age: 30, language: 'Ruby' },
+  { firstName: 'Nor', lastName: 'E.', country: 'Malaysia', continent: 'Asia', age: 20, language: 'Clojure' }
+]));
