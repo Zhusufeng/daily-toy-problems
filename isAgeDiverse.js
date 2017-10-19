@@ -99,3 +99,23 @@ function isAgeDiverse(list) {
 }
 
 // Tests
+console.log(isAgeDiverse([
+  {age: 88}
+]));
+console.log(isAgeDiverse([
+  {age: 88},
+  {age: 22},
+  {age: 35}
+]));
+console.log(isAgeDiverse([
+  {age: 16},
+  {age: 22},
+  {age: 35},
+  {age: 49},
+  {age: 56},
+  {age: 69},
+  {age: 73}
+  {age: 88},
+  {age: 98},
+  {age: 159},
+]));
