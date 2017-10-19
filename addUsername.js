@@ -55,7 +55,13 @@ Iterate through given list of people
 
 PSEUDOCODE
 -----------
-
+Iterate through list (forEach)
+  Create firstName equal to element.firstName.toLowerCase
+  Create lastName equal to element.lastName[0].toLowerCase
+  Create currYear by making instance of Date and running getFullYear
+  Get birthYear equal to currYear - element.age
+  Create username equal t firstName + lastName + birthYear
+  Add username to element
 
 */
 
