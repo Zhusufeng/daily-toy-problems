@@ -72,6 +72,7 @@ function isAgeDiverse(list) {
     return list.some(function(person) {
       let determinedGen = '';
       let age = person.age;
+      // console.log('age is ', age);
       if (age >= 13 && age < 20) {
         determinedGen = 'teens';
       } else if (age >= 20 && age < 30) {
@@ -90,9 +91,10 @@ function isAgeDiverse(list) {
         determinedGen = 'eighties';
       } else if (age >= 90 && age < 100) {
         determinedGen = 'nineties';
-      }else if (age >= 100) {
-        determindGen = 'centenarian';
+      } else if (age >= 100) {
+        determinedGen = 'centenarian';
       }
+      // console.log('the gen is ', determinedGen);
       return generation === determinedGen;
     });
   });
@@ -114,8 +116,20 @@ console.log(isAgeDiverse([
   {age: 49},
   {age: 56},
   {age: 69},
-  {age: 73}
+  {age: 73},
   {age: 88},
   {age: 98},
-  {age: 159},
+  {age: 159}
+]));
+console.log(isAgeDiverse([
+  { firstName: 'Harry', lastName: 'K.', country: 'Brazil', continent: 'Americas', age: 19, language: 'Python' },
+  { firstName: 'Kseniya', lastName: 'T.', country: 'Belarus', continent: 'Europe', age: 29, language: 'JavaScript' },
+  { firstName: 'Jing', lastName: 'X.', country: 'China', continent: 'Asia', age: 39, language: 'Ruby' },
+  { firstName: 'Noa', lastName: 'A.', country: 'Israel', continent: 'Asia', age: 40, language: 'Ruby' },
+  { firstName: 'Andrei', lastName: 'E.', country: 'Romania', continent: 'Europe', age: 59, language: 'C' },
+  { firstName: 'Maria', lastName: 'S.', country: 'Peru', continent: 'Americas', age: 60, language: 'C' },
+  { firstName: 'Lukas', lastName: 'X.', country: 'Croatia', continent: 'Europe', age: 75, language: 'Python' },
+  { firstName: 'Chloe', lastName: 'K.', country: 'Guernsey', continent: 'Europe', age: 88, language: 'Ruby' },
+  { firstName: 'Viktoria', lastName: 'W.', country: 'Bulgaria', continent: 'Europe', age: 98, language: 'PHP' },
+  { firstName: 'Piotr', lastName: 'B.', country: 'Poland', continent: 'Europe', age: 128, language: 'JavaScript' }
 ]));
