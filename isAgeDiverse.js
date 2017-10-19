@@ -67,4 +67,35 @@ Iterate through the ages array and make sure every item is inside some of the pe
 
 function isAgeDiverse(list) {
   const ages = ['teens', 'twenties', 'thirties', 'forties', 'fifties', 'sixties', 'seventies', 'eighties', 'nineties', 'centenarian'];
+
+  return ages.every(function(generation) {
+    return list.some(function(person) {
+      let determinedGen = '';
+      let age = person.age;
+      if (age >= 13 && age < 20) {
+        determinedGen = 'teens';
+      } else if (age >= 20 && age < 30) {
+        determinedGen = 'twenties';
+      } else if (age >= 30 && age < 40) {
+        determinedGen = 'thirties';
+      } else if (age >= 40 && age < 50) {
+        determinedGen = 'forties';
+      } else if (age >= 50 && age < 60) {
+        determinedGen = 'fifties';
+      } else if (age >= 60 && age < 70) {
+        determinedGen = 'sixties';
+      } else if (age >= 70 && age < 80) {
+        determinedGen = 'seventies';
+      } else if (age >= 80 && age < 90) {
+        determinedGen = 'eighties';
+      } else if (age >= 90 && age < 100) {
+        determinedGen = 'nineties';
+      }else if (age >= 100) {
+        determindGen = 'centenarian';
+      }
+      return generation === determinedGen;
+    });
+  });
 }
+
+// Tests
