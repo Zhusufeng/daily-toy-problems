@@ -67,5 +67,20 @@ EX.4
   {language: 'JavaScript', githubAdmin: 'yes'}
 ]
 
+EX.5
+[
+  {language: 'JavaScript', githubAdmin: 'yes'},
+  {language: 'JavaScript', githubAdmin: 'yes'}
+]
+[
+  {language: 'JavaScript', githubAdmin: 'yes'},
+  {language: 'JavaScript', githubAdmin: 'yes'}
+]
+
+GENERAL PLAN
+-------------
+Return iterate through list using filter
+If list at current index's language equals language param AND githubAdmin equals yes
+  Then return that the list at current index
 
 */
