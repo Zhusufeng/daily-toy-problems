@@ -24,3 +24,48 @@ The strings representing whether someone is a GitHub admin will always be format
 The strings representing a given language will always be formatted in the same way (e.g. 'JavaScript' will always be formatted with upper-case 'J' and 'S'. 
 */
 
+/*
+O: Array of objects
+I: Array of objects, language
+C: 
+  Time: Linear
+  Space: Linear
+E: 
+
+EX.1 
+[
+  {language: 'JavaScript', githubAdmin: 'yes'}
+]
+[
+  {language: 'JavaScript', githubAdmin: 'yes'}
+]
+
+EX.2
+[
+  {language: 'JavaScript', githubAdmin: 'yes'},
+  {language: 'JavaScript', githubAdmin: 'no'},
+]
+[
+  {language: 'JavaScript', githubAdmin: 'yes'}
+]
+
+EX.3 
+[
+  {language: 'JavaScript', githubAdmin: 'yes'},
+  {language: 'Java', githubAdmin: 'no'},
+]
+[
+  {language: 'JavaScript', githubAdmin: 'yes'}
+]
+
+EX.4
+[
+  {language: 'JavaScript', githubAdmin: 'yes'},
+  {language: 'Java', githubAdmin: 'yes'},
+]
+[
+  {language: 'JavaScript', githubAdmin: 'yes'}
+]
+
+
+*/
