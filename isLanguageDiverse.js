@@ -27,3 +27,16 @@ Each of the 3 programming languages will always be represented.
 function isLanguageDiverse(list) {
   // thank you for checking out the Coding Meetup kata :)
 }
+
+/*
+GENERAL PLAN
+---------------
+Create empty object tracker
+Iterate through list
+Increment languages in tracker
+Find smallest count of languages
+Then compare other languages
+If any languages are more than 2x bigger
+Return false
+Else return true
+*/
