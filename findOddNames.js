@@ -35,4 +35,12 @@ General Plan
       Add that current charCode to sum
     If the sum at end of loop modulo 2 is 1
       Return that programmer
+
+Pseudocode
+  Return the map through programmers
+    Initialize sum variable as 0
+    Iterate through programmer's name (string)
+      Add current charCode to sum
+    If sum modulo 2 equals 1
+      Return that programmer's entire object
 */
