@@ -87,3 +87,11 @@ var list2 = [
   { firstName: 'Aba', lastName: 'N.', country: 'Ghana', continent: 'Africa', age: 21, language: 'Python' }
 ];
 console.log(findOddNames(list2));
+
+// deomsj's Solution with reduce
+// var findOddNames = (list) =>
+//   list.filter(d=>d.firstName
+//                   .split('')
+//                   .map(c=>c.charCodeAt(0))
+//                   .reduce((a,b)=>a+b,0)
+//                   % 2 !== 0);
