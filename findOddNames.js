@@ -22,3 +22,17 @@ Preserve the order of the original list.
 Return an empty array [] if there is no developer with an "odd" name.
 The input array and first names will always be valid and formatted as in the example above.
 */
+/*
+O: Array of objects
+I: Array of objects
+C: Linear
+E:
+
+General Plan
+  Go through programmers
+    Create sum variable
+    Using programmer's name, go through the name and get charCodes
+      Add that current charCode to sum
+    If the sum at end of loop modulo 2 is 1
+      Return that programmer
+*/
