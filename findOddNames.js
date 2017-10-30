@@ -49,17 +49,32 @@ Pseudocode
   Else return oddNames
 */
 
+// function findOddNames(list) {
+//   return list.filter(function(dev) {
+//     var sum = 0;
+//     for (var i = 0; i < dev.firstName.length; i++) {
+//       sum += dev.firstName.charCodeAt(i);
+//     }
+//     if (sum % 2 === 1) {
+//       return dev;
+//     }
+//   });
+// };
+
 function findOddNames(list) {
-  return list.filter(function(dev) {
-    var sum = 0;
-    for (var i = 0; i < dev.firstName.length; i++) {
-      sum += dev.firstName.charCodeAt(i);
-    }
+  return list.filter((dev) => {
+    let sum = 0;
+    dev.firstName
+      .split('')
+      .forEach((letter) => {
+        sum += letter.charCodeAt(0);
+      });
     if (sum % 2 === 1) {
       return dev;
     }
   });
 };
+
 
 // Test
 var list1 = [
