@@ -37,10 +37,38 @@ General Plan
       Return that programmer
 
 Pseudocode
-  Return the map through programmers
+  Initialize oddNames array var to equal the filter through programmers
     Initialize sum variable as 0
     Iterate through programmer's name (string)
       Add current charCode to sum
     If sum modulo 2 equals 1
       Return that programmer's entire object
+
+  If oddNames has no length
+    Return []
+  Else return oddNames
 */
+
+function findOddNames(list) {
+  return list.filter(function(dev) {
+    var sum = 0;
+    for (var i = 0; i < dev.firstName.length; i++) {
+      sum += dev.firstName.charCodeAt(i);
+    }
+    if (sum % 2 === 1) {
+      return dev;
+    }
+  });
+};
+
+// Test
+var list1 = [
+  { firstName: 'Aba', lastName: 'N.', country: 'Ghana', continent: 'Africa', age: 21, language: 'Python' },
+  { firstName: 'Abb', lastName: 'O.', country: 'Israel', continent: 'Asia', age: 39, language: 'Java' }
+];
+console.log(findOddNames(list1));
+
+var list2 = [
+  { firstName: 'Aba', lastName: 'N.', country: 'Ghana', continent: 'Africa', age: 21, language: 'Python' }
+];
+console.log(findOddNames(list2));
