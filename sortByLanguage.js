@@ -49,6 +49,16 @@ function sortByLanguage(list) {
   });
 }
 
+// Allysson's solution I edited
+// function sortByLanguage(list) {
+//   return list.sort((a,b) => {
+//     if (a.language === b.language) {
+//       return a.firstName > b.firstName ? 1 : -1;
+//     }
+//     return a.language > b.language ? 1 : -1;
+//   });
+// }
+
 // Test
 var list1 = [
   { firstName: 'Nikau', lastName: 'R.', country: 'New Zealand', continent: 'Oceania', age: 39, language: 'Ruby' },
