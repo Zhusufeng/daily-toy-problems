@@ -37,12 +37,16 @@ function sortByLanguage(list) {
   return list.sort(function(dev1, dev2) {
     if (dev1.language > dev2.language) {
       return 1;
-
+    } else if (dev1.language === dev2.language) {
+      if (dev1.firstName > dev2.firstName) {
+        return 1;
+      } else {
+        return -1;
+      }
     } else {
       return -1;
     }
   });
-
 }
 
 // Test
