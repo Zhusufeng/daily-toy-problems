@@ -58,24 +58,41 @@ E:
     Return answer
 */
 
-var fizzBuzz = function(n) {
-  let answer = [];
-  let counter = 1;
+// var fizzBuzz = function(n) {
+//   let answer = [];
+//   let counter = 1;
 
-  while (counter <= n) {
-    if (counter % 15 === 0) {
-      answer.push('FizzBuzz');
-    } else if (counter % 3 === 0) {
-      answer.push('Fizz');
-    } else if (counter % 5 === 0) {
-      answer.push('Buzz');
+//   while (counter <= n) {
+//     if (counter % 15 === 0) {
+//       answer.push('FizzBuzz');
+//     } else if (counter % 3 === 0) {
+//       answer.push('Fizz');
+//     } else if (counter % 5 === 0) {
+//       answer.push('Buzz');
+//     } else {
+//       answer.push(counter);
+//     }
+//     counter++;
+//   }
+//   return answer;
+// };
+
+function fizzBuzz(n, a = 1, array = []) {
+  if(a > n) {
+    return array;
+  } else {
+    if (a % 15 === 0) {
+      array.push('FizzBuzz');
+    } else if (a % 3 === 0) {
+      array.push('Fizz');
+    } else if (a % 5 === 0) {
+      array.push('Buzz');
     } else {
-      answer.push(counter);
+      array.push(a);
     }
-    counter++;
+    return fizzBuzz(n, a + 1, array);
   }
-  return answer;
-};
+}
 
 // Simple Test
 // console.log(fizzBuzz(0));
