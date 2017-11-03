@@ -44,17 +44,41 @@ E:
   General Plan
   -------------
     Create an answer which is an array to hold all strings
-    Create a counter with value of 0
+    Create a counter with value of 1
     While counter is not n
-      If 15 mod n is 0
+      If 15 mod counter is 0
         Push "FizzBuzz"
-      Else if 3 mod n is 0
+      Else if 3 mod counter is 0
         Push "Fizz"
-      Else if 5 mod n is 0
+      Else if 5 mod counter is 0
         Push "Buzz"
       Else
         Push counter
       Increment counter
     Return answer
-
 */
+
+var fizzBuzz = function(n) {
+  let answer = [];
+  let counter = 1;
+
+  while (counter <= n) {
+    if (counter % 15 === 0) {
+      answer.push('FizzBuzz');
+    } else if (counter % 3 === 0) {
+      answer.push('Fizz');
+    } else if (counter % 5 === 0) {
+      answer.push('Buzz');
+    } else {
+      answer.push(counter);
+    }
+    counter++;
+  }
+  return answer;
+};
+
+// Simple Test
+// console.log(fizzBuzz(0));
+// console.log(fizzBuzz(1));
+// console.log(fizzBuzz(15));
+// console.log(fizzBuzz(20.5));
