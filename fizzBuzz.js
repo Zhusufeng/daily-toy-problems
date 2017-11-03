@@ -26,3 +26,35 @@ Return:
     "FizzBuzz"
 ]
 */
+
+/*
+O: Array of strings
+I: Number
+C:
+  Time: Linear
+  Space: Linear
+E:
+  What if n is 0
+    Return empty array
+  What if n is negative?
+    Return empty array
+  What if n is not a whole number?
+    Return up to the nearest whole number
+
+  General Plan
+  -------------
+    Create an answer which is an array to hold all strings
+    Create a counter with value of 0
+    While counter is not n
+      If 15 mod n is 0
+        Push "FizzBuzz"
+      Else if 3 mod n is 0
+        Push "Fizz"
+      Else if 5 mod n is 0
+        Push "Buzz"
+      Else
+        Push counter
+      Increment counter
+    Return answer
+
+*/
