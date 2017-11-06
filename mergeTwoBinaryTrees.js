@@ -91,14 +91,14 @@ return mergedTree
 
 var mergeTrees = function(t1, t2, counter = 0) {
   let val1, val2, sum, mergedTree;
-  if (!t1.val) {
+  if (!t1) {
     val1 = 0;
   } else {
     val1 = t1.val;
   }
   console.log('val1', val1);
 
-  if (!t2.val) {
+  if (!t2) {
     val2 = 0;
   } else {
     val2 = t2.val;
@@ -114,16 +114,28 @@ var mergeTrees = function(t1, t2, counter = 0) {
         return mergedTree;
       }
   } else {
-    return;
+    return null;
   }
 
-  if (t1.left || t2.left) {
-    mergedTree.left = mergeTrees(t1.left, t2.left, counter++);
+  let treeLeft1, treeLeft2, treeRight1, treeRight2;
+
+  if (t1 === null) {
+    treeLeft1 = null;
+    treeRight1 = null;
+  } else {
+    treeLeft1 = t1.left;
+    treeRight1 = t1.right;
+  }
+  if (t2 === null) {
+    treeLeft2 = null;
+    treeRight2 = null;
+  } else {
+    treeLeft2 = t2.left;
+    treeRight2 = t2.right;
   }
 
-  if (t1.right || t2.right) {
-    mergedTree.right = mergeTrees(t1.right, t2.right, counter++);
-  }
+    mergedTree.left = mergeTrees(treeLeft1, treeLeft2, counter++);
+    mergedTree.right = mergeTrees(treeRight1, treeRight2, counter++);
 
   return mergedTree;
 };
@@ -138,7 +150,11 @@ var tree1 = {
   val: 1,
   left: {
     val: 3,
-    left: null,
+    left: {
+      val: 5,
+      left: null,
+      right: null
+    },
     right: null
   },
   right: {
@@ -153,12 +169,20 @@ var tree2 = {
   left: {
     val: 1,
     left: null,
-    right: null
+    right: {
+      val: 4,
+      left: null,
+      right: null
+    }
   },
   right: {
     val: 3,
     left: null,
-    right: null
+    right: {
+      val: 7,
+      left: null,
+      right: null
+    }
   }
 };
 
