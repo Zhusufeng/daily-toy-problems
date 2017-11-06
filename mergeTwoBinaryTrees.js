@@ -90,18 +90,26 @@ return mergedTree
 */
 
 var mergeTrees = function(t1, t2, counter = 0) {
-  let val1, val2, sum, mergedTree;
+  let val1, val2, sum, mergedTree, treeLeft1, treeLeft2, treeRight1, treeRight2;
   if (!t1) {
     val1 = 0;
+    treeLeft1 = null;
+    treeRight1 = null;
   } else {
     val1 = t1.val;
+    treeLeft1 = t1.left;
+    treeRight1 = t1.right;
   }
   console.log('val1', val1);
 
   if (!t2) {
     val2 = 0;
+    treeLeft2 = null;
+    treeRight2 = null;
   } else {
     val2 = t2.val;
+    treeLeft2 = t2.left;
+    treeRight2 = t2.right;
   }
   console.log('val2', val2);
 
@@ -117,25 +125,8 @@ var mergeTrees = function(t1, t2, counter = 0) {
     return null;
   }
 
-  let treeLeft1, treeLeft2, treeRight1, treeRight2;
-
-  if (t1 === null) {
-    treeLeft1 = null;
-    treeRight1 = null;
-  } else {
-    treeLeft1 = t1.left;
-    treeRight1 = t1.right;
-  }
-  if (t2 === null) {
-    treeLeft2 = null;
-    treeRight2 = null;
-  } else {
-    treeLeft2 = t2.left;
-    treeRight2 = t2.right;
-  }
-
-    mergedTree.left = mergeTrees(treeLeft1, treeLeft2, counter++);
-    mergedTree.right = mergeTrees(treeRight1, treeRight2, counter++);
+  mergedTree.left = mergeTrees(treeLeft1, treeLeft2, counter++);
+  mergedTree.right = mergeTrees(treeRight1, treeRight2, counter++);
 
   return mergedTree;
 };
