@@ -111,10 +111,19 @@ var mergeTrees = function(t1, t2, counter = 0) {
     return;
   }
 
+  if (t1.left || t2.left) {
+    mergedTree.left = mergeTrees(t1.left, t2.left, counter++);
+  }
 
+  if (t1.right || t2.right) {
+    mergedTree.right = mergeTrees(t1.right, t2.right, counter++);
+  }
+
+  return mergedTree;
 };
 
 function TreeNode(val) {
   this.val = val;
   this.left = this.right = null;
 }
+
