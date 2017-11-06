@@ -96,12 +96,18 @@ var mergeTrees = function(t1, t2, counter = 0) {
   } else {
     val1 = t1.val;
   }
+  console.log('val1', val1);
+
   if (!t2.val) {
     val2 = 0;
   } else {
-    val3 = t2.val;
+    val2 = t2.val;
   }
+  console.log('val2', val2);
+
   sum = val1 + val2;
+  console.log('sum', sum);
+
   if (sum > 0) {
     mergedTree = new TreeNode(sum);
       if (counter > 0) {
