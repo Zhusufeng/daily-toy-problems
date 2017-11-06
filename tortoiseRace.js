@@ -31,6 +31,18 @@ B's distance = time * rate;
 
 So when do A's distance = B's distance
 AKA
-lead + (timeA * rateA) = timeB * rateB
+lead + (time * rateA) = time * rateB
+Ie.
+70 + (32m 18s * 720) = 32m 18s * 850
+32m 18s = 1938s
+720/60/60 = 0.2 feet per second
+850/60/60 = 0.2361 feet per second
+70 + (1938s * 0.2) = 1938s * 0.2361
+70 + 387.6 = 457.5618
+457.6 = 457.5618
+
+
+Then translate time into hours, minutes, seconds
+return hours, mins, seconds in an array
 
 */
