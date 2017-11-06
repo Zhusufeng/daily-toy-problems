@@ -100,7 +100,7 @@ var mergeTrees = function(t1, t2, counter = 0) {
     treeLeft1 = t1.left;
     treeRight1 = t1.right;
   }
-  console.log('val1', val1);
+  console.log('tree1: ', val1, treeLeft1, treeRight1);
 
   if (!t2) {
     val2 = 0;
@@ -111,7 +111,7 @@ var mergeTrees = function(t1, t2, counter = 0) {
     treeLeft2 = t2.left;
     treeRight2 = t2.right;
   }
-  console.log('val2', val2);
+  console.log('tree2: ', val2, treeLeft2, treeRight2);
 
   sum = val1 + val2;
   console.log('sum', sum);
@@ -125,8 +125,11 @@ var mergeTrees = function(t1, t2, counter = 0) {
     return null;
   }
 
-  mergedTree.left = mergeTrees(treeLeft1, treeLeft2, counter++);
+  // Need condition if even though right or left ends early
+  // To keep going on the other side
+  // Use breakpoints in DevTools to follow callstack
   mergedTree.right = mergeTrees(treeRight1, treeRight2, counter++);
+  mergedTree.left = mergeTrees(treeLeft1, treeLeft2, counter++);
 
   return mergedTree;
 };
