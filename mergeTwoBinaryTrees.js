@@ -38,5 +38,30 @@ INPUT                                                       OUTPUT
        /                           \   \                          / \   \
       5                             4   7                        5   4   7
 
+Tree1 = {
+  value: 1,
+  children: [
+    {
+      value: 3,
+      children: [
+        {
+          value: 5,
+          children: []
+        }
+      ]
+    },
+    {
+      value: 2,
+      children: []
+    },
+  ]
+}
+
+General Plan
+--------------
+Iterate through tree 1 & 2  by starting at root node
+Add root node's together
+
+
 
 */
