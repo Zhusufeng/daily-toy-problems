@@ -88,3 +88,12 @@ Push node to mergedTree.children
 
 return mergedTree
 */
+
+var mergeTrees = function(t1, t2, counter = 0) {
+
+};
+
+var Node = function(n) {
+  this.value = n;
+  this.children= [];
+};
