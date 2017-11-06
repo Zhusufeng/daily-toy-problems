@@ -127,3 +127,33 @@ function TreeNode(val) {
   this.left = this.right = null;
 }
 
+// Simple Tests
+var tree1 = {
+  val: 1,
+  left: {
+    val: 3,
+    left: null,
+    right: null
+  },
+  right: {
+    val: 2,
+    left: null,
+    right: null
+  }
+};
+
+var tree2 = {
+  val: 2,
+  left: {
+    val: 1,
+    left: null,
+    right: null
+  },
+  right: {
+    val: 3,
+    left: null,
+    right: null
+  }
+};
+
+console.log(mergeTrees(tree1, tree2));
