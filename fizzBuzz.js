@@ -88,7 +88,7 @@ function fizzBuzz(n, a = 1, array = []) {
     } else if (a % 5 === 0) {
       array.push('Buzz');
     } else {
-      array.push(a);
+      array.push(a.toString());
     }
     return fizzBuzz(n, a + 1, array);
   }
