@@ -90,10 +90,31 @@ return mergedTree
 */
 
 var mergeTrees = function(t1, t2, counter = 0) {
+  let val1, val2, sum, mergedTree;
+  if (!t1.val) {
+    val1 = 0;
+  } else {
+    val1 = t1.val;
+  }
+  if (!t2.val) {
+    val2 = 0;
+  } else {
+    val3 = t2.val;
+  }
+  sum = val1 + val2;
+  if (sum > 0) {
+    mergedTree = new TreeNode(sum);
+      if (counter > 0) {
+        return mergedTree;
+      }
+  } else {
+    return;
+  }
+
 
 };
 
-var Node = function(n) {
-  this.value = n;
-  this.children= [];
-};
+function TreeNode(val) {
+  this.val = val;
+  this.left = this.right = null;
+}
