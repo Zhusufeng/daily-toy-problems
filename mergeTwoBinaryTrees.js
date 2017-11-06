@@ -59,8 +59,25 @@ Tree1 = {
 
 General Plan
 --------------
-Iterate through tree 1 & 2  by starting at root node
-Add root node's together
+node function
+  this.value is null
+  this.children is []
+
+Adding
+If tree1 is null,
+  val1 = 0
+Else
+  val1 = tree1.value
+If tree2 is null,
+  val2 = 0
+Else
+  val2 = tree2.value
+sum = val1 adding val2
+Create new node for mergedTree by using node(sum)
+
+Children
+Loop through trees using for loop where i is 0 til it goes up to 2, i++
+mergeTrees(tree1.children[i], tree2.children[i]);
 
 
 
