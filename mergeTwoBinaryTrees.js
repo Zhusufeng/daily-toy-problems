@@ -73,12 +73,18 @@ If tree2 is null,
 Else
   val2 = tree2.value
 sum = val1 adding val2
-Create new node for mergedTree by using node(sum)
+If sum is greater than 0
+  mergedTree = Create new node (node(sum))
+  If counter is greater than 0
+    return mergedTree
+Else
+  return
+
 
 Children
 Loop through trees using for loop where i is 0 til it goes up to 2, i++
-mergeTrees(tree1.children[i], tree2.children[i]);
+node = mergeTrees(tree1.children[i], tree2.children[i], counter++);
+Push node to mergedTree.children
 
-
-
+return mergedTree
 */
