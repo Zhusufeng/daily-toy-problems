@@ -92,8 +92,16 @@ function race(v1, v2, g) {
   } else {
     hours = Math.floor(g/(v2 - v1));
     minAndSec = ((g/(v2 - v1) * 60).toString()).split('.');
-    minutes = parseInt(minAndSec[0]);
-    seconds = Math.floor(parseFloat('.' + minAndSec[1]) * 60);
+    if (parseInt(minAndSec[0]) < 59) {
+      minutes = parseInt(minAndSec[0]);
+    } else {
+      minutes = parseInt(minAndSec[0]) % 60;
+    }
+    if (!minAndSec[1]) {
+      seconds = 0;
+    } else {
+      seconds = Math.floor(parseFloat('.' + minAndSec[1]) * 60);
+    }
     return [hours, minutes, seconds];
   }
 }
