@@ -84,28 +84,41 @@ E:
     return [hours, minutes, seconds];
 */
 
+// function race(v1, v2, g) {
+//   let hours, minAndSec, minutes, seconds;
+
+//   if (v1 >= v2) {
+//     return null;
+//   } else {
+//     hours = Math.floor(g/(v2 - v1));
+//     minAndSec = ((g/(v2 - v1) * 60).toString()).split('.');
+//     if (parseInt(minAndSec[0]) < 59) {
+//       minutes = parseInt(minAndSec[0]);
+//     } else {
+//       minutes = parseInt(minAndSec[0]) % 60;
+//     }
+//     if (!minAndSec[1]) {
+//       seconds = 0;
+//     } else {
+//       seconds = Math.floor(parseFloat('.' + minAndSec[1]) * 60);
+//     }
+//     return [hours, minutes, seconds];
+//   }
+// }
+
+// Refactor
 function race(v1, v2, g) {
-  let hours, minAndSec, minutes, seconds;
+  let hours, minutes, seconds;
 
   if (v1 >= v2) {
     return null;
   } else {
     hours = Math.floor(g/(v2 - v1));
-    minAndSec = ((g/(v2 - v1) * 60).toString()).split('.');
-    if (parseInt(minAndSec[0]) < 59) {
-      minutes = parseInt(minAndSec[0]);
-    } else {
-      minutes = parseInt(minAndSec[0]) % 60;
-    }
-    if (!minAndSec[1]) {
-      seconds = 0;
-    } else {
-      seconds = Math.floor(parseFloat('.' + minAndSec[1]) * 60);
-    }
+    minutes = Math.floor((g/(v2 - v1) * 60) % 60);
+    seconds = Math.floor((g/(v2 - v1) * 3600) % 60);
     return [hours, minutes, seconds];
   }
 }
-
 
 // Test
 console.log(race(900, 500, 60));
