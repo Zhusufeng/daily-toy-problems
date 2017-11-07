@@ -52,4 +52,9 @@ Ie. 720t + 70 = 850t
 70/130 = t
 0.5384 = time
 0.5384 * 60 = 32.31 minutes
+
+lead = (time * rateB) - (time * rateA)
+g/(rateB - rateA) = time in hours
+g/(rateB - rateA) * 60 = time in minutes
+g/(rateB - rateA) * 60 * 60 = time in seconds
 */
