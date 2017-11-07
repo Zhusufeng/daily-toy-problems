@@ -45,4 +45,11 @@ Ie.
 Then translate time into hours, minutes, seconds
 return hours, mins, seconds in an array
 
+lead + (time * rateA) = time * rateB
+Ie. 720t + 70 = 850t
+70 = 850t - 720t
+70 = 130t
+70/130 = t
+0.5384 = time
+0.5384 * 60 = 32.31 minutes
 */
