@@ -54,7 +54,19 @@ Ie. 720t + 70 = 850t
 0.5384 * 60 = 32.31 minutes
 
 lead = (time * rateB) - (time * rateA)
-g/(rateB - rateA) = time in hours
-g/(rateB - rateA) * 60 = time in minutes
-g/(rateB - rateA) * 60 * 60 = time in seconds
+g/(rateB - rateA) = time in hours - Math.floor it
+g/(rateB - rateA) * 60 = time in minutes - Turn to string. Split on decimal
+g/(rateB - rateA) * 60 * 60 = time in seconds - .31 * 60 = 18.6  - Math.floor it
+
+O: Array
+I: Number, Number, Number
+C:
+  Time: Constant
+  Space: Constant
+E:
+  900, 500, 60 => null
+  900, 900, 60 => null
+  720, 850, 70 => [0, 32, 18]
+  80, 91, 37   => [3, 21, 49]
+  80, 100, 40  => [2, 0, 0]
 */
