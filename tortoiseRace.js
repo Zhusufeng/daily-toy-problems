@@ -84,3 +84,24 @@ E:
     return [hours, minutes, seconds];
 */
 
+function race(v1, v2, g) {
+  let hours, minAndSec, minutes, seconds;
+
+  if (v1 >= v2) {
+    return null;
+  } else {
+    hours = Math.floor(g/(v2 - v1));
+    minAndSec = ((g/(v2 - v1) * 60).toString()).split('.');
+    minutes = parseInt(minAndSec[0]);
+    seconds = Math.floor(parseFloat('.' + minAndSec[1]) * 60);
+    return [hours, minutes, seconds];
+  }
+}
+
+
+// Test
+console.log(race(900, 500, 60));
+console.log(race(900, 900, 60));
+console.log(race(720, 850, 70)); // [0, 32, 18]
+console.log(race(80, 91, 37));   // [3, 21, 49]
+console.log(race(80, 100, 40));  // [2, 0, 0]
