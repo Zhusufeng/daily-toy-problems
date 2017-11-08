@@ -33,6 +33,13 @@ E:
 
   General Plan
   ------------
-
+  Create variable answer equal to empty array
+  Turn string into an array
+  Iterate through array
+    If array[i] is + and array[i+1] is +,
+      Mutate array. Make array[i] & array[i+1] = -
+      Push joined array to answer
+      Unmutate array. Change array[i] & array[i+1] back to +
+  Return answer
 
 */
