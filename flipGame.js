@@ -12,3 +12,27 @@ For example, given s = "++++", after one move, it may become one of the followin
 ]
 If there is no valid move, return an empty list [].
 */
+
+/*
+O: array of strings
+I: string
+C:
+  Time: Linear
+  Space: Linear
+E:
+  ++++                  => --++
+                           +--+
+                           ++--
+
+  +++--                 => --+--
+                           +----
+
+  ++++--                => --++--
+                           +--+--
+                           ++----
+
+  General Plan
+  ------------
+
+
+*/
