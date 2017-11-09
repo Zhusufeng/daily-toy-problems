@@ -43,3 +43,26 @@ E:
   Return answer
 
 */
+
+var generatePossibleNextMoves = function(s) {
+  let answer = [];
+  let array = s.split('');
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === '+' && array[i + 1] === '+') {
+      array[i] = '-';
+      array[i + 1] = '-';
+      answer.push(array.join(''));
+      array[i] = '+';
+      array[i + 1] = '+';
+    }
+  }
+
+  return answer;
+};
+
+// Tests
+
+console.log(generatePossibleNextMoves('++++'));
+console.log(generatePossibleNextMoves('+++--'));
+console.log(generatePossibleNextMoves('++++--'));
