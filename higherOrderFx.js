@@ -291,4 +291,28 @@ function twoForEach () {
 
 }
 
-console.log(twoForEach());
+// console.log(twoForEach());
+
+function myConcatAll(array) {
+  let newArray = [];
+  array.forEach(element => {
+    element.forEach(item => {
+      newArray.push(item);
+    });
+  });
+
+  return newArray;
+}
+
+const myMovieTree = [
+  [
+      'Dashi',
+      'Maya'
+  ],
+  [
+      'Miko',
+      'Cuddles'
+  ]
+];
+
+console.log(myConcatAll(myMovieTree));
