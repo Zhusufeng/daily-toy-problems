@@ -453,8 +453,9 @@ function flatten3Deep() {
       }).map(art=> {
         return {id: film.id, title: film.title, boxart: art.url}
       });
-    });
-  });
+    }).concatAll();
+  }).concatAll();
 }
 
 console.log(flatten3Deep());
+
