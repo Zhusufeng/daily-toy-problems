@@ -457,5 +457,20 @@ function flatten3Deep() {
   }).concatAll();
 }
 
-console.log(flatten3Deep());
+// console.log(flatten3Deep());
+
+Array.prototype.concatMap = function(projectionFunctionThatReturnsArray) {
+  return this.map(item => {
+    return projectionFunctionThatReturnsArray(item);
+  }).concatAll();
+};
+
+var spanishFrenchEnglishWords = [ ["cero","rien","zero"], ["uno","un","one"], ["dos","deux","two"] ];
+// collect all the words for each number, in every language, in a single, flat list
+var allWords = [0,1,2].
+  concatMap(function(index) {
+    return spanishFrenchEnglishWords[index];
+  });
+
+// console.log(allWords);
 
