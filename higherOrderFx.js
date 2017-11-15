@@ -568,4 +568,37 @@ function largestBoxart() {
   return largestArt;
 }
 
-console.log(largestBoxart());
+// console.log(largestBoxart());
+
+// Exercise 16: Implement reduce()
+Array.prototype.reduce = function(combiner, initialValue) {
+  var counter, accumulatedValue;
+
+  // if the array is empty, return
+  if (this.length === 0) {
+    return this;
+  } else {
+    // if the user did not pass an initial value, use the first element
+    if (arguments.length === 1) {
+      counter = 1;
+      accumulatedValue = this[0];
+    } else if (arguments.length >= 2) {
+      counter = 0;
+      accumulatedValue = initialValue;
+    } else {
+      throw 'Invalid arguments';
+    }
+
+    // Loop through the array, feeding the current value and the result of
+    // the previous computation back into the combiner function until
+    // we've exhausted the entire array and are left with only one value.
+
+    for (; counter < this.length; counter++) {
+      accumulatedValue = combiner(accumulatedValue, this[counter]);
+    }
+  }
+  return [accumulatedValue];
+};
+
+// console.log([1,2,3].reduce(function(accumulatedValue, currentValue) { return accumulatedValue + currentValue; })); // === [6];
+// console.log([1,2,3].reduce(function(accumulatedValue, currentValue) { return accumulatedValue + currentValue; }, 10)); // === [16];
