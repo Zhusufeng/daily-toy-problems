@@ -615,4 +615,31 @@ function retrieveHighRating () {
   }, 0);
 }
 
-console.log(retrieveHighRating());
+// console.log(retrieveHighRating());
+
+// Exercise 18: Retrieve url of the largest boxart
+
+function getLargestBoxart() {
+  var boxarts = [
+    { width: 425, height: 150, url: "http://cdn-0.nflximg.com/images/2891/Fracture425.jpg" },
+    { width: 200, height: 200, url: "http://cdn-0.nflximg.com/images/2891/Fracture200.jpg" },
+    { width: 150, height: 200, url: "http://cdn-0.nflximg.com/images/2891/Fracture150.jpg" },
+    { width: 300, height: 200, url: "http://cdn-0.nflximg.com/images/2891/Fracture300.jpg" }
+  ];
+
+  return boxarts.reduce((largest, item) => {
+    let size = item.width * item.height;
+    let largestSize = item.width * item.height;
+
+    if (size > largestSize) {
+      largest = item;
+    }
+
+    return largest;
+  })
+  .map(property => {
+    return property.url;
+  });
+}
+
+console.log(getLargestBoxart());
