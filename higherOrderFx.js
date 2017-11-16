@@ -602,3 +602,17 @@ Array.prototype.reduce = function(combiner, initialValue) {
 
 // console.log([1,2,3].reduce(function(accumulatedValue, currentValue) { return accumulatedValue + currentValue; })); // === [6];
 // console.log([1,2,3].reduce(function(accumulatedValue, currentValue) { return accumulatedValue + currentValue; }, 10)); // === [16];
+
+// Exercise 17: Retrieve the largest rating.
+function retrieveHighRating () {
+  var ratings = [2,3,1,4,5];
+
+  return ratings.reduce((newVal, item) => {
+    if (item > newVal) {
+      newVal = item;
+    }
+    return newVal;
+  }, 0);
+}
+
+console.log(retrieveHighRating());
