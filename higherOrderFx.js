@@ -880,4 +880,104 @@ function zipArrays() {
   });
 }
 
-console.log(zipArrays());
+// console.log(zipArrays());
+
+// Exercise 24: Retrieve each video's id, title, middle interesting moment time, and smallest box art url.
+function getMomentAndArt() {
+  var movieLists = [
+      {
+        name: "New Releases",
+        videos: [
+          {
+            "id": 70111470,
+            "title": "Die Hard",
+            "boxarts": [
+              { width: 150, height:200, url:"http://cdn-0.nflximg.com/images/2891/DieHard150.jpg" },
+              { width: 200, height:200, url:"http://cdn-0.nflximg.com/images/2891/DieHard200.jpg" }
+            ],
+            "url": "http://api.netflix.com/catalog/titles/movies/70111470",
+            "rating": 4.0,
+            "interestingMoments": [
+              { type: "End", time:213432 },
+              { type: "Start", time: 64534 },
+              { type: "Middle", time: 323133}
+            ]
+          },
+          {
+            "id": 654356453,
+            "title": "Bad Boys",
+            "boxarts": [
+              { width: 200, height:200, url:"http://cdn-0.nflximg.com/images/2891/BadBoys200.jpg" },
+              { width: 140, height:200, url:"http://cdn-0.nflximg.com/images/2891/BadBoys140.jpg" }
+
+            ],
+            "url": "http://api.netflix.com/catalog/titles/movies/70111470",
+            "rating": 5.0,
+            "interestingMoments": [
+              { type: "End", time:54654754 },
+              { type: "Start", time: 43524243 },
+              { type: "Middle", time: 6575665}
+            ]
+          }
+        ]
+      },
+      {
+        name: "Instant Queue",
+        videos: [
+          {
+            "id": 65432445,
+            "title": "The Chamber",
+            "boxarts": [
+              { width: 130, height:200, url:"http://cdn-0.nflximg.com/images/2891/TheChamber130.jpg" },
+              { width: 200, height:200, url:"http://cdn-0.nflximg.com/images/2891/TheChamber200.jpg" }
+            ],
+            "url": "http://api.netflix.com/catalog/titles/movies/70111470",
+            "rating": 4.0,
+            "interestingMoments": [
+              { type: "End", time:132423 },
+              { type: "Start", time: 54637425 },
+              { type: "Middle", time: 3452343}
+            ]
+          },
+          {
+            "id": 675465,
+            "title": "Fracture",
+            "boxarts": [
+              { width: 200, height:200, url:"http://cdn-0.nflximg.com/images/2891/Fracture200.jpg" },
+              { width: 120, height:200, url:"http://cdn-0.nflximg.com/images/2891/Fracture120.jpg" },
+              { width: 300, height:200, url:"http://cdn-0.nflximg.com/images/2891/Fracture300.jpg" }
+            ],
+            "url": "http://api.netflix.com/catalog/titles/movies/70111470",
+            "rating": 5.0,
+            "interestingMoments": [
+              { type: "End", time:45632456 },
+              { type: "Start", time: 234534 },
+              { type: "Middle", time: 3453434}
+            ]
+          }
+        ]
+      }
+    ];
+  return movieLists.concatMap(category => {
+    return category.videos.concatMap(video => {
+      return Array.zip(
+        video.boxarts.reduce((smallest, item) => {
+          if (smallest.width * smallest.height > item.width * item.height) {
+            return item;
+          } else {
+            return smallest;
+          }
+        }),
+        video.interestingMoments.filter(moment => {
+          if (moment.type === 'Middle') return moment;
+        }),
+        function(left, right) {
+          console.log(left);
+          console.log(right);
+          return {videoId: video.id, title: video.title, url: left.url, time: right.time};
+        });
+      // return {videoId: video.id, title: video.title};
+    });
+  });
+}
+console.log(getMomentAndArt());
