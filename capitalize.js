@@ -1,6 +1,3 @@
-function capitalize(s,arr){
-  return "";
-};
 
 /*
 O: string
@@ -26,3 +23,16 @@ Iterate thru array of nums
 If index exists, turn letter in newText at that index to a capital
 Return joined newText array
 */
+
+function capitalize(s,arr){
+  let newText = s.split('');
+
+  arr.forEach(num => {
+    if (newText[num]) {
+      newText[num] = newText[num].toUppercase();
+    }
+  });
+  return newText.join('');
+};
+
+
