@@ -29,10 +29,16 @@ function capitalize(s,arr){
 
   arr.forEach(num => {
     if (newText[num]) {
-      newText[num] = newText[num].toUppercase();
+      newText[num] = newText[num].toUpperCase();
     }
   });
   return newText.join('');
 };
 
-
+console.log(capitalize('abcdef', [1, 2, 5]));
+console.log(capitalize('abcdef', [1, 2, 5, 100]));
+console.log(capitalize('aaa', [0, 0, 0]));
+console.log(capitalize('AAA', [0, 0, 0]));
+console.log(capitalize('aaa', [2]));
+console.log(capitalize('aaa', [100, 200, 300]));
+console.log(capitalize('aaa', [5000, 100, 1]));
