@@ -5,8 +5,12 @@ function capitalize(s,arr){
 /*
 O: string
 I: string + array of nums
-C: linear
+C:
+  Time: Linear
+  Space: Constant
 E:
+Examples/Edge Cases
+-------------------
 'abcdef', [1, 2, 5] => 'aBCdeF'
 'abcdef', [1, 2, 5, 100] => 'aBCdeF'
 'aaa', [0, 0, 0] => 'Aaa'
@@ -15,4 +19,10 @@ E:
 'aaa', [100, 200, 300] => 'aaa'
 'aaa', [5000, 100, 1] => 'aAa'
 
+General Plan
+------------
+Turn string into an array called newText
+Iterate thru array of nums
+If index exists, turn letter in newText at that index to a capital
+Return joined newText array
 */
