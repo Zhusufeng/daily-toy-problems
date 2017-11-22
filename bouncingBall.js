@@ -47,3 +47,20 @@ if 1.98 > 1.5
   else
     return seeCounter
 */
+
+function bouncingBall(h,  bounce,  window) {
+  var seenCounter = 0; // Number of times mother sees ball
+  var currH = 0; // Keep track of ball's current height
+
+  if (h <= 0 || bounce < 0 || bounce > 1 || window >= h) {
+  	console.log('This isn\'t going to work');
+  	return -1;
+  }
+
+}
+
+// Bad inputs
+console.log(bouncingBall(0, 0.66, 1.5));
+console.log(bouncingBall(3, 2, 1.5));
+console.log(bouncingBall(3, -1, 1.5));
+console.log(bouncingBall(3, 0.66, 5));
