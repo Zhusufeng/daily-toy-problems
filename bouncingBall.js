@@ -78,6 +78,16 @@ function bouncingBall(h,  bounce,  window) {
 // console.log(bouncingBall(3, 0.66, 5));
 
 // Valid inputs
-console.log(bouncingBall(3, 0.66, 1.5));
-console.log(bouncingBall(30.0, 0.66, 1.5));
+console.log(bouncingBall(3, 0.66, 1.5)); // 3
+console.log(bouncingBall(30.0, 0.66, 1.5)); // 15
+/*
+0.66    *     7       =     0.545516070... * 30    =    1.63654...
+bounce    numOfLoops                       height
+
+(bounce ^ numOfLoops) * height until less than window
+(numOfLoops * 2) + 1 = seenCounter
+*/
+
+
 // console.log(bouncingBall(30, 0.9999999999, 1));  // big calculation
+
