@@ -31,5 +31,19 @@ E:
 3, 0.66, 1.5 => 3
 3, 1, 1.5 => -1
 
-
+General Plan
+-------------
+3, 0.66, 1.5
+seenCounter = 0
+if 1.5 > 3
+  return -1
+seenCounter++
+3 * 0.66 = 1.98
+if 1.98 > 1.5
+  seenCounter += 2 for up and down
+  1.98 * 0.66
+  if 1.31 > 1.5
+    keep going
+  else
+    return seeCounter
 */
