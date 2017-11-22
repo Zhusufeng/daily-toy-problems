@@ -22,5 +22,14 @@ h = 3, bounce = 1, window = 1.5, result is -1 (Condition 2) not fullfilled).
 */
 
 /*
+O: Number
+I: Numbers: height, bounce, window
+C: 
+  Time: Logarithmic?
+  Space: ?
+E:
+3, 0.66, 1.5 => 3
+3, 1, 1.5 => -1
+
 
 */
