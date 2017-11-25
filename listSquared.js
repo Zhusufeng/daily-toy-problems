@@ -35,11 +35,15 @@ Use reduce to sum the divisors array
 Part 4: Test if the sum's square root is a whole number
 -------------------------
 Get square root of sum (use math.sqrt)
-If sqrt mod 1 is 0, it is a whole number
-Else it is not a whole number
+
 
 Part 5: Add that number to answer array
 -------------------------
+If sqrt mod 1 is 0
+  it is a whole number
+  Push n and the sum to the answer array
+  
+Else it is not a whole number
 
 Part 6: Optimize
 -------------------------
