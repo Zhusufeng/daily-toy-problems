@@ -73,8 +73,14 @@ function listSquared(m, n) {
 
     console.log(total);
 
+    if (Math.sqrt(total) % 1 === 0) {
+      answerArray.push([m, total]);
+    }
+
     m++;
   }
+
+  return answerArray;
 }
 
 console.log(listSquared(40, 42));
