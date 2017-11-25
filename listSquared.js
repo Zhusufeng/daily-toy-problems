@@ -15,6 +15,8 @@ list_squared(42, 250) --> [[42, 2500], [246, 84100]]
 O: Array of tuples
 I: Numbers
 C:
+  Time: 
+  Space: 
 E: 
 
 Part 1: Find Divisors
@@ -42,7 +44,7 @@ Part 5: Add that number to answer array
 If sqrt mod 1 is 0
   it is a whole number
   Push n and the sum to the answer array
-  
+
 Else it is not a whole number
 
 Part 6: Optimize
@@ -51,5 +53,20 @@ Part 6: Optimize
 */
 
 function listSquared(m, n) {
-    // your code
+  let answerArray = [];
+
+  while (m <= n) {
+    let divisors = [];
+    // console.log(Math.sqrt(m));
+    for (let i = 1; i <= m/2; i++) {
+      if (m % i === 0) {
+        divisors.push(i);
+      }
+    }
+    divisors.push(m);
+    console.log(divisors);
+    m++;
+  }
 }
+
+console.log(listSquared(40, 42));
