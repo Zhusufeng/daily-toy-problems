@@ -11,3 +11,36 @@ list_squared(1, 250) --> [[1, 1], [42, 2500], [246, 84100]]
 list_squared(42, 250) --> [[42, 2500], [246, 84100]]
 */
 
+/*
+O: Array of tuples
+I: Numbers
+C:
+E: 
+
+Part 1: Find Divisors
+-------------------------
+Make array to hold divisors
+Make a loop where i = 1 and it goes til i = sqrt of n
+If n is divisible by i, 
+  Add it to the divisors array
+
+Part 2: Square Divisors
+-------------------------
+
+Part 3: Sum the squared divisors
+-------------------------
+
+Part 4: Test if the sum's square root is a whole number
+-------------------------
+
+Part 5: Add that number to answer array
+-------------------------
+
+Part 6: Optimize
+-------------------------
+
+*/
+
+function listSquared(m, n) {
+    // your code
+}
