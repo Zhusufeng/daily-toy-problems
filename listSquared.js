@@ -60,11 +60,19 @@ function listSquared(m, n) {
     // console.log(Math.sqrt(m));
     for (let i = 1; i <= m/2; i++) {
       if (m % i === 0) {
-        divisors.push(i);
+        divisors.push(i*i);
       }
     }
-    divisors.push(m);
+    divisors.push(m*m);
     console.log(divisors);
+
+    let total = divisors.reduce((sum, current) => {
+      sum += current;
+      return sum;
+    }, 0);
+
+    console.log(total);
+
     m++;
   }
 }
