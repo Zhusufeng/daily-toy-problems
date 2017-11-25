@@ -56,16 +56,13 @@ function listSquared(m, n) {
   let answerArray = [];
 
   while (m <= n) {
-    let divisors = [];
     let total = 0;
 
     for (let i = 1; i <= m/2; i++) {
       if (m % i === 0) {
-        divisors.push(i * i);
         total += i * i;
       }
     }
-    divisors.push(m * m);
     total += m * m;
 
     if (Math.sqrt(total) % 1 === 0) {
