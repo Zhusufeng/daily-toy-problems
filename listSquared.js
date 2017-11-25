@@ -26,12 +26,17 @@ If n is divisible by i,
 
 Part 2: Square Divisors
 -------------------------
+When added to the divisors array, square it!
 
 Part 3: Sum the squared divisors
 -------------------------
+Use reduce to sum the divisors array
 
 Part 4: Test if the sum's square root is a whole number
 -------------------------
+Get square root of sum (use math.sqrt)
+If sqrt mod 1 is 0, it is a whole number
+Else it is not a whole number
 
 Part 5: Add that number to answer array
 -------------------------
