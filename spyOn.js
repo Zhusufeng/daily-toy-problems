@@ -42,7 +42,7 @@ Create spy to equal spyOn.prototype
 spy.func equals given function
 spy.timesCalled equals 0
 spy.storage equals empty object
-Returns spy
+Returns spy.func
 
 spyOn.callCount 
 Returns Number (this.timesCalled)
@@ -58,3 +58,31 @@ If value in this.storage exists, return true
 Else return false
 */
 
+var spyOn = function(func) {
+  var spy = Object.create(spyOn.prototype);
+  spy.func = func;
+  spy.timesCalled = 0;
+  spy.storage = {};
+
+  return spy.func;
+};
+
+spyOn.prototype.callCount = function() {
+  return this.timesCalled;
+};
+
+spyOn.prototype.wasCalledWith = function(arg){
+  if (this.storage[arg]) {
+    return true;
+  }
+  return false;
+};
+
+spyOn.prototype.returned = function(value) {
+  for (key in this.storage) {
+    if (this.storage[key] === value) {
+      return true;
+    }
+  }
+  return false;
+};
