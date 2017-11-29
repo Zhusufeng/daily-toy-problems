@@ -25,3 +25,36 @@ adderSpy.wasCalledWith(0); // false
 adderSpy.returned(8); // true
 adderSpy.returned(0); // false
 */
+
+/*
+O: An instance of spyOn
+I: Arguments that the function takes
+C: 
+  Time: Depends on input function
+  Space: Depends on input function
+E: See above
+
+General Plan
+-------------
+spyOn
+Takes in a function
+Create spy to equal spyOn.prototype
+spy.func equals given function
+spy.timesCalled equals 0
+spy.storage equals empty object
+Returns spy
+
+spyOn.callCount 
+Returns Number (this.timesCalled)
+
+spyOn.wasCalledWith
+Takes in an argument
+If key in this.storage exists, return true
+Else return false
+
+spyOn.returned
+Takes in an argument
+If value in this.storage exists, return true
+Else return false
+*/
+
