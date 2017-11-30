@@ -63,9 +63,17 @@ var spyOn = function(func) {
   spy.func = func;
   spy.timesCalled = 0;
   spy.storage = {};
+  // console.log(arguments);
+  let args = Array.prototype.slice.call(arguments);
+  console.log(args);
+  if (args.length > 1) {
+    return spy.func;
+  }
 
-  return spy.func;
+  return spy;
 };
+
+// spyOn.prototype.constructor = spyOn;
 
 spyOn.prototype.callCount = function() {
   return this.timesCalled;
@@ -86,3 +94,15 @@ spyOn.prototype.returned = function(value) {
   }
   return false;
 };
+
+// Test code
+function adder(n1, n2) { return n1 + n2; }
+var adderSpy = spyOn( adder );
+
+// console.log(adderSpy(2, 4)); // returns 6
+// console.log(adderSpy(3, 5)); // returns 8
+console.log(adderSpy.callCount()); // returns 2
+console.log(adderSpy.wasCalledWith(4)); // true
+console.log(adderSpy.wasCalledWith(0)); // false
+console.log(adderSpy.returned(8)); // true
+console.log(adderSpy.returned(0)); // false
