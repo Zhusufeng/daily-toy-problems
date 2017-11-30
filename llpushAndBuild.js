@@ -20,7 +20,16 @@ function Node(data) {
 }
 
 function push(head, data) {
+  // Create new node
+  var newNode = new Node(data);
+  
+  // Set newNode's next
+  newNode.next = head;
 
+  // Set head to newNode
+  head = newNode;
+
+  return head;
 }
 
 function buildOneTwoThree() {
@@ -29,8 +38,12 @@ function buildOneTwoThree() {
 
 // Test
 var chained = null
-chained = push(chained, 3)
-chained = push(chained, 2)
-chained = push(chained, 1)
+console.log('chained ==> ', chained);
+chained = push(chained, 3);
+console.log('chained, 3 ==> ', chained);
+chained = push(chained, 2);
+console.log('chained, 2 ==> ', chained);
+chained = push(chained, 1);
+console.log('chained, 1 ==> ', chained);
 chained = push(chained, 8) // === 8 -> 1 -> 2 -> 3 -> null
-
+console.log('chained, 8 ==> ', JSON.stringify(chained, null, 2));
