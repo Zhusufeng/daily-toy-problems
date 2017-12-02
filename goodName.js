@@ -49,19 +49,22 @@ function goodName(name) {
   let results = [];
   let array = name.split('.');
 
-  let givenName = array[0];
+  let siteName = array[0];
   let domain = '.' + array[1];
-  let length = givenName.length;
+  let length = siteName.length;
 
-  for (let i = 0; i < givenName.length; i++) {
-    if (givenName[i] === 'o') {
-      results.push(givenName.slice(0, i) + '0' + givenName.slice(i + 1, length) + domain);
+  for (let i = 0; i < siteName.length; i++) {
+    let start = siteName.slice(0, i);
+    let end = siteName.slice(i + 1, length);
+
+    if (siteName[i] === 'o') {
+      results.push(start + '0' + end + domain);
     }
-    if (givenName[i] === 'l') {
-      results.push(givenName.slice(0, i) + '1' + givenName.slice(i + 1, length) + domain);
+    if (siteName[i] === 'l') {
+      results.push(start + '1' + end + domain);
     }
-    if (givenName[i] === givenName[i - 1] && givenName[i] !== givenName[i + 1]) {
-      results.push(givenName.slice(0, i) + givenName.slice(i + 1, length) + domain);
+    if (siteName[i] === siteName[i - 1] && siteName[i] !== siteName[i + 1]) {
+      results.push(start + end + domain);
     }
   }
 
@@ -71,3 +74,5 @@ function goodName(name) {
 console.log(goodName('gooo.com'));
 console.log(goodName('looo.com'));
 console.log(goodName('goodlink.com'));
+console.log(goodName('microsoft.com'));
+console.log(goodName('fighter20000.net'));
