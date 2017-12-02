@@ -50,8 +50,13 @@ function goodName(name) {
   let array = name.split('.');
 
   let givenName = array[0];
+  let length = givenName.length;
 
-  
+  for (let i = 0; i < givenName.length; i++) {
+    if (givenName[i] === 'o') {
+      results.push(givenName.slice(0, i) + '0' + givenName.slice(i + 1, length));
+    }
+  }
 
   return results;
 }
