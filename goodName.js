@@ -33,6 +33,14 @@ E:
   looo.com => ['1ooo.com', 'l0oo.com', 'lo0o.com', 'loo0.com', 'loo.com']
 
 General Plan:
-
-
+  Declare results as an empty array
+  Get array by splitting string by decimal
+  Loop through array at index 0
+    If array[0][index] is 'o'
+      Push to results array[0].slice(0, index) + '0' + array[0].slice(index + 1, array[0].length)
+    If array[0][index] is 'l'
+      Push to results array[0].slice(0, index) + '1' + array[0].slice(index + 1, array[0].length)
+    If array[0][index] equals array[0][index - 1] && array[0][index] does not equal array[0][index + 1]
+      Push to results array[0].slice(0, index) + array[0].slice(index + 1, array[0].length)
+  Return results
 */
