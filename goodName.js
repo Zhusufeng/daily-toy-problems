@@ -68,11 +68,43 @@ function goodName(name) {
     }
   }
 
-  return results;
+  return results.sort();
 }
+
+// function goodName(name) {
+//   let results = [];
+//   let array = name.split('.');
+
+//   let siteName = array[0];
+//   let domain = '.' + array[1];
+//   let length = siteName.length;
+
+//   for (let i = 0; i < siteName.length; i++) {
+//     let start = siteName.slice(0, i);
+//     let end = siteName.slice(i + 1, length);
+
+//     if (siteName[i] === 'o') {
+//       results.push(start + '0' + end + domain);
+//     }
+//     if (siteName[i] === 'l') {
+//       results.push(start + '1' + end + domain);
+//     }
+//     if (i > 0 && siteName[i - 1] === siteName[i - 2] && siteName[i - 1] !== siteName[i]) {
+//       // let thisResult = siteName.slice(0, i - 1) + siteName.slice(i, length) + domain;
+//       // console.log(thisResult);
+//       results.push(siteName.slice(0, i - 1) + siteName.slice(i, length) + domain);
+//     }
+//     if (i === length - 1 && siteName[i] === siteName[i - 1] && siteName[i] !== siteName[i + 1]) {
+//       results.push(start + end + domain);
+//     }
+//   }
+
+//   return results;
+// }
 
 console.log(goodName('gooo.com'));
 console.log(goodName('looo.com'));
+console.log(goodName('leetcode.com'));
 console.log(goodName('goodlink.com'));
 console.log(goodName('microsoft.com'));
 console.log(goodName('fighter20000.net'));
