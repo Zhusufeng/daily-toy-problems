@@ -50,11 +50,18 @@ function goodName(name) {
   let array = name.split('.');
 
   let givenName = array[0];
+  let domain = '.' + array[1];
   let length = givenName.length;
 
   for (let i = 0; i < givenName.length; i++) {
     if (givenName[i] === 'o') {
-      results.push(givenName.slice(0, i) + '0' + givenName.slice(i + 1, length));
+      results.push(givenName.slice(0, i) + '0' + givenName.slice(i + 1, length) + domain);
+    }
+    if (givenName[i] === 'l') {
+      results.push(givenName.slice(0, i) + '1' + givenName.slice(i + 1, length) + domain);
+    }
+    if (givenName[i] === givenName[i - 1] && givenName[i] !== givenName[i + 1]) {
+      results.push(givenName.slice(0, i) + givenName.slice(i + 1, length) + domain);
     }
   }
 
@@ -62,3 +69,5 @@ function goodName(name) {
 }
 
 console.log(goodName('gooo.com'));
+console.log(goodName('looo.com'));
+console.log(goodName('goodlink.com'));
