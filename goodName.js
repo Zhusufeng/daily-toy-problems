@@ -44,3 +44,16 @@ General Plan:
       Push to results array[0].slice(0, index) + array[0].slice(index + 1, array[0].length)
   Return results
 */
+
+function goodName(name) {
+  let results = [];
+  let array = name.split('.');
+
+  let givenName = array[0];
+
+  
+
+  return results;
+}
+
+console.log(goodName('gooo.com'));
