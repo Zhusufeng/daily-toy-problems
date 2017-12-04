@@ -33,5 +33,13 @@ E:
   [0, 1, 2, 3, 4, 5], 4, => 4
   [0, 1], 1 => 1
   [1, 22, 33, 44, 55], 66 => -1
+  Maybe...
+  [11, 22, 33], 11 => 0
+  [11, 22, 33], 33 => 2
 
+General Plan
+  Iterate through shiftArr
+    If shiftArr at current index equals num
+      Return current index
+  Return -1
 */
