@@ -115,11 +115,36 @@ General Plan:
 */
 
 function shiftedArrSearch(shiftArr, num) {
-  
+  // Find where array shifted
+  let pivot = findPoint(shiftArr);
+
+  if (pivot === 0 || num < shiftArr[0]) {
+    // 
+    return binarySearch()
+  }
+
+  // 
+  return binarySearch()
 }
 
-function findPoint() {
+function findPoint(arr) {
+  let begin = 0;
+  let end = 0;
+  let mid = 0;
 
+  while (begin <= end) {
+    mid = begin + Math.floor((end - begin) / 2);
+    if (mid === 0 || arr[mid] < arr[mid - 1]) {
+      // You found the pivot point
+      return mid;
+    } else if (arr[mid] < arr[0]) {
+      // Look at the left
+      begin = mid + 1;
+    } else {
+      // Look at the right
+      end = mid - 1;
+    }
+  }
 }
 
 function binarySearch() {
