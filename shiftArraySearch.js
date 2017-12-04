@@ -65,4 +65,13 @@ console.log(shiftedArrSearch([1, 22, 33, 44, 55], 66)); // -1
 // Space Complexity of above code:
 // Constant as it returns only 1 value from memory, which is i or -1
 
+/*
+Part 2: Now each array we pass in as 'shiftArr' was sorted. How can you improve the time complexity of the search?
+*/
 
+/*
+We can use an augmented binary search
+
+General Plan:
+
+*/
