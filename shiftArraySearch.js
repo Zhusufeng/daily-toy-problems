@@ -58,3 +58,11 @@ console.log(shiftedArrSearch([9, 12, 17, 2, 4, 5], 2)); // 3
 console.log(shiftedArrSearch([0, 1, 2, 3, 4, 5], 4)); // 
 console.log(shiftedArrSearch([0, 1], 1)); // 1
 console.log(shiftedArrSearch([1, 22, 33, 44, 55], 66)); // -1
+
+// Time Complexity of above code: 
+// Linear as the worst case is that it goes through the whole data set
+
+// Space Complexity of above code:
+// Constant as it returns only 1 value from memory, which is i or -1
+
+
