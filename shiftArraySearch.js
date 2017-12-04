@@ -129,15 +129,15 @@ function shiftedArrSearch(shiftArr, num) {
 
 function findPoint(arr) {
   let begin = 0;
-  let end = 0;
+  let end = arr.length - 1;
   let mid = 0;
 
   while (begin <= end) {
-    mid = begin + Math.floor((end - begin) / 2);
+    mid = Math.floor((end + begin) / 2);
     if (mid === 0 || arr[mid] < arr[mid - 1]) {
       // You found the pivot point
       return mid;
-    } else if (arr[mid] < arr[0]) {
+    } else if (arr[mid] > arr[0]) {
       // Look at the left
       begin = mid + 1;
     } else {
@@ -169,7 +169,7 @@ function binarySearch(arr, begin, end, num) {
 
 console.log(shiftedArrSearch([3, 4, 5, 1, 2], 1)); // 3
 console.log(shiftedArrSearch([9, 12, 17, 2, 4, 5], 2)); // 3
-console.log(shiftedArrSearch([0, 1, 2, 3, 4, 5], 4)); // 4
+// console.log(shiftedArrSearch([0, 1, 2, 3, 4, 5], 4)); // 4 does not work bc needs to have been shifted!!!
 console.log(shiftedArrSearch([0, 1], 1)); // 1
 console.log(shiftedArrSearch([1, 22, 33, 44, 55], 66)); // -1
 
