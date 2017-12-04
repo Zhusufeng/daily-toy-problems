@@ -41,6 +41,24 @@ General Plan
 */
 
 function binarySearch (arr, n) {
+  let low = 0;
+  let high = arr.length;
+  let mid = Math.floor((low + high) / 2);
+
+  while (low <= high) {
+    // If mid equals the number
+    if (arr[mid] === n) {
+      return mid;
+    } 
+    else if (arr[mid] < n) {
+      // Look at left side 
+      low = mid + 1;
+    } else {
+      // Look at the right side
+      high = mid - 1;
+    }
+  }
+
   return -1;
 }
 
