@@ -147,14 +147,30 @@ function findPoint(arr) {
   }
 }
 
-function binarySearch() {
+function binarySearch(arr, begin, end, num) {
+  let mid = 0;
 
+  while (begin <= end) {
+    mid = begin + Math.floor((end - begin) / 2);
+
+    if (arr[mid] === num) {
+      return mid;
+    } else if (arr[mid] < num) {
+      // Look to the left
+      begin = mid + 1;
+    } else {
+      // Look to the right
+      end = mid - 1;
+    }
+  }
+
+  return -1;
 }
 
-// console.log(shiftedArrSearch([3, 4, 5, 1, 2], 1)); // 3
-// console.log(shiftedArrSearch([9, 12, 17, 2, 4, 5], 2)); // 3
-// console.log(shiftedArrSearch([0, 1, 2, 3, 4, 5], 4)); // 
-// console.log(shiftedArrSearch([0, 1], 1)); // 1
-// console.log(shiftedArrSearch([1, 22, 33, 44, 55], 66)); // -1
+console.log(shiftedArrSearch([3, 4, 5, 1, 2], 1)); // 3
+console.log(shiftedArrSearch([9, 12, 17, 2, 4, 5], 2)); // 3
+console.log(shiftedArrSearch([0, 1, 2, 3, 4, 5], 4)); // 4
+console.log(shiftedArrSearch([0, 1], 1)); // 1
+console.log(shiftedArrSearch([1, 22, 33, 44, 55], 66)); // -1
 
-// console.log(shiftedArrSearch([9, 12, 17, 2, 4, 5], 4)); // 4
+console.log(shiftedArrSearch([9, 12, 17, 2, 4, 5], 4)); // 4
