@@ -43,9 +43,11 @@ General Plan
 function binarySearch (arr, n) {
   let low = 0;
   let high = arr.length;
-  let mid = Math.floor((low + high) / 2);
+  let mid = 0;
 
   while (low <= high) {
+    // Get mid for each new low & high
+    mid = Math.floor((low + high) / 2);
     // If mid equals the number
     if (arr[mid] === n) {
       return mid;
@@ -62,10 +64,10 @@ function binarySearch (arr, n) {
   return -1;
 }
 
-console.log(binarySearch([0, 3, 5, 7, 9], 7));
-console.log(binarySearch([5, 10, 15, 20], 10));
-console.log(binarySearch([0, 1, 2, 3, 4], 5));
-console.log(binarySearch([0], 0));
-console.log(binarySearch([], 1));
-console.log(binarySearch([0], 5));
+console.log(binarySearch([0, 3, 5, 7, 9], 7)); // 3
+console.log(binarySearch([5, 10, 15, 20], 10)); // 1
+console.log(binarySearch([0, 1, 2, 3, 4], 5)); // -1
+console.log(binarySearch([0], 0)); // 0
+console.log(binarySearch([], 1)); // -1
+console.log(binarySearch([0], 5)); // -1
 
