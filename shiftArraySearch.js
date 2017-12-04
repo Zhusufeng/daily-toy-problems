@@ -119,12 +119,12 @@ function shiftedArrSearch(shiftArr, num) {
   let pivot = findPoint(shiftArr);
 
   if (pivot === 0 || num < shiftArr[0]) {
-    // 
-    return binarySearch()
+    // Look to the left
+    return binarySearch(shiftArr, pivot, shiftArr.length - 1, num);
   }
 
-  // 
-  return binarySearch()
+  // Look to the right
+  return binarySearch(shiftArr, 0, pivot - 1, num);
 }
 
 function findPoint(arr) {
