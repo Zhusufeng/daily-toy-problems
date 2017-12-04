@@ -25,5 +25,17 @@ E:
   [0], 5 => -1
 
 General Plan
+  Declare low as 0
+  Declare high as sortedArray.length - 1
+  Declare mid as middle of sortedArray
 
+  While low is less than or equal to high
+    Case 1: If mid equals number
+      You found it! Return mid
+    Case 2: If mid is less than number
+      Look at the left side (mid to high). To do that low equals mid + 1
+    Case 3: If mid is greater than number
+      Look at the right side (low to mid). To do that high equals mid - 1
+
+  Return -1 since number was not found
 */
