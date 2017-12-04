@@ -21,3 +21,17 @@ Constraints:
 [output] integer
 */
 
+/*
+O: Number
+I: Array of integers, Integer number
+C: 
+  Time: Linear
+  Space: Constant
+E: 
+  [3, 4, 5, 1, 2], 1 => 3
+  [9, 12, 17, 2, 4, 5], 2 => 3
+  [0, 1, 2, 3, 4, 5], 4, => 4
+  [0, 1], 1 => 1
+  [1, 22, 33, 44, 55], 66 => -1
+
+*/
