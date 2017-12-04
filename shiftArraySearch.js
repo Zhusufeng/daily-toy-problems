@@ -59,6 +59,9 @@ console.log(shiftedArrSearch([0, 1, 2, 3, 4, 5], 4)); //
 console.log(shiftedArrSearch([0, 1], 1)); // 1
 console.log(shiftedArrSearch([1, 22, 33, 44, 55], 66)); // -1
 
+console.log(shiftedArrSearch([9, 12, 17, 2, 4, 5], 4)); // 4
+
+
 // Time Complexity of above code: 
 // Linear as the worst case is that it goes through the whole data set
 
@@ -73,5 +76,36 @@ Part 2: Now each array we pass in as 'shiftArr' was sorted. How can you improve 
 We can use an augmented binary search
 
 General Plan:
+  shiftedArraySearch
+    Set point equal to findPoint with shiftedArr
 
+
+  Find original end point
+    Set begin to 0
+    Set end to arr.length - 1
+    Set mid to 0
+    While begin is less than or equal to end
+      Set mid to begin + (end - begin)/2 (underestimate with Math.floor)
+      If mid equals 0 or mid is less than mid -1
+        Return mid
+      Else if mid is bigger than 0
+        Look at the left: Set begin to mid + 1
+      Else
+        Look at the right: Set end to mid -1
+
+  Binary Search
+    Set mid to 0
+    While begin is less than or equal to end
+    If num equals shiftArr[begin]
+      Return begin
+    Iterate from begin to end
+      Set mid to begin + (end - begin)/2 (underestimate with Math.floor)
+      If shiftArr[mid] is less than num 
+        Set begin to mid + 1
+      Else if shiftArr[mid] equals num
+        Return mid
+      Else 
+        Set end to mid - 1
+
+      
 */
