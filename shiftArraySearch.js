@@ -79,6 +79,12 @@ General Plan:
   shiftedArraySearch
     Set point equal to findPoint with shiftedArr
 
+    If pivot is 0 or num is less than shiftArr[0]
+      Look on the left (pivot to end)
+      Return binarySearch with shiftedArr, point, shiftedArr.length - 1, num
+
+    Look on the right (begin to pivot - 1)
+    Return binarySearch with shiftedArr, 0, point - 1, num
 
   Find original end point
     Set begin to 0
