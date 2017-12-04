@@ -30,7 +30,7 @@ C:
 E: 
   [3, 4, 5, 1, 2], 1 => 3
   [9, 12, 17, 2, 4, 5], 2 => 3
-  [0, 1, 2, 3, 4, 5], 4, => 4
+  [0, 1, 2, 3, 4, 5], 4 => 4
   [0, 1], 1 => 1
   [1, 22, 33, 44, 55], 66 => -1
   Maybe...
@@ -43,3 +43,18 @@ General Plan
       Return current index
   Return -1
 */
+
+function shiftedArrSearch(shiftArr, num) {
+  for (let i = 0; i < shiftArr.length; i++) {
+    if (shiftArr[i] === num) {
+      return i;
+    }
+  }
+  return -1
+}
+
+console.log(shiftedArrSearch([3, 4, 5, 1, 2], 1)); // 3
+console.log(shiftedArrSearch([9, 12, 17, 2, 4, 5], 2)); // 3
+console.log(shiftedArrSearch([0, 1, 2, 3, 4, 5], 4)); // 
+console.log(shiftedArrSearch([0, 1], 1)); // 1
+console.log(shiftedArrSearch([1, 22, 33, 44, 55], 66)); // -1
