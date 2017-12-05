@@ -50,4 +50,30 @@ Set oldSpot equal to where car was spots[index]
 Put car in emptySpot
 Update emptySpot to point to oldSpot
 
+If hit the 0 spot, 
+go to spots[index + 1] to see car belongs there
+If not, find the car's destination spot
+Take the car in the destination spot and move it to 0
+Place car in its destination spot
+Repeat
+*/
+
+/*
+Example 4: Ordered
+
+spots 0 1 2 3 4 5 
+cars    1 2 3 4 5
+
+Find empty spot
+If it is 0
+Go to spots[index + 1] to check if the car belongs there
+
+If not find the car's destination and which car is in there
+Move that car to 0 
+Move the in the wrong spot to its right spot
+Now find place for car at 0
+*/
+
+/*
+Example 5:
 */
