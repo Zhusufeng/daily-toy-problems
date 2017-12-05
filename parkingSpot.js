@@ -20,3 +20,34 @@ If car is in the 0 spot
   Go to 0 + 1 to check if it has the right carNum in the spotNum
   If not switch
 */
+
+/*
+Example 2: Shifted over
+
+spots 0 1 2 3 4 5
+cars  1 2 3 4 5
+
+Find empty spot
+Find the car that goes in that spot
+Get that new spotNum
+Move the car to that spot
+Find car that goes in new spotNum and move it to it
+Continue
+*/
+
+/*
+Example 3: Random
+
+spots 0 1 2 3 4 5
+cars  5 2 4   3 1
+
+
+Find emptySpot
+Set emptySpot equal to spots[index]
+Loop through spots
+Using that index, get car number
+Set oldSpot equal to where car was spots[index]
+Put car in emptySpot
+Update emptySpot to point to oldSpot
+
+*/
