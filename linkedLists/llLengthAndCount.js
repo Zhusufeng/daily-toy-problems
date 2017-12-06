@@ -29,7 +29,17 @@ function length(head) {
 }
 
 function count(head, data) {
-  // Your code goes here.
+  let node = head;
+  counter = 0;
+
+  while(node) {
+    if (node.data === data) {
+      counter++;
+    }
+    node = node.next;
+  }
+
+  return counter;
 }
 
 let sample = {
@@ -37,10 +47,23 @@ let sample = {
   next: {
     data: 2,
     next: {
-      data: 3,
-      next: null
+      data: 2,
+      next: {
+        data: 1,
+        next: {
+          data: 2,
+          next: {
+            data: 1,
+            next: {
+              data: 2,
+              next: null
+            }
+          }
+        }
+      }
     }
   }
 };
 
 console.log(length(sample));
+console.log(count(sample, 2));
