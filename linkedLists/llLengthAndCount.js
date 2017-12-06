@@ -17,11 +17,10 @@ function Node(data) {
 }
 
 function length(head) {
-  // Your code goes here.
   let node = head;
   let length = 0;
 
-  while (node.next !== null) {
+  while (node) {
     length++;
     node = node.next;
   }
@@ -42,4 +41,6 @@ let sample = {
       next: null
     }
   }
-}
+};
+
+console.log(length(sample));
