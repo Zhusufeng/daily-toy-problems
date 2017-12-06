@@ -18,8 +18,28 @@ function Node(data) {
 
 function length(head) {
   // Your code goes here.
+  let node = head;
+  let length = 0;
+
+  while (node.next !== null) {
+    length++;
+    node = node.next;
+  }
+
+  return length;
 }
 
 function count(head, data) {
   // Your code goes here.
+}
+
+let sample = {
+  data: 1,
+  next: {
+    data: 2,
+    next: {
+      data: 3,
+      next: null
+    }
+  }
 }
