@@ -14,5 +14,34 @@ function Node(data) {
 }
 
 function getNth(node, index) {
-  // Your code goes here.
+  let counter = 0;
+  while (node) {
+    if (counter === index) {
+      return node.data;
+    }
+    counter++;
+    node = node.next;
+  }
 }
+
+let sample = {
+  data: 0,
+  next: {
+    data: 1,
+    next: {
+      data: 2,
+      next: {
+        data: 3,
+        next: {
+          data: 4,
+          next: {
+            data: 5,
+            next: {
+              data: 6,
+              next: null
+            }
+          }
+        }
+      }
+    }
+  }
