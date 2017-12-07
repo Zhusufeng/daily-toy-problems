@@ -17,11 +17,13 @@ function getNth(node, index) {
   let counter = 0;
   while (node) {
     if (counter === index) {
-      return node.data;
+      return node;
     }
     counter++;
     node = node.next;
   }
+
+  throw 'Cannot find index';
 }
 
 let sample = {
@@ -45,3 +47,11 @@ let sample = {
       }
     }
   }
+};
+
+console.log(getNth(sample, 6).data);  // 6
+console.log(getNth(sample, 1).data);  // 1
+console.log(getNth(sample, 2).data);  // 2
+console.log(getNth(sample, 0).data);  // 0
+console.log(getNth(sample, 7).data);  // error
+
