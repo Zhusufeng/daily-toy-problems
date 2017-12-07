@@ -26,6 +26,15 @@ function getNth(node, index) {
   throw 'Cannot find index';
 }
 
+/*
+Clever solution by other user
+*/
+// function getNth(node, index) {
+//   if (!node) throw new Error('Invalid node at ' + index);
+  
+//   return (index === 0) ? node : getNth(node.next, index - 1);
+// }
+
 let sample = {
   data: 0,
   next: {
