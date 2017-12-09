@@ -17,8 +17,23 @@ function Node(data) {
 }
 
 function insertNth(head, index, data) {
+  let node = head;
   let counter = 0;
+  let insertNode = new Node(data);
 
+  while (node){
+    if (counter === index - 1) {
+      // Set insertNode's next key to node.next's
+      insertNode.next = node.next;
+      // Set current node's next key to insertNode
+      node.next = insertNode;
+    }
+
+    counter++;
+    node = node.next;
+  }
+
+  return head;
 }
 
 let sample = {
