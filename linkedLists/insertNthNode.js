@@ -21,8 +21,6 @@ function insertNth(head, index, data) {
   let counter = 0;
   let insertNode = new Node(data);
 
-  // What if index is too large
-
   while (node){
     if (counter === index - 1) {
       // Set insertNode's next key to node.next's
@@ -30,14 +28,23 @@ function insertNth(head, index, data) {
       // Set current node's next key to insertNode
       node.next = insertNode;
       break;
+    } else if (counter === 0 && index === 0) {
+      insertNode.next = node;
+      head = insertNode;
+      break;
     }
+
     // Increment counter
     counter++;
     // Move to next node
     node = node.next;
+    // If node.next points to null
+    if (!node) {
+      throw new Error('index is too large');
+    }
   }
 
-  return head; // Ensure it returns the correct head, especially if index is 0!
+  return head;
 }
 
 let sample = {
@@ -63,6 +70,8 @@ let sample = {
   }
 };
 
-console.log(insertNth(sample, 0, -1)); // -1, 0, 1, 2, 3, 4, 5, 6
-console.log(insertNth(sample, 7, 7)); // -1, 0, 1, 2, 3, 4, 5, 7, 6
+console.log(JSON.stringify(insertNth(sample, 0, -1), null, 2)); // -1, 0, 1, 2, 3, 4, 5, 6
+console.log(JSON.stringify(insertNth(sample, 7, 7), null, 2)); // 0, 1, 2, 3, 4, 5, 6, 7
+console.log(JSON.stringify(insertNth(sample, 100, 100), null, 2)); // throw error
+
 
