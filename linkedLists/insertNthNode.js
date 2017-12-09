@@ -17,10 +17,16 @@ function Node(data) {
 }
 
 function insertNth(head, index, data) {
-  let node = head;
-  let counter = 0;
+  let node;
+  let counter = 0; 
   let insertNode = new Node(data);
 
+  if (!head){
+    head = insertNode;
+  } else {
+    node = head;
+  }
+  
   while (node){
     if (counter === index - 1) {
       // Set insertNode's next key to node.next's
@@ -69,6 +75,10 @@ let sample = {
     }
   }
 };
+
+let sample2 = {}
+
+console.log(JSON.stringify(insertNth(null, 0, 200), null, 2)); // should be able to insert a node on an empty/null list & value at index 1 should be null
 
 console.log(JSON.stringify(insertNth(sample, 0, -1), null, 2)); // -1, 0, 1, 2, 3, 4, 5, 6
 console.log(JSON.stringify(insertNth(sample, 7, 7), null, 2)); // 0, 1, 2, 3, 4, 5, 6, 7
