@@ -21,19 +21,23 @@ function insertNth(head, index, data) {
   let counter = 0;
   let insertNode = new Node(data);
 
+  // What if index is too large
+
   while (node){
     if (counter === index - 1) {
       // Set insertNode's next key to node.next's
       insertNode.next = node.next;
       // Set current node's next key to insertNode
       node.next = insertNode;
+      break;
     }
-
+    // Increment counter
     counter++;
+    // Move to next node
     node = node.next;
   }
 
-  return head;
+  return head; // Ensure it returns the correct head, especially if index is 0!
 }
 
 let sample = {
