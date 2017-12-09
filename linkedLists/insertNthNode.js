@@ -10,3 +10,40 @@ insertNth(1 -> 2 -> 3 -> null, 1, 7) === 1 -> 7 -> 2 -> 3 -> null)
 insertNth(1 -> 2 -> 3 -> null, 3, 7) === 1 -> 2 -> 3 -> 7 -> null)
 You must throw/raise an exception (ArgumentOutOfRangeException in C#, InvalidArgumentException in PHP) if the index is too large.
 */
+
+function Node(data) {
+  this.data = data;
+  this.next = null;
+}
+
+function insertNth(head, index, data) {
+  let counter = 0;
+
+}
+
+let sample = {
+  data: 0,
+  next: {
+    data: 1,
+    next: {
+      data: 2,
+      next: {
+        data: 3,
+        next: {
+          data: 4,
+          next: {
+            data: 5,
+            next: {
+              data: 6,
+              next: null
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+console.log(insertNth(sample, 0, -1)); // -1, 0, 1, 2, 3, 4, 5, 6
+console.log(insertNth(sample, 7, 7)); // -1, 0, 1, 2, 3, 4, 5, 7, 6
+
