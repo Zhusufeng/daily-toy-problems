@@ -114,59 +114,60 @@ General Plan:
         Set end to mid - 1
 */
 
-function shiftedArrSearch(shiftArr, num) {
-  // Find where array shifted
-  let pivot = findPoint(shiftArr);
+// function shiftedArrSearch(shiftArr, num) {
+//   // Find where array shifted
+//   let pivot = findPoint(shiftArr);
 
-  if (pivot === 0 || num < shiftArr[0]) {
-    // Look to the left
-    return binarySearch(shiftArr, pivot, shiftArr.length - 1, num);
-  }
+//   if (pivot === 0 || num < shiftArr[0]) {
+//     // Look to the left
+//     return binarySearch(shiftArr, pivot, shiftArr.length - 1, num);
+//   }
 
-  // Look to the right
-  return binarySearch(shiftArr, 0, pivot - 1, num);
-}
+//   // Look to the right
+//   return binarySearch(shiftArr, 0, pivot - 1, num);
+// }
 
-function findPoint(arr) {
-  let begin = 0;
-  let end = arr.length - 1;
-  let mid = 0;
+// function findPoint(arr) {
+//   let begin = 0;
+//   let end = arr.length - 1;
+//   let mid = 0;
 
-  while (begin <= end) {
-    mid = Math.floor((end + begin) / 2);
-    if (mid === 0 || arr[mid] < arr[mid - 1]) {
-      // You found the pivot point
-      return mid;
-    } else if (arr[mid] > arr[0]) {
-      // Look at the left
-      begin = mid + 1;
-    } else {
-      // Look at the right
-      end = mid - 1;
-    }
-  }
-}
+//   while (begin <= end) {
+//     mid = Math.floor((end + begin) / 2);
+//     if (mid === 0 || arr[mid] < arr[mid - 1]) {
+//       // You found the pivot point
+//       return mid;
+//     } else if (arr[mid] > arr[0]) {
+//       // Look at the left
+//       begin = mid + 1;
+//     } else {
+//       // Look at the right
+//       end = mid - 1;
+//     }
+//   }
+// }
 
-function binarySearch(arr, begin, end, num) {
-  let mid = 0;
+// function binarySearch(arr, begin, end, num) {
+//   let mid = 0;
 
-  while (begin <= end) {
-    mid = begin + Math.floor((end - begin) / 2);
+//   while (begin <= end) {
+//     mid = begin + Math.floor((end - begin) / 2);
 
-    if (arr[mid] === num) {
-      return mid;
-    } else if (arr[mid] < num) {
-      // Look to the left
-      begin = mid + 1;
-    } else {
-      // Look to the right
-      end = mid - 1;
-    }
-  }
+//     if (arr[mid] === num) {
+//       return mid;
+//     } else if (arr[mid] < num) {
+//       // Look to the left
+//       begin = mid + 1;
+//     } else {
+//       // Look to the right
+//       end = mid - 1;
+//     }
+//   }
 
-  return -1;
-}
+//   return -1;
+// }
 
+// Tests
 console.log(shiftedArrSearch([3, 4, 5, 1, 2], 1)); // 3
 console.log(shiftedArrSearch([9, 12, 17, 2, 4, 5], 2)); // 3
 // console.log(shiftedArrSearch([0, 1, 2, 3, 4, 5], 4)); // 4 does not work bc needs to have been shifted!!!
