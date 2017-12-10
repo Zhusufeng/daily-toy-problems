@@ -84,4 +84,17 @@ console.log(JSON.stringify(insertNth(sample, 0, -1), null, 2)); // -1, 0, 1, 2, 
 console.log(JSON.stringify(insertNth(sample, 7, 7), null, 2)); // 0, 1, 2, 3, 4, 5, 6, 7
 console.log(JSON.stringify(insertNth(sample, 100, 100), null, 2)); // throw error
 
+// Clever short solution 
+// function Node(data, nxt) {
+//   this.data = data;
+//   this.next = nxt;
+// }
+// function insertNth(head, index, data) {
+//   if(index == 0) return new Node(data, head);
+//   if(head && index > 0) {
+//     head.next = insertNth(head.next, index - 1, data);
+//     return head;
+//   }
+//   throw "Error";
+// }
 
