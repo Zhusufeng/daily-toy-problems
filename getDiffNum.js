@@ -49,6 +49,17 @@ General Plan #1, Linear Time, Linear Space
 */
 
 // General Plan #1
+function getDifferentNumber(arr) {
+  let sortedArr = arr.slice().sort();
+  // console.log(sortedArr);
+  let i = 0;
+  for (; i < sortedArr.length; i++) {
+    if (i !== sortedArr[i]) {
+      return i;
+    }
+  }
+  return i;
+}
 
 console.log(getDifferentNumber([0, 1, 2, 3])); // 4
 console.log(getDifferentNumber([0])); // 1
