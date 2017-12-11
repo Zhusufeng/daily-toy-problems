@@ -25,3 +25,16 @@ Constraints:
   0 ≤ arr[i] ≤ MAX_INT for every i, 0 ≤ i < MAX_INT
   [output] integer
 */
+/*
+O: Number (that isn't in the array)
+I: Array of non-negative numbers
+C: 
+  Time: 5000ms
+  Space: 
+E:
+  [0, 1, 2, 3] => 4
+  [0] => 1
+  [1] => 0
+  [1, 2] => 0
+  [0, 1, 2, 4] => 3
+*/
