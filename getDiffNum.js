@@ -60,6 +60,7 @@ function getDifferentNumber(arr) {
   }
   return i;
 }
+// Time Complexity is more specifically O(N log N)
 
 console.log(getDifferentNumber([0, 1, 2, 3])); // 4
 console.log(getDifferentNumber([0])); // 1
