@@ -198,7 +198,22 @@ function shiftedArrSearch(arr, num) {
 }
 
 function getPivotIndex(arr) {
+  const low = 0;
+  const high = arr.length - 1;
+  let mid = 0;
 
+  while (low <= high) {
+    mid = Math.floor((low + high) / 2);
+    if (mid === 0 || arr[mid] < arr[mid - 1]) {
+      return mid;
+    } else if (arr[mid] > arr[0]) {
+      // Look at the left
+      low = mid + 1;
+    } else {
+      // Look at the right
+      high = mid - 1;
+    }
+  }
 }
 
 function binarySearch(arr, low, high, num) {
@@ -210,6 +225,6 @@ console.log(shiftedArrSearch([3, 4, 5, 1, 2], 1)); // 3
 console.log(shiftedArrSearch([9, 12, 17, 2, 4, 5], 2)); // 3
 // console.log(shiftedArrSearch([0, 1, 2, 3, 4, 5], 4)); // 4 does not work bc needs to have been shifted!!!
 console.log(shiftedArrSearch([0, 1], 1)); // 1
-console.log(shiftedArrSearch([1, 22, 33, 44, 55], 66)); // -1
+console.log(shiftedArrSearch([1, 22, 33, 44, 0], 66)); // -1
 
 console.log(shiftedArrSearch([9, 12, 17, 2, 4, 5], 4)); // 4
