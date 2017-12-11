@@ -48,19 +48,38 @@ General Plan #1, Linear Time, Linear Space
   Return i
 */
 
-// General Plan #1
+// // General Plan #1
+// function getDifferentNumber(arr) {
+//   let sortedArr = arr.slice().sort();
+//   // console.log(sortedArr);
+//   let i = 0;
+//   for (; i < sortedArr.length; i++) {
+//     if (i !== sortedArr[i]) {
+//       return i;
+//     }
+//   }
+//   return i;
+// }
+// // Time Complexity is more specifically O(N log N)
+// // Space Complexity is linear
+
+// Plan #2 using a Set
 function getDifferentNumber(arr) {
-  let sortedArr = arr.slice().sort();
-  // console.log(sortedArr);
+  let mySet = new Set(arr);
+
   let i = 0;
-  for (; i < sortedArr.length; i++) {
-    if (i !== sortedArr[i]) {
+  for(; i < mySet.size; i++) {
+    if (!mySet.has(i)) {
       return i;
     }
   }
   return i;
 }
-// Time Complexity is more specifically O(N log N)
+// Time Complexity is specifically O(N) 
+// -- Create set from array is linear
+// -- Loop through set is linear
+// Space Complexity is linear
+// -- Make mySet out of array
 
 console.log(getDifferentNumber([0, 1, 2, 3])); // 4
 console.log(getDifferentNumber([0])); // 1
