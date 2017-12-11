@@ -167,6 +167,16 @@ General Plan:
 //   return -1;
 // }
 
+/*
+12.10.17
+General Plan
+  Get pivot index
+  If array at pivot is greater than num and less than array at length -1
+    Look right using binary search
+  Look left using binary search
+  Return -1
+*/
+
 // Tests
 console.log(shiftedArrSearch([3, 4, 5, 1, 2], 1)); // 3
 console.log(shiftedArrSearch([9, 12, 17, 2, 4, 5], 2)); // 3
