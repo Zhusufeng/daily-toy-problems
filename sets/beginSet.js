@@ -22,8 +22,10 @@ console.log(myFirstSet.has(10 * 10)); // true
 console.log(myFirstSet.has('THREE HUNDRED'.toLowerCase())); // true
 console.log(myFirstSet.has(four)); // true
 
-console.log(myFirstSet.size); // four 
+console.log(myFirstSet.size); // 4
 
+myFirstSet.delete(100);
+console.log(myFirstSet.size); // 3
 
 ////////////////////////////////////
 
