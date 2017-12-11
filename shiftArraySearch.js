@@ -188,8 +188,8 @@ General Plan
 
 function shiftedArrSearch(arr, num) {
   const pivot = getPivotIndex(arr);
-
-  if (arr[pivot] > num && num < arr[arr.length - 1]) {
+  // console.log(pivot);
+  if (num > arr[pivot] && num < arr[arr.length - 1]) {
     // Look right
     return binarySearch(arr, pivot, arr.length - 1, num);
   }
@@ -198,8 +198,8 @@ function shiftedArrSearch(arr, num) {
 }
 
 function getPivotIndex(arr) {
-  const low = 0;
-  const high = arr.length - 1;
+  let low = 0;
+  let high = arr.length - 1;
   let mid = 0;
 
   while (low <= high) {
@@ -207,24 +207,36 @@ function getPivotIndex(arr) {
     if (mid === 0 || arr[mid] < arr[mid - 1]) {
       return mid;
     } else if (arr[mid] > arr[0]) {
-      // Look at the left
+      // Look at the right
       low = mid + 1;
     } else {
-      // Look at the right
+      // Look at the left
       high = mid - 1;
     }
   }
 }
 
 function binarySearch(arr, low, high, num) {
-
+  while (low <= high) {
+    let mid = Math.floor((high + low) / 2);
+    if (arr[mid] === num) {
+      return mid;
+    } else if (arr[mid] < num) {
+      // Look to the right
+      low = mid + 1;
+    } else {
+      // Look to the left
+      high = mid - 1;
+    }
+  }
+  return -1;
 }
 
 // Tests
-console.log(shiftedArrSearch([3, 4, 5, 1, 2], 1)); // 3
+console.log(shiftedArrSearch([9, 12, 17, 2, 4, 5], 9)); // 0
+console.log(shiftedArrSearch([9, 12, 17, 2, 4, 5], 12)); // 1
+console.log(shiftedArrSearch([9, 12, 17, 2, 4, 5], 17)); // 2
 console.log(shiftedArrSearch([9, 12, 17, 2, 4, 5], 2)); // 3
-// console.log(shiftedArrSearch([0, 1, 2, 3, 4, 5], 4)); // 4 does not work bc needs to have been shifted!!!
-console.log(shiftedArrSearch([0, 1], 1)); // 1
-console.log(shiftedArrSearch([1, 22, 33, 44, 0], 66)); // -1
-
 console.log(shiftedArrSearch([9, 12, 17, 2, 4, 5], 4)); // 4
+console.log(shiftedArrSearch([9, 12, 17, 2, 4, 5], 5)); // 5
+// console.log(shiftedArrSearch([1, 22, 33, 44, 0], 66)); // -1
