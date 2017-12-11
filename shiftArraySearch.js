@@ -186,6 +186,25 @@ General Plan
     Returns index or -1
 */
 
+function shiftedArrSearch(arr, num) {
+  const pivot = getPivotIndex(arr);
+
+  if (arr[pivot] > num && num < arr[arr.length - 1]) {
+    // Look right
+    return binarySearch(arr, pivot, arr.length - 1, num);
+  }
+  // Look left
+  return binarySearch(arr, 0, pivot - 1, num);
+}
+
+function getPivotIndex(arr) {
+
+}
+
+function binarySearch(arr, low, high, num) {
+
+}
+
 // Tests
 console.log(shiftedArrSearch([3, 4, 5, 1, 2], 1)); // 3
 console.log(shiftedArrSearch([9, 12, 17, 2, 4, 5], 2)); // 3
