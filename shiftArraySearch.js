@@ -189,7 +189,7 @@ General Plan
 function shiftedArrSearch(arr, num) {
   const pivot = getPivotIndex(arr);
   // console.log(pivot);
-  if (num > arr[pivot] && num < arr[arr.length - 1]) {
+  if (pivot === 0 || num < arr[0]) {
     // Look right
     return binarySearch(arr, pivot, arr.length - 1, num);
   }
@@ -239,4 +239,4 @@ console.log(shiftedArrSearch([9, 12, 17, 2, 4, 5], 17)); // 2
 console.log(shiftedArrSearch([9, 12, 17, 2, 4, 5], 2)); // 3
 console.log(shiftedArrSearch([9, 12, 17, 2, 4, 5], 4)); // 4
 console.log(shiftedArrSearch([9, 12, 17, 2, 4, 5], 5)); // 5
-// console.log(shiftedArrSearch([1, 22, 33, 44, 0], 66)); // -1
+console.log(shiftedArrSearch([1, 22, 33, 44, 0], 66)); // -1
