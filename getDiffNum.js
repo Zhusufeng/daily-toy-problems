@@ -39,11 +39,22 @@ E:
   [0, 1, 2, 4] => 3
   [4, 1, 0, 2] => 3
 
-General Plan #1
+General Plan #1, Linear Time, Linear Space
   Make a copy of the array
   Sort the array
   Iterate through array starting at i as 0 and increment i once
     If index does not equal array at index
-      Return counter
+      Return i
   Return i
 */
+
+// General Plan #1
+
+console.log(getDifferentNumber([0, 1, 2, 3])); // 4
+console.log(getDifferentNumber([0])); // 1
+console.log(getDifferentNumber([1])); // 0
+console.log(getDifferentNumber([1, 2])); // 0
+console.log(getDifferentNumber([0, 1, 2, 4])); // 3
+console.log(getDifferentNumber([4, 1, 0, 2])); // 3
+
+
