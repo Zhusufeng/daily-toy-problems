@@ -29,12 +29,21 @@ Constraints:
 O: Number (that isn't in the array)
 I: Array of non-negative numbers
 C: 
-  Time: 5000ms
-  Space: 
+  Time: 5000ms, Linear
+  Space: Linear
 E:
   [0, 1, 2, 3] => 4
   [0] => 1
   [1] => 0
   [1, 2] => 0
   [0, 1, 2, 4] => 3
+  [4, 1, 0, 2] => 3
+
+General Plan #1
+  Make a copy of the array
+  Sort the array
+  Iterate through array starting at i as 0 and increment i once
+    If index does not equal array at index
+      Return counter
+  Return i
 */
