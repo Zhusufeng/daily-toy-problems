@@ -174,7 +174,16 @@ General Plan
   If array at pivot is greater than num and less than array at length -1
     Look right using binary search
   Look left using binary search
-  Return -1
+
+  getPivotIndex
+    Takes in array
+    Loops through array and looks for pivot point where mid is higher than end
+    Returns pivot
+
+  binarySearch
+    Takes in array, low index, high index, and number
+    Loops through array based on low and high til mid is number
+    Returns index or -1
 */
 
 // Tests
