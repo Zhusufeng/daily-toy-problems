@@ -10,3 +10,21 @@ Given s = "leetcode", return "leotcede".
 Note:
 The vowels does not include the letter "y".
 */
+
+/*
+O: String with reversed vowels
+I: String
+C: 
+  Time: 
+  Space: 
+E:
+ "hello" => "holle"
+ "leetcode" => "leotcede"
+  "aeiou" => "uoiea"
+  "laiu" => "luia"
+  "luau" => "luau"
+*/
+
+var reverseVowels = function(s) {
+    
+};
