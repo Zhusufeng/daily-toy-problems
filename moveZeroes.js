@@ -58,6 +58,21 @@ Iterate til counter, incrementing by 1 each loop
   Push 0s into array 
 */
 
+var moveZeroes = function(nums) {
+  let endIndex = nums.length;
+
+  for (let i = 0; i < endIndex; i++) {
+    if (nums[i] === 0) {
+      nums.splice(i, 1);
+      nums.push(0);
+      endIndex--;
+      i--;
+    }
+  }
+
+  return nums;
+};
+
 console.log(moveZeroes([0, 1, 0, 3, 12]));
 console.log(moveZeroes([0]));
 console.log(moveZeroes([]));
