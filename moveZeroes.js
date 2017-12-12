@@ -24,6 +24,19 @@ E:
 
 General Plan
 Idea #1
+  Keep track of the end index in a var called endIndex
   Iterate through array, starting at index 0 til current end of array
     If array 
+
+[0, 1, 0, 3, 12] before loop, i = 0, endIndex = length - 1
+[1, 0, 3, 12, 0] after loop, i = 0, endIndex = endIndex - 1 & i--, i++
+[1, 0, 3, 12, 0] before loop, i = 0
+[1, 0, 3, 12, 0] after loop, i = 0, i++
+[1, 0, 3, 12, 0] before loop, i = 1
+[1, 3, 12, 0, 0] after loop, i = 1, endIndex = endIndex - 1 & i--, i++
+[1, 3, 12, 0, 0] before loop, i = 1
+[1, 3, 12, 0, 0] after loop, i = 1
+[1, 3, 12, 0, 0] before loop, i = 2
+[1, 3, 12, 0, 0] after loop, i = 2
+Algorithm should complete since it made it to endIndex
 */
