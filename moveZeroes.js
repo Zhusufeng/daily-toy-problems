@@ -25,8 +25,12 @@ E:
 General Plan
 Idea #1
   Keep track of the end index in a var called endIndex
-  Iterate through array, starting at index 0 til current end of array
-    If array 
+  Iterate through array, starting at index 0 til endIndex is reached
+    If array at current index equals 0
+      Splice out current index element
+      Push 0 to array
+      Update endIndex to decrement by 1
+      Update i to decrement by 1
 
 [0, 1, 0, 3, 12] before loop, i = 0, endIndex = length - 1
 [1, 0, 3, 12, 0] after loop, i = 0, endIndex = endIndex - 1 & i--, i++
