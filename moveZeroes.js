@@ -9,6 +9,7 @@ Minimize the total number of operations.
 */
 
 /*
+12-11-17
 O: Nothing
 I: Array of nums
 C: 
@@ -72,6 +73,20 @@ var moveZeroes = function(nums) {
   return nums;
 };
 
+// More efficient solution
+// var moveZeroes = function(nums) {
+//   let j = 0;
+//   for(let i = 0; i < nums.length; i++) {
+//     // console.log(nums, i, j); // this bubbles nums to the top, 0's to the end
+//     if(nums[i] != 0) {
+//         let temp = nums[i];
+//         nums[i] = nums[j];
+//         nums[j] = temp;
+//         j++;
+//     }
+//   }
+//   return nums;
+// };
 console.log(moveZeroes([0, 1, 0, 3, 12]));
 console.log(moveZeroes([0]));
 console.log(moveZeroes([]));
