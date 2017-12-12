@@ -37,6 +37,20 @@ General Plan
     Do swaps outward to in updating the array
     Start i at 0 and j as length - 1 of vowels
     Increment i and decrement j
+
+Pseudocode
+  Create arr as the split of s
+  Create vowelKey as array of vowels
+  Create vowels as an empty array
+  Iterate through arr
+    If arr at index i has an index in vowelKey
+      Push obj with arr at index i and i to vowels
+  j is 0
+  k is length of vowels - 1
+  While j is less than k
+    array[vowels[k].index] becomes vowels[j].char
+    array[vowels[j].index] becomes vowels[k].char 
+  Return joined array
 */
 
 var reverseVowels = function(s) {
