@@ -54,5 +54,29 @@ Pseudocode
 */
 
 var reverseVowels = function(s) {
-    
+  let arr = s.split('');
+  const vowelKey = ['a', 'e', 'i', 'o', 'u'];
+  let vowels = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (vowelKey.indexOf(arr[i]) > -1) {
+      vowels.push({ char: arr[i], index: i });
+    }
+  }
+  console.log(vowels);
+
+  let j = 0;
+  let k = vowels.length -1;
+
+  while (j < k) {
+    console.log(j, k);
+    arr[vowels[j].index] = vowels[k].char;
+    arr[vowels[k].index] = vowels[j].char;
+    j++;
+    k--;
+  }
+
+  return arr.join('');
 };
+
+console.log(reverseVowels('abi'));
