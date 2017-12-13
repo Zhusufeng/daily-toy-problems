@@ -53,23 +53,50 @@ Pseudocode
   Return joined array
 */
 
+// var reverseVowels = function(s) {
+//   let arr = s.split('');
+//   const vowelKey = ['a', 'e', 'i', 'o', 'u'];
+//   let vowels = [];
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (vowelKey.indexOf(arr[i]) > -1) {
+//       vowels.push({ char: arr[i], index: i });
+//     }
+//   }
+//   console.log(vowels);
+
+//   let j = 0;
+//   let k = vowels.length -1;
+
+//   while (j < k) {
+//     console.log(j, k);
+//     arr[vowels[j].index] = vowels[k].char;
+//     arr[vowels[k].index] = vowels[j].char;
+//     j++;
+//     k--;
+//   }
+
+//   return arr.join('');
+// };
+// Time Complexity: Linear (split, iterate through arr + indexOf, join)
+// Space Complexity: Linear (create arr, create vowels)
+// 92 ms
+
 var reverseVowels = function(s) {
   let arr = s.split('');
-  const vowelKey = ['a', 'e', 'i', 'o', 'u'];
+  const vowelKey = new Set(['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']);
   let vowels = [];
 
   for (let i = 0; i < arr.length; i++) {
-    if (vowelKey.indexOf(arr[i]) > -1) {
+    if (vowelKey.has(arr[i])) {
       vowels.push({ char: arr[i], index: i });
     }
   }
-  console.log(vowels);
 
   let j = 0;
   let k = vowels.length -1;
 
   while (j < k) {
-    console.log(j, k);
     arr[vowels[j].index] = vowels[k].char;
     arr[vowels[k].index] = vowels[j].char;
     j++;
@@ -78,8 +105,45 @@ var reverseVowels = function(s) {
 
   return arr.join('');
 };
-// Time Complexity: (split, iterate through arr)
+// Time Complexity: Linear (split, create Set, iterate through arr, join)
 // Space Complexity: Linear (create arr, create vowels)
+// 72 ms
+// Your runtime beats 86.18% of JS submissions
+
+// More efficient algorithm:
+// var reverseVowels = function(s) {
+//          const vowels = {
+//         'a' : true,
+//         'e' : true,
+//         'i' : true,
+//         'o' : true,
+//         'u' : true,
+//         'A' : true,
+//         'E' : true,
+//         'I' : true,
+//         'O' : true,
+//         'U' : true
+//     }
+//     letters = s.split("");
+//     for(let i=0, j=letters.length-1; j > i;){
+//         if(vowels[letters[i]] === undefined){
+//             i++;
+//             continue;
+//         }
+//         if(vowels[letters[j]] === undefined){
+//             j--;
+//             continue;
+//         }
+//         let temp = letters[i];
+//         letters[i] = letters[j];
+//         letters[j] = temp;
+        
+//         i++;
+//         j--;
+//     }
+//     return letters.join("");
+    
+// };
 
 console.log(reverseVowels('abi'));
 console.log(reverseVowels('beluga'));
