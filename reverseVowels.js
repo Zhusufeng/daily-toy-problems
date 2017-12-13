@@ -78,5 +78,11 @@ var reverseVowels = function(s) {
 
   return arr.join('');
 };
+// Time Complexity: (split, iterate through arr)
+// Space Complexity: Linear (create arr, create vowels)
 
 console.log(reverseVowels('abi'));
+console.log(reverseVowels('beluga'));
+console.log(reverseVowels('smartphone'));
+console.log(reverseVowels('luau'));
+console.log(reverseVowels('aeiou'));
