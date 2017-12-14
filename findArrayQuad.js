@@ -57,34 +57,66 @@ Idea #1
   Return empty array
 */
 
+// function findArrayQuadruplet(arr, s) {
+//   if (arr.length < 4) {
+//     return [];
+//   }
+//   arr.sort();
+  
+//   for (let i = 0; i < arr.length; i++) {
+//     let diff1 = s - arr[i];
+//     for (let j = i + 1; j < arr.length; j++) {
+//       let diff2 = diff1 - arr[j];
+//       for (let k = j + 1; k < arr.length; k++) {
+//         let diff3 = diff2 - arr[k];
+//         for (let l = k + 1; l < arr.length; l++) {
+//           let diff4 = diff3 - arr[l];
+//           console.log(diff1, diff2, diff3, diff4);
+//           if (diff4 === 0) {
+//             return [arr[i], arr[j], arr[k], arr[l]];
+//           }
+//         }
+//       }
+//     }
+//   }
+//   return [];
+// }
+
+// recursive?
 function findArrayQuadruplet(arr, s) {
   if (arr.length < 4) {
     return [];
   }
   arr.sort();
   
-  for (let i = 0; i < arr.length; i++) {
-    let diff1 = s - arr[i];
-    for (let j = i + 1; j < arr.length; j++) {
-      let diff2 = diff1 - arr[j];
-      for (let k = j + 1; k < arr.length; k++) {
-        let diff3 = diff2 - arr[k];
-        for (let l = k + 1; l < arr.length; l++) {
-          let diff4 = diff3 - arr[l];
-          console.log(diff1, diff2, diff3, diff4);
-          if (diff4 === 0) {
-            return [arr[i], arr[j], arr[k], arr[l]];
-          }
-        }
-      }
+  const findNums = function(start, diff, count, ans) {
+    if (diff === 0 && count === 4) {
+      console.log('this is ans', ans);
+      return ans;
+    } else if (count === 4) {
+      return null;
     }
+    for (let i = start; i < arr.length; i++) {
+      diff -= arr[i];
+      ans.push(arr[i]);
+      start++;
+      count++;
+      console.log(start, diff, count, ans);
+      let result = findNums(start, diff, count, ans)
+      if(result){
+        return result;
+      }
+      count--;
+      ans.pop();
+    }
+    return [];
   }
-  return [];
+
+  return findNums(0, s, 0, []);
 }
 
 console.log(findArrayQuadruplet([5, 4, 3, 2, 1], 10)); // [1, 2, 3, 4]
 console.log(findArrayQuadruplet([5, 4, 3, 2, 1], 11)); // [1, 2, 3, 5]
-console.log(findArrayQuadruplet([2, 7, 4, 0, 9, 5, 1, 3], 20)); // [0, 4, 7, 9]
-console.log(findArrayQuadruplet([1, 2, 3], 6)); // []
-console.log(findArrayQuadruplet([2, 7, 4, 0, 9, 5, 1, 3], 100)); // []
-
+// console.log(findArrayQuadruplet([2, 7, 4, 0, 9, 5, 1, 3], 20)); // [0, 4, 7, 9]
+// console.log(findArrayQuadruplet([1, 2, 3], 6)); // []
+// console.log(findArrayQuadruplet([2, 7, 4, 0, 9, 5, 1, 3], 100)); // []
