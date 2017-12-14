@@ -41,7 +41,18 @@ E:
   [1], 1 => []
 
 General Plan
+Idea #1
   If length is less than 4, return empty array
   Sort array
-
+  Iterate through array starting at 0 til array length
+    Set diff1 equal to s minus array at i
+    Iterate through array starting at i + 1 til array length
+      Set diff2 equal to diff1 minus arr at j
+      Iterate through array starting at j + 1 til array length
+        Set diff 3 equal to diff2 minus arr at k
+        Iterate through array starting at k + 1 til array length
+          Set diff4 equal to diff3 minus arr at l
+          If diff4 equals 0
+            Return array with array at i, j, k and l
+  Return empty array
 */
