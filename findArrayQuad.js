@@ -56,3 +56,13 @@ Idea #1
             Return array with array at i, j, k and l
   Return empty array
 */
+
+function findArrayQuadruplet(arr, s) {
+  if (arr.length < 4) {
+    return [];
+  }
+  arr.sort();
+  
+}
+
+findArrayQuadruplet([5, 4, 3, 2, 1], 10); // [1, 2, 3, 4]
