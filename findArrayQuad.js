@@ -25,3 +25,23 @@ Constraints:
 [output] array.integer
 */
 
+/*
+O: Array of nums who equal s
+I: Array of numbers, Number
+C: 
+  Time: 
+  Space:
+E: 
+  Examples:
+  [] => []
+  [2, 7, 4, 0, 9, 5, 1, 3], 20 => [0, 4, 7, 9]
+  [2, 7, 4, 0, 9, 5, 1, 3], 100 => []
+  [1, 2, 3], 6 => []
+  [1, 2, 3, 4], 10 => [1, 2, 3, 4]
+  [1], 1 => []
+
+General Plan
+  If length is less than 4, return empty array
+  Sort array
+
+*/
