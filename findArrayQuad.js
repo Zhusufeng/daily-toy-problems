@@ -71,6 +71,7 @@ function findArrayQuadruplet(arr, s) {
         let diff3 = diff2 - arr[k];
         for (let l = k + 1; l < arr.length; l++) {
           let diff4 = diff3 - arr[l];
+          console.log(diff1, diff2, diff3, diff4);
           if (diff4 === 0) {
             return [arr[i], arr[j], arr[k], arr[l]];
           }
@@ -81,4 +82,4 @@ function findArrayQuadruplet(arr, s) {
   return [];
 }
 
-findArrayQuadruplet([5, 4, 3, 2, 1], 10); // [1, 2, 3, 4]
+console.log(findArrayQuadruplet([5, 4, 3, 2, 1], 10)); // [1, 2, 3, 4]
