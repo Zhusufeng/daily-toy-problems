@@ -19,28 +19,33 @@ E:
   1, 7, 8, null / 5 => 1, 5, 7, 8, null
   3, 5, 9, null / 7 => 3, 5, 7, 9, null
   null / 1 => 1, null
+  1, null / 5 => 1, 5, null
+  10, null / 5 => 5, 10, null
   What if number exists already in linkedList?
 
 General Plan
   Create insertNode as a new Node passing in data
   Create node which equals head
   Create nodeLast to equal null
-  
-  While node exists
-    Look at node's data
-    If node's data is less than data
+
+  If node does not exist
+    insertNode's next equals node
+    head equals insertNode
+  Else 
+    While node exists
+      If node's data is greater than data
+        If node equals head 
+          1, null / 5 or 10, null / 5
+        Else
+          Set insertNode's next equal to nodeLast's next
+          nodeLast's next equals insertNode
+          Break
       Set nodeLast to node
-    If node's data is greater than data
-      If node equals head
-        insertNode's next equals node
-        head equals insertNode
-        Break
-      Else
-        insertNode's next equals nodeLast's next
-        nodeLast's next equals insertNode
-        Break
-    node equals node's next
+      Set node equal to node's next
   Return head
+
+  ^ For cases where null or empty linkedList is sent in,
+  may need to move out of while loop and into separate if statement
 */
 
 
