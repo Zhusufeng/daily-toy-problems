@@ -45,7 +45,8 @@ General Plan
         Break
     Set nodeLast to node
     Set node equal to node's next
-
+    If node's next is null (1, null / 5) or (1, 2, null / 5)
+      Set node's next to insertNode
 
   Return head
 
@@ -62,7 +63,7 @@ function sortedInsert(head, data) {
   // Remember to return the head of the list.
 }
 
-let sample = {
+let sample1 = {
   data: 0,
   next: {
     data: 1,
@@ -84,3 +85,5 @@ let sample = {
     }
   }
 };
+
+let sample2 = {}
