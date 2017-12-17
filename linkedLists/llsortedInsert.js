@@ -31,21 +31,24 @@ General Plan
   If node does not exist
     insertNode's next equals node
     head equals insertNode
-  Else 
-    While node exists
-      If node's data is greater than data
-        If node equals head 
-          1, null / 5 or 10, null / 5
-        Else
-          Set insertNode's next equal to nodeLast's next
-          nodeLast's next equals insertNode
-          Break
-      Set nodeLast to node
-      Set node equal to node's next
+    Return head
+
+  While node exists
+    If node's data is greater than data
+      If node is head (10, null / 5)
+        Set insertNode's next to equal head
+        Set head to insertNode
+        Break
+      Else (1, 2, 3, 7, null / 5)
+        Set insertNode's next to equal nodeLast's next (5, 7)
+        nodeLast's next equals insertNode (3, 5)
+        Break
+    Set nodeLast to node
+    Set node equal to node's next
+
+
   Return head
 
-  ^ For cases where null or empty linkedList is sent in,
-  may need to move out of while loop and into separate if statement
 */
 
 
