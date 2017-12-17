@@ -29,7 +29,6 @@ General Plan
   Create nodeLast to equal null
 
   If node does not exist
-    insertNode's next equals node
     head equals insertNode
     Return head
 
@@ -40,13 +39,13 @@ General Plan
         Set head to insertNode
         Break
       Else (1, 2, 3, 7, null / 5)
-        Set insertNode's next to equal nodeLast's next (5, 7)
-        nodeLast's next equals insertNode (3, 5)
+        Set insertNode's next to equal nodeLast's next (5 -> 7)
+        nodeLast's next equals insertNode (3 -> 5)
         Break
     Set nodeLast to node
     Set node equal to node's next
-    If node's next is null (1, null / 5) or (1, 2, null / 5)
-      Set node's next to insertNode
+    If node is null (1, null / 5) or (1, 2, null / 5)
+      Set nodeLast's next to insertNode
 
   Return head
 
@@ -59,8 +58,34 @@ function Node(data) {
 }
 
 function sortedInsert(head, data) {
-  // Your code goes here.
-  // Remember to return the head of the list.
+  const insertNode = new Node(data);
+  let node = head;
+  let nodeLast = null;
+
+  if (!node) {
+    head = insertNode;
+    return head;
+  }
+
+  while (node) {
+    if (node.data > data) {
+      if (node === head) {
+        insertNode.next = head;
+        head = insertNode;
+        break;
+      } else {
+        insertNode.next = nodeLast.next;
+        nodeLast.next = insertNode;
+        break;
+      }
+    }
+    nodeLast = node;
+    node = node.next;
+    if (!node) {
+      nodeLast.next = insertNode;
+    }
+  }
+  return head;
 }
 
 let sample1 = {
