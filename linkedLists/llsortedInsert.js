@@ -89,19 +89,19 @@ function sortedInsert(head, data) {
 }
 
 let sample1 = {
-  data: 0,
+  data: 2,
   next: {
-    data: 1,
+    data: 3,
     next: {
-      data: 2,
+      data: 4,
       next: {
-        data: 3,
+        data: 5,
         next: {
-          data: 4,
+          data: 6,
           next: {
-            data: 5,
+            data: 7,
             next: {
-              data: 6,
+              data: 20,
               next: null
             }
           }
@@ -111,4 +111,16 @@ let sample1 = {
   }
 };
 
-let sample2 = {}
+let sample2 = null;
+
+// if node is empty
+console.log(JSON.stringify(sortedInsert(sample2, 4), null, 2)); // 4 -> null
+
+// if data is smaller than first node && is 0 (falsy value)
+console.log(JSON.stringify(sortedInsert(sample1, 0), null, 2)); // 0 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 20 -> null
+
+// if data is greater than last node
+console.log(JSON.stringify(sortedInsert(sample1, 50), null, 2)); // 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 20 -> 50 -> null
+
+// if data is inbetween values
+console.log(JSON.stringify(sortedInsert(sample1, 10), null, 2)); // 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 10 -> 20 -> null
