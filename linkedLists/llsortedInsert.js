@@ -124,3 +124,12 @@ console.log(JSON.stringify(sortedInsert(sample1, 50), null, 2)); // 2 -> 3 -> 4 
 
 // if data is inbetween values
 console.log(JSON.stringify(sortedInsert(sample1, 10), null, 2)); // 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 10 -> 20 -> null
+
+// Here is a very concise answer using recursion
+function sortedInsert(head, data) {
+  if(!head || data < head.data) return new Node(data, head);
+  else {
+    head.next = sortedInsert(head.next, data);
+    return head;
+  }
+}
