@@ -120,47 +120,59 @@ Idea #1
 // }
 
 // 12.17.17 Attempt 2
+// function findArrayQuadruplet(arr, s) {
+//   if (arr.length < 4) return [];
+//   arr.sort((a, b) => {
+//     if (a > b) {
+//       return 1;
+//     } else {
+//       return -1;
+//     }
+//   });
+//   console.log(arr);
+  
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] < s) {
+//       let diff1 = s - arr[i];
+//       for (let j = i + 1; j < arr.length; j++) {
+//         if (arr[j] < diff1) {
+//           let diff2 = diff1 - arr[j];
+//           for (let k = j + 1; k < arr.length; k++) {
+//             if (arr[k] < diff2) {
+//               let diff3 = diff2 - arr[k];
+//               for (let l = k + 1; l < arr.length; l++) {
+//                 if (arr[l] === diff3) {
+//                   return [arr[i], arr[j], arr[k], arr[l]];
+//                 }
+//               }
+//             }
+//           }
+//         }
+//       }
+//     } 
+//   }
+//   return [];
+// }
+
+// Attempt #3 12/17/17
 function findArrayQuadruplet(arr, s) {
   if (arr.length < 4) return [];
   arr.sort((a, b) => {
     if (a > b) {
-      return 1;
+      return 1; 
     } else {
       return -1;
     }
   });
   console.log(arr);
-  
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] < s) {
-      let diff1 = s - arr[i];
-      for (let j = i + 1; j < arr.length; j++) {
-        if (arr[j] < diff1) {
-          let diff2 = diff1 - arr[j];
-          for (let k = j + 1; k < arr.length; k++) {
-            if (arr[k] < diff2) {
-              let diff3 = diff2 - arr[k];
-              for (let l = k + 1; l < arr.length; l++) {
-                if (arr[l] === diff3) {
-                  return [arr[i], arr[j], arr[k], arr[l]];
-                }
-              }
-            }
-          }
-        }
-      }
-    } 
-  }
-  return [];
 }
 
 
-
 console.log(findArrayQuadruplet([5, 4, 3, 2, 1], 10)); // [1, 2, 3, 4]
-console.log(findArrayQuadruplet([5, 4, 3, 2, 1], 11)); // [1, 2, 3, 5]
-console.log(findArrayQuadruplet([2, 7, 4, 0, 9, 5, 1, 3], 20)); // [0, 4, 7, 9]
-console.log(findArrayQuadruplet([1, 2, 3], 6)); // []
-console.log(findArrayQuadruplet([2, 7, 4, 0, 9, 5, 1, 3], 100)); // []
-console.log(findArrayQuadruplet([200, 700, 400, 8, 900, 500, 100, 300], 5)); // []
-console.log(findArrayQuadruplet([200, 700, 400, 8, 4, 5, 1, 300], 18)); // []
-console.log(findArrayQuadruplet([1,2,3,4,5,9,19,12,12,19], 40));
+// console.log(findArrayQuadruplet([5, 4, 3, 2, 1], 11)); // [1, 2, 3, 5]
+// console.log(findArrayQuadruplet([2, 7, 4, 0, 9, 5, 1, 3], 20)); // [0, 4, 7, 9]
+// console.log(findArrayQuadruplet([1, 2, 3], 6)); // []
+// console.log(findArrayQuadruplet([2, 7, 4, 0, 9, 5, 1, 3], 100)); // []
+// console.log(findArrayQuadruplet([200, 700, 400, 8, 900, 500, 100, 300], 5)); // []
+// console.log(findArrayQuadruplet([200, 700, 400, 8, 4, 5, 1, 300], 18)); // []
+// console.log(findArrayQuadruplet([1,2,3,4,5,9,19,12,12,19], 40));
