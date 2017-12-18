@@ -165,8 +165,8 @@ function findArrayQuadruplet(arr, s) {
     }
   });
 
-  for (let i = 0; i < arr.length - 4; i++) {
-    for (let j = i + 1; j < arr.length - 3; j++) {
+  for (let i = 0; i < arr.length - 3; i++) {
+    for (let j = i + 1; j < arr.length -2; j++) {
       let r = s - (arr[i] + arr[j]);
       let low = j + 1;
       let high = arr.length - 1;
@@ -194,3 +194,4 @@ console.log(findArrayQuadruplet([2, 7, 4, 0, 9, 5, 1, 3], 100)); // []
 console.log(findArrayQuadruplet([200, 700, 400, 8, 900, 500, 100, 300], 5)); // []
 console.log(findArrayQuadruplet([200, 700, 400, 8, 4, 5, 1, 300], 18)); // []
 console.log(findArrayQuadruplet([1,2,3,4,5,9,19,12,12,19], 40));
+console.log(findArrayQuadruplet([4, 4, 4, 4], 16)); // [4, 4, 4, 4]
