@@ -164,15 +164,33 @@ function findArrayQuadruplet(arr, s) {
       return -1;
     }
   });
-  console.log(arr);
+
+  for (let i = 0; i < arr.length - 4; i++) {
+    for (let j = i + 1; j < arr.length - 3; j++) {
+      let r = s - (arr[i] + arr[j]);
+      let low = j + 1;
+      let high = arr.length - 1;
+
+      while (low < high) {
+        if (arr[low] + arr[high] === r) {
+          return [arr[i], arr[j], arr[low], arr[high]];
+        } else if (arr[low] + arr[high] < r) {
+          low++;
+        } else {
+          high--;
+        }
+      }
+    }
+  }
+  return [];
 }
 
 
 console.log(findArrayQuadruplet([5, 4, 3, 2, 1], 10)); // [1, 2, 3, 4]
-// console.log(findArrayQuadruplet([5, 4, 3, 2, 1], 11)); // [1, 2, 3, 5]
-// console.log(findArrayQuadruplet([2, 7, 4, 0, 9, 5, 1, 3], 20)); // [0, 4, 7, 9]
-// console.log(findArrayQuadruplet([1, 2, 3], 6)); // []
-// console.log(findArrayQuadruplet([2, 7, 4, 0, 9, 5, 1, 3], 100)); // []
-// console.log(findArrayQuadruplet([200, 700, 400, 8, 900, 500, 100, 300], 5)); // []
-// console.log(findArrayQuadruplet([200, 700, 400, 8, 4, 5, 1, 300], 18)); // []
-// console.log(findArrayQuadruplet([1,2,3,4,5,9,19,12,12,19], 40));
+console.log(findArrayQuadruplet([5, 4, 3, 2, 1], 11)); // [1, 2, 3, 5]
+console.log(findArrayQuadruplet([2, 7, 4, 0, 9, 5, 1, 3], 20)); // [0, 4, 7, 9]
+console.log(findArrayQuadruplet([1, 2, 3], 6)); // []
+console.log(findArrayQuadruplet([2, 7, 4, 0, 9, 5, 1, 3], 100)); // []
+console.log(findArrayQuadruplet([200, 700, 400, 8, 900, 500, 100, 300], 5)); // []
+console.log(findArrayQuadruplet([200, 700, 400, 8, 4, 5, 1, 300], 18)); // []
+console.log(findArrayQuadruplet([1,2,3,4,5,9,19,12,12,19], 40));
