@@ -119,7 +119,28 @@ Idea #1
 //   return findNums(0, s, 0, []);
 // }
 
-// console.log(findArrayQuadruplet([5, 4, 3, 2, 1], 10)); // [1, 2, 3, 4]
+// 12.17.17 Attempt 2
+function findArrayQuadruplet(arr, s) {
+  if (arr.length < 4) return [];
+  arr.sort();
+  const mySet = new Set(arr);
+  console.log(mySet);
+  let diff1;
+  let diff2;
+  let diff3;
+  let diff4;
+  
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < s) {
+      
+    } 
+  }
+
+}
+
+
+
+console.log(findArrayQuadruplet([5, 4, 3, 2, 1], 10)); // [1, 2, 3, 4]
 // console.log(findArrayQuadruplet([5, 4, 3, 2, 1], 11)); // [1, 2, 3, 5]
 // console.log(findArrayQuadruplet([2, 7, 4, 0, 9, 5, 1, 3], 20)); // [0, 4, 7, 9]
 // // console.log(findArrayQuadruplet([1, 2, 3], 6)); // []
