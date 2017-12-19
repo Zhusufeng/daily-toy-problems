@@ -50,7 +50,7 @@ function insertSort(head) {
   let node = head;
   let lastNode = null;
 
-  while (node) {
+  while (node !== null) {
     if (node === head) {
       head = node.next;
       if (node.next === null) {
@@ -59,11 +59,11 @@ function insertSort(head) {
     } else {
       lastNode = node.next;
     }
-    sortedInsert(head, node.data);
-    // lastNode = node; 
-    // node = node.next;
+    head = sortedInsert(head, node.data);
+    lastNode = node; // Is it ok if node becomes lastNode?
+    node = node.next; // Is it ok if previous node.next is next item to assess?
   }
-
+  return head;
 }
 
 function sortedInsert(head, data) {
@@ -84,7 +84,7 @@ let sample1 = {
     }
   }
 };
-console.log(insertSort(sample1)); // 1 -> 2 -> 3 -> null
+// console.log(JSON.stringify(insertSort(sample1), null, 2)); // 1 -> 2 -> 3 -> null
 
 let sample2 = {
   data: 4,
@@ -99,7 +99,7 @@ let sample2 = {
     }
   }
 };
-console.log(insertSort(sample2)); // 1 -> 2 -> 3 -> 4 -> null
+// console.log(JSON.stringify(insertSort(sample2), null, 2)); // 1 -> 2 -> 3 -> 4 -> null
 
 let sample3 = {
   data: 10,
@@ -114,11 +114,21 @@ let sample3 = {
     }
   }
 };
-console.log(insertSort(sample3)); // 4 -> 6 -> 10 -> 12 -> null
+// console.log(JSON.stringify(insertSort(sample3), null, 2)); // 4 -> 6 -> 10 -> 12 -> null
 
 let sample4 = {
   data: 10,
   next: null
 };
-console.log(insertSort(sample4)); // 10 -> null
-console.log(insertSort(null)); // null
+// console.log(JSON.stringify(insertSort(sample4), null, 2)); // 10 -> null GOOD
+// console.log(insertSort(null)); // null GOOD
+
+let sample5 = {
+  data: 10,
+  next: {
+    data: 5,
+    next: null
+  }
+};
+console.log(JSON.stringify(insertSort(sample5), null, 2)); // 5 -> 10 -> null
+
