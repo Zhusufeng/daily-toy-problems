@@ -15,12 +15,26 @@ C:
   Time:
   Space:
 E:
-  null ==> null
-  100 -> null ==> 100 -> null
-  4 -> 3 -> 1 -> 2 -> null ==> 1 -> 2 -> 3 -> 4 -> null
-  10 -> 6 -> 12 -> 4 -> null ==> 4 -> 6 -> 10 -> 12 -> null
+  null                          ==> null
+  100 -> null                   ==> 100 -> null
+  4 -> 3 -> 1 -> 2 -> null      ==> 1 -> 2 -> 3 -> 4 -> null
+  10 -> 6 -> 12 -> 4 -> null    ==> 4 -> 6 -> 10 -> 12 -> null
+  1 -> 2 -> 3 -> null           ==> 1 -> 2 -> 3 -> null
   
+General Plan
+  Create node equal to head
+  Create lastNode equal to null
 
+  While node exists
+    If node equals head
+    Else
+      Set new let var insertNode equal to node
+      Detach it by setting lastNode's next to node's next
+      Run sortedInsert with head and insertNode's data
+    Set lastNode equal to node
+    Set node to node.next
+
+  Return head
 */
 
 
@@ -42,25 +56,30 @@ function sortedInsert(head, data) {
   }
 }
 
-let sample = {
-  data: 0,
+let sample1 = {
+  data: 1,
   next: {
-    data: 1,
+    data: 2,
     next: {
-      data: 2,
+      data: 3,
+      next: null
+    }
+  }
+};
+
+console.log(insertSort(sample1)); // 1 -> 2 -> 3 -> null
+
+let sample2 = {
+  data: 4,
+  next: {
+    data: 3,
+    next: {
+      data: 1,
       next: {
-        data: 3,
-        next: {
-          data: 4,
-          next: {
-            data: 5,
-            next: {
-              data: 6,
-              next: null
-            }
-          }
-        }
+        data: 2,
+        next: null
       }
     }
   }
 };
+console.log(insertSort(sample2)); // 1 -> 2 -> 3 -> 4 -> null
