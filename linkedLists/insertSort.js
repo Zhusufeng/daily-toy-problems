@@ -26,14 +26,14 @@ General Plan
   Create lastNode equal to null
 
   While node exists
-      Set new let var insertNode equal to node
-      If node equals head
-        Set head to node.next
-        If node.next equals null
-          Return node
-      Else 
-        Detach node by setting lastNode's next to node's next
-      Run sortedInsert with head and insertNode's data
+    Set new let var insertNode equal to node
+    If node equals head
+      Set head to node.next
+      If node.next equals null
+        Return node
+    Else 
+      Detach node by setting lastNode's next to node's next
+    Run sortedInsert with head and insertNode's data
     Set lastNode equal to node
     Set node to node.next
 
@@ -49,6 +49,20 @@ function Node(data) {
 function insertSort(head) {
   let node = head;
   let lastNode = null;
+
+  while (node) {
+    if (node === head) {
+      head = node.next;
+      if (node.next === null) {
+        return node;
+      }
+    } else {
+      lastNode = node.next;
+    }
+    sortedInsert(head, node.data);
+    // lastNode = node; 
+    // node = node.next;
+  }
 
 }
 
