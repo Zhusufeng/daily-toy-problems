@@ -26,10 +26,13 @@ General Plan
   Create lastNode equal to null
 
   While node exists
-    If node equals head
-    Else
       Set new let var insertNode equal to node
-      Detach it by setting lastNode's next to node's next
+      If node equals head
+        Set head to node.next
+        If node.next equals null
+          Return node
+      Else 
+        Detach node by setting lastNode's next to node's next
       Run sortedInsert with head and insertNode's data
     Set lastNode equal to node
     Set node to node.next
@@ -44,8 +47,9 @@ function Node(data) {
 }
 
 function insertSort(head) {
-  // Your code goes here.
-  // Remember to return the head of the list.
+  let node = head;
+  let lastNode = null;
+
 }
 
 function sortedInsert(head, data) {
@@ -66,7 +70,6 @@ let sample1 = {
     }
   }
 };
-
 console.log(insertSort(sample1)); // 1 -> 2 -> 3 -> null
 
 let sample2 = {
@@ -83,3 +86,25 @@ let sample2 = {
   }
 };
 console.log(insertSort(sample2)); // 1 -> 2 -> 3 -> 4 -> null
+
+let sample3 = {
+  data: 10,
+  next: {
+    data: 6,
+    next: {
+      data: 10,
+      next: {
+        data: 4,
+        next: null
+      }
+    }
+  }
+};
+console.log(insertSort(sample3)); // 4 -> 6 -> 10 -> 12 -> null
+
+let sample4 = {
+  data: 10,
+  next: null
+};
+console.log(insertSort(sample4)); // 10 -> null
+console.log(insertSort(null)); // null
