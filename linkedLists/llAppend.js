@@ -58,6 +58,15 @@ function append(listA, listB) {
   }
 }
 
+/*
+Smart solution
+ function append(a,b) {
+    if(!a)return b;
+    a.next=append(a.next,b);
+    return a;
+  }
+*/
+
 let sample1 = {
   data: 0,
   next: {
