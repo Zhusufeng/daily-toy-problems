@@ -8,3 +8,25 @@ var listB = 4 -> 5 -> 6 -> null
 append(listA, listB) === 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> null
 If both listA and listB are null/NULL/None/nil, return null/NULL/None/nil. If one list is null/NULL/None/nil and the other is not, simply return the non-null/NULL/None/nil list.
 */
+
+/*
+O: linked list or null
+I: linked list 1, linked list 2
+C:
+  Time: Linear
+  Space: Constant
+E:
+  null, null => null
+  null, 1 -> 2 -> null => 1 -> 2 -> null
+  1 -> 2 -> null, null => 1 -> 2 -> null
+  1 -> 2 -> null, 1 -> 2 -> null => 1 -> 2 -> 1 -> 2 -> null
+
+General Plan
+  If listA and listB are null
+    Return listA (null)
+  If listA is null
+    Return listB
+  If listB is null
+    Return listA
+  
+*/
