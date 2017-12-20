@@ -42,9 +42,13 @@ function Node(data) {
 }
 
 function append(listA, listB) {
-  if (listA === null && listB === null) {
+  if (listA === null && listB === null || listB === null) {
     return listA;
   }
+  if (listA === null) {
+    return listB;
+  }
+
 }
 
 let sample1 = {
@@ -69,9 +73,9 @@ let sample2 = {
   }
 };
 
-console.log(append(null, null)); // null
-console.log(append(sample1, null)); // 0 -> 1 -> 2 -> null
-console.log(append(null, sample2)); // 300 -> 400 -> 500 -> null
-console.log(append(sample1, sample2)); // 0 -> 1 -> 2 -> 300 -> 400 -> 500 -> null
-console.log(append(sample2, sample1)); // 300 -> 400 -> 500 -> 0 -> 1 -> 2 -> null
+console.log(JSON.stringify(append(null, null), null, 2)); // null
+console.log(JSON.stringify(append(sample1, null), null, 2)); // 0 -> 1 -> 2 -> null
+console.log(JSON.stringify(append(null, sample2), null, 2)); // 300 -> 400 -> 500 -> null
+console.log(JSON.stringify(append(sample1, sample2), null, 2)); // 0 -> 1 -> 2 -> 300 -> 400 -> 500 -> null
+console.log(JSON.stringify(append(sample2, sample1), null, 2)); // 300 -> 400 -> 500 -> 0 -> 1 -> 2 -> null
 
