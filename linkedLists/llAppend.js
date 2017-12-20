@@ -28,5 +28,10 @@ General Plan
     Return listB
   If listB is null
     Return listA
-  
+  Create node set to listA head
+  While node exists
+    If node.next is null
+      Set node.next to listB
+      Return listA
+    Set node equal to node.next
 */
