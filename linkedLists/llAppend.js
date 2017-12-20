@@ -48,7 +48,14 @@ function append(listA, listB) {
   if (listA === null) {
     return listB;
   }
-
+  let node = listA;
+  while (node) {
+    if (node.next === null) {
+      node.next = listB;
+      return listA;
+    }
+    node = node.next;
+  }
 }
 
 let sample1 = {
@@ -73,9 +80,20 @@ let sample2 = {
   }
 };
 
+let sample3 = {
+  data: 6,
+  next: {
+    data: 7,
+    next: {
+      data: 8,
+      next: null
+    }
+  }
+};
+
 console.log(JSON.stringify(append(null, null), null, 2)); // null
 console.log(JSON.stringify(append(sample1, null), null, 2)); // 0 -> 1 -> 2 -> null
 console.log(JSON.stringify(append(null, sample2), null, 2)); // 300 -> 400 -> 500 -> null
 console.log(JSON.stringify(append(sample1, sample2), null, 2)); // 0 -> 1 -> 2 -> 300 -> 400 -> 500 -> null
-console.log(JSON.stringify(append(sample2, sample1), null, 2)); // 300 -> 400 -> 500 -> 0 -> 1 -> 2 -> null
+console.log(JSON.stringify(append(sample2, sample3), null, 2)); // 300 -> 400 -> 500 -> 6 -> 7 -> 8 -> null
 
