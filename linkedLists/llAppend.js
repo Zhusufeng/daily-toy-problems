@@ -35,3 +35,43 @@ General Plan
       Return listA
     Set node equal to node.next
 */
+
+function Node(data) {
+  this.data = data;
+  this.next = null;
+}
+
+function append(listA, listB) {
+  if (listA === null && listB === null) {
+    return listA;
+  }
+}
+
+let sample1 = {
+  data: 0,
+  next: {
+    data: 1,
+    next: {
+      data: 2,
+      next: null
+    }
+  }
+};
+
+let sample2 = {
+  data: 300,
+  next: {
+    data: 400,
+    next: {
+      data: 500,
+      next: null
+    }
+  }
+};
+
+console.log(append(null, null)); // null
+console.log(append(sample1, null)); // 0 -> 1 -> 2 -> null
+console.log(append(null, sample2)); // 300 -> 400 -> 500 -> null
+console.log(append(sample1, sample2)); // 0 -> 1 -> 2 -> 300 -> 400 -> 500 -> null
+console.log(append(sample2, sample1)); // 300 -> 400 -> 500 -> 0 -> 1 -> 2 -> null
+
