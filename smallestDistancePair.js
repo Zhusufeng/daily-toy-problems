@@ -107,26 +107,77 @@ Idea #4 Set
 // Space: Linear because of the set
 // Time: Quadratic because of the 2 for loops
 
+// var smallestDistancePair = function(nums, k) {
+//   let counter = 0;
+
+//   for (let i = 0; i < nums.length; i++) {
+//     for (let j = 0; j < nums.length; j++) {
+//       if (i === j) continue;
+//       if (counter === k) return Math.abs(nums[i] - nums[j]);
+//       counter++;
+//     }
+//   } 
+//   return null;
+// };
+
+// console.log(smallestDistancePair([1,3,1], 0));  // 2
+// console.log(smallestDistancePair([1,3,1], 1));  // 0
+// console.log(smallestDistancePair([1,3,1], 2));  // 2
+// console.log(smallestDistancePair([1, 5, 7, 9], 0));  // 4
+// console.log(smallestDistancePair([1, 5, 7, 9], 1));  // 6
+// console.log(smallestDistancePair([1, 5, 7, 9], 2));  // 8
+// console.log(smallestDistancePair([1, 5, 7, 9], 3));  // 4
+// console.log(smallestDistancePair([1, 5, 7, 9], 4));  // 2
+// console.log(smallestDistancePair([1, 5, 7, 9], 5));  // 4
+
 var smallestDistancePair = function(nums, k) {
-  let counter = 0;
+  let difference = [0];
 
   for (let i = 0; i < nums.length; i++) {
     for (let j = 0; j < nums.length; j++) {
-      if (i === j) continue;
-      if (counter === k) return Math.abs(nums[i] - nums[j]);
-      counter++;
+      if (i === j) {
+        break;
+      } else {
+        difference.push(Math.abs(nums[i] - nums[j]));
+      }
     }
   } 
-  return null;
+  console.log(difference);
+  difference.sort((a, b) => {
+    if (a < b) {
+      return -1;
+    } else {
+      return 1;
+    }
+  });
+  console.log(difference);
+  return difference[k];
 };
 
-console.log(smallestDistancePair([1,3,1], 0));  // 2
-console.log(smallestDistancePair([1,3,1], 1));  // 0
-console.log(smallestDistancePair([1,3,1], 2));  // 2
+// k is equal or greater than 1
+console.log(smallestDistancePair([1,3,1], 1));  // 0 - Correct
+console.log(smallestDistancePair([1,3,1], 2));  // 2 - Correct
+console.log(smallestDistancePair([62, 100, 4], 2)); // 58 - Correct
 
-console.log(smallestDistancePair([1, 5, 7, 9], 0));  // 4
-console.log(smallestDistancePair([1, 5, 7, 9], 1));  // 6
-console.log(smallestDistancePair([1, 5, 7, 9], 2));  // 8
-console.log(smallestDistancePair([1, 5, 7, 9], 3));  // 4
-console.log(smallestDistancePair([1, 5, 7, 9], 4));  // 2
-console.log(smallestDistancePair([1, 5, 7, 9], 5));  // 4
+console.log(smallestDistancePair([9,10,7,10,6,1,5,4,9,8], 18)); // 2 
+console.log(smallestDistancePair([38,33,57,65,13,2,86,75,4,56], 26)); // 36
+/*
+[62, 100, 4]
+0 62 - 100 = 38
+1 62 - 4   = 58
+2 100 - 62 = 38
+3 100 - 4  = 96
+4 4 - 62   = 58
+5 4 - 100  = 96
+
+Do I need to sort the array? NO
+[4, 62, 100]
+0 4 - 62   = 58
+1 4 - 100  = 96
+2 62 - 4   = 58
+3 62 - 100 = 38
+4 100 - 4  = 96
+5 100 - 62 = 38
+
+Do I sort the differences?
+*/
