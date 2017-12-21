@@ -88,3 +88,24 @@ Idea #4 Set
       Increment counter
   Return null if never got to k
 */
+
+var smallestDistancePair = function(nums, k) {
+  const s = new Set(nums);
+  let counter = 0;
+
+  for (let i of s.keys()) {
+    for (let j of s.keys()) {
+      if (i === j) continue;
+      if (counter === k) return Math.abs(i - j);
+      counter++;
+    }
+  } 
+  return null;
+};
+
+console.log(smallestDistancePair([1, 5, 7, 9], 0));  // 4
+console.log(smallestDistancePair([1, 5, 7, 9], 1));  // 6
+console.log(smallestDistancePair([1, 5, 7, 9], 2));  // 8
+console.log(smallestDistancePair([1, 5, 7, 9], 3));  // 4
+console.log(smallestDistancePair([1, 5, 7, 9], 4));  // 2
+console.log(smallestDistancePair([1, 5, 7, 9], 5));  // 4
