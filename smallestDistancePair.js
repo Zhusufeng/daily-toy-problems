@@ -54,14 +54,37 @@ Idea #1 Arrays
       Push the absolute value of array at i minus array at j to difference
   Return difference at k
 
-Idea #2 Arrays
+Idea #2 Array
   Create counter set to 0
   Iterate through given array starting at i equal to 0 til array's length
     Iterate through given array starting at j equal to 0 til array's length
-      If i equals j
+      If i equals j OR array at i equals array at j
         Continue
-      Increment counter
       If counter equals k
         Return the absolute value of array at i minus array at j
+      Increment counter
+  Return null if never got to k
+
+Idea #3 Array 
+  Create counter set to 0
+  Iterate through given array starting at i equal to 0 til array's length
+    Iterate through given array starting at j equal to 0 til array's length
+      If array at i equals array at j
+        Continue
+      If counter equals k
+        Return the absolute value of array at i minus array at j
+      Increment counter
+  Return null if never got to k
+
+Idea #4 Set
+  Create Set s using the array
+  Create counter set to 0
+  Iterate through s, let i
+    Iterate through s, let j
+      If i equals j
+        continue
+      If counter equals k
+        Return the absolute value of i minus j
+      Increment counter
   Return null if never got to k
 */
