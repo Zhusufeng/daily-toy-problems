@@ -58,7 +58,7 @@ Idea #2 Array
   Create counter set to 0
   Iterate through given array starting at i equal to 0 til array's length
     Iterate through given array starting at j equal to 0 til array's length
-      If i equals j OR array at i equals array at j
+      If i equals j OR array at i equals array at j (NOT viable because you want difference of 0)
         Continue
       If counter equals k
         Return the absolute value of array at i minus array at j
@@ -76,7 +76,8 @@ Idea #3 Array
       Increment counter
   Return null if never got to k
 
-Idea #4 Set
+Idea #4 Set 
+(Not viable because what if there are 2 of the same num? Diff to equal 0)
   Create Set s using the array
   Create counter set to 0
   Iterate through s, let i
@@ -89,19 +90,39 @@ Idea #4 Set
   Return null if never got to k
 */
 
+// var smallestDistancePair = function(nums, k) {
+//   const s = new Set(nums);
+//   let counter = 0;
+
+//   for (let i of s.keys()) {
+//     for (let j of s.keys()) {
+//       console.log(i, j);
+//       if (i === j) continue;
+//       if (counter === k) return Math.abs(i - j);
+//       counter++;
+//     }
+//   } 
+//   return null;
+// };
+// Space: Linear because of the set
+// Time: Quadratic because of the 2 for loops
+
 var smallestDistancePair = function(nums, k) {
-  const s = new Set(nums);
   let counter = 0;
 
-  for (let i of s.keys()) {
-    for (let j of s.keys()) {
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = 0; j < nums.length; j++) {
       if (i === j) continue;
-      if (counter === k) return Math.abs(i - j);
+      if (counter === k) return Math.abs(nums[i] - nums[j]);
       counter++;
     }
   } 
   return null;
 };
+
+console.log(smallestDistancePair([1,3,1], 0));  // 2
+console.log(smallestDistancePair([1,3,1], 1));  // 0
+console.log(smallestDistancePair([1,3,1], 2));  // 2
 
 console.log(smallestDistancePair([1, 5, 7, 9], 0));  // 4
 console.log(smallestDistancePair([1, 5, 7, 9], 1));  // 6
