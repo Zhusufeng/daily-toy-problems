@@ -44,5 +44,24 @@ E:
     (9, 5) -> 4  k = 10
     (9, 7) -> 2  k = 11
 
+General Plan
+Idea #1 Arrays
+  Create difference array that is empty
+  Iterate through given array starting at i equal to 0 til array's length
+    Iterate through given array starting at j equal to 0 til array's length
+      If i equals j
+        Continue
+      Push the absolute value of array at i minus array at j to difference
+  Return difference at k
 
+Idea #2 Arrays
+  Create counter set to 0
+  Iterate through given array starting at i equal to 0 til array's length
+    Iterate through given array starting at j equal to 0 til array's length
+      If i equals j
+        Continue
+      Increment counter
+      If counter equals k
+        Return the absolute value of array at i minus array at j
+  Return null if never got to k
 */
