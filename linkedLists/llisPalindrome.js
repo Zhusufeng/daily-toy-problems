@@ -68,20 +68,27 @@ var isPalindrome = function(head) {
   console.log(counter);
 
   let currentNode = head;
-  let complementNode;
   let nextCounter = counter;
-  for (let j = 0; j < Math.floor(counter/2); j++) {
+  
+  for (let j = 0; j < Math.ceil(counter/2); j++) {
+    let complementNode = head;
+    console.log(`nextCounter is ${nextCounter}`);
+    console.log(`j is ${j}`);
+
     for (let i = 0; i < nextCounter; i++) {
       complementNode = complementNode.next;
     }
-    if (currentNode !== complementNode) return false;
+
+    console.log(`currentNode.data is ${currentNode.data}`);
+    console.log(`complementNode.data is ${complementNode.data}`);
+    if (currentNode.data !== complementNode.data) return false;
     currentNode = currentNode.next;
     nextCounter--;
   }
   return true;
 };
 
-let sample = {
+let sample1 = {
   data: 'r',
   next: {
     data: 'a',
@@ -103,5 +110,25 @@ let sample = {
     }
   }
 };
+let sample2 = {
+  data: 'r',
+  next: {
+    data: 'a',
+    next: {
+      data: 'c',
+      next: {
+        data: 'c',
+        next: {
+          data: 'a',
+          next: {
+            data: 'r',
+            next: null
+          }
+        }
+      }
+    }
+  }
+};
 
-console.log(isPalindrome(sample)); // true
+console.log(isPalindrome(sample1)); // true
+console.log(isPalindrome(sample2)); // true
