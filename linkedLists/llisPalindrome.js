@@ -43,7 +43,7 @@ Idea #3
   Iterate through linkedlist until j is half of counter
     Iterate starting i at 0, until i is less than nextCounter, increment i by 1
       complementNode = complementNode.next
-    If currentNode's data is NOT equal to complementNode's data
+    If currentNode's val is NOT equal to complementNode's val
       Return false
     Set currentNode equal to currentNode.next
     Decrement nextCounter by 1
@@ -56,13 +56,21 @@ function ListNode(val) {
   this.next = null;
 }
 var isPalindrome = function(head) {
-  if (!head) return false;
+  if (!head) return true;
+  if (Array.isArray(head)) {
+    console.log('I am an array');
+    for (let k = 0, h = head.length - 1; k < Math.ceil(head.length / 2); k++, h--) {
+      console.log(`head[k] is ${head[k]} / head[h] is ${head[h]}`);
+      if (head[k] !== head[h]) return false;
+    }
+    return true;
+  }
+
   let node = head;
   let counter = 0;
-
   while (node.next) {
     // console.log(`counter is ${counter}`);
-    // console.log(`node.data is ${node.data}``);
+    // console.log(`node.val is ${node.val}``);
     counter++;
     node = node.next;
   } 
@@ -80,9 +88,9 @@ var isPalindrome = function(head) {
       complementNode = complementNode.next;
     }
 
-    console.log(`currentNode.data is ${currentNode.data}`);
-    console.log(`complementNode.data is ${complementNode.data}`);
-    if (currentNode.data !== complementNode.data) return false;
+    console.log(`currentNode.val is ${currentNode.val}`);
+    console.log(`complementNode.val is ${complementNode.val}`);
+    if (currentNode.val !== complementNode.val) return false;
     currentNode = currentNode.next;
     nextCounter--;
   }
@@ -90,19 +98,19 @@ var isPalindrome = function(head) {
 };
 
 let sample1 = {
-  data: 'r',
+  val: 'r',
   next: {
-    data: 'a',
+    val: 'a',
     next: {
-      data: 'c',
+      val: 'c',
       next: {
-        data: 'e',
+        val: 'e',
         next: {
-          data: 'c',
+          val: 'c',
           next: {
-            data: 'a',
+            val: 'a',
             next: {
-              data: 'r',
+              val: 'r',
               next: null
             }
           }
@@ -112,17 +120,17 @@ let sample1 = {
   }
 };
 let sample2 = {
-  data: 'r',
+  val: 'r',
   next: {
-    data: 'a',
+    val: 'a',
     next: {
-      data: 'c',
+      val: 'c',
       next: {
-        data: 'c',
+        val: 'c',
         next: {
-          data: 'a',
+          val: 'a',
           next: {
-            data: 'r',
+            val: 'r',
             next: null
           }
         }
@@ -131,17 +139,17 @@ let sample2 = {
   }
 };
 let sample3 = {
-  data: 'r',
+  val: 'r',
   next: {
-    data: 'a',
+    val: 'a',
     next: {
-      data: 'c',
+      val: 'c',
       next: {
-        data: 'z',
+        val: 'z',
         next: {
-          data: 'a',
+          val: 'a',
           next: {
-            data: 'r',
+            val: 'r',
             next: null
           }
         }
@@ -150,14 +158,25 @@ let sample3 = {
   }
 };
 let sample4 = {
-  data: 'r',
+  val: 'r',
   next: null
 };
 let sample5 = null;
+let sample6 = {
+  val: 1,
+  next: {
+    val: 2,
+    next: null
+  }
+};
+let sample7 = [1, 2];
 console.log(isPalindrome(sample1)); // true
 console.log(isPalindrome(sample2)); // true
 console.log(isPalindrome(sample3)); // false
 console.log(isPalindrome(sample4)); // true?
-console.log(isPalindrome(sample5)); // false if empty
+console.log(isPalindrome(sample5)); // true based on leetCode
+console.log(isPalindrome(sample6)); // false
+console.log(isPalindrome(sample7)); // false
+
 
 
