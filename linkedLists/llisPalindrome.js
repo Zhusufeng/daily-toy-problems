@@ -38,16 +38,17 @@ Idea #3
     Increment counter (ie 6)
   Create currentNode equal to head
   Create complementNode (1st round should equal currentNode.next.next.next.next.next.next)
-  Create secondCounter to 0
+  Create j to 0
   Create nextCounter to counter
-  Iterate through linkedlist until secondCounter is half of counter
+  Iterate through linkedlist until j is half of counter
     Iterate starting i at 0, until i is less than nextCounter, increment i by 1
       complementNode = complementNode.next
     If currentNode's data is NOT equal to complementNode's data
       Return false
     Set currentNode equal to currentNode.next
     Decrement nextCounter by 1
-    Increment secondCounter
+    Increment j
+  Return true
 */
 
 function ListNode(val) {
@@ -65,6 +66,19 @@ var isPalindrome = function(head) {
     node = node.next;
   } 
   console.log(counter);
+
+  let currentNode = head;
+  let complementNode;
+  let nextCounter = counter;
+  for (let j = 0; j < Math.floor(counter/2); j++) {
+    for (let i = 0; i < nextCounter; i++) {
+      complementNode = complementNode.next;
+    }
+    if (currentNode !== complementNode) return false;
+    currentNode = currentNode.next;
+    nextCounter--;
+  }
+  return true;
 };
 
 let sample = {
