@@ -129,6 +129,7 @@ function ListNode(val) {
 var isPalindrome = function(head) {
   if (!head) return true;
   let node = head;
+  let counter = 0;
   let tail;
   let prevNode;
 
@@ -154,10 +155,24 @@ var isPalindrome = function(head) {
 
     // Change to the next node
     node = node.next;
+
+    counter++;
   } 
+  console.log(counter);
+  let currNode = head;
+  let complementNode = tail;
 
+  for (let i = 0; i < Math.ceil(counter / 2); i++) {
+    console.log(`currNode is ${currNode.val} / complementNode is ${complementNode.val}`);
+    if (currNode.val !== complementNode.val) return false;
+    currNode = currNode.next;
+    complementNode = complementNode.prev;
+  }
+  return true;
 };
-
+// ^ Doubly linked list version
+// Time: Linear
+// Space: Linear?
 
 let sample1 = {
   val: 'r',
