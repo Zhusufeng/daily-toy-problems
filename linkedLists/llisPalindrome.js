@@ -55,7 +55,16 @@ function ListNode(val) {
   this.next = null;
 }
 var isPalindrome = function(head) {
- 
+  let node = head;
+  let counter = 0;
+
+  while (node.next) {
+    // console.log(counter);
+    // console.log(node.data);
+    counter++;
+    node = node.next;
+  } 
+  console.log(counter);
 };
 
 let sample = {
