@@ -30,6 +30,24 @@ Idea #2
   Iterate through linked list
     Check if linked list node equals the second linked list's node
       If not return false
+
+Idea #3
+  Create node equal to head
+  Create counter equal to 0
+  Iterate through linked list until node doesn't exist
+    Increment counter (ie 6)
+  Create currentNode equal to head
+  Create complementNode (1st round should equal currentNode.next.next.next.next.next.next)
+  Create secondCounter to 0
+  Create nextCounter to counter
+  Iterate through linkedlist until secondCounter is half of counter
+    Iterate starting i at 0, until i is less than nextCounter, increment i by 1
+      complementNode = complementNode.next
+    If currentNode's data is NOT equal to complementNode's data
+      Return false
+    Set currentNode equal to currentNode.next
+    Decrement nextCounter by 1
+    Increment secondCounter
 */
 
 function ListNode(val) {
@@ -39,3 +57,28 @@ function ListNode(val) {
 var isPalindrome = function(head) {
  
 };
+
+let sample = {
+  data: 'r',
+  next: {
+    data: 'a',
+    next: {
+      data: 'c',
+      next: {
+        data: 'e',
+        next: {
+          data: 'c',
+          next: {
+            data: 'a',
+            next: {
+              data: 'r',
+              next: null
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+console.log(isPalindrome(sample)); // true
