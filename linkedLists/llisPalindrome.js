@@ -56,16 +56,17 @@ function ListNode(val) {
   this.next = null;
 }
 var isPalindrome = function(head) {
+  if (!head) return false;
   let node = head;
   let counter = 0;
 
   while (node.next) {
-    // console.log(counter);
-    // console.log(node.data);
+    // console.log(`counter is ${counter}`);
+    // console.log(`node.data is ${node.data}``);
     counter++;
     node = node.next;
   } 
-  console.log(counter);
+  console.log(`counter is ${counter}`);
 
   let currentNode = head;
   let nextCounter = counter;
@@ -129,6 +130,34 @@ let sample2 = {
     }
   }
 };
-
+let sample3 = {
+  data: 'r',
+  next: {
+    data: 'a',
+    next: {
+      data: 'c',
+      next: {
+        data: 'z',
+        next: {
+          data: 'a',
+          next: {
+            data: 'r',
+            next: null
+          }
+        }
+      }
+    }
+  }
+};
+let sample4 = {
+  data: 'r',
+  next: null
+};
+let sample5 = null;
 console.log(isPalindrome(sample1)); // true
 console.log(isPalindrome(sample2)); // true
+console.log(isPalindrome(sample3)); // false
+console.log(isPalindrome(sample4)); // true?
+console.log(isPalindrome(sample5)); // false if empty
+
+
