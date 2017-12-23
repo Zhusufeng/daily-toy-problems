@@ -102,29 +102,62 @@ function ListNode(val) {
 // Time: Quadratic
 // Space: Not great...1/2 of length of linkedlist
 
-var isPalindrome = function(head) {
-  if (!head) return true;
-  let node = head;
-  let array = [];
+// var isPalindrome = function(head) {
+//   if (!head) return true;
+//   let node = head;
+//   let array = [];
 
-  while (node) {
-    // console.log(`counter is ${counter}`);
-    // console.log(`node.val is ${node.val}``);
-    array.push(node.val);
-    node = node.next;
-  } 
-  console.log(array);
+//   while (node) {
+//     // console.log(`counter is ${counter}`);
+//     // console.log(`node.val is ${node.val}``);
+//     array.push(node.val);
+//     node = node.next;
+//   } 
+//   console.log(array);
 
-  for (let k = 0, h = array.length - 1; k < Math.ceil(array.length / 2); k++, h--) {
-    console.log(`array[k] is ${array[k]} / array[h] is ${array[h]}`);
-    if (array[k] !== array[h]) return false;
-  }
-  return true;
+//   for (let k = 0, h = array.length - 1; k < Math.ceil(array.length / 2); k++, h--) {
+//     console.log(`array[k] is ${array[k]} / array[h] is ${array[h]}`);
+//     if (array[k] !== array[h]) return false;
+//   }
+//   return true;
 
-};
+// };
 // ^ Above code passes all test cases
 // Time: 1n + 1/2n = 1.5n -> Linear
 // Space: Linear
+
+var isPalindrome = function(head) {
+  if (!head) return true;
+  let node = head;
+  let tail;
+  let prevNode;
+
+  // Create a doubly linked list: Linear
+  while (node) {
+    console.log(`node.val is ${node.val}`);
+    // If it's the head
+    if (node === head) {
+      node.prev = null;
+    } else { // If it's NOT the head
+      node.prev = prevNode;
+    }
+
+    // If we hit the end
+    if (node.next === null) {
+      console.log(`you hit the end ${node.val}`);
+      tail = node;
+      console.log(`tail is ${tail.val}`);
+      break;
+    }
+    // Set the prevNode
+    prevNode = node;
+
+    // Change to the next node
+    node = node.next;
+  } 
+
+};
+
 
 let sample1 = {
   val: 'r',
@@ -201,8 +234,8 @@ let sample6 = {
 console.log(isPalindrome(sample1)); // true
 console.log(isPalindrome(sample2)); // true
 console.log(isPalindrome(sample3)); // false
-console.log(isPalindrome(sample4)); // true?
-console.log(isPalindrome(sample5)); // true based on leetCode
+console.log('test 4: ', isPalindrome(sample4)); // true?
+console.log('test 5: ', isPalindrome(sample5)); // true based on leetCode
 console.log(isPalindrome(sample6)); // false
 
 
