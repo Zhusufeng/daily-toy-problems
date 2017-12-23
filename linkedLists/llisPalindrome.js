@@ -55,47 +55,76 @@ function ListNode(val) {
   this.val = val;
   this.next = null;
 }
+
+// Idea 3 with array and linked list
+// var isPalindrome = function(head) {
+//   if (!head) return true;
+//   if (Array.isArray(head)) {
+//     console.log('I am an array');
+//     for (let k = 0, h = head.length - 1; k < Math.ceil(head.length / 2); k++, h--) {
+//       console.log(`head[k] is ${head[k]} / head[h] is ${head[h]}`);
+//       if (head[k] !== head[h]) return false;
+//     }
+//     return true;
+//   }
+
+//   let node = head;
+//   let counter = 0;
+//   while (node.next) {
+//     // console.log(`counter is ${counter}`);
+//     // console.log(`node.val is ${node.val}``);
+//     counter++;
+//     node = node.next;
+//   } 
+//   console.log(`counter is ${counter}`);
+
+//   let currentNode = head;
+//   let nextCounter = counter;
+  
+//   for (let j = 0; j < Math.ceil(counter/2); j++) {
+//     let complementNode = head;
+//     console.log(`nextCounter is ${nextCounter}`);
+//     console.log(`j is ${j}`);
+
+//     for (let i = 0; i < nextCounter; i++) {
+//       complementNode = complementNode.next;
+//     }
+
+//     console.log(`currentNode.val is ${currentNode.val}`);
+//     console.log(`complementNode.val is ${complementNode.val}`);
+//     if (currentNode.val !== complementNode.val) return false;
+//     currentNode = currentNode.next;
+//     nextCounter--;
+//   }
+//   return true;
+// };
+// Idea 3 Code passes 25/26 test cases, failing on time limit
+// Time: Quadratic
+// Space: Not great...1/2 of length of linkedlist
+
 var isPalindrome = function(head) {
   if (!head) return true;
-  if (Array.isArray(head)) {
-    console.log('I am an array');
-    for (let k = 0, h = head.length - 1; k < Math.ceil(head.length / 2); k++, h--) {
-      console.log(`head[k] is ${head[k]} / head[h] is ${head[h]}`);
-      if (head[k] !== head[h]) return false;
-    }
-    return true;
-  }
-
   let node = head;
-  let counter = 0;
-  while (node.next) {
+  let array = [];
+
+  while (node) {
     // console.log(`counter is ${counter}`);
     // console.log(`node.val is ${node.val}``);
-    counter++;
+    array.push(node.val);
     node = node.next;
   } 
-  console.log(`counter is ${counter}`);
+  console.log(array);
 
-  let currentNode = head;
-  let nextCounter = counter;
-  
-  for (let j = 0; j < Math.ceil(counter/2); j++) {
-    let complementNode = head;
-    console.log(`nextCounter is ${nextCounter}`);
-    console.log(`j is ${j}`);
-
-    for (let i = 0; i < nextCounter; i++) {
-      complementNode = complementNode.next;
-    }
-
-    console.log(`currentNode.val is ${currentNode.val}`);
-    console.log(`complementNode.val is ${complementNode.val}`);
-    if (currentNode.val !== complementNode.val) return false;
-    currentNode = currentNode.next;
-    nextCounter--;
+  for (let k = 0, h = array.length - 1; k < Math.ceil(array.length / 2); k++, h--) {
+    console.log(`array[k] is ${array[k]} / array[h] is ${array[h]}`);
+    if (array[k] !== array[h]) return false;
   }
   return true;
+
 };
+// ^ Above code passes all test cases
+// Time: 1n + 1/2n = 1.5n -> Linear
+// Space: Linear
 
 let sample1 = {
   val: 'r',
@@ -169,14 +198,13 @@ let sample6 = {
     next: null
   }
 };
-let sample7 = [1, 2];
 console.log(isPalindrome(sample1)); // true
 console.log(isPalindrome(sample2)); // true
 console.log(isPalindrome(sample3)); // false
 console.log(isPalindrome(sample4)); // true?
 console.log(isPalindrome(sample5)); // true based on leetCode
 console.log(isPalindrome(sample6)); // false
-console.log(isPalindrome(sample7)); // false
+
 
 
 
