@@ -82,15 +82,22 @@ var findRobotPaths = function(n) {
       counter++;
       return;
     }
-    
-
+    // Check as visited
+    theGrid.toggleVisit(i, j);
+    // Move pieces to next places on board
+    countPaths(i, j + 1); // Right
+    countPaths(i + 1, j); // Down
+    countPaths(i, j - 1); // Left
+    countPaths(i - 1, j); // Up
+    // Toggle off as visited
+    theGrid.toggleVisit(i, j);
   }
   countPaths(0, 0);
 
   return counter;
 }
 
-// console.log(findRobotPaths(1)); // 1
+console.log(findRobotPaths(1)); // 1
 // console.log(findRobotPaths(2)); // 2
 // console.log(findRobotPaths(3)); // 12
 // console.log(findRobotPaths(4));
