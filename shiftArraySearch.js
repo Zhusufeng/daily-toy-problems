@@ -290,7 +290,20 @@ General Plan
     Return -1
 */
 function shiftedArrSearch(shiftArr, num) {
-  
+  let startPt = findStartPoint(shiftArr);
+
+  if (num > shiftArr[0]) { // Look at the left 0 to startPt - 1
+    return binarySearch(shiftArr, 0, startPt - 1, num);
+  }
+  return binarySearch(shiftArr, startPt, shiftArr.length - 1, num);
+}
+
+function findStartPoint(arr) {
+
+}
+
+function binarySearch(arr, low, high, num) {
+
 }
 
 // Tests
