@@ -186,51 +186,69 @@ General Plan
     Returns index or -1
 */
 
-function shiftedArrSearch(arr, num) {
-  const pivot = getPivotIndex(arr);
-  // console.log(pivot);
-  if (pivot === 0 || num < arr[0]) {
-    // Look right
-    return binarySearch(arr, pivot, arr.length - 1, num);
-  }
-  // Look left
-  return binarySearch(arr, 0, pivot - 1, num);
-}
+// function shiftedArrSearch(arr, num) {
+//   const pivot = getPivotIndex(arr);
+//   // console.log(pivot);
+//   if (pivot === 0 || num < arr[0]) {
+//     // Look right
+//     return binarySearch(arr, pivot, arr.length - 1, num);
+//   }
+//   // Look left
+//   return binarySearch(arr, 0, pivot - 1, num);
+// }
 
-function getPivotIndex(arr) {
-  let low = 0;
-  let high = arr.length - 1;
-  let mid = 0;
+// function getPivotIndex(arr) {
+//   let low = 0;
+//   let high = arr.length - 1;
+//   let mid = 0;
 
-  while (low <= high) {
-    mid = Math.floor((low + high) / 2);
-    if (mid === 0 || arr[mid] < arr[mid - 1]) {
-      return mid;
-    } else if (arr[mid] > arr[0]) {
-      // Look at the right
-      low = mid + 1;
-    } else {
-      // Look at the left
-      high = mid - 1;
-    }
-  }
-}
+//   while (low <= high) {
+//     mid = Math.floor((low + high) / 2);
+//     if (mid === 0 || arr[mid] < arr[mid - 1]) {
+//       return mid;
+//     } else if (arr[mid] > arr[0]) {
+//       // Look at the right
+//       low = mid + 1;
+//     } else {
+//       // Look at the left
+//       high = mid - 1;
+//     }
+//   }
+// }
 
-function binarySearch(arr, low, high, num) {
-  while (low <= high) {
-    let mid = Math.floor((high + low) / 2);
-    if (arr[mid] === num) {
-      return mid;
-    } else if (arr[mid] < num) {
-      // Look to the right
-      low = mid + 1;
-    } else {
-      // Look to the left
-      high = mid - 1;
-    }
-  }
-  return -1;
-}
+// function binarySearch(arr, low, high, num) {
+//   while (low <= high) {
+//     let mid = Math.floor((high + low) / 2);
+//     if (arr[mid] === num) {
+//       return mid;
+//     } else if (arr[mid] < num) {
+//       // Look to the right
+//       low = mid + 1;
+//     } else {
+//       // Look to the left
+//       high = mid - 1;
+//     }
+//   }
+//   return -1;
+// }
+
+// 12.23.17 Shifted Array Search
+/*
+O: Number (index of num)
+I: Array (numbers), Number
+C:
+  Time: Logarithmic
+  Space:
+E:
+  [2, 3, 0, 1], 1 => 3
+  [2, 3, 0, 1], 0 => 2
+  [2, 3, 0, 1], 2 => 0
+  [2, 3, 0, 1], 3 => 1
+  [2, 3, 0, 1], 4 => -1
+  [], 3 => -1
+  Not an array, 4 => -1
+*/
+
 
 // Tests
 console.log(shiftedArrSearch([9, 12, 17, 2, 4, 5], 9)); // 0
