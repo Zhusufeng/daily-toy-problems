@@ -270,14 +270,24 @@ General Plan
       Set mid to the sum of high plus low divided in half
       If array at mid is 0 or array at mid is less than mid - 1
         Return mid
-      If array at mid is greater than array at 0
+      If array at mid is greater than array at 0 (if midpt is greater than 1st el in arr)
         Set high to mid + 1
-      Else
-        Set low to mid - 1
+      Else (if midpt is less than 1st el in arr)
+        Move low to to mid - 1 
 
   Binary Search
-  
+    Create high equal to high
+    Create low equal to low
+    Create mid
 
+    While low is less than high
+      If array at mid equals num
+        Return mid
+      Else if array at mid is less than num [1, 2, 3, 4, 5], 4
+        Look to the right -> Low is mid + 1
+      Else if array at mid is greater than num [1, 2, 3, 4, 5], 2
+        Look to the left -> High is mid - 1
+    Return -1
 */
 function shiftedArrSearch(shiftArr, num) {
   
