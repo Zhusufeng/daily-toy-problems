@@ -102,6 +102,7 @@ function ListNode(val) {
 // Time: Quadratic
 // Space: Not great...1/2 of length of linkedlist
 
+
 // var isPalindrome = function(head) {
 //   if (!head) return true;
 //   let node = head;
@@ -123,10 +124,11 @@ function ListNode(val) {
 
 // };
 // ^ Array version
-// Time: 1n + 1/2n = 1.5n -> Linear
+// Time: Linear
 // Space: Linear
 // Runtime: 385 ms
 // Percentage Beat: 3.45%
+
 
 var isPalindrome = function(head) {
   if (!head) return true;
@@ -137,7 +139,7 @@ var isPalindrome = function(head) {
 
   // Create a doubly linked list: Linear
   while (node) {
-    console.log(`node.val is ${node.val}`);
+    // console.log(`node.val is ${node.val}`);
     // If it's the head
     if (node === head) {
       node.prev = null;
@@ -147,9 +149,9 @@ var isPalindrome = function(head) {
 
     // If we hit the end
     if (node.next === null) {
-      console.log(`you hit the end ${node.val}`);
+      // console.log(`you hit the end ${node.val}`);
       tail = node;
-      console.log(`tail is ${tail.val}`);
+      // console.log(`tail is ${tail.val}`);
       break;
     }
     // Set the prevNode
@@ -160,12 +162,12 @@ var isPalindrome = function(head) {
 
     counter++;
   } 
-  console.log(counter);
+  // console.log(counter);
   let currNode = head;
   let complementNode = tail;
 
   for (let i = 0; i < Math.ceil(counter / 2); i++) {
-    console.log(`currNode is ${currNode.val} / complementNode is ${complementNode.val}`);
+    // console.log(`currNode is ${currNode.val} / complementNode is ${complementNode.val}`);
     if (currNode.val !== complementNode.val) return false;
     currNode = currNode.next;
     complementNode = complementNode.prev;
@@ -175,28 +177,30 @@ var isPalindrome = function(head) {
 // ^ Doubly linked list version
 // Time: Linear
 // Space: Linear?
-// Runtime: 629 ms
-// Percentage Beat: 2.87% 
+// Runtime: 95 ms
+// Percentage Beat: 93.68% 
 
-var isPalindrome = function(head) {
-  if (!head) return true;
-  let node = head;
-  let arr = [];
+// var isPalindrome = function(head) {
+//   if (!head) return true;
+//   let node = head;
+//   let arr = [];
 
-  while (node) {
-    arr.push(node.val);
-    node = node.next;
-  } 
-  let len = Math.ceil(arr.length / 2);
-  let end = arr.length - 1;
-  for (let i = 0; i < len; i++) {
-    console.log(`arr[i] is ${arr[i]}, arr[end - i] is ${arr[end - i]}`);
-    if (arr[i] !== arr[end - i]) return false;
-  }
-  return true;
-
-};
+//   while (node) {
+//     arr.push(node.val);
+//     node = node.next;
+//   } 
+//   let len = Math.ceil(arr.length / 2);
+//   let end = arr.length - 1;
+//   for (let i = 0; i < len; i++) {
+//     if (arr[i] !== arr[end - i]) return false;
+//   }
+//   return true;
+// };
 // ^ Array version 2
+// Time: Linear
+// Space: Linear
+// Runtime: 106ms
+// Percentage Beat: 63.79%
 
 let sample1 = {
   val: 'r',
