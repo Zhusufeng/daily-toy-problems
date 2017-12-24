@@ -245,10 +245,27 @@ E:
   [2, 3, 0, 1], 2 => 0
   [2, 3, 0, 1], 3 => 1
   [2, 3, 0, 1], 4 => -1
+  [5, 6, 0, 1], 4 => -1
   [], 3 => -1
   Not an array, 4 => -1
-*/
 
+General Plan
+  Find where the end of the array *was*
+  Then you have 2 halves
+  Left half will be larger 
+  Right half will be smaller
+  If num is bigger than shiftedArr at 0, start on left using binary search
+  Otherwise, look in the right half using binary search
+
+  Find where end of array was
+
+
+  Binary Search
+
+*/
+function shiftedArrSearch(shiftArr, num) {
+  
+}
 
 // Tests
 console.log(shiftedArrSearch([9, 12, 17, 2, 4, 5], 9)); // 0
