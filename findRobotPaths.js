@@ -74,7 +74,7 @@ var findRobotPaths = function(n) {
 
   function countPaths(i, j) {
     // Check if coordinates are valid
-    if (i < 0 || j < 0 || i > n || j > n) return;
+    if (i < 0 || j < 0 || i >= n || j >= n) return;
     // Check if we've been at these coordinates before
     if (theGrid.hasBeenVisited(i, j)) return;
     // Check if we made it to destination
@@ -98,8 +98,8 @@ var findRobotPaths = function(n) {
 }
 
 console.log(findRobotPaths(1)); // 1
-// console.log(findRobotPaths(2)); // 2
-// console.log(findRobotPaths(3)); // 12
-// console.log(findRobotPaths(4));
+console.log(findRobotPaths(2)); // 2
+console.log(findRobotPaths(3)); // 12
+console.log(findRobotPaths(4)); // 184
 
 
