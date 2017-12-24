@@ -271,9 +271,9 @@ General Plan
       If array at mid is 0 or array at mid is less than mid - 1
         Return mid
       If array at mid is greater than array at 0 (if midpt is greater than 1st el in arr)
-        Set high to mid + 1
+        Set low to mid + 1
       Else (if midpt is less than 1st el in arr)
-        Move low to to mid - 1 
+        Move high to to mid - 1 
 
   Binary Search
     Create high equal to high
@@ -299,7 +299,21 @@ function shiftedArrSearch(shiftArr, num) {
 }
 
 function findStartPoint(arr) {
+  let high = arr.length - 1;
+  let low = 0;
+  let mid;
 
+  while(low <= high) {
+    mid = Math.floor((high + low) / 2);
+    if (mid === 0 || arr[mid] < arr[mid - 1]) {
+      return mid;
+    } else if (arr[mid] > arr[0]) { // if midpt is greater than 1st el in arr
+      low = mid + 1;
+    } else { // midpt is less than 1st el in arr
+      high = mid - 1;
+    }
+  }
+  return 0;
 }
 
 function binarySearch(arr, low, high, num) {
