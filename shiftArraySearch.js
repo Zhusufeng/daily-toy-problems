@@ -317,7 +317,18 @@ function findStartPoint(arr) {
 }
 
 function binarySearch(arr, low, high, num) {
-
+  let mid;
+  while (low < high) {
+    mid = Math.floor((low + high) / 2);
+    if (arr[mid] === num) {
+      return mid;
+    } else if (arr[mid] > num) { // [3, 4, 5, 6, 7], 4
+      high = mid - 1;
+    } else { // [3, 4, 5, 6, 7], 6
+      low = mid + 1;
+    }
+  }
+  return -1;
 }
 
 // Tests
