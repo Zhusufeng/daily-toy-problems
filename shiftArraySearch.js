@@ -292,7 +292,7 @@ General Plan
 function shiftedArrSearch(shiftArr, num) {
   let startPt = findStartPoint(shiftArr);
 
-  if (num > shiftArr[0]) { // Look at the left 0 to startPt - 1
+  if (num >= shiftArr[0]) { // Look at the left 0 to startPt - 1
     return binarySearch(shiftArr, 0, startPt - 1, num);
   }
   return binarySearch(shiftArr, startPt, shiftArr.length - 1, num);
@@ -317,14 +317,17 @@ function findStartPoint(arr) {
 }
 
 function binarySearch(arr, low, high, num) {
+  console.log(`low is ${low} / high is ${high}`);
   let mid;
-  while (low < high) {
+  while (low <=high) {
     mid = Math.floor((low + high) / 2);
     if (arr[mid] === num) {
       return mid;
     } else if (arr[mid] > num) { // [3, 4, 5, 6, 7], 4
+      // Look at the left side (low to mid - 1)
       high = mid - 1;
     } else { // [3, 4, 5, 6, 7], 6
+      // Look at the right side (mid + 1 to high)
       low = mid + 1;
     }
   }
