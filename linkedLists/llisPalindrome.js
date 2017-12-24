@@ -122,9 +122,11 @@ function ListNode(val) {
 //   return true;
 
 // };
-// ^ Above code passes all test cases
+// ^ Array version
 // Time: 1n + 1/2n = 1.5n -> Linear
 // Space: Linear
+// Runtime: 385 ms
+// Percentage Beat: 3.45%
 
 var isPalindrome = function(head) {
   if (!head) return true;
@@ -173,6 +175,28 @@ var isPalindrome = function(head) {
 // ^ Doubly linked list version
 // Time: Linear
 // Space: Linear?
+// Runtime: 629 ms
+// Percentage Beat: 2.87% 
+
+var isPalindrome = function(head) {
+  if (!head) return true;
+  let node = head;
+  let arr = [];
+
+  while (node) {
+    arr.push(node.val);
+    node = node.next;
+  } 
+  let len = Math.ceil(arr.length / 2);
+  let end = arr.length - 1;
+  for (let i = 0; i < len; i++) {
+    console.log(`arr[i] is ${arr[i]}, arr[end - i] is ${arr[end - i]}`);
+    if (arr[i] !== arr[end - i]) return false;
+  }
+  return true;
+
+};
+// ^ Array version 2
 
 let sample1 = {
   val: 'r',
