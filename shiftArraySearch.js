@@ -246,6 +246,10 @@ E:
   [2, 3, 0, 1], 3 => 1
   [2, 3, 0, 1], 4 => -1
   [5, 6, 0, 1], 4 => -1
+  [5, 6, 0, 1, 2], 4 => -1
+  [5, 6, 0, 1, 2, 3, 4], 4 => 6
+  [5, 6, 7, 8, 9, 0, 1], 4 => -1
+  [5, 6, 0], 6 => 1
   [], 3 => -1
   Not an array, 4 => -1
 
@@ -258,9 +262,21 @@ General Plan
   Otherwise, look in the right half using binary search
 
   Find where end of array was
+    Have high, set to end of array 
+    Have low, set to begin of array
+    Have mid
 
+    while low is less than or equal to high
+      Set mid to the sum of high plus low divided in half
+      If array at mid is 0 or array at mid is less than mid - 1
+        Return mid
+      If array at mid is greater than array at 0
+        Set high to mid + 1
+      Else
+        Set low to mid - 1
 
   Binary Search
+  
 
 */
 function shiftedArrSearch(shiftArr, num) {
