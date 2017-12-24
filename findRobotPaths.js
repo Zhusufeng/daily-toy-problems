@@ -68,8 +68,26 @@ var makeGrid = function(n) {
   return grid;
 };
 
-var findRobotPaths = function() {
+var findRobotPaths = function(n) {
+  let counter = 0;
+  const theGrid = makeGrid(n);
 
+  function countPaths(i, j) {
+    // Check if coordinates are valid
+    if (i < 0 || j < 0 || i > n || j > n) return;
+    // Check if we've been at these coordinates before
+    if (theGrid.hasBeenVisited(i, j)) return;
+    // Check if we made it to destination
+    if (i === n - 1 && j === n - 1) {
+      counter++;
+      return;
+    }
+    
+
+  }
+  countPaths(0, 0);
+
+  return counter;
 }
 
 // console.log(findRobotPaths(1)); // 1
