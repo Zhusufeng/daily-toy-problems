@@ -29,7 +29,7 @@ General Plan
   Create prevNode
 
   Iterate through linked list
-    If prevNode's data equals node's data
+    If prevNode is not head and prevNode's data equals node's data
       Set prevNode's next to node's next
     Else 
       Set prevNode equal to node
@@ -45,8 +45,19 @@ function Node(data) {
 }
 
 function removeDuplicates(head) {
-  // Your code goes here.
-  // Remember to return the head of the list.
+  if (!head) return head;
+  let node = head;
+  let prevNode = head;
+
+  while (node) {
+    if (prevNode !== head && prevNode.data === node.data) {
+      prevNode.next = node.next;
+    } else {
+      prevNode = node;
+    }
+    if (node.next === null) return head;
+    node = node.next;
+  }
 }
 
 let sample1 = {
@@ -56,7 +67,6 @@ let sample1 = {
     next: {
       data: 3,
       next: null
-      }
     }
   }
 };
