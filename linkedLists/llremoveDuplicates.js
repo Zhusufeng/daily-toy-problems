@@ -50,7 +50,7 @@ function removeDuplicates(head) {
   let prevNode = head;
 
   while (node) {
-    if (prevNode !== head && prevNode.data === node.data) {
+    if (prevNode.data === node.data) {
       prevNode.next = node.next;
     } else {
       prevNode = node;
@@ -119,8 +119,8 @@ let sample4 = {
     }
   }
 };
-console.log(removeDuplicates(null)); // null
-console.log(removeDuplicates(sample1)); // 3 -> null
-// console.log(removeDuplicates(sample2)); // 0 -> 1 -> 2 -> 3 -> 4 -> null
-console.log(removeDuplicates(sample3)); // 1 -> null
-// console.log(removeDuplicates(sample4)); // 1 -> 2 -> 3 -> 4 -> 5 -> null
+console.log(JSON.stringify(removeDuplicates(null), null, 2)); // null
+console.log(JSON.stringify(removeDuplicates(sample1), null, 2)); // 3 -> null
+console.log(JSON.stringify(removeDuplicates(sample2), null, 2)); // 0 -> 1 -> 2 -> 3 -> 4 -> null
+console.log(JSON.stringify(removeDuplicates(sample3), null, 2)); // 1 -> null
+console.log(JSON.stringify(removeDuplicates(sample4), null, 2)); // 1 -> 2 -> 3 -> 4 -> 5 -> null
