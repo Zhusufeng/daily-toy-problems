@@ -19,13 +19,24 @@ C:
   Space: Constant
 E:
   null                                    => null
+  1 -> null                               => 1 -> null
   3 -> 3 -> 3 -> null                     => 3 -> null
   0 -> 1 -> 2 -> 3 -> 4 -> 4 -> 4 -> null => 0 -> 1 -> 2 -> 3 -> 4 -> null
-
+  1 -> 2 -> 3 -> 4 -> 4 -> 4 -> 5 -> null => 1 -> 2 -> 3 -> 4 -> 5 -> null
 General Plan
   If head is null, return null
+  Create node equal to head
   Create prevNode
-  
+
+  Iterate through linked list
+    If prevNode's data equals node's data
+      Set prevNode's next to node's next
+    Else 
+      Set prevNode equal to node
+    If node.next equals null
+      return head
+    Set node equal to node.next
+
 */
 
 function Node(data) {
@@ -72,6 +83,34 @@ let sample2 = {
     }
   }
 };
+let sample3 = {
+  data: 1,
+  next: null
+}
+let sample4 = {
+  data: 1,
+  next: {
+    data: 2,
+    next: {
+      data: 3,
+      next: {
+        data: 4,
+        next: {
+          data: 4,
+          next: {
+            data: 4,
+            next: {
+              data: 5,
+              next: null
+            }
+          }
+        }
+      }
+    }
+  }
+};
 console.log(removeDuplicates(null)); // null
 console.log(removeDuplicates(sample1)); // 3 -> null
 // console.log(removeDuplicates(sample2)); // 0 -> 1 -> 2 -> 3 -> 4 -> null
+console.log(removeDuplicates(sample3)); // 1 -> null
+// console.log(removeDuplicates(sample4)); // 1 -> 2 -> 3 -> 4 -> 5 -> null
