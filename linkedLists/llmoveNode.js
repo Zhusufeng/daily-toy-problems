@@ -49,8 +49,11 @@ function Context(source, dest) {
 }
 
 function moveNode(source, dest) {
-  // Your code goes here.
-  // Remember to return the context.
+  if (!source) throw new Error('source is null');
+  let newHead = source.next;
+  source.next = dest;
+  dest = source;
+  source = newHead;
   return new Context(source, dest);
 }
 
@@ -80,4 +83,9 @@ dest4 = {
     data: 5,
     next: null
   }
-}
+};
+// console.log(moveNode(source1, dest1)); // err - works
+// console.log(moveNode(source1, dest2)); // err - works
+console.log(JSON.stringify(moveNode(source3, dest1), null, 2)); // s = null, dest = 1 -> null
+console.log(JSON.stringify(moveNode(source4, dest4), null, 2)); // s = 2 -> null, dest = 1 -> 4 -> 5 -> null
+
