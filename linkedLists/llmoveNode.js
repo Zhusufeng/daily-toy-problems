@@ -22,6 +22,20 @@ E:
   s = null, dest = 1 -> 2 -> null,                  throw err
   s = 1 -> null, dest = null,                       s = null, dest = 1 -> null
   s = 1 -> 2 -> null, dest = 4 -> 5 -> null         s = 2 -> null, dest = 1 -> 4 -> 5 -> null
+
+General Plan
+Idea #1
+  Set temp to source.next
+  Set source.next to dest
+  Set dest to source
+  Set source to temp
+
+Idea #2
+  If source is null, throw new Error 'source is null'
+  Set newHead to source.next 
+  Set source.next to dest
+  Set dest to source
+  Set source to newHead
 */
 
 function Node(data) {
