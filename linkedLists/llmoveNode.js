@@ -53,3 +53,31 @@ function moveNode(source, dest) {
   // Remember to return the context.
   return new Context(source, dest);
 }
+
+source1 = null;
+dest1 = null;
+dest2 = {
+  data: 1,
+  next: {
+    data: 2,
+    next: null
+  }
+};
+source3 = {
+  data: 1,
+  next: null
+};
+source4 = {
+  data: 1,
+  next: {
+    data: 2,
+    next: null
+  }
+};
+dest4 = {
+  data: 4,
+  next: {
+    data: 5,
+    next: null
+  }
+}
