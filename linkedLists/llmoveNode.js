@@ -11,6 +11,19 @@ moveNode(source, dest).source === 2 -> 3 -> null
 moveNode(source, dest).dest === 1 -> 4 -> 5 -> 6 -> null
 */
 
+/*
+O: Context Object
+I: Source linked list, destination linked list
+C:
+  Time: Constant
+  Space: Constant
+E:
+  s = null, dest = null,                            throw err
+  s = null, dest = 1 -> 2 -> null,                  throw err
+  s = 1 -> null, dest = null,                       s = null, dest = 1 -> null
+  s = 1 -> 2 -> null, dest = 4 -> 5 -> null         s = 2 -> null, dest = 1 -> 4 -> 5 -> null
+*/
+
 function Node(data) {
   this.data = data;
   this.next = null;
