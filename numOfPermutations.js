@@ -111,5 +111,6 @@ console.log(perms(115)); // 3
 console.log(perms('abc')); // 6
 console.log(perms('aabc')); // 12
 console.log(perms('aa')); // 1
-console.log(perms('ugjzxubiahf')); 
+// console.log(perms('ugjzxubiahf')); 
+// ^ may need to use tail call recursion or trampolining
 
