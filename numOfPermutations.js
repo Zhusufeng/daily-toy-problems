@@ -21,6 +21,20 @@ perms(115)==3
 perms("abc")==6
 */
 
+/*
+O: Number
+I: Number or string
+C: 
+  Time: O(n!) Factorial - Quadratic
+E: 
+  1      => 1
+  45     => 2
+  115    => 3
+  'abc'  => 6
+
+General Plan
+*/
+
 function perms(element){
   //your code here
 }
