@@ -52,7 +52,18 @@ General Plan
 */
 
 function perms(element){
-  //your code here
+  let string = element.toString();
+
+  console.log(`string is ${string}`);
+
+  function getPerms(str, part, arr) {
+
+  }
+
+  let perms = getPerms(string, '', []);
+  let permSet = new Set(perms);
+
+  return permSet.size;
 }
 
 console.log(perms(1)); // 1
