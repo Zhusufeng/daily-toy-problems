@@ -62,7 +62,7 @@ function perms(element){
       return;
     }
     for (let i = 0; i < str.length; i++) {
-      getPerms(str.slice(i), part + str[i], arr);
+      getPerms(str.slice(0, i) + str.slice(i + 1), part + str[i], arr);
     }
 
     return arr;
