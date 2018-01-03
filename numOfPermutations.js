@@ -31,8 +31,24 @@ E:
   45     => 2
   115    => 3
   'abc'  => 6
+  'aabc' => 6
 
 General Plan
+  Turn element into a string called string
+  
+  Subroutine: getPerms that takes in str, part, array
+    If str is empty
+      Push part to array
+      Return
+    Loop through str
+      Call getPerms again with str (without currentIndex), part + str at current index, array
+    Return array
+  
+  Set perms to getPerms with string, empty string, empty array
+
+  Set permSet equal to new Set of perms
+
+  Return permSet's size
 */
 
 function perms(element){
