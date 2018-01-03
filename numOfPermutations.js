@@ -57,7 +57,15 @@ function perms(element){
   console.log(`string is ${string}`);
 
   function getPerms(str, part, arr) {
+    if (!str) {
+      arr.push(part);
+      return;
+    }
+    for (let i = 0; i < str.length; i++) {
+      getPerms(str.slice(i), part + str[i], arr);
+    }
 
+    return arr;
   }
 
   let perms = getPerms(string, '', []);
