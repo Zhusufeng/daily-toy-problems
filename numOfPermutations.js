@@ -51,27 +51,44 @@ General Plan
   Return permSet's size
 */
 
+// function perms(element){
+//   let string = element.toString();
+
+//   console.log(`string is ${string}`);
+
+//   function getPerms(str, part, arr) {
+//     if (!str) {
+//       arr.push(part);
+//       return;
+//     }
+//     for (let i = 0; i < str.length; i++) {
+//       getPerms(str.slice(0, i) + str.slice(i + 1), part + str[i], arr);
+//     }
+
+//     return arr;
+//   }
+
+//   let perms = getPerms(string, '', []);
+//   let permSet = new Set(perms);
+
+//   return permSet.size;
+// }
+
 function perms(element){
   let string = element.toString();
 
-  console.log(`string is ${string}`);
-
-  function getPerms(str, part, arr) {
+  function getPerms(str, part, set) {
     if (!str) {
-      arr.push(part);
+      set.add(part);
       return;
     }
     for (let i = 0; i < str.length; i++) {
-      getPerms(str.slice(0, i) + str.slice(i + 1), part + str[i], arr);
+      getPerms(str.slice(0, i) + str.slice(i + 1), part + str[i], set);
     }
-
-    return arr;
+    return set;
   }
 
-  let perms = getPerms(string, '', []);
-  let permSet = new Set(perms);
-
-  return permSet.size;
+  return getPerms(string, '', new Set()).size;
 }
 
 console.log(perms(1)); // 1
