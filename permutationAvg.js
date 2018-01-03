@@ -31,6 +31,24 @@ return 629
 Note: Your program should be able to handle numbers up to 6 digits long
 */
 
+/*
+O: Number
+I: Number (1-6 digits)
+C: 
+  Time: Quadratic?
+  Space: Constant
+E:
+  INPUT              OUTPUT
+  2               => 2
+  25              => 39
+  20              => 11
+  737             => 629
+  0               => 0
+  12              => 17
+
+General Plan
+*/
+
 function permutationAverage(n){
   //your code here
 }
