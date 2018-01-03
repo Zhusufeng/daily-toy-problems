@@ -31,7 +31,7 @@ E:
   45     => 2
   115    => 3
   'abc'  => 6
-  'aabc' => 6
+  'aabc' => 12
 
 General Plan
   Turn element into a string called string
@@ -78,6 +78,6 @@ console.log(perms(1)); // 1
 console.log(perms(45)); // 2
 console.log(perms(115)); // 3
 console.log(perms('abc')); // 6
-console.log(perms('aabc')); // 6
-
+console.log(perms('aabc')); // 12
+console.log(perms('aa')); // 1
 
