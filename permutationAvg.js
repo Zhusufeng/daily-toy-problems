@@ -36,7 +36,7 @@ O: Number
 I: Number (1-6 digits)
 C: 
   Time: Quadratic?
-  Space: Constant
+  Space: Linear?
 E:
   INPUT              OUTPUT
   2               => 2
@@ -47,6 +47,10 @@ E:
   12              => 17
 
 General Plan
+  Keep track of permutations (Set)
+  Get permutations
+  Iterate through set to get totalSumOfPerms
+  Return totalSumOfPerms/permutations.size rounded up to the nearest integer
 */
 
 function permutationAverage(n){
