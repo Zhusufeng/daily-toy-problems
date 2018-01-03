@@ -52,9 +52,13 @@ General Plan
 */
 
 // function perms(element){
-//   let string = element.toString();
+//   let string;
 
-//   console.log(`string is ${string}`);
+//   if (typeof element !== 'string') {
+//     string = element.toString();
+//   } else {
+//     string = element;
+//   }
 
 //   function getPerms(str, part, arr) {
 //     if (!str) {
@@ -62,7 +66,8 @@ General Plan
 //       return;
 //     }
 //     for (let i = 0; i < str.length; i++) {
-//       getPerms(str.slice(0, i) + str.slice(i + 1), part + str[i], arr);
+//       let newStr = str.slice(0, i) + str.slice(i + 1);
+//       getPerms(newStr, part + str[i], arr);
 //     }
 
 //     return arr;
@@ -75,7 +80,14 @@ General Plan
 // }
 
 function perms(element){
-  let string = element.toString();
+  let string;
+
+  if (typeof element !== 'string') {
+    string = element.toString();
+  } else {
+    string = element;
+  }
+  console.log(string);
 
   function getPerms(str, part, set) {
     if (!str) {
@@ -83,12 +95,14 @@ function perms(element){
       return;
     }
     for (let i = 0; i < str.length; i++) {
-      getPerms(str.slice(0, i) + str.slice(i + 1), part + str[i], set);
+      let newStr = str.slice(0, i) + str.slice(i + 1);
+      getPerms(newStr, part + str[i], set);
     }
     return set;
   }
 
-  return getPerms(string, '', new Set()).size;
+  let perms = getPerms(string, '', new Set());
+  return perms.size;
 }
 
 console.log(perms(1)); // 1
@@ -97,4 +111,5 @@ console.log(perms(115)); // 3
 console.log(perms('abc')); // 6
 console.log(perms('aabc')); // 12
 console.log(perms('aa')); // 1
+console.log(perms('ugjzxubiahf')); 
 
