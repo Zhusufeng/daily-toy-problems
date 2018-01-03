@@ -55,3 +55,10 @@ function perms(element){
   //your code here
 }
 
+console.log(perms(1)); // 1
+console.log(perms(45)); // 2
+console.log(perms(115)); // 3
+console.log(perms('abc')); // 6
+console.log(perms('aabc')); // 6
+
+
