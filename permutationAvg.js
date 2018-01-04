@@ -74,36 +74,49 @@ Pseudocode
   Return the sum over permutations.size (rounded up to nearest integer)
 */
 
+// function permutationAverage(n){
+//   let sum = 0;
+//   n = n.toString();
+
+//   function makePermutations(str, combo = '', set = new Set()) {
+//     if (!str) {
+//       set.add(combo);
+//       return;
+//     }
+//     for (let i = 0; i < str.length; i++) {
+//       makePermutations(str.slice(0, i) + str.slice(i + 1), combo + str[i], set);
+//     } 
+//     return set;
+//   }
+//   let permutations = makePermutations(n);
+//   for (let i of permutations) {
+//     sum += parseInt(i);
+//   }
+//   let result = sum/permutations.size;
+//   if (result % 1 !== 0) {
+//     let remainder = result % 1;
+//     if (remainder < 0.5) {
+//       result = Math.floor(result);
+//     } else {
+//       result = Math.ceil(result);
+//     }
+//   }
+//   return result;
+// }
+
+
 function permutationAverage(n){
-  let sum = 0;
+  var sum = 0;
+  
   n = n.toString();
-
-  function makePermutations(str, combo = '', set = new Set()) {
-    if (!str) {
-      set.add(combo);
-      return;
-    }
-    for (let i = 0; i < str.length; i++) {
-      makePermutations(str.slice(0, i) + str.slice(i + 1), combo + str[i], set);
-    } 
-    return set;
+  for (var i = 0; i < n.length; i++) {
+    console.log('n is ', n);
+    sum += parseInt(n);
+    console.log('sum is ', sum);
+    n = n.slice(-1) + n.substring(0, n.length - 1)
   }
-  let permutations = makePermutations(n);
-  for (let i of permutations) {
-    sum += parseInt(i);
-  }
-  let result = sum/permutations.size;
-  if (result % 1 !== 0) {
-    let remainder = result % 1;
-    if (remainder < 0.5) {
-      result = Math.floor(result);
-    } else {
-      result = Math.ceil(result);
-    }
-  }
-  return result;
+  return Math.round(sum/(n.length));
 }
-
 
 console.log(permutationAverage(2)); // 2
 console.log(permutationAverage(25)); // 39
