@@ -51,6 +51,27 @@ General Plan
   Get permutations
   Iterate through set to get totalSumOfPerms
   Return totalSumOfPerms/permutations.size rounded up to the nearest integer
+
+Pseudocode
+  Set sum to 0
+
+  Turn n to string
+  Split string into array
+
+  Make subroutine makePermutations takes in arr, combo, set
+    If arr is empty
+      Add combo to set
+      Return
+    Iterate through arr (for loop)
+      Call makePermutations with arr with current index spliced out, combo + current index, set
+    Return set
+
+  Set permutations to call subroutine makePermutations with array, empty string, empty set
+
+  Iterate through permutations
+    Add each value (parsed to an integer) to sum
+
+  Return the sum over permutations.size (rounded up to nearest integer)
 */
 
 function permutationAverage(n){
