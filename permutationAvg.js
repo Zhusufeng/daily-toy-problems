@@ -92,7 +92,16 @@ function permutationAverage(n){
   for (let i of permutations) {
     sum += parseInt(i);
   }
-  return Math.ceil(sum/permutations.size);
+  let result = sum/permutations.size;
+  if (result % 1 !== 0) {
+    let remainder = result % 1;
+    if (remainder < 0.5) {
+      result = Math.floor(result);
+    } else {
+      result = Math.ceil(result);
+    }
+  }
+  return result;
 }
 
 
@@ -101,3 +110,6 @@ console.log(permutationAverage(25)); // 39
 console.log(permutationAverage(20)); // 11
 console.log(permutationAverage(737)); // 629
 console.log(permutationAverage(76853)); // 64444
+console.log(permutationAverage(97754)); // 71110
+console.log(permutationAverage(25865)); // 57777
+
