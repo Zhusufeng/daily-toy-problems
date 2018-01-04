@@ -85,9 +85,14 @@ function permutationAverage(n){
   let permutations = makePermutations(array, '', new Set());
 
   console.log(permutations);
-  
+
   for (let num of permutations) {
     sum += parseInt(num);
   }
   return Math.ceil(sum/permutations.size);
 }
+
+console.log(permutationAverage(2)); // 2
+console.log(permutationAverage(25)); // 39
+console.log(permutationAverage(20)); // 11
+console.log(permutationAverage(737)); // 629
