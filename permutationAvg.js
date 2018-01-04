@@ -78,7 +78,7 @@ function permutationAverage(n){
   let sum = 0;
   n = n.toString();
 
-  function makePermutations(str, combo, set) {
+  function makePermutations(str, combo = '', set = new Set()) {
     if (!str) {
       set.add(combo);
       return;
@@ -88,17 +88,16 @@ function permutationAverage(n){
     } 
     return set;
   }
-  let permutations = makePermutations(n, '', new Set());
-
-  console.log(permutations);
-
-  for (let num of permutations) {
-    sum += parseInt(num);
+  let permutations = makePermutations(n);
+  for (let i of permutations) {
+    sum += parseInt(i);
   }
   return Math.ceil(sum/permutations.size);
 }
+
 
 console.log(permutationAverage(2)); // 2
 console.log(permutationAverage(25)); // 39
 console.log(permutationAverage(20)); // 11
 console.log(permutationAverage(737)); // 629
+console.log(permutationAverage(76853)); // 64444
