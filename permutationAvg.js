@@ -77,12 +77,18 @@ Pseudocode
 function permutationAverage(n){
   let sum = 0;
   n = n.toString();
-  let array = n.split('');
 
-  function makePermutations(arr, combo, set) {
-
+  function makePermutations(str, combo, set) {
+    if (!str) {
+      set.add(combo);
+      return;
+    }
+    for (let i = 0; i < str.length; i++) {
+      makePermutations(str.slice(0, i) + str.slice(i + 1), combo + str[i], set);
+    } 
+    return set;
   }
-  let permutations = makePermutations(array, '', new Set());
+  let permutations = makePermutations(n, '', new Set());
 
   console.log(permutations);
 
