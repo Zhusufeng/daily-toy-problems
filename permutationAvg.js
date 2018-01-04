@@ -75,5 +75,19 @@ Pseudocode
 */
 
 function permutationAverage(n){
-  //your code here
+  let sum = 0;
+  n = n.toString();
+  let array = n.split('');
+
+  function makePermutations(arr, combo, set) {
+
+  }
+  let permutations = makePermutations(array, '', new Set());
+
+  console.log(permutations);
+  
+  for (let num of permutations) {
+    sum += parseInt(num);
+  }
+  return Math.ceil(sum/permutations.size);
 }
