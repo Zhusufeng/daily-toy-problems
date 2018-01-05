@@ -26,6 +26,11 @@ E:
 1 -> 2 -> 3 -> 4, 3 => 1 -> 2 -> 4
 1 -> 2 -> 3 -> 4, 4 => 1 -> 2 -> 3 -> 4
 1 -> 2 -> 3 -> 4, 1 => 2 -> 3 -> 4
+
+General Plan
+  If node.next is truthy
+    Replace node's val with node.next's val
+    Replace node's next with node.next's next
 */
 
 var deleteNode = function(node) {
