@@ -43,7 +43,16 @@ Output: [
 ]
 
 General Plan:
+  Create result as empty array
 
+  Create subroutine getPerms that takes in arr, subArr initialized as empty array
+    If arr is empty
+      Push subArr to arr
+      Return
+    Loop through arr
+      Call getPerms with arr.slice(0, i) + arr.slice(i + 1), subArr push arr at i
+  Call getPerms sending in nums
+  Return result  
 */
 
 var permute = function(nums) {
