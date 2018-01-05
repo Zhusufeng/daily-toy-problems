@@ -47,7 +47,7 @@ General Plan:
 
   Create subroutine getPerms that takes in arr, subArr initialized as empty array
     If arr is empty
-      Push subArr to arr
+      Push subArr to  result
       Return
     Loop through arr
       Call getPerms with arr.slice(0, i) + arr.slice(i + 1), subArr push arr at i
@@ -56,5 +56,23 @@ General Plan:
 */
 
 var permute = function(nums) {
-    
+  const result = [];
+
+  function getPerms(arr, subArr = []) {
+    if (arr.length === 0) {
+      result.push(subArr);
+      return;
+    }
+    for (let i = 0; i < arr.length; i++) {
+      let newArr = arr.slice(0, i).concat(arr.slice(i + 1));
+      subArr.push(arr[i]);
+      getPerms(newArr, subArr);
+      subArr.pop();
+      console.log('result is ', result);
+    }
+  }   
+  getPerms(nums);
+  return result;
 };
+
+console.log('result is ', permute([1, 2, 3]));
