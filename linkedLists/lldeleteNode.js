@@ -5,7 +5,7 @@ Ie.
 1 -> 2 -> 3 -> 4
 You are given the third node with the value 3
 The linked list should now look like:
-1 -> 2 -> 4
+c
 */
 
 /*
@@ -14,6 +14,18 @@ function ListNode(val) {
   this.val = val;
   this.next = null;
 }
+*/
+
+/*
+O: Nothing
+I: node
+C:
+  Time: Constant
+  Space: Constant
+E:
+1 -> 2 -> 3 -> 4, 3 => 1 -> 2 -> 4
+1 -> 2 -> 3 -> 4, 4 => 1 -> 2 -> 3 -> 4
+1 -> 2 -> 3 -> 4, 1 => 2 -> 3 -> 4
 */
 
 var deleteNode = function(node) {
