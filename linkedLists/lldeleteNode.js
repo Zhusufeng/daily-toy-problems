@@ -28,13 +28,16 @@ E:
 1 -> 2 -> 3 -> 4, 1 => 2 -> 3 -> 4
 
 General Plan
-  If node.next is truthy
+  If node.next is truthy (not the tail)
     Replace node's val with node.next's val
     Replace node's next with node.next's next
 */
 
 var deleteNode = function(node) {
-
+  if (node.next) {
+    node.val = node.next.val;
+    node.next = node.next.next;
+  }
 }
 
 function listNode(val) {
