@@ -7,3 +7,15 @@ You are given the third node with the value 3
 The linked list should now look like:
 1 -> 2 -> 4
 */
+
+/*
+Definition for singly-linked list
+function ListNode(val) {
+  this.val = val;
+  this.next = null;
+}
+*/
+
+var deleteNode = function(node) {
+
+}
