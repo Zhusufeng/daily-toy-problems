@@ -31,3 +31,20 @@ E:
 var deleteNode = function(node) {
 
 }
+
+function listNode(val) {
+  this.val = val;
+  this.next = null;
+}
+
+const node1 = new listNode(1);
+const node2 = new listNode(2);
+const node3 = new listNode(3);
+const node4 = new listNode(4);
+node1.next = node2;
+node2.next = node3;
+node3.next = node4;
+console.log(JSON.stringify(node1, null, 2));  // 1 -> 2 -> 3 -> 4
+deleteNode(node3);
+console.log(JSON.stringify(node1, null, 2));  // 1 -> 2 -> 4
+console.log(node3); // val is 4, next is null
