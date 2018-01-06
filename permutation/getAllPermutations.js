@@ -60,15 +60,12 @@ var permute = function(nums) {
 
   function getPerms(arr, subArr = []) {
     if (arr.length === 0) {
-      result.push(subArr);
+      result.push(subArr.slice());
       return;
     }
     for (let i = 0; i < arr.length; i++) {
       let newArr = arr.slice(0, i).concat(arr.slice(i + 1));
-      subArr.push(arr[i]);
-      getPerms(newArr, subArr);
-      subArr.pop();
-      console.log('result is ', result);
+      getPerms(newArr, subArr.concat(arr[i]));
     }
   }   
   getPerms(nums);
@@ -76,3 +73,7 @@ var permute = function(nums) {
 };
 
 console.log('result is ', permute([1, 2, 3]));
+console.log('result is ', permute([0]));
+console.log('result is ', permute([0,1]));
+
+
