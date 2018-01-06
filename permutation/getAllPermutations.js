@@ -55,20 +55,30 @@ General Plan:
   Return result  
 */
 
-var permute = function(nums) {
-  const result = [];
+// var permute = function(nums) {
+//   const result = [];
 
-  function getPerms(arr, subArr = []) {
-    if (arr.length === 0) {
-      result.push(subArr.slice());
-      return;
-    }
-    for (let i = 0; i < arr.length; i++) {
-      let newArr = arr.slice(0, i).concat(arr.slice(i + 1));
-      getPerms(newArr, subArr.concat(arr[i]));
-    }
-  }   
-  getPerms(nums);
+//   function getPerms(arr, subArr = []) {
+//     if (arr.length === 0) {
+//       result.push(subArr.slice());
+//       return;
+//     }
+//     for (let i = 0; i < arr.length; i++) {
+//       getPerms(arr.slice(0, i).concat(arr.slice(i + 1)), subArr.concat(arr[i]));
+//     }
+//   }   
+//   getPerms(nums);
+//   return result;
+// };
+
+var permute = function(arr, subArr = [], result = []) {
+  if (arr.length === 0) {
+    result.push(subArr.slice());
+    return;
+  }
+  for (let i = 0; i < arr.length; i++) {
+    permute(arr.slice(0, i).concat(arr.slice(i + 1)), subArr.concat(arr[i]), result);
+  }
   return result;
 };
 
