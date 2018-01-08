@@ -35,11 +35,19 @@ E:
   ]
 
   Input: 
-  ["bl", at", "ta", "lb']
+  ["bl", "at", "ta", "lb']
   Output:
   [
     ["at", "ta"],
     ["bl", "lb"]
+  ]
+
+  Input: 
+  ["bl", "bl", "ta", "lb']
+  Output:
+  [
+    ["ta"],
+    ["bl", "bl", lb"]
   ]
 
 General Plan
@@ -68,4 +76,18 @@ Idea #1
     Return result
 
 Idea #2
+  Create library set
+  Create result obj
+  Create result arr
+
+  Sort the given array
+  Go through given array
+    Split the element 'eat' -> ['e', 'a', 't']
+    Sort ['a', 'e', 't']
+    Join the temp array back to a temp string 'aet'
+    If library has this string
+      Push the element ('eat') to result obj where temp string 'aet' is the key
+    Else (library does not have string)
+      Add the temp string to library set
+      Add the temp string 'aet' as key to result obj with value as the element in an array ['eat']
 */
