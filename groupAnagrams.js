@@ -120,6 +120,7 @@ Idea #2
 
 //   return resultArr;
 // };
+// Runtime beat around 39%
 
 var groupAnagrams = function(strs) {
   const lib = new Map();
@@ -140,6 +141,7 @@ var groupAnagrams = function(strs) {
 
   return result;
 };
+// Runtime beat 82.27%
 
 console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
 console.log(groupAnagrams(["at", "ta"]));
