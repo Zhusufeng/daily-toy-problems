@@ -35,7 +35,7 @@ E:
   ]
 
   Input: 
-  ["bl", "at", "ta", "lb']
+  ["bl", "at", "ta", "lb"]
   Output:
   [
     ["at", "ta"],
@@ -97,28 +97,51 @@ Idea #2
   Return resultArr
 */
 
+// var groupAnagrams = function(strs) {
+//   const library = new Set();
+//   const resultObj = {};
+//   const resultArr = [];
+
+//   for (let i = 0; i < strs.length; i++) {
+//     let tempSplit = strs[i].split('');
+//     tempSplit.sort();
+//     let tempJoin = tempSplit.join('');
+//     if (library.has(tempJoin)) {
+//       resultObj[tempJoin].push(strs[i]);
+//     } else {
+//       library.add(tempJoin);
+//       resultObj[tempJoin] = [strs[i]];
+//     }
+//   }
+
+//   for (let key in resultObj) {
+//     resultArr.push(resultObj[key]);
+//   }
+
+//   return resultArr;
+// };
+
 var groupAnagrams = function(strs) {
-  const library = new Set();
-  const resultObj = {};
+  const library = new Map();
   const resultArr = [];
 
   for (let i = 0; i < strs.length; i++) {
-    let tempSplit = strs[i].split('');
-    tempSplit.sort();
-    let tempJoin = tempSplit.join('');
-    if (library.has(tempJoin)) {
-      resultObj[tempJoin].push(strs[i]);
+    let temp = strs[i].split('').sort().join('');
+    if (library.has(temp)) {
+      library.get(temp).push(strs[i]);
     } else {
-      library.add(tempJoin);
-      resultObj[tempJoin] = [strs[i]];
+      library.set(temp, [strs[i]]);
     }
   }
 
-  for (let key in resultObj) {
-    resultArr.push(resultObj[key]);
+  for (let val of library.values()) {
+    resultArr.push(val);
   }
 
   return resultArr;
 };
 
 console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
+console.log(groupAnagrams(["at", "ta"]));
+console.log(groupAnagrams(["bl", "at", "ta", "lb"]));
+
