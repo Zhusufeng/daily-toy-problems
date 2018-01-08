@@ -102,14 +102,10 @@ var groupAnagrams = function(strs) {
   const resultObj = {};
   const resultArr = [];
 
-  strs.sort();
-  console.log(strs);
-
   for (let i = 0; i < strs.length; i++) {
     let tempSplit = strs[i].split('');
     tempSplit.sort();
     let tempJoin = tempSplit.join('');
-    console.log(tempJoin);
     if (library.has(tempJoin)) {
       resultObj[tempJoin].push(strs[i]);
     } else {
