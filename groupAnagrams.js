@@ -122,23 +122,23 @@ Idea #2
 // };
 
 var groupAnagrams = function(strs) {
-  const library = new Map();
-  const resultArr = [];
+  const lib = new Map();
+  const result = [];
 
-  for (let i = 0; i < strs.length; i++) {
-    let temp = strs[i].split('').sort().join('');
-    if (library.has(temp)) {
-      library.get(temp).push(strs[i]);
+  strs.forEach(el => {
+    let tmp = el.split('').sort().join('');
+    if (lib.has(tmp)) {
+      lib.get(tmp).push(el);
     } else {
-      library.set(temp, [strs[i]]);
+      lib.set(tmp, [el]);
     }
-  }
+  });
 
-  for (let val of library.values()) {
-    resultArr.push(val);
-  }
+  lib.forEach(v => {
+    result.push(v);
+  });
 
-  return resultArr;
+  return result;
 };
 
 console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
