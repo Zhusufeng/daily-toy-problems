@@ -90,4 +90,39 @@ Idea #2
     Else (library does not have string)
       Add the temp string to library set
       Add the temp string 'aet' as key to result obj with value as the element in an array ['eat']
+
+  Iterate through resultObj
+    Push values of resultObj to resultArr
+
+  Return resultArr
 */
+
+var groupAnagrams = function(strs) {
+  const library = new Set();
+  const resultObj = {};
+  const resultArr = [];
+
+  strs.sort();
+  console.log(strs);
+
+  for (let i = 0; i < strs.length; i++) {
+    let tempSplit = strs[i].split('');
+    tempSplit.sort();
+    let tempJoin = tempSplit.join('');
+    console.log(tempJoin);
+    if (library.has(tempJoin)) {
+      resultObj[tempJoin].push(strs[i]);
+    } else {
+      library.add(tempJoin);
+      resultObj[tempJoin] = [strs[i]];
+    }
+  }
+
+  for (let key in resultObj) {
+    resultArr.push(resultObj[key]);
+  }
+
+  return resultArr;
+};
+
+console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
