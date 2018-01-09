@@ -48,10 +48,14 @@ Idea #2
   Return answer joined
 
 Idea #3
-
-
+  Create an empty set called answer
+  Create set2 from str2
+  Iterate through str1
+    If set2 has current el of str1
+      Add current el to answer set
+  Return spread of answer set into array
 */
 
 var commonChars = function(str1, str2) {
-  // TODO: Your code here!
+  
 };
