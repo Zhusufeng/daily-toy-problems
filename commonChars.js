@@ -7,6 +7,27 @@
 
  */
 
+/*
+O: String (in order appear in 'string1')
+I: String 1, String 2
+C: 
+  Time: Linear
+  Space: Constant?
+E:
+  'abeginotu', 'acehimosu' => 'aeiou'
+  'have', 'have' => 'have'
+  'have', 'eavh' => 'have'
+  'happy', 'happy' => 'hapy'
+  'happy', 'hapy' => 'hapy'
+  'h ave', 'h a v e' => 'have'
+  '', 'have' => ''
+  'have', '' => ''
+  'hyz', 'aetf' => ''
+  'a', 'htapttz' => 'a'
+  '123', '39612' => '123'
+  '39612', '123' => '312'
+
+*/
 
 var commonChars = function(str1, str2) {
   // TODO: Your code here!
