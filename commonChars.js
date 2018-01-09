@@ -27,6 +27,29 @@ E:
   '123', '39612' => '123'
   '39612', '123' => '312'
 
+General Plan
+
+Idea #1
+  Create a empty string called answer
+  Iterate through string1 'abeginotu'
+    For each el in string1, iterate through string2  ('a', going to go through 'acehimosu')
+      Look if string2 has 'a' ('a' , string2[i])
+        Concat string1 el to answer
+        Break
+  Return answer
+  // 2 for loops
+
+Idea #2
+  Create an empty array called answer
+  Iterate through string1 'abeginotu'
+    If current el 'a' is included inside of string2 (.includes or .contains())
+      If answer has current el inside already - No dupes - using indexOf
+        Push current el to answer
+  Return answer joined
+
+Idea #3
+
+
 */
 
 var commonChars = function(str1, str2) {
