@@ -60,6 +60,43 @@
     numerator + / + denominator
     3 + / + 4
 
+  Next hundredths with a whole number
+  Example:
+    3.75
+    Turn 3.75 to string
+    Split it by '.'
+    Save array at 0 as wholeNum (parsed) -> 3
+
+    Save array at 1 as decimal (parsed)
+    If decimal is 0
+      numerator is 1
+      denominator is 1
+    Else
+      75 is numerator
+
+      Get length of array at 1 (which is 2)
+      Create denominator, add as many 0's as the length of array at 1: 1 + 0 + 0
+      100 is denominator
+
+      Check if numerator & denominator are divisible by same num - up to denom (100)
+      1, 2, 3, 4, 5 (both divisible)
+      Divide both by 5
+      15 is numerator
+      20 is denominator
+      Check if numerator & denominator are divisible by same num - up to denom (20)
+      1, 2, 3, 4, 5 (both divisible)
+      Divide both by 5
+      3 is numerator
+      4 is denominator
+      Check if numerator & denominator are divisible by same num - up to denom (4)
+      No, then you're done
+
+      If wholeNum was not 0,
+        Multiple wholeNum and denominator  (3 * 4) & save to product
+        Add product + numerator (3 + 12) which is 15
+
+      Return numerator + / + denominator
+      15 + / + 4
 */
 var toFraction = function(num) {
 
