@@ -58,9 +58,9 @@ General Plan
     If array at midpt at 0's tolowerCase's charCode is less than array at midpt - 1 at 0's toLowerCase charCode
       Return midpt
     If array at midpt at 0's toLowerCase's charCode is greater than array at 0 at 0's toLowerCase charcode
-      Look to the right: Change low to midpt + 1
+      Look to the right: Change start to midpt + 1
     Else
-      Look to the left: Change high to midpt - 1
+      Look to the left: Change end to midpt - 1
   
   Return null
   
@@ -70,6 +70,21 @@ General Plan
 */
 
 var findPivot = function (array) {
+  let start = 0;
+  let end = array.length - 1;
+  let mid = 0;
+
+  while (start <= end) {
+    mid = Math.floor((start + end) / 2);
+
+    if (mid === 0 || array[mid].charCodeAt(0) < array[mid - 1].charCodeAt(0)) {
+      return mid;
+    } else if (array[mid].charCodeAt(0) > array[0].charCodeAt(0)) {
+      start = mid + 1;
+    } else {
+      end = mid - 1;
+    }
+  }
 
   return null;
 };
@@ -78,3 +93,11 @@ var findPivot = function (array) {
 console.log(findPivot(['dog', 'eagle', 'falcon', 'apple', 'bear', 'cat'])); // 3
 console.log(findPivot(['apple', 'bear', 'cat'])); // null
 console.log(findPivot(['cat', 'apple', 'bear'])); // 1
+
+/* Info
+ Time Complexity: Logarithmic
+ Space Complexity: Constant
+ Assumptions: 
+   Array was ordered before, and was shifted only once. 
+   Each string starts with an alphabetical character
+*/
