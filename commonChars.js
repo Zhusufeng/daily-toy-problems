@@ -57,5 +57,23 @@ Idea #3
 */
 
 var commonChars = function(str1, str2) {
-  
+  const answer = new Set();
+  const set2 = new Set(str2);
+  console.log(set2);
+
 };
+
+console.log(commonChars('abeginotu', 'acehimosu')); // 'aeiou'
+console.log(commonChars('have', 'have')); // 'have'
+console.log(commonChars('have', 'eavh')); // 'have'
+console.log(commonChars('happy', 'happy')); // 'hapy'
+console.log(commonChars('happy', 'hapy')); // 'hapy'
+console.log(commonChars('h ave', 'h a v e' )); // 'have'
+console.log(commonChars('', 'have')); // ''
+console.log(commonChars('have', '')); // ''
+console.log(commonChars('hyz', 'aetf')); // ''
+console.log(commonChars('a', 'htapttz')); // 'a'
+console.log(commonChars('123', '39612')); // '123'
+console.log(commonChars('39612', '123')); // '312'
+
+
