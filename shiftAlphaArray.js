@@ -27,16 +27,16 @@ General Plan
   Would like to use binary search...
 */
 
-var findPivot = function (array, start, end) {
-  const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+// var findPivot = function (array, start, end) {
+//   const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
   
-  for (let i = 1; i < array.length; i++) {
-    if (letters.indexOf(array[i][0]) < letters.indexOf(array[i - 1][0])) {
-      return i;
-    }
-  }
-  return null;
-};
+//   for (let i = 1; i < array.length; i++) {
+//     if (letters.indexOf(array[i][0]) < letters.indexOf(array[i - 1][0])) {
+//       return i;
+//     }
+//   }
+//   return null;
+// };
 // Info about above implementation
 /*
   Time complexity: Linear
@@ -45,11 +45,6 @@ var findPivot = function (array, start, end) {
     No nums or chars besides English alphabet in lowercase
     There is only 1 pivot (rotation) because given array was ordered before
 */
-
-// Simple Tests
-console.log(findPivot(['dog', 'eagle', 'falcon', 'apple', 'bear', 'cat'])); // 3
-console.log(findPivot(['apple', 'bear', 'cat'])); // null
-console.log(findPivot(['cat', 'apple', 'bear'])); // 1
 
 /*
   Idea 2
@@ -60,11 +55,11 @@ console.log(findPivot(['cat', 'apple', 'bear'])); // 1
   end index is length - 1
   
   While start is less than end
-    If array at midpt at 0's tolowerCase's charCode is less than start
+    If array at midpt at 0's tolowerCase's charCode is less than array at midpt - 1 at 0's toLowerCase charCode
       Return midpt
-    If array at midpt at 0's toLowerCase's charCode is greater than start's
+    If array at midpt at 0's toLowerCase's charCode is greater than array at 0 at 0's toLowerCase charcode
       Look to the right: Change low to midpt + 1
-    If array at midpt at 0's toLowerCase's charCode is less than end's
+    Else
       Look to the left: Change high to midpt - 1
   
   Return null
@@ -73,3 +68,13 @@ console.log(findPivot(['cat', 'apple', 'bear'])); // 1
     No nums or chars besides English alphabet in lowercase
     There is only 1 pivot (rotation) because given array was ordered before
 */
+
+var findPivot = function (array) {
+
+  return null;
+};
+
+// Simple Tests
+console.log(findPivot(['dog', 'eagle', 'falcon', 'apple', 'bear', 'cat'])); // 3
+console.log(findPivot(['apple', 'bear', 'cat'])); // null
+console.log(findPivot(['cat', 'apple', 'bear'])); // 1
