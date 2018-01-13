@@ -9,3 +9,26 @@
   Hint
   The brute force approach would be to generate all the permutations of the string and check each one of them whether it is a palindrome. However, an optimized approach will not require this at all.
 */
+
+/*
+  O: Boolean
+  I: String
+  C:
+    Time:
+    Space:
+  E:
+   madam -> True
+   adamm -> True
+   junk -> False
+   ada -> True
+   a -> True
+   aad -> True
+
+   General Plan
+
+*/
+
+function permuteAPalindrome (input) { 
+
+  return true;
+}
