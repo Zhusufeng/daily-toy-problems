@@ -17,15 +17,39 @@
     Time:
     Space:
   E:
-   madam -> True
-   adamm -> True
-   junk -> False
-   ada -> True
-   a -> True
-   aad -> True
+    madam -> True
+    adamm -> True
+    junk -> False
+    ada -> True
+    a -> True
+    aad -> True
 
-   General Plan
+    General Plan
+      Idea #1 - Permutation
+        Initialize permutation array as empty array
 
+        Create subroutine getPerms, takes in string, word as empty string
+          If string is empty
+            Push word to permutation array
+          Iterate through array
+            Call getPerms with string without current index, word + array at index
+        
+        Call getPerms with string
+
+        Create function checkIfPalindrome, takes in a string
+          Iterates over string
+            Checks if string at i equals string at length - 1 - i
+            If not equal 
+              Return false
+          Return true
+
+        Iterate through permutation array
+          If checkIfPalindrome with current word
+            Return true
+        
+        Return false
+
+      Idea #2 Math
 */
 
 function permuteAPalindrome (input) { 
