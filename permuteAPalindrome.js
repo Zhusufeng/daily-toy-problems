@@ -66,37 +66,62 @@
 */
 
 // Idea #1
-function permuteAPalindrome (input) { 
-  const permutation = [];
+// function permuteAPalindrome (input) { 
+//   const permutation = [];
 
-  function getPerms(str, word = '') {
-    if (!str) {
-      permutation.push(word);
-    }
-    for (let i = 0; i < str.length; i++) {
-      getPerms(str.slice(0, i) + str.slice(i + 1), word + str[i]);
+//   function getPerms(str, word = '') {
+//     if (!str) {
+//       permutation.push(word);
+//     }
+//     for (let i = 0; i < str.length; i++) {
+//       getPerms(str.slice(0, i) + str.slice(i + 1), word + str[i]);
+//     }
+//   }
+
+//   getPerms(input);
+//   // console.log(permutation);
+
+//   function checkIfPalindrome(str) {
+//     for (let j = 0; j < str.length; j++) {
+//       if (str[j] !== str[str.length - 1 - j]) {
+//         return false;
+//       }
+//     }
+//     return true;
+//   }
+
+//   for (let k = 0; k < permutation.length; k++) {
+//     if (checkIfPalindrome(permutation[k])) {
+//       return true;
+//     }
+//   }
+
+//   return false;
+// }
+
+// Idea #2
+function permuteAPalindrome(input) {
+  const tracker = {};
+  let oddCounter = 0;
+
+  for (let i = 0; i < input.length; i++) {
+    if (tracker[input[i]]) {
+      tracker[input[i]]++;
+    } else {
+      tracker[input[i]] = 1;
     }
   }
 
-  getPerms(input);
-  // console.log(permutation);
-
-  function checkIfPalindrome(str) {
-    for (let j = 0; j < str.length; j++) {
-      if (str[j] !== str[str.length - 1 - j]) {
-        return false;
-      }
-    }
-    return true;
-  }
-
-  for (let k = 0; k < permutation.length; k++) {
-    if (checkIfPalindrome(permutation[k])) {
-      return true;
+  for (let key in tracker) {
+    if (tracker[key] % 2 === 1) {
+      oddCounter++;
     }
   }
 
-  return false;
+  if (oddCounter > 1) {
+    return false;
+  }
+  return true;
 }
 
 console.log(permuteAPalindrome('abc')); // false
