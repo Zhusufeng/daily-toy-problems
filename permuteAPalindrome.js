@@ -116,11 +116,11 @@ function permuteAPalindrome(input) {
     if (tracker[key] % 2 === 1) {
       oddCounter++;
     }
+    if (oddCounter > 1) {
+      return false;
+    }
   }
-
-  if (oddCounter > 1) {
-    return false;
-  }
+  
   return true;
 }
 
