@@ -66,10 +66,28 @@ function permuteAPalindrome (input) {
   }
 
   getPerms(input);
-  console.log(permutation);
-  return true;
+  // console.log(permutation);
+
+  function checkIfPalindrome(str) {
+    for (let j = 0; j < str.length; j++) {
+      if (str[j] !== str[str.length - 1 - j]) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  for (let k = 0; k < permutation.length; k++) {
+    if (checkIfPalindrome(permutation[k])) {
+      return true;
+    }
+  }
+
+  return false;
 }
 
-console.log(permuteAPalindrome('abc'));
+console.log(permuteAPalindrome('abc')); // false
 console.log(permuteAPalindrome('madam')); // true
 console.log(permuteAPalindrome('junk')); // false
+console.log(permuteAPalindrome('racecar')); // true
+console.log(permuteAPalindrome('toyot')); // true
