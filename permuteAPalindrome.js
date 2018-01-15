@@ -50,6 +50,19 @@
         Return false
 
       Idea #2 Math
+        Create a tracker obj
+        Iterate through input
+          If obj at input at i is not there
+            Set obj at input at i to 1
+          Else
+            Increment obj at input at i plus 1
+        Create oddCounter
+        Iterate through tracker obj
+          If value is odd
+            Increment oddCounter
+        If oddCounter is greater than 1
+          Return false
+        Return true
 */
 
 // Idea #1
