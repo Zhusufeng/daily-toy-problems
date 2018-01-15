@@ -52,7 +52,24 @@
       Idea #2 Math
 */
 
+// Idea #1
 function permuteAPalindrome (input) { 
+  const permutation = [];
 
+  function getPerms(str, word = '') {
+    if (!str) {
+      permutation.push(word);
+    }
+    for (let i = 0; i < str.length; i++) {
+      getPerms(str.slice(0, i) + str.slice(i + 1), word + str[i]);
+    }
+  }
+
+  getPerms(input);
+  console.log(permutation);
   return true;
 }
+
+console.log(permuteAPalindrome('abc'));
+console.log(permuteAPalindrome('madam')); // true
+console.log(permuteAPalindrome('junk')); // false
