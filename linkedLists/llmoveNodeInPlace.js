@@ -28,6 +28,16 @@ function moveNode(source, dest) {
   // Your code goes here.
 }
 
+// Strategy
+// If source is null, throw err. If dest is null, throw err
+// Change temp to source
+// Set source to source.next
+// Change temp.next to dest
+// Set dest to temp
+
+// Time Complexity
+// Constant time
+
 let source1 = null;
 
 let dest1 = null;
