@@ -27,3 +27,29 @@ function Node(data) {
 function moveNode(source, dest) {
   // Your code goes here.
 }
+
+let source1 = null;
+
+let dest1 = null;
+
+let source2 = {
+  data: 1,
+  next: {
+    data: 2,
+    next: {
+      data: 3,
+      next: null
+    }
+  }
+};
+
+let dest2 = {
+  data: 4,
+  next: {
+    data: 5,
+    next: {
+      data: 6,
+      next: null
+    }
+  }
+};
