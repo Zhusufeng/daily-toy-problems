@@ -25,7 +25,17 @@ function Node(data) {
 }
 
 function moveNode(source, dest) {
-  // Your code goes here.
+  if (!source || !dest) throw new Error;
+  if (!source.data || !dest.data) throw new Error;
+
+  let temp = source;
+  source = source.next;
+  console.log(JSON.stringify(source, null, 2));
+
+  temp.next = dest;
+  dest = temp;
+  console.log(JSON.stringify(dest, null, 2));
+
 }
 
 // Strategy
@@ -65,5 +75,5 @@ let dest2 = {
 };
 
 console.log(moveNode(source2, dest2));
-console.log(source2);
-console.log(dest2);
+// console.log(JSON.stringify(source2, null, 2));
+// console.log(JSON.stringify(dest2, null, 2));
