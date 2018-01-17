@@ -63,3 +63,7 @@ let dest2 = {
     }
   }
 };
+
+console.log(moveNode(source2, dest2));
+console.log(source2);
+console.log(dest2);
