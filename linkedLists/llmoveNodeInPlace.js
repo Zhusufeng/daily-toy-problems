@@ -28,13 +28,23 @@ function moveNode(source, dest) {
   if (!source || !dest) throw new Error('No Source or Dest list');
   if (!source.data) throw new Error('No source.data');
 
-  let newDestNode = new Node(dest.data);
-  newDestNode.next = dest.next;
-  dest.next = newDestNode;
-  dest.data = source.data;
+  let newDestNode;
+  if (!dest.data) { // if dest is empty
+    dest.data = source.data; 
+  } else {
+    newDestNode = new Node(dest.data);
+    newDestNode.next = dest.next;
+    dest.next = newDestNode;
+    dest.data = source.data;  
+  }
 
-  source.data = source.next.data;
-  source.next = source.next.next;
+  if (source.next) { // if source has next
+    source.data = source.next.data;
+    source.next = source.next.next;
+  } else {
+    source.data = null;
+  }
+  
 }
 
 // Strategy
