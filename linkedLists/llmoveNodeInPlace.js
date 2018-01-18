@@ -28,22 +28,24 @@ function moveNode(source, dest) {
   if (!source || !dest) throw new Error;
   if (!source.data || !dest.data) throw new Error;
 
-  let temp = source;
-  source = source.next;
-  console.log(JSON.stringify(source, null, 2));
+  let newDestNode = new Node(dest.data);
+  newDestNode.next = dest.next;
+  dest.next = newDestNode;
+  dest.data = source.data;
 
-  temp.next = dest;
-  dest = temp;
-  console.log(JSON.stringify(dest, null, 2));
-
+  source.data = source.next.data;
+  source.next = source.next.next;
 }
 
 // Strategy
-// If source is null, throw err. If dest is null, throw err
-// Change temp to source
-// Set source to source.next
-// Change temp.next to dest
-// Set dest to temp
+// Dest:
+// Create new node with dest.data
+// This new node's next is dest.next
+// Insert this new node after dest
+// Get value of head in source and update dest.data
+// Source:
+// Update source's data to equal source.next.data
+// Update source's next to equal source.next.next
 
 // Time Complexity
 // Constant time
@@ -75,5 +77,5 @@ let dest2 = {
 };
 
 console.log(moveNode(source2, dest2));
-// console.log(JSON.stringify(source2, null, 2));
-// console.log(JSON.stringify(dest2, null, 2));
+console.log(JSON.stringify(source2, null, 2));
+console.log(JSON.stringify(dest2, null, 2));
