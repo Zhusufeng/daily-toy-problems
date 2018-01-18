@@ -25,8 +25,8 @@ function Node(data) {
 }
 
 function moveNode(source, dest) {
-  if (!source || !dest) throw new Error;
-  if (!source.data || !dest.data) throw new Error;
+  if (!source || !dest) throw new Error('No Source or Dest list');
+  if (!source.data) throw new Error('No source.data');
 
   let newDestNode = new Node(dest.data);
   newDestNode.next = dest.next;
@@ -76,6 +76,7 @@ let dest2 = {
   }
 };
 
+// console.log(moveNode(source1, dest1));
 console.log(moveNode(source2, dest2));
 console.log(JSON.stringify(source2, null, 2));
 console.log(JSON.stringify(dest2, null, 2));
