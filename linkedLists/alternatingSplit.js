@@ -8,7 +8,44 @@
   var list = 1 -> 2 -> 3 -> 4 -> 5 -> null
   alternatingSplit(list).first === 1 -> 3 -> 5 -> null
   alternatingSplit(list).second === 2 -> 4 -> null
+
   For simplicity, we use a Context object to store and return the state of the two linked lists. A Context object containing the two mutated lists should be returned by AlternatingSplit().
 
   If the passed in head node is null/None/nil or a single node, throw an error.
 */
+
+function Node(data) {
+  this.data = data;
+  this.next = null;
+}
+
+function Context(first, second) {
+  this.first = first;
+  this.second = second;
+}
+
+function alternatingSplit(head) {
+  // Your code goes here.
+  // Remember to return the context.
+}
+
+/*
+*/
+const example1 = {
+  data: 1,
+  next: {
+    data: 2,
+    next: {
+      data: 3,
+      next: {
+        data: 4,
+        next: {
+          data: 5,
+          next: null
+        }
+      }
+    }
+  }
+};
+
+console.log(alternatingSplit(example1));
