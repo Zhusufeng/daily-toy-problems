@@ -25,8 +25,28 @@ function Context(first, second) {
 }
 
 function alternatingSplit(head) {
-  // Your code goes here.
-  // Remember to return the context.
+  let node1 = new Node(null);
+  let first = node1;
+
+  let node2 = new Node(null);
+  let second = node2;
+
+  let counter = 1;
+
+  while (head) {
+    if (!head) break;
+    if (counter % 2 === 1) {
+      first.next = new Node(head.data);
+      first = first.next;
+    } else if (counter % 2 === 0) {
+      second.next = new Node(head.data);
+      second = second.next;
+    } 
+    counter += 1;
+    head = head.next;
+  }
+
+  return new Context(node1.next, node2.next);
 }
 
 /*
@@ -61,4 +81,4 @@ const example1 = {
   }
 };
 
-console.log(alternatingSplit(example1));
+console.log(JSON.stringify(alternatingSplit(example1), null, 2));
