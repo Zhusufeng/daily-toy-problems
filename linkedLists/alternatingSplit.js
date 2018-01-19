@@ -30,6 +30,19 @@ function alternatingSplit(head) {
 }
 
 /*
+Strategy: Iterate through linked list. While linked list
+  if odd, add to first. If even, add to second.
+  Return new Context with first and second
+
+Time Complexity: O(n) - linear - need to iterate through entire linked list
+
+function alternatingSplit(head) {
+  // Create first, second and counter starting at 1
+  // Iterate through linked list
+    // If odd, add new node to first
+    // If even, add new node to second
+  // Return new Context with first and second
+}
 */
 const example1 = {
   data: 1,
