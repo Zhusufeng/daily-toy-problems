@@ -13,3 +13,48 @@
 
   Hint. Probably the simplest strategy is to compute the length of the list, then use a for loop to hop over the right number of nodes to find the last node of the front half, and then cut the list at that point. There is a trick technique that uses two pointers to traverse the list. A "slow" pointer advances one nodes at a time, while the "fast" pointer goes two nodes at a time. When the fast pointer reaches the end, the slow pointer will be about half way. For either strategy, care is required to split the list at the right point.
 */
+
+function Node(data) {
+  this.data = data === undefined ? null : data;
+  this.next = null;
+}
+
+function frontBackSplit(source, front, back) {
+  // Your code goes here.
+}
+
+/*
+*/
+const source1 = {
+  data: 2,
+  next: {
+    data: 3,
+    next: {
+      data: 5,
+      next: {
+        data: 7,
+        next: {
+          data: 11,
+          next: null;
+        }
+      }
+    }
+  }
+};
+const front1 = {
+  data: 2,
+  next: {
+    data: 3,
+    next: {
+      data: 5,
+      next: null
+    }
+  }
+};
+const back1 = {
+  data: 7,
+  next: {
+    data: 11,
+    next: null
+  }
+};
