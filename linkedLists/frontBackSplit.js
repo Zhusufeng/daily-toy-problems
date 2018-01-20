@@ -24,6 +24,31 @@ function frontBackSplit(source, front, back) {
 }
 
 /*
+  Strategy: every1LoopCounter, copy to backList
+  every2LoopCounter goes through backList
+  Once every1LoopCounter reaches null, split backList
+
+  Big-O: O(n) - Linear because we go through the list
+  Transform Steps:
+
+  function frontBackSplit(source, front, back) {
+    let every1LoopCounter = 0;
+    let every2LoopCounter = 0;
+    let list = new Node(null);
+    front = list;
+    let source2 = source;
+    // While source or list
+      // every1LoopCounter increment
+      // Copy source to list
+      // if every1LoopCounter is even, increment every2LoopCounter
+        // list is list.next
+      // source is source.next
+      // if source is null
+        // list.next is back
+        // list.next is null
+        // break
+    // front = front.next
+  }
 */
 const source1 = {
   data: 2,
