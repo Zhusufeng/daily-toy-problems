@@ -25,6 +25,8 @@ function Context(first, second) {
 }
 
 function alternatingSplit(head) {
+  if (!head) throw new Error ('Empty list');
+
   let node1 = new Node(null);
   let first = node1;
 
@@ -34,7 +36,6 @@ function alternatingSplit(head) {
   let counter = 1;
 
   while (head) {
-    if (!head) break;
     if (counter % 2 === 1) {
       first.next = new Node(head.data);
       first = first.next;
@@ -45,6 +46,7 @@ function alternatingSplit(head) {
     counter += 1;
     head = head.next;
   }
+  if (!node2.next) throw new Error ('Single node list');
 
   return new Context(node1.next, node2.next);
 }
