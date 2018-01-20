@@ -20,7 +20,29 @@ function Node(data) {
 }
 
 function frontBackSplit(source, front, back) {
-  // Your code goes here.
+  let every1LoopCounter = 0;
+  let every2LoopCounter = 0;
+  let list = front;
+  let source2 = source;
+
+  while (source || list) {
+    every1LoopCounter += 1;
+    let newNode = new Node(source.data);
+
+    list.next = newNode;
+
+    if (every1LoopCounter % 2 === 0) {
+      every2LoopCounter += 1;
+      list = list.next;
+    } 
+    source = source.next;
+    if (!source) {
+      list.next = back;
+      list.next = null;
+      front = front.next;
+      break;
+    }
+  }
 }
 
 /*
@@ -60,13 +82,15 @@ const source1 = {
         data: 7,
         next: {
           data: 11,
-          next: null;
+          next: null
         }
       }
     }
   }
 };
-const front1 = {
+const front1 = new Node();
+const back1 = new Node();
+const frontOutput = {
   data: 2,
   next: {
     data: 3,
@@ -76,10 +100,14 @@ const front1 = {
     }
   }
 };
-const back1 = {
+const backOutput = {
   data: 7,
   next: {
     data: 11,
     next: null
   }
 };
+
+frontBackSplit(source1, front1, back1);
+console.log(JSON.stringify(front1, null, 2));
+console.log(JSON.stringify(back1, null, 2));
