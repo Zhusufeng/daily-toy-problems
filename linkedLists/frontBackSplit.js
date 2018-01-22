@@ -28,7 +28,8 @@ function frontBackSplit(source, front, back) {
 
   while (source || list) {
     if (!source) {
-      list2.next.next = back;
+      back.data = list2.next.next.data;
+      back.next = list2.next.next.next;
       list2.next.next = null;
       front.data = front.next.data;
       front.next = front.next.next;
