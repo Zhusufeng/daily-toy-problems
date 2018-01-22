@@ -23,25 +23,28 @@ function frontBackSplit(source, front, back) {
   let every1LoopCounter = 0;
   let every2LoopCounter = 0;
   let list = front;
-  let source2 = source;
+  let list2 = front;
+  // let source2 = source;
 
   while (source || list) {
+    if (!source) {
+      list2.next = back;
+      list2.next = null;
+      front = front.next;
+      break;
+    }
+
     every1LoopCounter += 1;
     let newNode = new Node(source.data);
-
+    console.log(newNode.data);
     list.next = newNode;
 
     if (every1LoopCounter % 2 === 0) {
       every2LoopCounter += 1;
-      list = list.next;
+      list2 = list2.next;
     } 
+    list = list.next;
     source = source.next;
-    if (!source) {
-      list.next = back;
-      list.next = null;
-      front = front.next;
-      break;
-    }
   }
 }
 
@@ -109,5 +112,5 @@ const backOutput = {
 };
 
 frontBackSplit(source1, front1, back1);
-console.log(JSON.stringify(front1, null, 2));
-console.log(JSON.stringify(back1, null, 2));
+console.log(JSON.stringify(front1, null, 2)); // 2 -> 3 -> 5 -> null
+console.log(JSON.stringify(back1, null, 2)); // 7 -> 11 -> null
