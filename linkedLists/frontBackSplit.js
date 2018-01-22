@@ -28,21 +28,22 @@ function frontBackSplit(source, front, back) {
 
   while (source || list) {
     if (!source) {
-      list2.next = back;
-      list2.next = null;
-      front = front.next;
+      list2.next.next = back;
+      list2.next.next = null;
+      front.data = front.next.data;
+      front.next = front.next.next;
       break;
     }
 
-    every1LoopCounter += 1;
+
     let newNode = new Node(source.data);
     console.log(newNode.data);
     list.next = newNode;
 
-    if (every1LoopCounter % 2 === 0) {
-      every2LoopCounter += 1;
+    if (every1LoopCounter % 2 === 1) {
       list2 = list2.next;
-    } 
+    }     
+    every1LoopCounter += 1;
     list = list.next;
     source = source.next;
   }
