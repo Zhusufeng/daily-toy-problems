@@ -112,7 +112,34 @@ const backOutput = {
     next: null
   }
 };
+const source2 = {
+  data: 1,
+  next: {
+    data: 3,
+    next: {
+      data: 7,
+      next: {
+        data: 8,
+        next: {
+          data: 11,
+          next: {
+            data: 12,
+            next: {
+              data: 14,
+              next: null
+            }
+          }
+        }
+      }
+    }
+  }
+};
+const front2 = new Node();
+const back2 = new Node();
 
 frontBackSplit(source1, front1, back1);
 console.log(JSON.stringify(front1, null, 2)); // 2 -> 3 -> 5 -> null
 console.log(JSON.stringify(back1, null, 2)); // 7 -> 11 -> null
+frontBackSplit(source2, front2, back2);
+console.log(JSON.stringify(front2, null, 2)); // 1-> 3 -> 7 -> 8 -> null
+console.log(JSON.stringify(back2, null, 2)); // 11 -> 12 -> 14 -> null
