@@ -20,14 +20,18 @@ function Node(data) {
 }
 
 function frontBackSplit(source, front, back) {
+  if (!source.data) {
+    throw new Error ('Source is empty');
+  }
   let every1LoopCounter = 0;
-  let every2LoopCounter = 0;
   let list = front;
   let list2 = front;
-  // let source2 = source;
 
   while (source || list) {
     if (!source) {
+      if (every1LoopCounter < 2) {
+        throw new Error ('Source has less than 2 nodes');
+      }
       back.data = list2.next.next.data;
       back.next = list2.next.next.next;
       list2.next.next = null;
@@ -136,6 +140,24 @@ const source2 = {
 };
 const front2 = new Node();
 const back2 = new Node();
+const source3 = new Node();
+const front3 = new Node();
+const back3 = new Node();
+const source4 = {
+  data: 1,
+  next: null
+};
+const front4 = new Node();
+const back4 = new Node();
+const source5 = {
+  data: 1,
+  next: {
+    data: 2,
+    next: null
+  }
+};
+const front5 = new Node();
+const back5 = new Node();
 
 frontBackSplit(source1, front1, back1);
 console.log(JSON.stringify(front1, null, 2)); // 2 -> 3 -> 5 -> null
@@ -143,3 +165,8 @@ console.log(JSON.stringify(back1, null, 2)); // 7 -> 11 -> null
 frontBackSplit(source2, front2, back2);
 console.log(JSON.stringify(front2, null, 2)); // 1-> 3 -> 7 -> 8 -> null
 console.log(JSON.stringify(back2, null, 2)); // 11 -> 12 -> 14 -> null
+// frontBackSplit(source3, front3, back3); // throw Error for empty source
+// frontBackSplit(source4, front4, back4); // throw Error for source less than 2 nodes
+frontBackSplit(source5, front5, back5);
+console.log(JSON.stringify(front5, null, 2)); // 1 ->  null
+console.log(JSON.stringify(back5, null, 2)); // 2 -> null
