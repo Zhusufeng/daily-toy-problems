@@ -23,33 +23,31 @@ function frontBackSplit(source, front, back) {
   if (!source.data) {
     throw new Error ('Source is empty');
   }
-  let every1LoopCounter = 0;
-  let list = front;
-  let list2 = front;
+  let loopCounter = 1;
+  let fastList = front;
+  let slowList = front;
 
-  while (source || list) {
+  while (source || fastList) {
     if (!source) {
-      if (every1LoopCounter < 2) {
+      if (loopCounter < 2) {
         throw new Error ('Source has less than 2 nodes');
       }
-      back.data = list2.next.next.data;
-      back.next = list2.next.next.next;
-      list2.next.next = null;
+      back.data = slowList.next.data;
+      back.next = slowList.next.next;
+      slowList.next = null;
       front.data = front.next.data;
       front.next = front.next.next;
       break;
     }
 
-
     let newNode = new Node(source.data);
-    console.log(newNode.data);
-    list.next = newNode;
+    fastList.next = newNode;
 
-    if (every1LoopCounter % 2 === 1) {
-      list2 = list2.next;
+    if (loopCounter % 2 === 1) {
+      slowList = slowList.next;
     }     
-    every1LoopCounter += 1;
-    list = list.next;
+    loopCounter += 1;
+    fastList = fastList.next;
     source = source.next;
   }
 }
