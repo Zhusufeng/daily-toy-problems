@@ -97,7 +97,6 @@ function romanize(cyrillic) {
     ' ': ' '
   };
   for (let i = 0; i < cyrillic.length; i++) {
-    console.log(hash[cyrillic[i]]);
     if (hash[cyrillic[i]]) {
       string += hash[cyrillic[i]];
     }
@@ -105,10 +104,16 @@ function romanize(cyrillic) {
   console.log(string);
   let whole = string.split(' ');
   console.log(whole);
-  // let pt1 = string[0].split('');
-  // console.log('pt 1 is ', pt1);
-  // let pt2 = string[1].split(''); // strings are immutable
-  // console.log(pt2);
+
+  let pt1 = whole[0].split('');
+  pt1[0] = pt1[0].toUpperCase();
+  console.log('pt 1 is ', pt1[0]);
+  console.log(pt1);
+  // whole[0].join('');
+  console.log(whole);
+
+  let pt2 = whole[1].split(''); // strings are immutable
+  console.log(pt2[0]);
   // Iterate through cyrillic
     // Concat the latin counterpart to string
   // Split the string on ' '
