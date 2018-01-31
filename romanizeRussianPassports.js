@@ -41,20 +41,21 @@ const input1 = 'Иван Иван';
 const output1 = 'Ivan Ivan';
 
 // Steps
-Given 'Иван Иван'
-Iterate through it 
-'i'
-'iv'
-'iva'
-...
-'ivan ivan'
-Split on the ' '
-['ivan', 'ivan']
-Capitalize arr[0][0] and arr[1][0]
-['Ivan', 'Ivan']
-Join it by ' '
-'Ivan Ivan'
+// Given 'Иван Иван'
+// Iterate through it 
+// 'i'
+// 'iv'
+// 'iva'
+// ...
+// 'ivan ivan'
+// Split on the ' '
+// ['ivan', 'ivan']
+// Capitalize arr[0][0] and arr[1][0]
+// ['Ivan', 'Ivan']
+// Join it by ' '
+// 'Ivan Ivan'
 
 // Constraints
-
+// You should follow the rules for Russian passports (2013, ICAO), which can be found on Wikipedia
+// If a capital Cyrillic letter transliterates into more than one Latin letters, only capitalize the first Latin letter. E.g. capital Cyrillic Щ becomes Shch.
 
