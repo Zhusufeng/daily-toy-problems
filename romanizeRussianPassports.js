@@ -31,17 +31,29 @@ function romanize(cyrillic) {
 
 // Strategy
 // Iterate through cyrillic string and translate it to lowercase latin alphabet (spaces push to spaces)
-// Push each character to an array, join by the ',', split on the ' ', and capitalize 1st char of each element, return it joined by the ' '
+// Concat each character to str, split on the ' ', and capitalize 1st char of each element, return it joined by the ' '
 
 // Big-O
 // Linear
 
 // Inputs & Outputs
-const input1 =;
-const output1 =;
+const input1 = 'Иван Иван';
+const output1 = 'Ivan Ivan';
 
 // Steps
-
+Given 'Иван Иван'
+Iterate through it 
+'i'
+'iv'
+'iva'
+...
+'ivan ivan'
+Split on the ' '
+['ivan', 'ivan']
+Capitalize arr[0][0] and arr[1][0]
+['Ivan', 'Ivan']
+Join it by ' '
+'Ivan Ivan'
 
 // Constraints
 
