@@ -25,7 +25,82 @@ Example output for example input: Ivan Ivanovich
 */
 
 function romanize(cyrillic) {
-  // удачи !
+  let string = '';
+
+  const hash = {
+    А: 'a',
+    а: 'a',
+    Б: 'b',
+    б: 'b',
+    В: 'v',
+    в: 'v',
+    Г: 'g',
+    г: 'g',
+    Д: 'd',
+    д: 'd',
+    Е: 'e',
+    е: 'e',
+    Ё: 'e',
+    ё: 'e',
+    Ж: 'zh',
+    ж: 'zh',
+    З: 'z',
+    з: 'z',
+    И: 'i',
+    и: 'i',
+    Й: 'i',
+    й: 'i',
+    К: 'k',
+    к: 'k',
+    Л: 'l',
+    л: 'l',
+    М: 'm',
+    м: 'm',
+    Н: 'n',
+    н: 'n',
+    О: 'o',
+    о: 'o',
+    П: 'p',
+    п: 'p',
+    Р: 'r',
+    р: 'r',
+    С: 's',
+    с: 's',
+    Т: 't',
+    т: 't',
+    У: 'u',
+    у: 'u',
+    Ф: 'f',
+    ф: 'f',
+    Х: 'kh',
+    х: 'kh',
+    Ц: 'ts',
+    ц: 'ts',
+    Ч: 'ch',
+    ч: 'ch',
+    Ш: 'sh',
+    ш: 'sh',
+    Щ: 'shch',
+    щ: 'shch',
+    Ъ: 'ie',
+    ъ: 'ie',
+    Ы: 'y',
+    ы: 'y',
+    Ь: null,
+    ь: null,
+    Э: 'e',
+    э: 'e',
+    Ю: 'iu',
+    ю: 'iu',
+    Я: 'ia',
+    я: 'ia'
+  };
+  // Create hash of cyrillic alphabet to lowercase latin counterparts
+  // Iterate through cyrillic
+    // Concat the latin counterpart to string
+  // Split the string on ' '
+  // Capitalize arr[0][0] and arr[1][0]
+  // Return string joined
 }
 
 
@@ -60,12 +135,12 @@ const output1 = 'Ivan Ivan';
 // If a capital Cyrillic letter transliterates into more than one Latin letters, only capitalize the first Latin letter. E.g. capital Cyrillic Щ becomes Shch.
 
 // Function with comments
-function romanize(cyrillic) {
-  let string = '';
-  // Create hash of cyrillic alphabet to lowercase latin counterparts
-  // Iterate through cyrillic
-    // Concat the latin counterpart to string
-  // Split the string on ' '
-  // Capitalize arr[0][0] and arr[1][0]
-  // Return string joined
-}
+// function romanize(cyrillic) {
+//   let string = '';
+//   // Create hash of cyrillic alphabet to lowercase latin counterparts
+//   // Iterate through cyrillic
+//     // Concat the latin counterpart to string
+//   // Split the string on ' '
+//   // Capitalize arr[0][0] and arr[1][0]
+//   // Return string joined
+// }
