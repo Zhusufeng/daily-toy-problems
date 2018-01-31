@@ -95,7 +95,14 @@ function romanize(cyrillic) {
     Я: 'ia',
     я: 'ia'
   };
-  // Create hash of cyrillic alphabet to lowercase latin counterparts
+  for (let i = 0; i < cyrillic.length; i++) {
+    if (hash[cyrillic]) {
+      string.concat(hash[cyrillic]);
+    }
+  }
+  string.split(' ');
+  string[0][0].toUpperCase();
+  string[1][0].toUpperCase(); // strings are immutable
   // Iterate through cyrillic
     // Concat the latin counterpart to string
   // Split the string on ' '
