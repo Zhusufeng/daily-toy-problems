@@ -93,16 +93,22 @@ function romanize(cyrillic) {
     Ю: 'iu',
     ю: 'iu',
     Я: 'ia',
-    я: 'ia'
+    я: 'ia',
+    ' ': ' '
   };
   for (let i = 0; i < cyrillic.length; i++) {
-    if (hash[cyrillic]) {
-      string.concat(hash[cyrillic]);
+    console.log(hash[cyrillic[i]]);
+    if (hash[cyrillic[i]]) {
+      string += hash[cyrillic[i]];
     }
   }
-  string.split(' ');
-  string[0][0].toUpperCase();
-  string[1][0].toUpperCase(); // strings are immutable
+  console.log(string);
+  let whole = string.split(' ');
+  console.log(whole);
+  // let pt1 = string[0].split('');
+  // console.log('pt 1 is ', pt1);
+  // let pt2 = string[1].split(''); // strings are immutable
+  // console.log(pt2);
   // Iterate through cyrillic
     // Concat the latin counterpart to string
   // Split the string on ' '
@@ -110,6 +116,7 @@ function romanize(cyrillic) {
   // Return string joined
 }
 
+console.log(romanize('Иван Иван'));
 
 // Strategy
 // Iterate through cyrillic string and translate it to lowercase latin alphabet (spaces push to spaces)
