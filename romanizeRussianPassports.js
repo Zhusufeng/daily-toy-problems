@@ -59,3 +59,13 @@ const output1 = 'Ivan Ivan';
 // You should follow the rules for Russian passports (2013, ICAO), which can be found on Wikipedia
 // If a capital Cyrillic letter transliterates into more than one Latin letters, only capitalize the first Latin letter. E.g. capital Cyrillic Щ becomes Shch.
 
+// Function with comments
+function romanize(cyrillic) {
+  let string = '';
+  // Create hash of cyrillic alphabet to lowercase latin counterparts
+  // Iterate through cyrillic
+    // Concat the latin counterpart to string
+  // Split the string on ' '
+  // Capitalize arr[0][0] and arr[1][0]
+  // Return string joined
+}
