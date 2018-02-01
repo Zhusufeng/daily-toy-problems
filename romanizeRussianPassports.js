@@ -101,20 +101,24 @@ function romanize(cyrillic) {
       string += hash[cyrillic[i]];
     }
   }
-  console.log(string);
+
   let fullName = string.split(' ');
   console.log(fullName);
 
-  let first = fullName[0].split('');
-  first[0] = first[0].toUpperCase();
-  console.log('first is ', first.join(''));
-  // fullName[0].join('');
+  // let first = fullName[0].split('');
+  // first[0] = first[0].toUpperCase();
+  // console.log('first is ', first.join(''));
 
-  let last = fullName[1].split('');
-  last[0] = last[0].toUpperCase();
-  console.log('last is ', last.join(''));
+  // let last = fullName[1].split('');
+  // last[0] = last[0].toUpperCase();
+  // console.log('last is ', last.join(''));
 
-  return first.join('') + ' ' + last.join('');
+  // return first.join('') + ' ' + last.join('');
+
+  // another method attempt
+  // Capitalize fullName[0]
+  // If indexOf space ' ' exists
+    // use that index + 1, and capitalize fullName[index + 1]
 }
 
 console.log(romanize('Иван Иван'));
