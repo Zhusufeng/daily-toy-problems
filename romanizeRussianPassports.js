@@ -127,6 +127,15 @@ function romanize(cyrillic) {
 }
 
 console.log(romanize('Иван Иван'));
+console.log(romanize('Анастасия Иванов')); // Anastasiia Ivanov
+console.log(romanize('Настя Попов')); // Nastia Popov
+console.log(romanize('Никита Смирнов')); // Nikita Smirnov
+console.log(romanize('Влад Соколов')); // Vlad Sokolov
+console.log(romanize('Ольга Кузнецова')); // Olga Kuznetsova
+console.log(romanize('Александр Васильев')); // Aleksandr Vasilev
+console.log(romanize('Цветочек Михайлов')); // Tsvetochek Mikhailov
+console.log(romanize('Дима Петров')); // Dima Petrov
+
 
 // Strategy
 // Iterate through cyrillic string and translate it to lowercase latin alphabet (spaces push to spaces)
