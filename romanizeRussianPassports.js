@@ -102,8 +102,8 @@ function romanize(cyrillic) {
     }
   }
 
-  let fullName = string.split(' ');
-  console.log(fullName);
+  // let fullName = string.split(' ');
+  // console.log(fullName);
 
   // let first = fullName[0].split('');
   // first[0] = first[0].toUpperCase();
@@ -115,10 +115,15 @@ function romanize(cyrillic) {
 
   // return first.join('') + ' ' + last.join('');
 
-  // another method attempt
-  // Capitalize fullName[0]
-  // If indexOf space ' ' exists
-    // use that index + 1, and capitalize fullName[index + 1]
+  let fullName = string.split('');
+  fullName[0] = fullName[0].toUpperCase();
+
+  let spaceIndex = fullName.indexOf(' ');
+  if (spaceIndex) {
+    fullName[spaceIndex + 1] = fullName[spaceIndex + 1].toUpperCase();
+  }
+
+  return fullName.join('');
 }
 
 console.log(romanize('Иван Иван'));
