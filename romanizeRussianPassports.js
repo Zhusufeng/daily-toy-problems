@@ -24,106 +24,102 @@ Note that the soft sign ь has no transliteration and can thus be ignored.
 Example output for example input: Ivan Ivanovich
 */
 
-function romanize(cyrillic) {
-  let string = '';
+// function romanize(cyrillic) {
+//   let string = '';
 
-  const hash = {
-    А: 'a',
-    а: 'a',
-    Б: 'b',
-    б: 'b',
-    В: 'v',
-    в: 'v',
-    Г: 'g',
-    г: 'g',
-    Д: 'd',
-    д: 'd',
-    Е: 'e',
-    е: 'e',
-    Ё: 'e',
-    ё: 'e',
-    Ж: 'zh',
-    ж: 'zh',
-    З: 'z',
-    з: 'z',
-    И: 'i',
-    и: 'i',
-    Й: 'i',
-    й: 'i',
-    К: 'k',
-    к: 'k',
-    Л: 'l',
-    л: 'l',
-    М: 'm',
-    м: 'm',
-    Н: 'n',
-    н: 'n',
-    О: 'o',
-    о: 'o',
-    П: 'p',
-    п: 'p',
-    Р: 'r',
-    р: 'r',
-    С: 's',
-    с: 's',
-    Т: 't',
-    т: 't',
-    У: 'u',
-    у: 'u',
-    Ф: 'f',
-    ф: 'f',
-    Х: 'kh',
-    х: 'kh',
-    Ц: 'ts',
-    ц: 'ts',
-    Ч: 'ch',
-    ч: 'ch',
-    Ш: 'sh',
-    ш: 'sh',
-    Щ: 'shch',
-    щ: 'shch',
-    Ъ: 'ie',
-    ъ: 'ie',
-    Ы: 'y',
-    ы: 'y',
-    Ь: null,
-    ь: null,
-    Э: 'e',
-    э: 'e',
-    Ю: 'iu',
-    ю: 'iu',
-    Я: 'ia',
-    я: 'ia',
-    ' ': ' '
-  };
-  for (let i = 0; i < cyrillic.length; i++) {
-    if (hash[cyrillic[i]]) {
-      string += hash[cyrillic[i]];
-    }
-  }
+//   const hash = {
+//     А: 'a',
+//     а: 'a',
+//     Б: 'b',
+//     б: 'b',
+//     В: 'v',
+//     в: 'v',
+//     Г: 'g',
+//     г: 'g',
+//     Д: 'd',
+//     д: 'd',
+//     Е: 'e',
+//     е: 'e',
+//     Ё: 'e',
+//     ё: 'e',
+//     Ж: 'zh',
+//     ж: 'zh',
+//     З: 'z',
+//     з: 'z',
+//     И: 'i',
+//     и: 'i',
+//     Й: 'i',
+//     й: 'i',
+//     К: 'k',
+//     к: 'k',
+//     Л: 'l',
+//     л: 'l',
+//     М: 'm',
+//     м: 'm',
+//     Н: 'n',
+//     н: 'n',
+//     О: 'o',
+//     о: 'o',
+//     П: 'p',
+//     п: 'p',
+//     Р: 'r',
+//     р: 'r',
+//     С: 's',
+//     с: 's',
+//     Т: 't',
+//     т: 't',
+//     У: 'u',
+//     у: 'u',
+//     Ф: 'f',
+//     ф: 'f',
+//     Х: 'kh',
+//     х: 'kh',
+//     Ц: 'ts',
+//     ц: 'ts',
+//     Ч: 'ch',
+//     ч: 'ch',
+//     Ш: 'sh',
+//     ш: 'sh',
+//     Щ: 'shch',
+//     щ: 'shch',
+//     Ъ: 'ie',
+//     ъ: 'ie',
+//     Ы: 'y',
+//     ы: 'y',
+//     Ь: null,
+//     ь: null,
+//     Э: 'e',
+//     э: 'e',
+//     Ю: 'iu',
+//     ю: 'iu',
+//     Я: 'ia',
+//     я: 'ia',
+//     ' ': ' '
+//   };
 
-  // let fullName = string.split(' ');
-  // console.log(fullName);
+//   for (let i = 0; i < cyrillic.length; i++) {
+//     if (hash[cyrillic[i]]) {
+//       string += hash[cyrillic[i]];
+//     }
+//   }
 
-  // let first = fullName[0].split('');
-  // first[0] = first[0].toUpperCase();
-  // console.log('first is ', first.join(''));
+//   const fullName = string.split('');
+//   fullName[0] = fullName[0].toUpperCase();
 
-  // let last = fullName[1].split('');
-  // last[0] = last[0].toUpperCase();
-  // console.log('last is ', last.join(''));
+//   const spaceIndex = fullName.indexOf(' ');
+//   if (spaceIndex) {
+//     fullName[spaceIndex + 1] = fullName[spaceIndex + 1].toUpperCase();
+//   }
 
-  // return first.join('') + ' ' + last.join('');
+//   return fullName.join('');
+// }
 
-  let fullName = string.split('');
-  fullName[0] = fullName[0].toUpperCase();
+var hash = {'а':'a','А':'A','б':'b','Б':'B','в':'v','В':'V','г':'g','Г':'G','д':'d','Д':'D','е':'e','Е':'E','ё':'e','Ё':'E','ж':'zh','Ж':'Zh','з':'z','З':'Z','и':'i','И':'I','й':'i','Й':'I','к':'k','К':'K','л':'l','Л':'L','м':'m','М':'M','н':'n','Н':'N','о':'o','О':'O','п':'p','П':'P','р':'r','Р':'R','с':'s','С':'S','т':'t','Т':'T','у':'u','У':'U','ф':'f','Ф':'F','х':'kh','Х':'Kh','ц':'ts','Ц':'Ts','ч':'ch','Ч':'Ch','ш':'sh','Ш':'Sh','щ':'shch','Щ':'Shch','ы':'y','Ы':'Y','ъ':'ie','Ъ':'Ie','э':'e','Э':'E','ю':'iu','Ю':'Iu','я':'ia','Я':'Ia',' ':' '};
 
-  let spaceIndex = fullName.indexOf(' ');
-  if (spaceIndex) {
-    fullName[spaceIndex + 1] = fullName[spaceIndex + 1].toUpperCase();
-  }
-
-  return fullName.join('');
+function romanize(cyr) {
+  return cyr.split('')
+    .map( el => hash[el])
+    .join('');
 }
 
 console.log(romanize('Иван Иван'));
