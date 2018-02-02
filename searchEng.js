@@ -1,7 +1,12 @@
 /* 
 Build a mini search engine by writing a function that takes four parameters: (1) a string, (2) a word to search for, (3) a search method and (possibly) (4) a new word.
 
-The string can contain any characters (alphanumeric and/or symbols), the words (both searchWord and newWord) can contain only letters and/or numbers and the search method can only take two numbers: 1 for searching for a specific word only and 2 for searching and replacing each occurrence of a specific word. The default search method is 1.
+The string can contain any characters (alphanumeric and/or symbols).
+The words (both searchWord and newWord) can contain only letters and/or numbers
+The search method can only take two numbers: 
+  1 - for searching for a specific word only
+  2 - for searching and replacing each occurrence of a specific word. 
+The default search method is 1.
 
 The function should return an object with two properties called matches and newString.
 
@@ -15,3 +20,7 @@ searchEng('OMG, today is Monday!','day', 1); // should return {matches: 0, newSt
 searchEng('Today is my day!','day', 2, 'birthday'); // should return {matches: 1, newString: 'Today is my birthday!'}
 searchEng('Today is my day.','day.', 2, 'birthday!'); // should return 'No valid input'
 */
+
+function searchEng(string,searchWord,searchMethod,newWord) {
+  //Write your code in here
+}
