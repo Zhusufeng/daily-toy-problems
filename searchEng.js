@@ -21,6 +21,20 @@ searchEng('Today is my day!','day', 2, 'birthday'); // should return {matches: 1
 searchEng('Today is my day.','day.', 2, 'birthday!'); // should return 'No valid input'
 */
 
+/*
+  Constraints
+    1. Input string can contain alphanumeric + symbol characters
+    2. Search word can only be letters and/or numbers
+    3. New word can only be letters and/or numbers
+    4. Search method can only take 1 number - either 1 or 2, nothing else
+
+  Strategy
+    
+  Big-O
+
+  Transformative Steps
+*/
+
 function searchEng(string,searchWord,searchMethod,newWord) {
   //Write your code in here
 }
