@@ -28,6 +28,18 @@ searchEng('Today is my day.','day.', 2, 'birthday!'); // should return 'No valid
     3. New word can only be letters and/or numbers
     4. Search method can only take 1 number - either 1 or 2, nothing else
 
+  input: 'tom Tom Tomm Tommy', 'tom', 1
+  output: matches: 1
+
+  input: 'tom Tom Tomm Tommy', 'tom', 2, 'jim'
+  output: matches: 1, newString: 'jim Tom Tomm Tommy'
+
+  input: 'tom Tom Tomm Tommy', 'thom', 2, 'jim'
+  output: matches: 0, newString: ''
+
+  input: 'tom Tom Tomm Tommy!', 'Tommy!', 1
+  output: No valid input
+
   Strategy
     
   Big-O
