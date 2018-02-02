@@ -41,10 +41,14 @@ searchEng('Today is my day.','day.', 2, 'birthday!'); // should return 'No valid
   output: No valid input
 
   Strategy
+    Check that search method, search word & new word is legit else return 'No valid input'
+    Split input string to array on spaces. Iterate through it checking if array[i] equals search word. If it does, increment matches by 1. If search method is 2, update array[i] to equal new word
     
   Big-O
+    Linear- visit each word in the array
 
   Transformative Steps
+    Given input: 'tom Tom Tomm Tommy', 'tom', 2, 'jim'
 */
 
 function searchEng(string,searchWord,searchMethod,newWord) {
