@@ -62,7 +62,7 @@ searchEng('Today is my day.','day.', 2, 'birthday!'); // should return 'No valid
 function searchEng(string, searchWord, searchMethod, newWord) {
   if (searchMethod > 2 || searchMethod < 1) return 'No valid input';
   if (!isValidWord(searchWord)) return 'No valid input';
-  if (!isValidWord(newWord)) return 'No valid input';
+  if (newWord && !isValidWord(newWord)) return 'No valid input';
 
   let match = 0;
   let newString = '';
@@ -76,19 +76,13 @@ function searchEng(string, searchWord, searchMethod, newWord) {
       }
     }
   }
-  newString = arr.join(' ');
+  if (searchMethod === 2) newString = arr.join(' ');
   return {match, newString};
 }
 
 function isValidWord(word) {
   for (let i = 0; i < word.length; i++) {
-    if (word.charCodeAt(i) < 48) {
-      return false;
-    } else if (word.charCodeAt(i) > 57 && word.charCodeAt(i) < 65) {
-      return false;
-    } else if (word.charCodeAt(i) > 90 && word.charCodeAt(i) < 97) {
-      return false;
-    } else if (word.charCodeAt(i) > 123) {
+    if (word.charCodeAt(i) < 48 || (word.charCodeAt(i) > 57 && word.charCodeAt(i) < 65) || (word.charCodeAt(i) > 90 && word.charCodeAt(i) < 97) || word.charCodeAt(i) > 123) {
       return false;
     }
   }
