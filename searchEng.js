@@ -64,20 +64,20 @@ function searchEng(string, searchWord, searchMethod, newWord) {
   if (!isValidWord(searchWord)) return 'No valid input';
   if (newWord && !isValidWord(newWord)) return 'No valid input';
 
-  let match = 0;
+  let matches = 0;
   let newString = '';
 
   const arr = string.split(' ');
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === searchWord) {
-      match += 1;
+      matches += 1;
       if (searchMethod === 2) {
         arr[i] = newWord;
       }
     }
   }
   if (searchMethod === 2) newString = arr.join(' ');
-  return {match, newString};
+  return {matches, newString};
 }
 
 function isValidWord(word) {
@@ -106,3 +106,9 @@ console.log(searchEng('tom Tom Tomm Tommy', 'tom', 2, 'jim.'));
 console.log(searchEng('tom Tom Tomm Tommy', 'tom', 2, 'jim?'));
 console.log(searchEng('tom Tom Tomm Tommy', 'tom', 2, 'jim]'));
 console.log(searchEng('tom Tom Tomm Tommy', 'tom', 2, 'jim}'));
+
+searchEng('Every day the menu changes depending on the day\'s supply. Today\'s recipes are spicy!','day',2, 'weekend')
+// {
+//   matches:2, 
+//   newString:'Every weekend the menu changes depending on the weekend\'s supply. Today\'s recipes are spicy!'
+// };
