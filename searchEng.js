@@ -95,4 +95,20 @@ function isValidWord(word) {
   return true;
 }
 
+// Test searchMethod when 1
+console.log(searchEng('tom Tom Tomm Tommy', 'tom', 1));
+console.log(searchEng('tom Tom Tomm Tommy', 'tom1', 1));
+
+// Test searchMethod when 2
 console.log(searchEng('tom Tom Tomm Tommy', 'tom', 2, 'jim'));
+console.log(searchEng('tom Tom Tomm Tommy', 'tom1', 2, 'jim'));
+console.log(searchEng('tom Tom Tomm Tommy', 'tom', 2, 'jim10'));
+
+// Test searchWord is invalid
+console.log(searchEng('tom Tom Tomm Tommy', 'tom.', 2, 'jim'));
+
+// Test newWord is invalid
+console.log(searchEng('tom Tom Tomm Tommy', 'tom', 2, 'jim.'));
+console.log(searchEng('tom Tom Tomm Tommy', 'tom', 2, 'jim?'));
+console.log(searchEng('tom Tom Tomm Tommy', 'tom', 2, 'jim]'));
+console.log(searchEng('tom Tom Tomm Tommy', 'tom', 2, 'jim}'));
