@@ -49,6 +49,11 @@ searchEng('Today is my day.','day.', 2, 'birthday!'); // should return 'No valid
 
   Transformative Steps
     Given input: 'tom Tom Tomm Tommy', 'tom', 2, 'jim'
+    Split to ['tom', 'Tom', 'Tomm', 'Tommy']
+    Iterate through array
+      If array[i] === searchWord ('tom' === 'tom')
+
+
 */
 
 function searchEng(string,searchWord,searchMethod,newWord) {
