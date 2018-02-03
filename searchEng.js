@@ -60,10 +60,11 @@ searchEng('Today is my day.','day.', 2, 'birthday!'); // should return 'No valid
 */
 
 function searchEng(string, searchWord, searchMethod, newWord) {
+  if (searchMethod !== 1 || searchMethod !== 2) return 'No valid input';
   let match = 0;
   let newString = '';
 
-  const arr = string.split('');
+  const arr = string.split(' ');
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === searchWord) {
       match += 1;
@@ -72,6 +73,8 @@ function searchEng(string, searchWord, searchMethod, newWord) {
       }
     }
   }
-  newString = arr.join('');
+  newString = arr.join(' ');
   return {match, newString};
 }
+
+console.log(searchEng('tom Tom Tomm Tommy', 'tom', 2, 'jim'));
