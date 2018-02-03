@@ -52,8 +52,11 @@ searchEng('Today is my day.','day.', 2, 'birthday!'); // should return 'No valid
     Split to ['tom', 'Tom', 'Tomm', 'Tommy']
     Iterate through array
       If array[i] === searchWord ('tom' === 'tom')
-
-
+        Increase match by 1
+        If searchMethod === 2
+          array[i] = newWord (array[i] = 'jim')
+    Set newString equal to array.join
+    return {match, newString}
 */
 
 function searchEng(string,searchWord,searchMethod,newWord) {
