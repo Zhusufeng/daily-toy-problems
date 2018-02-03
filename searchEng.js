@@ -59,6 +59,19 @@ searchEng('Today is my day.','day.', 2, 'birthday!'); // should return 'No valid
     return {match, newString}
 */
 
-function searchEng(string,searchWord,searchMethod,newWord) {
-  //Write your code in here
+function searchEng(string, searchWord, searchMethod, newWord) {
+  let match = 0;
+  let newString = '';
+
+  const arr = string.split('');
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === searchWord) {
+      match += 1;
+      if (searchMethod === 2) {
+        arr[i] = newWord;
+      }
+    }
+  }
+  newString = arr.join('');
+  return {match, newString};
 }
