@@ -70,3 +70,11 @@ const firstDuplicate = (a) => {
   }
   return -1;
 };
+
+console.log(firstDuplicate([1, 2, 2])); // 2
+console.log(firstDuplicate([2, 4, 3, 5, 1])); // -1
+console.log(firstDuplicate([1, 2, 3, 4, 2])); // 2
+console.log(firstDuplicate([1, 2, 3, 4, 4, 2])); // 4
+console.log(firstDuplicate([1, 2, 2, 1])); // 2
+console.log(firstDuplicate([1, 2, 1, 2])); // 1
+
