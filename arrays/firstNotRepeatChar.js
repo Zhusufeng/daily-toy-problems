@@ -98,3 +98,11 @@ const firstNotRepeatingCharacter = (s) => {
 
   return '_';
 };
+
+console.log(firstNotRepeatingCharacter('abacabad')); // c
+console.log(firstNotRepeatingCharacter('abacabaabacaba'));  // _
+console.log(firstNotRepeatingCharacter('abcdabcdef')); // e
+console.log(firstNotRepeatingCharacter('cccccc')); // _
+console.log(firstNotRepeatingCharacter('cccccce')); // e
+console.log(firstNotRepeatingCharacter('fgfgfhe')); // h
+
