@@ -90,16 +90,16 @@
 
 const waterBlocks = (walls) => {
   let i = 0; // pointer going left to right
-  let j = 0; // pointer going right to left
+  let j = walls.length - 1; // pointer going right to left
   let leftWall = walls[i]; // highest left wall
   let rightWall = walls[j]; // highest right wall
-  let counter = 0; // counts how much water blocks are inbetween walls
+  let counter = 0; // counts how many water blocks are inbetween walls
 
   while (i <= j) {
     leftWall = Math.max(leftWall, walls[i]);
     rightWall = Math.max(rightWall, walls[j]);
 
-    if (leftWall > rightWall) {
+    if (leftWall < rightWall) { // we want to subtract from the shortest highest wall
       counter += leftWall - walls[i];
       i += 1;
     } else {
@@ -110,3 +110,12 @@ const waterBlocks = (walls) => {
 
   return counter;
 };  
+
+console.log(waterBlocks([4, 1, 1, 5, 2, 3])); //7
+console.log(waterBlocks([1, 4, 4, 1])); //0
+console.log(waterBlocks([1, 2, 3, 4])); //0
+console.log(waterBlocks([5, 1, 1, 5])); //8
+console.log(waterBlocks([4, 1, 1, 5, 2, 3])); //7
+console.log(waterBlocks([5, 4, 1, 1, 4, 5])); //10
+console.log(waterBlocks([4, 1, 5, 2, 4])); //5
+console.log(waterBlocks([5, 1, 1, 4, 1, 5])); //13
