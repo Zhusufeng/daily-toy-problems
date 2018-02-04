@@ -22,3 +22,33 @@
   [output] char
   The first non-repeating character in s, or '_' if there are no characters that do not repeat.
 */
+
+/*
+  Inputs & Outputs
+  const input1 = 'abacabad';
+  const output1 = 'c';
+
+  const input2 = 'abacabaabacaba';
+  const output2 = '_';
+
+  const input3 = 'abcdabcdef';
+  const output3 = 'e';
+
+  const input4 = 'cccccc';
+  const output4 = '_';
+
+  const input5 = 'cccccce';
+  const output5 = 'e';
+
+  Constraints
+  1. Iterates over the string once
+  2. Uses O(1) additional memory
+
+  Strategy
+
+  Big-O
+
+  Steps
+
+  Skeleton
+*/
