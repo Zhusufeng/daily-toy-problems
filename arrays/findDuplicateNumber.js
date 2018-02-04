@@ -15,3 +15,30 @@
   For a = [2, 4, 3, 5, 1], the output should be
   firstDuplicate(a) = -1.
 */
+
+/*
+  Inputs & Outputs
+    const input1 = [2, 3, 3, 1, 5, 2];
+    const output1 = 3;
+
+    const input2 = [2, 4, 3, 5, 1];
+    const output2 = -1;
+
+    const input3 = [1, 2, 3, 4, 2];
+    const output3 = 2;  
+
+    const input4 = [1, 2, 3, 4, 4, 2];
+    const output4 = 4; 
+
+  Constraints
+
+  Strategy
+
+  Big-O
+
+  Step by Step
+
+  Skeleton
+
+
+*/
