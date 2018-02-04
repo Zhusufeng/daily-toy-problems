@@ -45,6 +45,11 @@
   2. Uses O(1) additional memory
 
   Strategy
+    #1
+    Iterate over string. Save a hashMap with the char as key and # of times it appears value. Increment value by 1 if you visit it again. Iterate over hashMap as it keeps order of insertion and return first key with val of 1
+
+    #2
+    Iterate over string. Save a hashMap with char as key and keep array as value which holds the indexes the char appears in the string. Iterate over hashMap looking for 1st key whose val (array) has length of 1
 
   Big-O
 
