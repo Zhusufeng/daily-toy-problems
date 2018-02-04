@@ -58,6 +58,14 @@
     // Iterate through a, 0 to a.length
       // If a[a[i] - 1] is negative return a[i]
       // Else a[a[i] - 1] = a[a[i] - 1] * -1
-    // Return null
+    // Return -1
   };
 */
+
+const firstDuplicate = (a) => {
+  for (let i = 0; i < a.length; i++) {
+    if (a[a[i]] < 0) return a[i];
+    a[a[i] - 1] = a[a[i] - 1] * -1; 
+  }
+  return -1;
+};
