@@ -53,6 +53,11 @@
   
 
   Skeleton
-
-
+  const firstDuplicate = (a) => {
+    // C: Time complexity: O(n) & Space complexity: O(1)
+    // Iterate through a, 0 to a.length
+      // If a[a[i] - 1] is negative return a[i]
+      // Else a[a[i] - 1] = a[a[i] - 1] * -1
+    // Return null
+  };
 */
