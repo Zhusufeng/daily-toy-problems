@@ -64,8 +64,9 @@
 
 const firstDuplicate = (a) => {
   for (let i = 0; i < a.length; i++) {
-    if (a[a[i]] < 0) return a[i];
-    a[a[i] - 1] = a[a[i] - 1] * -1; 
+    let posVal = Math.abs([a[i]]);
+    if (a[posVal - 1] < 0) return posVal;
+    a[posVal - 1] = a[posVal - 1] * -1; 
   }
   return -1;
 };
