@@ -78,7 +78,7 @@
         let i = 0; // pointer going left to right
         let j = 0; // pointer going right to left
         let leftWall = walls[i]; // highest left wall
-        let rightWall = walls[i]; // highest right wall
+        let rightWall = walls[j]; // highest right wall
         let counter = 0; // counts how much water blocks are inbetween walls
         // while i is less than or equal to j
           // check if there is a new high left or right wall
@@ -88,6 +88,25 @@
       };  
 */
 
-const waterBlocks = (blocks) => {
-  // TODO: Implement
-};
+const waterBlocks = (walls) => {
+  let i = 0; // pointer going left to right
+  let j = 0; // pointer going right to left
+  let leftWall = walls[i]; // highest left wall
+  let rightWall = walls[j]; // highest right wall
+  let counter = 0; // counts how much water blocks are inbetween walls
+
+  while (i <= j) {
+    leftWall = Math.max(leftWall, walls[i]);
+    rightWall = Math.max(rightWall, walls[j]);
+
+    if (leftWall > rightWall) {
+      counter += leftWall - walls[i];
+      i += 1;
+    } else {
+      counter += rightWall - walls[j];
+      j -= 1;
+    }
+  }
+
+  return counter;
+};  
