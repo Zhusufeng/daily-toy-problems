@@ -70,4 +70,13 @@
     key = 'c', val: 1 <-- first with val of 1, return it!
 
   Skeleton
+  const firstNotRepeatingCharacter = (s) => {
+    const hashMap = new Map();
+    // iterate over s
+      // if hashMap has key, increment value by 1
+      // else add char to hashMap as key with value of 1
+    // iterate over hashMap
+      // if val is 1, return key
+    // return '_'
+  }
 */
