@@ -31,16 +31,26 @@
     const output4 = 4; 
 
   Constraints
+    Array will have numbers between 1 to a.length
     Time complexity: O(n), Space complexity: O(1)
 
   Strategy
-    Iterate through array. For the val at array at curr index, update the matching index to a negative value of itself. If the matching index is already negative, return the index + 1, else return null 
+    Initial strategy:
+      Iterate through array and keep track of numbers that have appeared in a hash and set to true. If already in the hash, return that number.
+
+    Iterate through array. For the val at array at curr index, update the value of arr[val] to a negative value of itself. If the matching index is already negative, return arr[i], else return -1
 
   Big-O
     Time complexity: O(n), Space complexity: O(1)
 
   Step by Step
-    
+    Given [4, 2, 2, 1]
+    i = 0, arr[i] = 4, check if arr[4 - 1] is negative. It's not, so change arr[4 - 1] = arr[4 - 1] * -1
+    [4, 2, 2, -1]
+    i = 1, arr[i] = 2, check if arr[2 - 1] is negative. It's not, so change arr[2 - 1] = arr[2 - 1] * -1
+    [4, -2, 2, -1]
+    i = 2, arr[i] = 2, check if arr[2 - 1] is negative. It is! Return arr[i]
+  
 
   Skeleton
 
