@@ -25,6 +25,20 @@
     [5, 4, 1, 1, 4, 5] => 10
     [4, 1, 5, 2, 4] => 5
     [5, 1, 1, 4, 1, 5] => 13
+
+    Constraints
+      Input will only be positive integers
+
+    Strategy
+      Use two pointers, one going left to right; the other coming from right going left. 
+      Also save the highest values coming from left to the right and right to the left.
+      While the two pointers are not equal to each other, check if the left wall is higher than the right. If it is, add high left wall - current value at left pointer to counter. Otherwise add high right wall - current value at right pointer to counter.
+
+    Big-O
+
+    Steps
+
+    Skeleton
 */
 
 var waterBlocks = function (blocks) {
