@@ -61,7 +61,21 @@
     -----------------------------------------
   
   General Plan
-  
+    Create waterCount, set to 0
+    
+    Loop through array
+      Find 1stHighPt
+      Find 2ndHighPt
+        If there is no 2ndHighPt
+          There is 0 water (it all flows down)
+        Find the lower of the 2 high points
+        Iterate through the array that were inbetween the high points
+          Subtract arr[lower] - arr[i]
+          Add the difference to waterCount
+      Set 1stHighPt equal to 2ndHighPt
+      Set 2ndHighPt to null
+      Repeat
+
 */
 
 var waterBlocks = function (blocks) {
