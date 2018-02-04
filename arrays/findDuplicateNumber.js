@@ -31,12 +31,16 @@
     const output4 = 4; 
 
   Constraints
+    Time complexity: O(n), Space complexity: O(1)
 
   Strategy
+    Iterate through array. For the val at array at curr index, update the matching index to a negative value of itself. If the matching index is already negative, return the index + 1, else return null 
 
   Big-O
+    Time complexity: O(n), Space complexity: O(1)
 
   Step by Step
+    
 
   Skeleton
 
