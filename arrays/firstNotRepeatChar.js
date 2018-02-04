@@ -52,8 +52,22 @@
     Iterate over string. Save a hashMap with char as key and keep array as value which holds the indexes the char appears in the string. Iterate over hashMap looking for 1st key whose val (array) has length of 1
 
   Big-O
+    Time: Linear
+    Space: O(1)
 
   Steps
+    Given 'ababcd'. Iterate over s
+    i = 0, s[i] = 'a', add to hashMap key: 'a', val: 1
+    i = 1, s[i] = 'b', add to hashMap key: 'b', val: 1
+    i = 2, s[i] = 'a', set hashMap key: 'a', val: val + 1
+    i = 3, s[i] = 'b', set hashMap key: 'b', val: val + 1
+    i = 4, s[i] = 'c', add to hashMap key: 'c', val: 1
+    i = 5, s[i] = 'd', add to hashMap key: 'd', val: 1
+    Iterate over hashMap
+    {a: 2, b: 2, c: 1}
+    key = 'a', val: 2
+    key = 'b', val: 2
+    key = 'c', val: 1 <-- first with val of 1, return it!
 
   Skeleton
 */
