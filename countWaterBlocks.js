@@ -73,9 +73,21 @@
       return counter, which is 7
 
     Skeleton
-
+      const waterBlocks = (walls) => {
+        // Constraints: Input will only be positive integers
+        let i = 0; // pointer going left to right
+        let j = 0; // pointer going right to left
+        let leftWall = walls[i]; // highest left wall
+        let rightWall = walls[i]; // highest right wall
+        let counter = 0; // counts how much water blocks are inbetween walls
+        // while i is less than or equal to j
+          // check if there is a new high left or right wall
+          // if leftWall is higher than rightWall, add the difference of walls[i] from leftWall & increment i
+          // otherwise add the difference of walls[j] from rightWall & decrement j
+        return counter;
+      };  
 */
 
-var waterBlocks = function (blocks) {
+const waterBlocks = (blocks) => {
   // TODO: Implement
 };
