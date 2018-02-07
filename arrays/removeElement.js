@@ -15,3 +15,25 @@
 var removeElement = function(nums, val) {
     
 };
+/*
+Inputs & Outputs
+const input1a = [3,2,2,3];
+const input1b = 3;
+const output1 = 2;
+
+const input2a = [0, 1, 2, 3];
+const input2b = 2;
+const output2 = 3;
+
+const input3a = [0];
+const input3b = 0;
+const output3 = 0;
+
+const input4a = [0, 1, 2];
+const input4b = 5;
+const output4 = 3;
+
+const input5a = [];
+const input5b = 5;
+const output5 = 0;
+*/
