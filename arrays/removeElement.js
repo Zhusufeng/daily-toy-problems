@@ -69,4 +69,14 @@ Steps
   Return array.length => 3
 
 Skeleton
+  const removeElement = (nums, val) => {
+    // Constraints: Linear Time; Constant Space
+    // Sort nums
+    // Iterate thru nums
+      // if nums[i] is val
+        // if startPt is not truthy, set startPt to i
+        // set endPt to i
+    // Splice startPt to endPt out of array
+    // Return array.length
+  };
 */
