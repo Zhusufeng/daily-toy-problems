@@ -52,6 +52,21 @@ Constraints
   Space: Constant O(1)/ Make updates in place to array
 
 Steps
+  Given [3, 1, 2, 2, 2, 0] and 2
+  Sort it -> [0, 1, 2, 2, 2, 3]
+  i = 0, 0 !== 2
+  i = 1, 1 !== 2
+  i = 2, 2 === 2
+    startPt was null, startPt = i = 2
+    endPt was null, endPt = i = 2
+  i = 3, 2 === 2
+    endPt = i = 3
+  i = 4, 2 === 2
+    endPt = i = 4
+  i = 5, 3 ! == 2
+  Splice startPt to endPt from array
+  Array is now [0, 1, 3]
+  Return array.length => 3
 
 Skeleton
 */
