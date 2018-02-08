@@ -12,9 +12,34 @@
   Your function should return length = 2, with the first two elements of nums being 2.
 */
 
-var removeElement = function(nums, val) {
-    
+const removeElement = (nums, val) => {
+  // Constraints: Linear Time; Constant Space
+  let startPt;
+  let endPt;
+  nums.sort();
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] === val){
+      if (!startPt) {
+        startPt = i;
+      }
+      endPt = i;
+    }
+  }
+
+  const diff = endPt - startPt;
+  nums.splice(startPt, diff + 1);
+
+  console.log(nums);
+
+  return nums.length;
 };
+
+console.log(removeElement([3, 2, 2, 3], 3)); // 2
+console.log(removeElement([3, 1, 2, 2, 2, 0], 2)); // 3
+console.log(removeElement([1, 1, 1], 1)); // 0
+
+
 /*
 Inputs & Outputs
   const input1a = [3,2,2,3];
