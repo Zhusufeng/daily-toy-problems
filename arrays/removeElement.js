@@ -14,23 +14,20 @@
 
 const removeElement = (nums, val) => {
   // Constraints: Linear Time; Constant Space
-  let startPt;
+  let startPt = null;
   let endPt;
   nums.sort();
 
   for (let i = 0; i < nums.length; i++) {
     if (nums[i] === val){
-      if (!startPt) {
+      if (startPt === null) {
         startPt = i;
       }
       endPt = i;
     }
   }
-
   const diff = endPt - startPt;
   nums.splice(startPt, diff + 1);
-
-  console.log(nums);
 
   return nums.length;
 };
