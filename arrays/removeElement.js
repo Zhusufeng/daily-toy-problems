@@ -13,7 +13,6 @@
 */
 
 const removeElement = (nums, val) => {
-  // Constraints: Linear Time; Constant Space
   let startPt = null;
   let endPt;
   nums.sort();
@@ -26,8 +25,7 @@ const removeElement = (nums, val) => {
       endPt = i;
     }
   }
-  const diff = endPt - startPt;
-  nums.splice(startPt, diff + 1);
+  nums.splice(startPt, (endPt - startPt) + 1);
 
   return nums.length;
 };
@@ -35,6 +33,17 @@ const removeElement = (nums, val) => {
 console.log(removeElement([3, 2, 2, 3], 3)); // 2
 console.log(removeElement([3, 1, 2, 2, 2, 0], 2)); // 3
 console.log(removeElement([1, 1, 1], 1)); // 0
+
+// Faster solution 79 ms on leetcode
+var removeElement = function(nums, val) {
+    for(var i = nums.length - 1; i >= 0; i--){
+        if(nums[i] === val){
+            nums.splice(i, 1);
+        }
+    }
+};
+
+// There's solution where it's not required to remove elements but only count
 
 
 /*
