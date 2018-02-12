@@ -4,6 +4,33 @@
   You may assume that the array is non-empty and the majority element always exist in the array.
 */
 
+const majorityElement = (nums) => {
+  const hash = {};
+  for (let i = 0; i < nums.length; i++) {
+    if (hash[nums[i]]) {
+      hash[nums[i]]++;
+    } else {
+      hash[nums[i]] = 1;
+    }
+  }
+
+  console.log(JSON.stringify(hash), null, 2);
+
+  const majorityVal = nums.length/2;
+  let greaterVal = majorityVal;
+  let majorityEl = null;
+
+  console.log(majorityVal);
+
+  for (key in hash) {
+    if (hash[key] > majorityVal && hash[key] > greaterVal) {
+      greaterVal = hash[key];
+      majorityEl = key;
+    }
+  }
+  return majorityEl;
+};
+
 /*
   Inputs and Outputs
     const input1 = [6, 5, 5, 5, 5, 5, 5, 5, 6]
