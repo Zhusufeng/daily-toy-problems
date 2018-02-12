@@ -14,7 +14,7 @@ const majorityElement = (nums) => {
     }
   }
 
-  console.log(JSON.stringify(hash), null, 2);
+  console.log(JSON.stringify(hash, null, 2));
 
   const majorityVal = nums.length/2;
   let greaterVal = majorityVal;
@@ -28,8 +28,15 @@ const majorityElement = (nums) => {
       majorityEl = key;
     }
   }
-  return majorityEl;
+  return parseInt(majorityEl);
 };
+
+console.log(majorityElement([6, 5, 5, 5, 5, 6])); // 5
+console.log(majorityElement([6, 5, 5, 5, 5, 5, 5, 5, 6])); // 5
+
+console.log(majorityElement([5, 5, 5, 5, 5, 6, 6, 6, 6])); // 5
+
+
 
 /*
   Inputs and Outputs
