@@ -66,7 +66,17 @@
   
   Skeleton
     const majorityElement = (nums) => {
-      // The array is non-empty
-      // The majority element always exist in the array
+      // Constraint: The array is non-empty
+      // Constraint: The majority element always exist in the array
+      const hash = {};
+      // Iterate thru nums
+        // if hash[nums[i]], increment it by 1
+        // else create it and set to 1
+      const majorityVal = nums.length/2;
+      let greaterVal = majorityVal;
+      let majorityEl = null;
+      // Iterate thru hash
+        // if hash[key] > majorityVal & greater, set greaterVal to hash[key], set majorityEl to key
+      return majorityEl;
     };
 */
