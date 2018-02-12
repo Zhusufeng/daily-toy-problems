@@ -40,15 +40,30 @@
     Iterate through the array and create a hash & count their instances. Find n/2. Iterate over hash to find majority (which is n/2 > majority)
 
   Big-O
-
-
+    Time: Linear
+    Space: Constant
 
   Constraints
     The array is non-empty
     The majority element always exist in the array
 
   Steps
-
+    Given [5, 5, 5, 5, 5, 6, 6, 6, 6]. Create hash
+    i = 0 hash = { 5: 1 }
+    i = 1 hash = { 5: 2 }
+    i = 2 hash = { 5: 3 }
+    i = 3 hash = { 5: 4 }
+    i = 4 hash = { 5: 5 }
+    i = 5 hash = { 5: 5, 6: 1 }
+    i = 6 hash = { 5: 5, 6: 2 }
+    i = 7 hash = { 5: 5, 6: 3 }
+    i = 8 hash = { 5: 5, 6: 4 }
+    Find n/2. n = 9. n/2 = 4.5.
+    Iterate thru hash to find key with value greater than n/2 & is the greatest
+    key = 5 val = 5, 5 > 4.5 Yes, set majority = val
+    key = 6 val = 4, 4 < 4.5 
+    Return 5  
+  
   Skeleton
     const majorityElement = (nums) => {
       // The array is non-empty
