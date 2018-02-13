@@ -29,7 +29,7 @@
 
   Look at first row -> rotated first row
   before -> rotated
-  [m][n] 
+  [m][n] -> [b][c]
   [0][0] -> [0][3]   m + 0, n + 3 
   [0][1] -> [1][3]   m + 1, n + 2
   [0][2] -> [2][3]   m + 2, n + 1
@@ -51,8 +51,14 @@
   [3][3] -> [3][0]   m + 0, n - 3
 
   pattern:
-    n becomes m when rotated
-    if m was 0, n will be matrix.length - 1 and decrement
+    len = matrix.length - 1
+    b: will be n index  
+    c: if m was 0, c will be matrix.length - 1 and decrement
+       if m was 1, c will be matrix.length - 1 - 1
+       if m was 2, c will be matrix.length - 1 - 1 - 1
+       if m was 3, c will be matrix.length - 1 - 1 - 1 - 1
+       aka m starts at 0 with len and decrement len by 1
+    Now get matrix[b][c] = rotatedMatrix[b][c]
     
 
 
