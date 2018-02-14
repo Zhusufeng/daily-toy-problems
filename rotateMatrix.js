@@ -58,7 +58,7 @@
        if m was 2, c will be matrix.length - 1 - 1 - 1
        if m was 3, c will be matrix.length - 1 - 1 - 1 - 1
        aka m starts at 0 with len and decrement len by 1
-    Now get matrix[b][c] = rotatedMatrix[b][c]
+    Now get matrix[m][n] = rotatedMatrix[b][c]
     
   strategy
     Make a new array called rotatedMatrix. Iterate thru matrix based on using indexes m and n. Return rotatedMatrix
@@ -68,9 +68,34 @@
     space: Constant (in relation to the original input)
 
   steps
+    Given [
+      [1, 2, 3],
+      [4, 5, 6].
+      [7, 8, 9]
+    ]
+      m = 0, n = 0 
+      m = 0, n = 1
+      m = 0, n = 2
+      m = 1, n = 0
+      m = 1, n = 1
+      m = 1, n = 2
+      m = 2, n = 0
+      m = 2, n = 1
+      m = 2, n = 2
+
+    Return
+    [
+      [7, 4, 1],
+      [8, 5, 2],
+      [9, 6, 3]
+    ]
+        
 
   skeleton
-
+  const rotateMatrix = function(matrix) {
+      Iterate over matrix via index m
+      Iterate over matrix[m] via index n
+  };
 
 */
 
