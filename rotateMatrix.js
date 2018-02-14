@@ -60,7 +60,16 @@
        aka m starts at 0 with len and decrement len by 1
     Now get matrix[b][c] = rotatedMatrix[b][c]
     
+  strategy
+    Make a new array called rotatedMatrix. Iterate thru matrix based on using indexes m and n. Return rotatedMatrix
 
+  big-o
+    time: Linear
+    space: Constant (in relation to the original input)
+
+  steps
+
+  skeleton
 
 
 */
