@@ -109,6 +109,18 @@
 
 */
 
-var rotateMatrix = function(matrix) {
+const rotateMatrix = matrix => {
+  const len = matrix.length - 1;
+  let c = len;
+  const rotateMatrix = [];
   
+  for (let m = 0; m < matrix.length; m++) {
+    for (let n = 0; n < matrix[m].length; n++) {
+      let b = n;
+      matrix[m][n] = rotatedMatrix[b][c];
+    }
+    c -= 1;
+  }
+
+  return rotatedMatrix;  
 };
