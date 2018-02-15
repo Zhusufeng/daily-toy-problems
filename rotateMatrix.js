@@ -73,15 +73,18 @@
       [4, 5, 6].
       [7, 8, 9]
     ]
-      m = 0, n = 0 
-      m = 0, n = 1
-      m = 0, n = 2
-      m = 1, n = 0
-      m = 1, n = 1
-      m = 1, n = 2
-      m = 2, n = 0
-      m = 2, n = 1
-      m = 2, n = 2
+    len = matrix.length - 1 = 2
+    m = 0, n = 0, b = n, c = len, matrix[m][n] aka 1 = rotatedMatrix[0][2]
+    m = 0, n = 1, b = n, c = len, matrix[m][n] aka 2 = rotatedMatrix[1][2]
+    m = 0, n = 2, b = n, c = len, matrix[m][n] aka 3 = rotatedMatrix[2][2]
+    len = len - 1 = 1
+    m = 1, n = 0, b = n, c = len, matrix[m][n] aka 4 = rotatedMatrix[0][1]
+    m = 1, n = 1, b = n, c = len, matrix[m][n] aka 5 = rotatedMatrix[1][1]
+    m = 1, n = 2, b = n, c = len, matrix[m][n] aka 6 = rotatedMatrix[2][1]
+    len = len - 1 = 0
+    m = 2, n = 0, b = n, c = len, matrix[m][n] aka 7 = rotatedMatrix[0][0]
+    m = 2, n = 1, b = n, c = len, matrix[m][n] aka 8 = rotatedMatrix[1][0]
+    m = 2, n = 2, b = n, c = len, matrix[m][n] aka 9 = rotatedMatrix[2][0]
 
     Return
     [
