@@ -96,8 +96,15 @@
 
   skeleton
   const rotateMatrix = function(matrix) {
-      Iterate over matrix via index m
-      Iterate over matrix[m] via index n
+    const len = matrix.length - 1;
+    let c = len;
+    const rotateMatrix = [];
+    // Iterate over matrix via index m
+      // Iterate over matrix[m] via index n
+        // Set b = n
+        // Set matrix[m][n] = rotatedMatrix[b][c] 
+      // Decrement c by 1
+    return rotatedMatrix;
   };
 
 */
