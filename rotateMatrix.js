@@ -112,11 +112,14 @@
 const rotateMatrix = matrix => {
   const len = matrix.length - 1;
   let c = len;
-  const rotateMatrix = [];
+  const rotatedMatrix = [];
   
+  console.log('len is ', len);
+
   for (let m = 0; m < matrix.length; m++) {
     for (let n = 0; n < matrix[m].length; n++) {
       let b = n;
+      console.log(b, c);
       matrix[m][n] = rotatedMatrix[b][c];
     }
     c -= 1;
@@ -124,3 +127,12 @@ const rotateMatrix = matrix => {
 
   return rotatedMatrix;  
 };
+
+
+const matrix1 = [
+  [1,2,3,4],
+  [5,6,7,8],
+  [9, 10,11,12],
+  [13,14,15,16]
+];
+console.log(rotateMatrix(matrix1));
