@@ -110,19 +110,15 @@
 */
 
 const rotateMatrix = matrix => {
-  const len = matrix.length - 1;
-  let c = len;
   const rotatedMatrix = [];
-  
-  console.log('len is ', len);
 
-  for (let m = 0; m < matrix.length; m++) {
+  for (let m = 0, c = matrix.length - 1; m < matrix.length; m++, c--) {
     for (let n = 0; n < matrix[m].length; n++) {
-      let b = n;
-      console.log(b, c);
-      matrix[m][n] = rotatedMatrix[b][c];
+      if (!rotatedMatrix[n]) {
+        rotatedMatrix.push([]);
+      }
+      rotatedMatrix[n][c] = matrix[m][n];
     }
-    c -= 1;
   }
 
   return rotatedMatrix;  
@@ -136,3 +132,9 @@ const matrix1 = [
   [13,14,15,16]
 ];
 console.log(rotateMatrix(matrix1));
+  // var matrix = [ 
+  //  [13,9,5,1],
+  //  [14,10,6,2],
+  //  [15,11,7,3],
+  //  [16,12,8,4]
+  // ]
