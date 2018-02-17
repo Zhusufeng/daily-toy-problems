@@ -129,6 +129,26 @@ console.log(waterBlocks([5, 1, 1, 4, 1, 5])); //13
 
     const input2 = [2, 1, 10, 1, 9]
     const output2 =  8
+  
+    const input3 = [6, 1, 2, 3, 4, 5, 1, 4]
+    const output3 = 6
+
+    const input4 = [6, 1, 2, 3, 4, 5, 1, 7]
+    const output4 = 20
+
+    const input5 = [6, 1, 2, 3, 4, 5, 1, 7, 1, 10]
+    const output5 = 20
+
+  Strategy
+     
+
+  Big-O
+
+  Constraints
+
+  Steps
+
+  Skeleton
 */
 
 
