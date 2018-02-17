@@ -139,8 +139,17 @@ console.log(waterBlocks([5, 1, 1, 4, 1, 5])); //13
     const input5 = [6, 1, 2, 3, 4, 5, 1, 7, 1, 10]
     const output5 = 20
 
+    const input6 = [4, 1, 1, 5, 4, 6, 4, 7]
+    const output6 = 6
+
   Strategy
-     
+    ptr1 and ptr2
+    ptr1 is highest Left wall
+    ptr2 is next highest wall that is greater than or equal to wall[ptr1]
+    find ptr2
+    calculate amount of blocks inside this pocket
+
+    set ptr1 to ptr2 + 1
 
   Big-O
 
