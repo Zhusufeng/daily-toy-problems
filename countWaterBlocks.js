@@ -119,3 +119,19 @@ console.log(waterBlocks([4, 1, 1, 5, 2, 3])); //7
 console.log(waterBlocks([5, 4, 1, 1, 4, 5])); //10
 console.log(waterBlocks([4, 1, 5, 2, 4])); //5
 console.log(waterBlocks([5, 1, 1, 4, 1, 5])); //13
+
+// Return the largest amount of water blocks in one pocket
+
+/*
+  Inputs & Outputs
+    const input1 = [4, 1, 1, 4, 1, 4]
+    const output1 = 6
+
+    const input2 = [2, 1, 10, 1, 9]
+    const output2 =  8
+*/
+
+
+const findMostWaterInPocket = walls => {
+
+};
