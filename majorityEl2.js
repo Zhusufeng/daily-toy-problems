@@ -21,11 +21,22 @@
     const output3 = [3]
 
   Strategy
-    
+    Iterate thru array & count each num to the hash. Find the max. Iterate thru hash for values greater than max
 
-  Big-O
+  Big-O/Constraints
+    Input = n
+    Time: Linear - O(2n)
+    Space: Constant 
 
-  Constraints
-
-  Pattern
+  Skeleton
+  const majorityElement = nums => {
+    const hash = {};
+    const results = [];
+    const max = nums.length/3;
+    // Iterate thru nums
+      // If hash[nums[i]] increment by 1 else create & set to 1
+    // Iterate thru hash 
+      // If value is greater than max, push to results
+    return results;
+  };
 */
