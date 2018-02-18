@@ -40,3 +40,22 @@
     return results;
   };
 */
+
+const majorityElement = nums => {
+  const hash = {};
+  const results = [];
+  const max = nums.length/3;
+
+  for (let i = 0; i < nums.length; i++) {
+    if (hash[nums[i]]) {
+      hash[nums[i]]++;
+    } else {
+      hash[nums[i]] = 1;
+    }
+  }
+
+  for (let key in hash) {
+    if (hash[key] > max) results.push(key);
+  }
+  return results;
+};
