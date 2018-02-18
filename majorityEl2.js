@@ -55,7 +55,11 @@ const majorityElement = nums => {
   }
 
   for (let key in hash) {
-    if (hash[key] > max) results.push(key);
+    if (hash[key] > max) results.push(parseInt(key));
   }
   return results;
 };
+
+console.log(majorityElement([1, 3, 3, 3, 3, 3]));
+console.log(majorityElement([1, 1, 1, 3, 3, 3, 3, 3]));
+console.log(majorityElement([1, 1, 1, 3, 3, 3, 3, 3, 7]));
