@@ -1,4 +1,6 @@
-//https://leetcode.com/problems/majority-element-ii/description/
+/*
+  Prompt: https://leetcode.com/problems/majority-element-ii/description/
+*/
 
 /*
   Inputs & Outputs, Steps

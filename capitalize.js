@@ -1,4 +1,6 @@
-
+/*
+  Prompt: https://www.codewars.com/kata/indexed-capitalization
+*/
 /*
 O: string
 I: string + array of nums
