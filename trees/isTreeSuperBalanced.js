@@ -34,10 +34,30 @@ BinaryTreeNode.prototype.insertRight = function(value) {
 
   Steps
     Given input3
-    
+    depths = []
+    nodes = [[node, 0]]
+    curr value: 0, has left, has right - push into nodes
+    depths = []   
+    nodes = [[node.left (4), 1], [node.right (6), 1]] 
+    curr value: 4, no left, no right, push into depths
+    depths = [1]
+    nodes = [[node.right (6), 1]] 
+    curr value: 6, has left, has right - push into nodes
+    depths = [1]
+    nodes = [[node.left (2), 2], [node.right (7), 2]]
+    curr value: 2, has left, has right - push into nodes
+    depths = [1]
+    nodes = [[node.left (7), 2], [node.left (5), 3], [node.left (10), 3]]
+    curr value: 5, no left, no right, push into depths
+    depths = [1, 3]
+    if depths.length is greater than 1, look at depths
+    difference = 1 - 3 = Math.abs(2)
+    If difference is greater than 1, return false
 
   Skeleton
-
+    const isTreeSuperBalanced = node => {
+      
+    };
 */
 
 /*
