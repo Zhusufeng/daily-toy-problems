@@ -2,25 +2,26 @@
   Prompt: https://www.interviewcake.com/question/javascript/balanced-binary-tree
 */
 
-function BinaryTreeNode(value) {
-    this.value = value;
-    this.left  = null;
-    this.right = null;
-}
-
-BinaryTreeNode.prototype.insertLeft = function(value) {
-    this.left = new BinaryTreeNode(value);
-    return this.left;
-};
-
-BinaryTreeNode.prototype.insertRight = function(value) {
-    this.right = new BinaryTreeNode(value);
-    return this.right;
-};
-
 /*
   ** ITERATIVE ATTEMPT **
 */
+const isTreeSuperBalanced = node => {
+  if (!node) return true;
+
+  const depths = [];
+  const nodes = [[node, 0]];
+
+  while (nodes.length) {
+    let current = nodes.pop()
+  }
+  // while nodes is not empty
+    // if no left and no right, it's a leaf: push depth into depths
+    // if depths.length is greater than 1, get the difference
+      // if difference is greater than 1, return false
+    // if node has left, push it and depth + 1 to nodes
+    // if node has right, push it and depth + 1 to nodes
+  return true
+};
 
 /*
   Iterative Notes
@@ -39,17 +40,31 @@ BinaryTreeNode.prototype.insertRight = function(value) {
     curr value: 0, has left, has right - push into nodes
     depths = []   
     nodes = [[node.left (4), 1], [node.right (6), 1]] 
-    curr value: 4, no left, no right, push into depths
-    depths = [1]
-    nodes = [[node.right (6), 1]] 
     curr value: 6, has left, has right - push into nodes
-    depths = [1]
-    nodes = [[node.left (2), 2], [node.right (7), 2]]
+    depths = []
+    nodes = [[node.right (4), 1], [node.left (2), 2], [node.right (7), 2]]
+    curr value: 7, has left, has right - push into nodes
+    depths = []
+    nodes = [[node.right (4), 1], [node.left (2), 2], [node.left (15), 3], [node.right (20), 3]]
+    curr value: 20, no left, no right - push into depths
+    depths = [3]
+    nodes = [[node.right (4), 1], [node.left (2), 2], [node.left (15), 3]]
+    curr value: 15, no left, no right - push into depths if not found but found!
+    depths = [3]
+    nodes = [[node.right (4), 1], [node.left (2), 2]]
     curr value: 2, has left, has right - push into nodes
-    depths = [1]
-    nodes = [[node.left (7), 2], [node.left (5), 3], [node.left (10), 3]]
-    curr value: 5, no left, no right, push into depths
-    depths = [1, 3]
+    depths = [3]
+    nodes = [[node.right (4), 1], [node.left (5), 3], [node.right (10), 3]]
+    curr value: 10, no left, no right - push into depths if not found but found!
+    depths = [3]
+    nodes = [[node.right (4), 1], [node.left (5), 3]]
+    curr value: 5, no left, no right - push into depths if not found but found!
+    depths = [3]
+    nodes = [[node.right (4), 1]]
+    curr value: 4, no left, no right - push into depths if not found
+    depths = [3, 1]
+    difference = 2, return false
+
     if depths.length is greater than 1, look at depths
     difference = 1 - 3 = Math.abs(2)
     If difference is greater than 1, return false
