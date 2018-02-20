@@ -56,7 +56,16 @@ BinaryTreeNode.prototype.insertRight = function(value) {
 
   Skeleton
     const isTreeSuperBalanced = node => {
-      
+      const depths = [];
+      const nodes = [[node, 0]];
+
+      // while nodes is not empty
+        // if no left and no right, it's a leaf: push depth into depths
+        // if depths.length is greater than 1, get the difference
+          // if difference is greater than 1, return false
+        // if node has left, push it and depth + 1 to nodes
+        // if node has right, push it and depth + 1 to nodes
+      return true
     };
 */
 
