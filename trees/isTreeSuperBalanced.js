@@ -12,15 +12,23 @@ const isTreeSuperBalanced = node => {
   const nodes = [[node, 0]];
 
   while (nodes.length) {
-    let current = nodes.pop()
+    let current = nodes.pop();
+    let currNode = current[0];
+    let depth = current[1];
+
+    if (!node.left && !node.right) {
+      if (depths.indexOf(depth) < 0) {
+        depths.push(depth);
+        if (depths.length > 1) {
+          let difference = Math.abs(depths[0] - depths[depths.length - 1]);
+          if (difference > 1) return false;
+        }
+      }
+    }
+    if (node.left) nodes.push([node.left, depth + 1]);
+    if (node.right) nodes.push([node.right, depth + 1]);
   }
-  // while nodes is not empty
-    // if no left and no right, it's a leaf: push depth into depths
-    // if depths.length is greater than 1, get the difference
-      // if difference is greater than 1, return false
-    // if node has left, push it and depth + 1 to nodes
-    // if node has right, push it and depth + 1 to nodes
-  return true
+  return true;
 };
 
 /*
