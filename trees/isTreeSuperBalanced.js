@@ -18,120 +18,78 @@ BinaryTreeNode.prototype.insertRight = function(value) {
     return this.right;
 };
 
-const isTreeSuperBalanced = (tree, depth = 0, depths = []) => {
-  if (tree.left === null && tree.right === null) {
-    depths.push(depth);
-    return;
-  }
-  
-  depth += 1;
-  if (tree.left) {
-    isTreeSuperBalanced(tree.left, depth, depths);
-  }
-  if (tree.right) {
-    isTreeSuperBalanced(tree.right, depth, depths);
-  }
-  
-  // Get total max depth first
-  // get the minimum
-  
-  // Keep stuff below here? Or move around? \/
+/*
+  ** ITERATIVE ATTEMPT **
+*/
 
-  let minDepth = null;
-  let maxDepth = null;
-  
-  for (let i = 0; i < depths.length; i++) {
-    if (!minDepth) {
-      minDepth = depths[i];  
-    }
-    if (!maxDepth) {
-      maxDepth = depths[i];
-    }
-    if (depths[i] < minDepth) {
-      minDepth = depths[i];
-    }
-    if (depths[i] > maxDepth) {
-      maxDepth = depths[i];
-    }
-  }
-  // hey use Math.min(), Math.max()
-  
-  const maximumDifference = maxDepth - minDepth;
-  
-  if (maximumDifference > 1) {
-    return false; // not superbalanced
-  } else {
-    return true; // superbalanced
-  }
-};
+/*
+  Iterative Notes
 
-    const input1 = {
-      value: 0,
-      left: {
-        value: 4,
-        left: {
-          value: 2,
-          left: null,
-          right: null
-        },
-        right: {
-          value: 7,
-          left: null,
-          right: null
-        }
-      },
-      right: {
-        value: 6,
-        left: {
-          value: 13,
-          left: null,
-          right: null
-        },
-        right: null
-      }
-    };
+  Strategy
+    Keep track of nodes. Use a stack to look at each node. Loop through stack to see if we add more than 2 depths. (If there are more than 2 depths, we have a nonbalanced tree)
+
+  Big-O
+    Time: Linear
+    Space: Linear (create a stack for each node)
+
+  Steps
+    Given input3
     
-    console.log('Test input1 should be true: ', isTreeSuperBalanced(input1)); // true
 
-    const input3 = {
-      value: 0,
-      left: {
-        value: 4,
-        left: null,
-        right: null
-      },
-      right: {
-        value: 6,
-        left: {
-          value: 2,
-          left: {
-            value: 5,
-            left: null,
-            right: null
-          },
-          right: {
-            value: 10,
-            left: null,
-            right: null
-          }
-        },
-        right: {
-          value: 7,
-          left: {
-            value: 15,
-            left: null, 
-            right: null
-          },
-          right: {
-            value: 20,
-            left: null,
-            right: null
-          }
-        }
-      }
-    };
-    
-    console.log('Test input3 should be false: ', isTreeSuperBalanced(input3)); // false
+  Skeleton
+
+*/
+
+/*
+   ** RECURSIVE ATTEMPT **
+*/
+// const isTreeSuperBalanced = (tree, depth = 0, depths = []) => {
+//   if (tree.left === null && tree.right === null) {
+//     depths.push(depth);
+//     return;
+//   }
+  
+//   depth += 1;
+//   if (tree.left) {
+//     isTreeSuperBalanced(tree.left, depth, depths);
+//   }
+//   if (tree.right) {
+//     isTreeSuperBalanced(tree.right, depth, depths);
+//   }
+  
+//   // Get total max depth first
+//   // get the minimum
+  
+//   // Keep stuff below here? Or move around? \/
+
+//   let minDepth = null;
+//   let maxDepth = null;
+  
+//   for (let i = 0; i < depths.length; i++) {
+//     if (!minDepth) {
+//       minDepth = depths[i];  
+//     }
+//     if (!maxDepth) {
+//       maxDepth = depths[i];
+//     }
+//     if (depths[i] < minDepth) {
+//       minDepth = depths[i];
+//     }
+//     if (depths[i] > maxDepth) {
+//       maxDepth = depths[i];
+//     }
+//   }
+//   // hey use Math.min(), Math.max()
+  
+//   const maximumDifference = maxDepth - minDepth;
+  
+//   if (maximumDifference > 1) {
+//     return false; // not superbalanced
+//   } else {
+//     return true; // superbalanced
+//   }
+// };
+
 
 /*
   Inputs & Outputs
@@ -272,3 +230,71 @@ const isTreeSuperBalanced = (tree, depth = 0, depths = []) => {
         // If maxDepth > 1 return false otherwise true
       };
 */
+
+const input1 = {
+  value: 0,
+  left: {
+    value: 4,
+    left: {
+      value: 2,
+      left: null,
+      right: null
+    },
+    right: {
+      value: 7,
+      left: null,
+      right: null
+    }
+  },
+  right: {
+    value: 6,
+    left: {
+      value: 13,
+      left: null,
+      right: null
+    },
+    right: null
+  }
+};
+
+console.log('Test input1 should be true: ', isTreeSuperBalanced(input1)); // true
+
+const input3 = {
+  value: 0,
+  left: {
+    value: 4,
+    left: null,
+    right: null
+  },
+  right: {
+    value: 6,
+    left: {
+      value: 2,
+      left: {
+        value: 5,
+        left: null,
+        right: null
+      },
+      right: {
+        value: 10,
+        left: null,
+        right: null
+      }
+    },
+    right: {
+      value: 7,
+      left: {
+        value: 15,
+        left: null, 
+        right: null
+      },
+      right: {
+        value: 20,
+        left: null,
+        right: null
+      }
+    }
+  }
+};
+
+console.log('Test input3 should be false: ', isTreeSuperBalanced(input3)); // false
