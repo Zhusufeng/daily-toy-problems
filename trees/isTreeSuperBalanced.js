@@ -16,7 +16,7 @@ const isTreeSuperBalanced = node => {
     let currNode = current[0];
     let depth = current[1];
 
-    if (!node.left && !node.right) {
+    if (!currNode.left && !currNode.right) {
       if (depths.indexOf(depth) < 0) {
         depths.push(depth);
         if (depths.length > 1) {
@@ -25,8 +25,8 @@ const isTreeSuperBalanced = node => {
         }
       }
     }
-    if (node.left) nodes.push([node.left, depth + 1]);
-    if (node.right) nodes.push([node.right, depth + 1]);
+    if (currNode.left) nodes.push([currNode.left, depth + 1]);
+    if (currNode.right) nodes.push([currNode.right, depth + 1]);
   }
   return true;
 };
