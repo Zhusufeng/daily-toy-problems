@@ -59,3 +59,21 @@ console.log(findUniqId([100])); // 100
       return -1;
     };
 */
+
+/** BITWISE VERSION **/
+
+/*
+  Inputs & Outputs
+    const in1 = [1, 2, 3, 2, 1]
+    const out1 = 3
+
+  Strategy
+    
+
+  Big-O
+
+  Steps
+
+  Skeleton
+
+*/
