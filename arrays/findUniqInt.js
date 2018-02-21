@@ -1,3 +1,7 @@
+/*
+  Prompt: https://www.interviewcake.com/question/javascript/find-unique-int-among-duplicates
+*/
+
 const findUniqId = arr => {
   arr.sort();
   for (let i = 0; i < arr.length; i += 2) {
@@ -32,7 +36,7 @@ console.log(findUniqId([100])); // 100
       Iterate thru the hash for the order with the value of 1
       
   Big-O
-    Time: Linear (log, n/2)
+    Time: Linear - O(n/2 * logn)
     Space: Constant
   
   Constraints
