@@ -68,11 +68,24 @@ console.log(findUniqId([100])); // 100
     const out1 = 3
 
   Strategy
-    
+    Iterate thru input and use bitwise OR to add up numbers or take out numbers
 
   Big-O
+    Linear
 
   Steps
+    Given [1, 2, 3, 2, 1]
+    temp = 0
+    
+      i    XOR in base-10    XOR in base-2   updated temp in base-2       
+    i = 0     0 ^= 1      ->  0000 ^= 0001      0001 
+    i = 1     1 ^= 2      ->  0001 ^= 0010      0011
+    i = 2     3 ^= 3      ->  0011 ^= 0011      0000
+    i = 3     0 ^= 2      ->  0000 ^= 0010      0010
+    i = 4     2 ^= 1      ->  0010 ^= 0001      0011 
+
+    0011 is 3 in base 10
+
 
   Skeleton
 
