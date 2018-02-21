@@ -12,9 +12,9 @@ const findUniqId = arr => {
   return -1;
 };
 
-console.log(findUniqId([100, 101, 102, 103, 100, 101, 102])); // 103
-console.log(findUniqId([100, 101, 102, 100, 101, 102])); // -1
-console.log(findUniqId([100])); // 100
+// console.log(findUniqId([100, 101, 102, 103, 100, 101, 102])); // 103
+// console.log(findUniqId([100, 101, 102, 100, 101, 102])); // -1
+// console.log(findUniqId([100])); // 100
 
 /*
   INPUTS & OUTPUTS
@@ -86,7 +86,27 @@ console.log(findUniqId([100])); // 100
 
     0011 is 3 in base 10
 
-
   Skeleton
+    const findUniqInt = arr => {
+      let temp = 0;
+
+      // iterate thru arr
+        // temp bitwise OR current element
+
+      return temp;
+    };
 
 */
+
+const findUniqInt = arr => {
+  let temp = 0;
+
+  arr.forEach(int => {
+    temp ^= int;
+  });
+
+  return temp;
+};
+
+console.log(findUniqInt([1, 2, 3, 2, 1])); // 3
+console.log(findUniqInt([100, 101, 102, 103, 100, 101, 102])); // 103
