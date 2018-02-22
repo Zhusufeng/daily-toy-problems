@@ -58,6 +58,13 @@
     lastVal = 8
     results = [1, 6, 5, 2, 8]
 
-
   Skeleton
+  const sumConsecutiveValues = arr = {
+    const results = [];
+    let lastVal = null;
+    // Iterate thru arr
+      // If lastVal doesn't eql arr[i], push it to results, update lastVal to arr[i]
+      // Else pop from results, push that val + arr[i] to results
+    return results;
+  };
 */
