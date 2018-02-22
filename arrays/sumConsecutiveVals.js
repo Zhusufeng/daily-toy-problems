@@ -2,6 +2,27 @@
   Prompt: Verbal - John's Challenge 1
 */
 
+const sumConsecutiveValues = arr => {
+  const results = [];
+  let lastVal = null;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (lastVal !== arr[i]) {
+      results.push(arr[i]);
+      lastVal = arr[i];
+    } else {
+      results.push(results.pop() + arr[i]);
+    }
+  }
+
+  return results;
+};
+
+console.log(sumConsecutiveValues([1, 2, 2, 2, 5, 8])); // [1, 6, 5, 8]
+console.log(sumConsecutiveValues([1, 2, 2, 2, 5, 2, 8])); // [1, 6, 5, 2, 8]
+console.log(sumConsecutiveValues([1, 1, 1, 2, 2, 2, 3, 4])); // [3, 6, 3, 4]
+
+
 /*
   Input & Output
     const input1 = [1, 2, 2, 2, 5, 8];
