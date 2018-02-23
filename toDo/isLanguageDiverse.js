@@ -29,4 +29,21 @@ function isLanguageDiverse(list) {
     ];
 
     const output1 = true;
+
+    {
+      JavaScript: 3,
+      Python: 1,
+      Ruby: 2
+    }
+    const total = 6
+
+    const input2 = [
+      {language: 'Ruby'},
+      {language: 'Ruby'},
+      {language: 'Ruby'}
+    ];
+    const total = 3
+
+    const output2 = true;
+
 */
