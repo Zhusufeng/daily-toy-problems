@@ -55,15 +55,35 @@ function isLanguageDiverse(list) {
 
     const output2 = true;
 
+    let ruby = 0
+    let javascript = 0
+    let python = 0
+    let max = 0
+    let min = 0
+
     Strategy
+      Iterate thru array, increment each counter, update max and min
+      If max is between min and 2 * min return true
 
     Big-O
+      Time: Linear
+      Space: Constant
 
     Constraints
       Input will always be valid
       3 programming languages will always be represented
 
-    Skeleton
+    Steps
+      Given input2
+        i = 0, ruby = 1, max = 1, min = 1
+        i = 1, ruby = 2, max = 2, min = 1
+        i = 2, python = 1, max = 2, min = 1
+        i = 3, javascript = 1, max = 2, min = 1
+      Max is between 2 and 1
 
+    Skeleton
+      const isLanguageDiverse = list => {
+  
+      };
 
 */
