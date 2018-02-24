@@ -25,20 +25,18 @@ const isLanguageDiverse = list => {
     }
   });
 
-  console.log(Object.values(hash));
-
-  Object.values(hash).forEach(count => {
+  for (let key in hash) {
     if (!min) {
-      min = count;
-    } else if (count < min) {
-      min = count;
+      min = hash[key];
+    } else if (hash[key] < min) {
+      min = hash[key];
     }
     if (!max) {
-      max = count;
-    } else if (count > max) {
-      max = count;
+      max = hash[key];
+    } else if (hash[key] > max) {
+      max = hash[key];
     }
-  });
+  }
 
   if (max <= (2 * min)) return true;
   return false;
