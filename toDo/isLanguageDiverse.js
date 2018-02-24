@@ -13,25 +13,34 @@ const input1 = [
 
 
 const isLanguageDiverse = list => {
-  let ruby = 0;
-  let javascript = 0;
-  let python = 0;
+  const hash = {};
   let max = 0;
   let min = 0;
 
   list.forEach(person => {
-    if (person.language === 'Ruby') ruby += 1;
-    if (person.language === 'JavaScript') javascript += 1;
-    if (person.language === 'Python') python += 1;
-    if (ruby > max) max = ruby;
-    if (javascript > max) max = javascript;
-    if (python > max) max = python;
-    if (ruby < min) min = ruby;
-    if (javascript < min) min = javascript;
-    if (python < min) min = python;
+    if (hash[person.language]) {
+      hash[person.language] += 1;
+    } else {
+      hash[person.language] = 1;
+    }
   });
 
-  if (max <= 2 * min) return true;
+  console.log(Object.values(hash));
+
+  Object.values(hash).forEach(count => {
+    if (!min) {
+      min = count;
+    } else if (count < min) {
+      min = count;
+    }
+    if (!max) {
+      max = count;
+    } else if (count > max) {
+      max = count;
+    }
+  });
+
+  if (max <= (2 * min)) return true;
   return false;
 };
 
