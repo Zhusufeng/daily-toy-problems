@@ -83,7 +83,20 @@ function isLanguageDiverse(list) {
 
     Skeleton
       const isLanguageDiverse = list => {
-  
+        let ruby = 0;
+        let javascript = 0;
+        let python = 0;
+        let max = 0;
+        let min = 0;
+
+        // iterate thru list
+          // if list.language is ruby, +1 to ruby
+          // if list.language is javascript, +1 to javascript
+          // if list.language is python, +1 to python
+          // if ruby or js or python is greater than max, set it
+          // if ruby or js or python is less than min, set it
+        // if max is greater than/eql to min and less than/eql to min * 2, return true
+        // return false
       };
 
 */
