@@ -37,13 +37,33 @@ function isLanguageDiverse(list) {
     }
     const total = 6
 
+    find max
+    find min
+    max needs to be between min and 2min
+    ensure max is within constraints for min
+
     const input2 = [
       {language: 'Ruby'},
       {language: 'Ruby'},
-      {language: 'Ruby'}
+      {language: 'Python'},
+      {language: 'JavaScript'}
     ];
-    const total = 3
+    const total = 4
+
+    max = 2
+    min = 1
 
     const output2 = true;
+
+    Strategy
+
+    Big-O
+
+    Constraints
+      Input will always be valid
+      3 programming languages will always be represented
+
+    Skeleton
+
 
 */
