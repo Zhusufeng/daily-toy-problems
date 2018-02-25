@@ -18,11 +18,7 @@ const isLanguageDiverse = list => {
   let min = 0;
 
   list.forEach(person => {
-    if (hash[person.language]) {
-      hash[person.language] += 1;
-    } else {
-      hash[person.language] = 1;
-    }
+    hash[person.language] = (hash[person.language] || 0) + 1;
   });
 
   for (let key in hash) {
@@ -30,8 +26,7 @@ const isLanguageDiverse = list => {
     max = Math.max(hash[key], max);
   }
 
-  if (max <= (2 * min)) return true;
-  return false;
+  return (max <= (2 * min));
 };
 
 console.log(isLanguageDiverse(input1));
