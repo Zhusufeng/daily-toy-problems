@@ -26,16 +26,8 @@ const isLanguageDiverse = list => {
   });
 
   for (let key in hash) {
-    if (!min) {
-      min = hash[key];
-    } else if (hash[key] < min) {
-      min = hash[key];
-    }
-    if (!max) {
-      max = hash[key];
-    } else if (hash[key] > max) {
-      max = hash[key];
-    }
+    min = Math.min(hash[key], min);
+    max = Math.max(hash[key], max);
   }
 
   if (max <= (2 * min)) return true;
