@@ -14,9 +14,20 @@ Start / End = Edge
 
 /*
   Input & Output
-  const arr1 = [1,1,1,2,2,2];
-  const start = 1;
-  const end = 4;
-  const output1 = [3, 6];
+    const arr1 = [1,1,1,2,2,2];
+    const start = 1;
+    const end = 4;
+    const output1 = [3, 6];
+        s=1         e=4   
+         |           |
+    [1,  1,  1,  2,  2,  2]
 
+    Steps
+      With start, go backwards starting at start - 1 til 0 checking if same as arr[start]
+        Whichever is the first most index before a diff number, save as startBegin
+      Then go start + 1 checking if same as arr[start]
+        Whichever is the last index, save as startEnd
+      totalTimes = startEnd - startBegin
+      Splice arr from startBegin, delete totalTimes, add totalTimes * arr[start]
+      Do the same with the end edge
 */
