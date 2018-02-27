@@ -31,9 +31,27 @@
     Space: O(1) additional
 
   Constraints
-    Should not use same movie twice!
+    Should not use same movie twice! (Should not make users see same movie in a row)
 
   Steps
+    Given time as 240 and movies as [100, 140, 120, 180]
+    Movies is a set now
+    i = 0 240 - 100 = 140, true
+
+    Given time as 200 and movies as [100, 130, 120, 180]
+    Movies is a set now
+    i = 0 200 - 100 = 100
+    If diff is not the same as curr el return true, otherwise continue
+    Return false
 
   Skeleton
+    const findTwoMovies = (time, movies) => {
+      let movieSet = new Set(movies);
+
+      // Iterate thru movieSet
+        let diff = time - item
+        // If diff eqls item continue
+        // Else return true
+      return false;
+    };
 */
