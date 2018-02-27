@@ -50,8 +50,29 @@
 
       // Iterate thru movieSet
         let diff = time - item
-        // If diff eqls item continue
-        // Else return true
+        // Check that movieSet has diff
+          // If diff eqls item continue
+          // Else return true
       return false;
     };
 */
+
+const findTwoMovies = (time, movies) => {
+  let movieSet = new Set(movies);
+
+  for (let item of movieSet) {
+    let diff = time - item;
+    if (movieSet.has(diff)) {
+      if (diff === item) {
+        continue;
+      } else {
+        return true;
+      }
+    }   
+  }
+
+  return false;
+};
+
+console.assert(findTwoMovies(240, [100, 140, 120, 180]) === true, 'Given 240, [100, 140, 120, 180], it should return true but got false');
+console.assert(findTwoMovies(240, [100, 130, 120, 180]) === false, 'Given 240, [100, 130, 120, 180], it should return false but got true');
