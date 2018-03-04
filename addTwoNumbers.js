@@ -71,3 +71,21 @@ function ListNode(val) {
  this.val = val;
  this.next = null;
 }
+const addTwoNumbers = (a, b) => {
+  let nodeA = a;
+  let nodeB = b;
+  const output = new ListNode(0);
+  let nodeOut = output;
+
+  while (nodeA !== null && nodeB !== null) {
+    // TODO if nodeA.val does not exist
+    let temp = nodeA.val + nodeB.val;
+    nodeOut.next = new ListNode(temp);
+    // TODO if no null
+    nodeA = nodeA.next;
+    nodeB = nodeB.next;
+    nodeOut = nodeOut.next;
+  }
+
+  return output.next;
+};
