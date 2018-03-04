@@ -49,4 +49,25 @@
       2 + 4 = 6, add as node to output
       3 + 5 = 8, add as node to output
     Return head of output
+
+  const addTwoNumbers = (a, b) => {
+    let nodeA = a;
+    let nodeB = b;
+    const output = new ListNode(0);
+    let nodeOut = output;
+
+    // iterate thru nodeA & nodeB if not empty
+      // set temp to nodeA.val + nodeB.val
+      // set nodeOut.next to new ListNode(temp)
+      // set nodeA to nodeA.next
+      // set nodeB to nodeB.next
+      // set nodeOut to nodeOut.next
+
+    return output.next;
+  };
 */
+
+function ListNode(val) {
+ this.val = val;
+ this.next = null;
+}
