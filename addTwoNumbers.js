@@ -34,4 +34,19 @@
         }
       }
     };
+
+  Strategy
+    Iterate thru both inputs adding their values
+
+  Big-O
+    Time: Linear
+    Space: Constant
+
+  Steps
+    Given input1a, input1b
+    While input1a & input1b is not empty
+      1 + 3 = 7, add as node to output 
+      2 + 4 = 6, add as node to output
+      3 + 5 = 8, add as node to output
+    Return head of output
 */
