@@ -78,12 +78,12 @@ const addTwoNumbers = (a, b) => {
   let nodeOut = output;
 
   while (nodeA !== null && nodeB !== null) {
-    // TODO if nodeA.val does not exist
-    let temp = nodeA.val + nodeB.val;
-    nodeOut.next = new ListNode(temp);
-    // TODO if no null
-    nodeA = nodeA.next;
-    nodeB = nodeB.next;
+    // Keep track of remainders?
+    let valA = nodeA === null ? 0 : nodeA.val;
+    let valB = nodeB === null ? 0 : nodeB.val; 
+    nodeOut.next = new ListNode(valA + valB);
+    nodeA = nodeA === null ? null : nodeA.next;
+    nodeB = nodeB === null ? null : nodeB.next;
     nodeOut = nodeOut.next;
   }
 
