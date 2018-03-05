@@ -77,13 +77,18 @@ const addTwoNumbers = (a, b) => {
   let nodeB = b;
   const output = new ListNode(0);
   let nodeOut = output;
-  let remainder = null;
+  let remainder = 0;
 
   while (nodeA !== null && nodeB !== null) {
     let valA = nodeA === null ? 0 : nodeA.val;
     let valB = nodeB === null ? 0 : nodeB.val; 
-    remainder = remainder || 0;
-    let temp = valA + valB + remainder;
+    let temp = 0;
+    if (remainder) {
+      temp = valA + valB + remainder;
+      remainder = 0;
+    } else {
+      temp = valA + valB;
+    } 
     if (temp > 9) {
       temp = temp % 10;
       remainder = Math.floor(temp / 10);
