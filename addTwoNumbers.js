@@ -4,6 +4,7 @@
 
 /*
   Input & Output
+*/
     const input1a = {
       val: 1,
       next: {
@@ -34,7 +35,7 @@
         }
       }
     };
-
+/*
   Strategy
     Iterate thru both inputs adding their values
 
@@ -76,12 +77,18 @@ const addTwoNumbers = (a, b) => {
   let nodeB = b;
   const output = new ListNode(0);
   let nodeOut = output;
+  let remainder = null;
 
   while (nodeA !== null && nodeB !== null) {
-    // Keep track of remainders?
     let valA = nodeA === null ? 0 : nodeA.val;
     let valB = nodeB === null ? 0 : nodeB.val; 
-    nodeOut.next = new ListNode(valA + valB);
+    remainder = remainder || 0;
+    let temp = valA + valB + remainder;
+    if (temp > 9) {
+      temp = temp % 10;
+      remainder = Math.floor(temp / 10);
+    }
+    nodeOut.next = new ListNode(temp);
     nodeA = nodeA === null ? null : nodeA.next;
     nodeB = nodeB === null ? null : nodeB.next;
     nodeOut = nodeOut.next;
@@ -89,3 +96,6 @@ const addTwoNumbers = (a, b) => {
 
   return output.next;
 };
+
+// Practice no remainders
+console.log(addTwoNumbers(input1a, input1b));
