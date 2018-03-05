@@ -107,7 +107,7 @@ const addTwoNumbers = (a, b) => {
     let valA = nodeA === null ? 0 : nodeA.val;
     let valB = nodeB === null ? 0 : nodeB.val; 
     let temp = 0;
-    console.log('remainder is ', remainder);
+    console.log('110: remainder is ', remainder);
     if (remainder) {
       temp = valA + valB + remainder;
       remainder = 0;
@@ -116,8 +116,9 @@ const addTwoNumbers = (a, b) => {
     } 
     if (temp > 9) {
       console.log('temp is', temp);
-      temp = temp % 10;
       remainder = Math.floor(temp / 10);
+      temp = temp % 10;      
+      console.log('121: remainder is ', remainder);
     }
     nodeOut.next = new ListNode(temp);
     nodeA = nodeA === null ? null : nodeA.next;
