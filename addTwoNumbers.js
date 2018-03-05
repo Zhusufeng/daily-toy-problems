@@ -35,6 +35,30 @@
         }
       }
     };
+    const input2a = {
+      val: 8,
+      next: {
+        val: 9,
+        next: null
+      }
+    };
+    const input2b = {
+      val: 6,
+      next: {
+        val: 9,
+        next: null
+      }
+    };
+    const output2 = {
+      val: 4,
+      next: {
+        val: 9,
+        next: {
+          val: 1,
+          next: null
+        }
+      }
+    };
 /*
   Strategy
     Iterate thru both inputs adding their values
@@ -83,6 +107,7 @@ const addTwoNumbers = (a, b) => {
     let valA = nodeA === null ? 0 : nodeA.val;
     let valB = nodeB === null ? 0 : nodeB.val; 
     let temp = 0;
+    console.log('remainder is ', remainder);
     if (remainder) {
       temp = valA + valB + remainder;
       remainder = 0;
@@ -90,6 +115,7 @@ const addTwoNumbers = (a, b) => {
       temp = valA + valB;
     } 
     if (temp > 9) {
+      console.log('temp is', temp);
       temp = temp % 10;
       remainder = Math.floor(temp / 10);
     }
@@ -103,4 +129,5 @@ const addTwoNumbers = (a, b) => {
 };
 
 // Practice no remainders
-console.log(addTwoNumbers(input1a, input1b));
+// console.log(addTwoNumbers(input1a, input1b));
+console.log(addTwoNumbers(input2a, input2b));
