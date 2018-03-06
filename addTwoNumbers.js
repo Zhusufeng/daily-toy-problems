@@ -59,6 +59,24 @@
         }
       }
     };
+    const input3a = {
+     val: 1,
+     next: {
+      val: 8,
+      next: null
+     } 
+    };
+    const input3b = {
+      val: 0,
+      next: null
+    };
+    const output3 = {
+      val: 1,
+      next: {
+        val: 8,
+        next: null
+      }
+    };
 /*
   Strategy
     Iterate thru both inputs adding their values
@@ -131,3 +149,5 @@ const addTwoNumbers = (a, b) => {
 // Practice no remainders
 // console.log(addTwoNumbers(input1a, input1b));
 // console.log(addTwoNumbers(input2a, input2b));
+console.log(addTwoNumbers(input3a, input3b));
+
