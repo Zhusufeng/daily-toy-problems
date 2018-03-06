@@ -103,11 +103,12 @@ const addTwoNumbers = (a, b) => {
   let nodeOut = output;
   let remainder = 0;
 
-  while (nodeA !== null && nodeB !== null) {
+  // TODO FIX when there is a remainder in while loop!
+  while (nodeA !== null && nodeB !== null || remainder) {
     let valA = nodeA === null ? 0 : nodeA.val;
     let valB = nodeB === null ? 0 : nodeB.val; 
     let temp = 0;
-    console.log('110: remainder is ', remainder);
+
     if (remainder) {
       temp = valA + valB + remainder;
       remainder = 0;
@@ -115,10 +116,8 @@ const addTwoNumbers = (a, b) => {
       temp = valA + valB;
     } 
     if (temp > 9) {
-      console.log('temp is', temp);
       remainder = Math.floor(temp / 10);
       temp = temp % 10;      
-      console.log('121: remainder is ', remainder);
     }
     nodeOut.next = new ListNode(temp);
     nodeA = nodeA === null ? null : nodeA.next;
@@ -131,4 +130,4 @@ const addTwoNumbers = (a, b) => {
 
 // Practice no remainders
 // console.log(addTwoNumbers(input1a, input1b));
-console.log(addTwoNumbers(input2a, input2b));
+// console.log(addTwoNumbers(input2a, input2b));
