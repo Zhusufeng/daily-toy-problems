@@ -114,34 +114,53 @@ function ListNode(val) {
  this.val = val;
  this.next = null;
 }
+// const addTwoNumbers = (a, b) => {
+//   let nodeA = a;
+//   let nodeB = b;
+//   const output = new ListNode(0);
+//   let nodeOut = output;
+//   let remainder = 0;
+
+//   while ((nodeA !== null || nodeB !== null) || remainder) {
+//     let valA = nodeA === null ? 0 : nodeA.val;
+//     let valB = nodeB === null ? 0 : nodeB.val; 
+//     let temp = 0;
+
+//     if (remainder) {
+//       temp = valA + valB + remainder;
+//       remainder = 0;
+//     } else {
+//       temp = valA + valB;
+//     } 
+
+//     if (temp > 9) {
+//       remainder = Math.floor(temp / 10);
+//       temp = temp % 10;      
+//     }
+
+//     nodeOut.next = new ListNode(temp);
+//     nodeA = nodeA === null ? null : nodeA.next;
+//     nodeB = nodeB === null ? null : nodeB.next;
+//     nodeOut = nodeOut.next;
+//   }
+
+//   return output.next;
+// };
+
 const addTwoNumbers = (a, b) => {
-  let nodeA = a;
-  let nodeB = b;
   const output = new ListNode(0);
   let nodeOut = output;
   let remainder = 0;
 
-  while ((nodeA !== null || nodeB !== null) || remainder) {
-    console.log('Did this go thru');
-    let valA = nodeA === null ? 0 : nodeA.val;
-    let valB = nodeB === null ? 0 : nodeB.val; 
-    let temp = 0;
-
-    if (remainder) {
-      temp = valA + valB + remainder;
-      remainder = 0;
-    } else {
-      temp = valA + valB;
-    } 
-
-    if (temp > 9) {
-      remainder = Math.floor(temp / 10);
-      temp = temp % 10;      
-    }
-
-    nodeOut.next = new ListNode(temp);
-    nodeA = nodeA === null ? null : nodeA.next;
-    nodeB = nodeB === null ? null : nodeB.next;
+  while ((a !== null || b !== null) || remainder) {
+    let valA = a === null ? 0 : a.val;
+    let valB = b === null ? 0 : b.val; 
+    let sum = valA + valB + remainder;
+    remainder = Math.floor(sum / 10);
+    sum = sum % 10;      
+    nodeOut.next = new ListNode(sum);
+    a = a === null ? null : a.next;
+    b = b === null ? null : b.next;
     nodeOut = nodeOut.next;
   }
 
@@ -149,11 +168,11 @@ const addTwoNumbers = (a, b) => {
 };
 
 // Practice no remainders
-// console.log(addTwoNumbers(input1a, input1b));
+console.log(addTwoNumbers(input1a, input1b));
 
 // Remainders
-// console.log(addTwoNumbers(input2a, input2b));
+console.log(addTwoNumbers(input2a, input2b));
 
 // Inputa is longer than Inputb
-// console.log(addTwoNumbers(input3a, input3b));
+console.log(addTwoNumbers(input3a, input3b));
 
