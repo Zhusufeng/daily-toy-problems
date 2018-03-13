@@ -5,13 +5,13 @@
 /*
   Inputs & Outputs
     const input1 = 'abcabab'
-    const output1 = 'abc'
+    const output1 = 3
 
     const input2 = 'ooooo'
-    const output2 = 'o'
+    const output2 = 1
 
     const input3 = 'pwwkew'
-    const output3 = 'wke'
+    const output3 = 3
 
   Strategy
     
@@ -59,10 +59,21 @@ const lengthOfLongestSubstring = (s) => {
       if (substring.size > max) {
         max = substring.size;
       }
-      substring = new Set();
+      substring = new Set(s[i]);
+    } else if (i === s.length - 1) {
+      substring.add(s[i]);
+      if (substring.size > max) {
+        max = substring.size;
+      }
     } else {
       substring.add(s[i]);
     }
   } 
   return max; 
 };
+
+console.log(lengthOfLongestSubstring('pwwkew')); // 3
+console.log(lengthOfLongestSubstring('abcabab')); // 3
+console.log(lengthOfLongestSubstring('oooooooo')); // 1 
+console.log(lengthOfLongestSubstring('tacosiz')); // 7
+
