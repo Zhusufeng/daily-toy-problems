@@ -77,3 +77,6 @@ console.log(lengthOfLongestSubstring('abcabab')); // 3
 console.log(lengthOfLongestSubstring('oooooooo')); // 1 
 console.log(lengthOfLongestSubstring('tacosiz')); // 7
 
+// TODO 
+// 1. make DRY
+// 2. make case for when input is empty string
