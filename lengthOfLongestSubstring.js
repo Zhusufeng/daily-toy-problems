@@ -28,7 +28,7 @@
           Push current char to current substring
       Iterate over substrings
         Keep track of substring with longest length (Math.max)
-      Return longest substring
+      Return longest substring.length
 
     Big-O of Idea #1
       Time: Worst O(n^2 + n) -> Quadratic
@@ -39,8 +39,8 @@
       Keep track of current substring as a set (let)
       Iterate thru input 
         If current char is in current substring 
-          If current substring's length (joined) is greater than max's length
-            Set max to current substring joined
+          If current substring's length is greater than max
+            Set max to current substring.length
           Restart substring as a new Set with current char
         Else 
           Add current char to substring
@@ -49,5 +49,7 @@
     Big-O of Idea #2
       Time: O(n) -> Linear
       Space: O(1) -> Constant
-  
 */
+const lengthOfLongestSubstring = (s) => {
+    
+};
