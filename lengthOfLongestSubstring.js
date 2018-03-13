@@ -51,5 +51,18 @@
       Space: O(1) -> Constant
 */
 const lengthOfLongestSubstring = (s) => {
-    
+  let max = Number.NEGATIVE_INFINITY;
+  let substring = new Set();
+
+  for (let i = 0; i < s.length; i++) {
+    if (substring.has(s[i])) {
+      if (substring.size > max) {
+        max = substring.size;
+      }
+      substring = new Set();
+    } else {
+      substring.add(s[i]);
+    }
+  } 
+  return max; 
 };
