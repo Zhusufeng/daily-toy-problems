@@ -56,15 +56,11 @@ const lengthOfLongestSubstring = (s) => {
 
   for (let i = 0; i < s.length; i++) {
     if (substring.has(s[i])) {
-      if (substring.size > max) {
-        max = substring.size;
-      }
+      max = Math.max(substring.size, max);
       substring = new Set(s[i]);
     } else if (i === s.length - 1) {
       substring.add(s[i]);
-      if (substring.size > max) {
-        max = substring.size;
-      }
+      max = Math.max(substring.size, max);
     } else {
       substring.add(s[i]);
     }
