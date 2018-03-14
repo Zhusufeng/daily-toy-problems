@@ -51,7 +51,7 @@
       Space: O(1) -> Constant
 */
 const lengthOfLongestSubstring = (s) => {
-  let max = Number.NEGATIVE_INFINITY;
+  let max = 0;
   let substring = new Set();
 
   for (let i = 0; i < s.length; i++) {
@@ -76,7 +76,9 @@ console.log(lengthOfLongestSubstring('pwwkew')); // 3
 console.log(lengthOfLongestSubstring('abcabab')); // 3
 console.log(lengthOfLongestSubstring('oooooooo')); // 1 
 console.log(lengthOfLongestSubstring('tacosiz')); // 7
+console.log(lengthOfLongestSubstring('')); // 0
+
 
 // TODO 
 // 1. make DRY
-// 2. make case for when input is empty string
+// 2. make case for when input is empty string -> change max to 0
