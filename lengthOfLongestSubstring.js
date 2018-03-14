@@ -58,11 +58,11 @@ const lengthOfLongestSubstring = (s) => {
     if (substring.has(s[i])) {
       max = Math.max(substring.size, max);
       substring = new Set(s[i]);
-    } else if (i === s.length - 1) {
-      substring.add(s[i]);
-      max = Math.max(substring.size, max);
     } else {
       substring.add(s[i]);
+      if (i === s.length - 1) {
+        max = Math.max(substring.size, max);
+      }
     }
   } 
   return max; 
@@ -73,8 +73,4 @@ console.log(lengthOfLongestSubstring('abcabab')); // 3
 console.log(lengthOfLongestSubstring('oooooooo')); // 1 
 console.log(lengthOfLongestSubstring('tacosiz')); // 7
 console.log(lengthOfLongestSubstring('')); // 0
-
-
-// TODO 
-// 1. make DRY
-// 2. make case for when input is empty string -> change max to 0
+console.log(lengthOfLongestSubstring('dvdf')); // 3 --> not working
