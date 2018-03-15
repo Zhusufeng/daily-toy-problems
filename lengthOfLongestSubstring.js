@@ -53,25 +53,21 @@
 const lengthOfLongestSubstring = (s) => {
   s = s.split('');
   let max = 0;
-  let substring = new Set();
-  let lastIndex = 0;
+  let substring = [];
 
   for (let i = 0; i < s.length; i++) {
-    if (substring.has(s[i])) {
-      max = Math.max(substring.size, max);
-      if (lastIndex === 0) {
-        substring = new Set();
-      } else {
-        substring = new Set(s.splice(lastIndex + 1, i));
-      }
-      console.log(substring);
-      lastIndex = i;
+    let tempIndex = substring.indexOf(s[i]);
+    if (tempIndex > -1) {
+      max = Math.max(substring.length, max);
+      substring = substring.splice(tempIndex + 1);
+      substring.push(s[i]);
     } else {
-      substring.add(s[i]);
+      substring.push(s[i]);
       if (i === s.length - 1) {
-        max = Math.max(substring.size, max);
+        max = Math.max(substring.length, max);
       }
     }
+    console.log(substring);
   } 
   return max; 
 };
