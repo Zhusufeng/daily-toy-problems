@@ -60,14 +60,11 @@ const lengthOfLongestSubstring = (s) => {
     if (tempIndex > -1) {
       max = Math.max(substring.length, max);
       substring = substring.splice(tempIndex + 1);
-      substring.push(s[i]);
-    } else {
-      substring.push(s[i]);
-      if (i === s.length - 1) {
-        max = Math.max(substring.length, max);
-      }
     }
-    console.log(substring);
+    substring.push(s[i]);
+    if (i === s.length - 1) {
+      max = Math.max(substring.length, max);
+    }
   } 
   return max; 
 };
