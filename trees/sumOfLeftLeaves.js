@@ -29,7 +29,34 @@ const input1 = {
 
 const output1 = 24;
 
-const input2 = {
+/*
+  Strategy
+    Iterate thru entire tree, adding any this.lefts
 
-};
+  Big-O
+    Time: Linear
+    Space: Constant
+
+  Steps
+    sum = 0
+    [root]
+    sum = 9
+    [{9}, {20}]
+    sum = 24
+    [{9}, {15}, {7}]
+    sum = 24
+    [{9}, {15}]
+    sum = 24
+    [{9}]
+    sum = 24
+    
+  const sumOfLeftLeavese = (root, sum) => {
+    // Push root to holder array
+    // While holder has length
+      // Set current to holder.pop
+      // If left, add to sum & push to holder array
+      // If right, push to holder array
+    // Return sum
+  }; 
+*/
 
