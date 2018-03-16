@@ -59,4 +59,20 @@ const output1 = 24;
     // Return sum
   }; 
 */
+const sumOfLeftLeaves = root => {
+  let sum = 0;
+  let holder = [];
+  holder.push(root);
 
+  while (holder.length) {
+    let current = holder.pop();
+    if (current.left) {
+      sum += current.left.val;
+      holder.push(current.left);
+    }
+    if (current.right) {
+      holder.push(current.right);
+    }
+  }
+  return sum;
+}; 
