@@ -70,6 +70,25 @@ const output3 = 0;
     // Return sum
   }; 
 */
+// const sumOfLeftLeaves = root => {
+//   let sum = 0;
+//   let holder = [];
+//   holder.push(root);
+
+//   while (holder.length) {
+//     let current = holder.pop();
+//     if (current.left) {
+//       sum += current.left.val;
+//       holder.push(current.left);
+//     }
+//     if (current.right) {
+//       holder.push(current.right);
+//     }
+//   }
+//   return sum;
+// }; 
+// ^ Above code is for all LEFT trees, not only leaves
+
 const sumOfLeftLeaves = root => {
   let sum = 0;
   let holder = [];
@@ -78,7 +97,9 @@ const sumOfLeftLeaves = root => {
   while (holder.length) {
     let current = holder.pop();
     if (current.left) {
-      sum += current.left.val;
+      if (!current.left.left && !current.left.right) {
+        sum += current.left.val;
+      }
       holder.push(current.left);
     }
     if (current.right) {
