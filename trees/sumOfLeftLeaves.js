@@ -79,7 +79,7 @@ const output3 = 0;
 //     let current = holder.pop();
 //     if (current.left) {
 //       sum += current.left.val;
-//       holder.push(current.left);
+//       
 //     }
 //     if (current.right) {
 //       holder.push(current.right);
@@ -91,6 +91,7 @@ const output3 = 0;
 
 const sumOfLeftLeaves = root => {
   let sum = 0;
+  if (!root) return sum;
   let holder = [];
   holder.push(root);
 
@@ -99,8 +100,9 @@ const sumOfLeftLeaves = root => {
     if (current.left) {
       if (!current.left.left && !current.left.right) {
         sum += current.left.val;
-      }
-      holder.push(current.left);
+      } else {
+        holder.push(current.left);
+      }      
     }
     if (current.right) {
       holder.push(current.right);
