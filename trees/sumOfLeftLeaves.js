@@ -29,6 +29,17 @@ const input1 = {
 
 const output1 = 24;
 
+const input2 = {
+  val: 5,
+  left: null,
+  right: null
+};
+
+const output2 = 0;
+
+const input3 = {};
+const output3 = 0;
+
 /*
   Strategy
     Iterate thru entire tree, adding any this.lefts
@@ -76,3 +87,8 @@ const sumOfLeftLeaves = root => {
   }
   return sum;
 }; 
+
+console.log(sumOfLeftLeaves(input1));
+console.log(sumOfLeftLeaves(input2));
+console.log(sumOfLeftLeaves(input3));
+
