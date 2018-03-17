@@ -14,6 +14,15 @@
     const input3 = [5, 5, 5];
     const output3 = 0;
 
+    const input4 = [];
+    const output4 = 0;
+
+    const input5 = [7, 6, 4, 3, 1];
+    const output5 = 0;
+
+    const input6 = [1, 2, 3, 4, 5, 6, 7];
+    const output6 = 6;
+
 /*
   Strategy
     Keep track of the smallest number & iterate thru to find max
@@ -44,5 +53,13 @@ const maxProfit = prices => {
     maxProfit = Math.max(maxProfit, currProfit);
   });
 
-  return maxProfit
+  return maxProfit;
 };
+
+console.log(maxProfit(input1)); // 5
+console.log(maxProfit(input2)); // 3
+console.log(maxProfit(input3)); // 0
+console.log(maxProfit(input4)); // 0
+console.log(maxProfit(input5)); // 0
+console.log(maxProfit(input6)); // 6
+
