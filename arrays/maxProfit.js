@@ -23,7 +23,26 @@
     Space: Constant
 
   Steps
-    Given [8, 4, 7] 
+    maxProfit = 0
+    Given [8, 4, 7]
+    smallest = 8
+    smallest = 4    
+    currProfit = 7 - 4 = 3
+    maxProfit = 3
 
   Pseudo
 */
+
+const maxProfit = prices => {
+  if (!prices.length) return 0;
+  let maxProfit = 0;
+  let smallest = prices[0];
+
+  prices.forEach(price => {
+    smallest = Math.min(price, smallest);
+    currProfit = price - smallest;
+    maxProfit = Math.max(maxProfit, currProfit);
+  });
+
+  return maxProfit
+};
