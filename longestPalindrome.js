@@ -104,6 +104,15 @@
 
   Skeleton  
     const longestPalindrome = s => {
-  
+      let longestPalindrome = '';
+      // iterate thru str, i = 0
+        // iterate thru str, j = i + 1
+          // if (isPalindrome)
+            // longestPalindrome = (substring.length > longestPalindrome.length) ? substring : longestPalindrome;
     };
+
+    const isPalindrome(s) = s => {
+      // iterate thru s, i++, j--
+        // if s[i] !== s[j] return false
+    }
 */
