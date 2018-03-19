@@ -117,9 +117,9 @@
     }
 */
 
-const isPalindrome = s => {
-  for (let i = 0, j = s.length - 1; i <= j; i += 1, j -= 1) {
-    if (s[i] !== s[j]) return false;
+const isPalindrome = substring => {
+  for (let i = 0, j = substring.length - 1; i <= j; i += 1, j -= 1) {
+    if (substring[i] !== substring[j]) return false;
   }
   return true;
 }
@@ -128,12 +128,13 @@ const longestPalindrome = s => {
   let longestPalindrome = '';
   for (let i = 0; i < s.length; i += 1) {
     let substring = s[i];
+    if (isPalindrome(substring)) {
+      longestPalindrome = substring.length > longestPalindrome.length ? substring : longestPalindrome;
+    }
     for (let j = i + 1; j < s.length; j += 1) {
       substring += s[j];
       if (isPalindrome(substring)) {
-        if (substring.length > longestPalindrome.length) {
-          longestPalindrome = substring;
-        }
+        longestPalindrome = substring.length > longestPalindrome.length ? substring : longestPalindrome;
       }
     }
   }
@@ -147,3 +148,11 @@ const longestPalindrome = s => {
 // console.log(isPalindrome('')); // true
 // console.log(isPalindrome('aba')); // true
 // console.log(isPalindrome('abc')); // false
+
+// Check longestPalindrome
+console.log(longestPalindrome('abc')); // 'a'
+console.log(longestPalindrome('aba')); // 'aba'
+console.log(longestPalindrome('cbbd')); // 'bb'
+console.log(longestPalindrome('tacocat')); // 'tacocat'
+
+
