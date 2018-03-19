@@ -116,3 +116,26 @@
         // if s[i] !== s[j] return false
     }
 */
+
+const isPalindrome(s) = s => {
+  for (let i = 0, j = s.length - 1; i <= j; i += 1, j -= 1) {
+    if (s[i] !== s[j]) return false;
+  }
+  return true;
+}
+
+const longestPalindrome = s => {
+  let longestPalindrome = '';
+  for (let i = 0; i < s.length; i += 1) {
+    let substring = s[i];
+    for (let j = i + 1; j < s.length; j += 1) {
+      substring += s[j]
+      if (isPalindrome(substring)) {
+        if (substring.length > longestPalindrome.length) {
+          longestPalindrome = substring;
+        }
+      }
+    }
+  }
+  return longestPalindrome;
+};
