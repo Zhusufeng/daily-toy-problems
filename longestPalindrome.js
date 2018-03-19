@@ -117,7 +117,7 @@
     }
 */
 
-const isPalindrome(s) = s => {
+const isPalindrome = s => {
   for (let i = 0, j = s.length - 1; i <= j; i += 1, j -= 1) {
     if (s[i] !== s[j]) return false;
   }
@@ -129,7 +129,7 @@ const longestPalindrome = s => {
   for (let i = 0; i < s.length; i += 1) {
     let substring = s[i];
     for (let j = i + 1; j < s.length; j += 1) {
-      substring += s[j]
+      substring += s[j];
       if (isPalindrome(substring)) {
         if (substring.length > longestPalindrome.length) {
           longestPalindrome = substring;
@@ -139,3 +139,11 @@ const longestPalindrome = s => {
   }
   return longestPalindrome;
 };
+
+// Check isPalindrome working
+// Time: Linear
+// Space: Constant
+// console.log(isPalindrome('a')); // true
+// console.log(isPalindrome('')); // true
+// console.log(isPalindrome('aba')); // true
+// console.log(isPalindrome('abc')); // false
