@@ -153,4 +153,7 @@ console.log(longestPalindrome('cbbd')); // 'bb'
 console.log(longestPalindrome('tacocat')); // 'tacocat'
 console.log(longestPalindrome('betacocatpt')); // 'tacocat'
 console.log(longestPalindrome('babad')); // 'bab'
-
+// 82 / 94 test cases passed
+// Time limit exceeded for 1000 b's....
+// Hint: If “aba” is a palindrome, is “xabax” and palindrome? Similarly is “xabay” a palindrome?
+// Hint: If we use brute-force and check whether for every start and end position a substring is a palindrome we have O(n^2) start - end pairs and O(n) palindromic checks. Can we reduce the time for palindromic checks to O(1) by reusing some previous computation.
