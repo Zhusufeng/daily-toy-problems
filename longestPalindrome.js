@@ -5,7 +5,7 @@
 /*
   Input & Output
 */
-    const input1 = 'ababad';
+    const input1 = 'babad';
     const output1 = 'bab'; // or 'aba'
 
     const input2 = 'cbbd';
@@ -117,28 +117,25 @@
     }
 */
 
-const isPalindrome = substring => {
-  for (let i = 0, j = substring.length - 1; i <= j; i += 1, j -= 1) {
-    if (substring[i] !== substring[j]) return false;
+const isPalindrome = s => {
+  for (let i = 0, j = s.length - 1; i <= j; i += 1, j -= 1) {
+    if (s[i] !== s[j]) return false;
   }
   return true;
 }
 
 const longestPalindrome = s => {
-  let longestPalindrome = '';
+  let longest = '';
   for (let i = 0; i < s.length; i += 1) {
-    let substring = s[i];
-    if (isPalindrome(substring)) {
-      longestPalindrome = substring.length > longestPalindrome.length ? substring : longestPalindrome;
-    }
-    for (let j = i + 1; j < s.length; j += 1) {
-      substring += s[j];
-      if (isPalindrome(substring)) {
-        longestPalindrome = substring.length > longestPalindrome.length ? substring : longestPalindrome;
+    let sub = '';
+    for (let j = i; j < s.length; j += 1) {
+      sub += s[j];
+      if (isPalindrome(sub)) {
+        longest = sub.length > longest.length ? sub : longest;
       }
     }
   }
-  return longestPalindrome;
+  return longest;
 };
 
 // Check isPalindrome working
@@ -154,5 +151,6 @@ console.log(longestPalindrome('abc')); // 'a'
 console.log(longestPalindrome('aba')); // 'aba'
 console.log(longestPalindrome('cbbd')); // 'bb'
 console.log(longestPalindrome('tacocat')); // 'tacocat'
-
+console.log(longestPalindrome('betacocatpt')); // 'tacocat'
+console.log(longestPalindrome('babad')); // 'bab'
 
