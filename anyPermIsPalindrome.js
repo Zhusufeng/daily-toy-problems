@@ -15,6 +15,12 @@ const output2 = false;
 const input3 = 'penguin';
 const output3 = false;
 
+const input4 = 'bbb';
+const output4 = true;
+
+const input5 = 'bbbccc';
+const output5 = false;
+
 /*
   Strategy
     Make a hash map of letters & their count (iterate thru string)
@@ -29,5 +35,13 @@ const output3 = false;
     Efficient!
 
   Skeleton
-    
+    const isPalindrome = s => {
+      const hash = {};
+      let oddCount = 0;
+      // Iterate thru string & add count of a letter occurence to hash
+      // Iterate thru hash & if oddCount is 0 or 1, return true, otherwise false
+    };
 */
+
+
+
