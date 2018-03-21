@@ -65,16 +65,14 @@ const isPalindrome = s => {
   const set = new Set();
 
   for (let i = 0; i < s.length; i += 1) {
-    if (set.has(s[i])) {
-      set.delete(s[i]);
-    } else {
-      set.add(s[i]);
-    }
+    set.has(s[i]) ? set.delete(s[i]) : set.add(s[i]);
   }
-  console.log(set);
 
   return set.size <= 1;
 };
+
+// Time: Linear
+// Space: Constant
 
 console.log(isPalindrome(input1)); // t
 console.log(isPalindrome(input2)); // f
