@@ -42,23 +42,38 @@ const output5 = false;
       // Iterate thru hash & if oddCount is 0 or 1, return true, otherwise false
     };
 */
+// const isPalindrome = s => {
+//   const hash = {};
+//   let oddCount = 0;
+
+//   for (let i = 0; i < s.length; i += 1) {
+//     if (hash[s[i]]) {
+//       hash[s[i]] += 1;
+//     } else {
+//       hash[s[i]] = 1;
+//     }
+//   }
+  
+//   for (let key in hash) {
+//     if (hash[key] % 2 === 1) oddCount += 1;
+//   }
+
+//   return oddCount <= 1;
+// };
+
 const isPalindrome = s => {
-  const hash = {};
-  let oddCount = 0;
+  const set = new Set();
 
   for (let i = 0; i < s.length; i += 1) {
-    if (hash[s[i]]) {
-      hash[s[i]] += 1;
+    if (set.has(s[i])) {
+      set.delete(s[i]);
     } else {
-      hash[s[i]] = 1;
+      set.add(s[i]);
     }
   }
-  
-  for (let key in hash) {
-    if (hash[key] % 2 === 1) oddCount += 1;
-  }
+  console.log(set);
 
-  return oddCount <= 1;
+  return set.size <= 1;
 };
 
 console.log(isPalindrome(input1)); // t
