@@ -61,5 +61,11 @@ const isPalindrome = s => {
   return oddCount <= 1;
 };
 
+console.log(isPalindrome(input1)); // t
+console.log(isPalindrome(input2)); // f
+console.log(isPalindrome(input3)); // f
+console.log(isPalindrome(input4)); // t
+console.log(isPalindrome(input5)); // f
+
 
 
