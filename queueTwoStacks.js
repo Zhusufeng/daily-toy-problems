@@ -51,6 +51,21 @@ oddNums.enqueue(4);
       Return dequeueStack.pop()
       
   Skeleton
-  
+    class Queue {
+      constructor () {
+        this.enqueueStack = [];
+        this.dequeueStack = [];
+      }
+
+      enqueue (val) {
+        // iterate thru dequeueStack & pop off each to enqueueStack
+        // push val to enqueueStack
+      }
+
+      dequeue (val) {
+        // iterate thru enqueueStack & pop off each to dequeueStack
+        // return dequeueStack.pop();
+      }
+    }
 
 */
