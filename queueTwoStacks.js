@@ -69,3 +69,25 @@ oddNums.enqueue(4);
     }
 
 */
+
+class Queue {
+  constructor () {
+    this.enqueueStack = [];
+    this.dequeueStack = [];
+  }
+
+  enqueue (val) {
+    for (let i = 0; i < this.dequeueStack.length; i += 1) {
+      this.enqueueStack.push(this.dequeueStack.pop());
+    }
+    this.enqueueStack.push(val);
+  }
+
+  dequeue (val) {
+    // iterate thru enqueueStack & pop off each to dequeueStack
+    for (let i = 0; i < this.enqueueStack.length; i += 1) {
+      this.dequeueStack.push(this.enqueueStack.pop());
+    }
+    return dequeueStack.pop();
+  }
+}
