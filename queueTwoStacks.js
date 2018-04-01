@@ -79,20 +79,20 @@ class Queue {
   }
 
   enqueue (val) {
-    for (let i = 0; i < this.dequeueStack.length; i += 1) {
+    const len = this.dequeueStack.length;
+    for (let i = 0; i < len; i += 1) {
       this.enqueueStack.push(this.dequeueStack.pop());
     }
     this.enqueueStack.push(val);
-    console.log(this.enqueueStack);
+    console.log('enqueue', this.enqueueStack);
   }
 
   dequeue (val) {
-    // iterate thru enqueueStack & pop off each to dequeueStack
-    for (let i = 0; i < this.enqueueStack.length; i += 1) {
+    const len = this.enqueueStack.length;
+    for (let i = 0; i < len; i += 1) {
       this.dequeueStack.push(this.enqueueStack.pop());
     }
-    console.log(this.dequeueStack);
-
+    console.log('dequeue', this.dequeueStack);
     return this.dequeueStack.pop();
   }
 }
