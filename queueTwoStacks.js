@@ -6,28 +6,30 @@
   Inputs & Outputs
 */
 
-const oddNums = new Queue();
-oddNums.enqueue(1);
-/*
-  stack1 = [1]
-*/
-oddNums.enqueue(2);
-/*
-  enqueueStack = [1, 2]
-*/
-oddNums.enqueue(3);
-/*
-  enqueueStack = [1, 2, 3]
-*/
-oddNums.dequeue();
-/*
-  dequeueStack = [3]
-  dequeueStack = [3, 2]
-  dequeueStack = [3, 2, 1]
-  enqueueStack = []
-  dequeueStack = [3, 2]
-*/
-oddNums.enqueue(4);
+
+// const oddNums = new Queue();
+// oddNums.enqueue(1);
+  /*
+    stack1 = [1]
+  */
+// oddNums.enqueue(2);
+  /*
+    enqueueStack = [1, 2]
+  */
+// oddNums.enqueue(3);
+  /*
+    enqueueStack = [1, 2, 3]
+  */
+// oddNums.dequeue();
+  /*
+    dequeueStack = [3]
+    dequeueStack = [3, 2]
+    dequeueStack = [3, 2, 1]
+    enqueueStack = []
+    dequeueStack = [3, 2]
+  */
+// oddNums.enqueue(4);
+
 /*
   enqueueStack = [2]
   enqueueStack = [2, 3]
@@ -81,6 +83,7 @@ class Queue {
       this.enqueueStack.push(this.dequeueStack.pop());
     }
     this.enqueueStack.push(val);
+    console.log(this.enqueueStack);
   }
 
   dequeue (val) {
@@ -88,6 +91,15 @@ class Queue {
     for (let i = 0; i < this.enqueueStack.length; i += 1) {
       this.dequeueStack.push(this.enqueueStack.pop());
     }
-    return dequeueStack.pop();
+    console.log(this.dequeueStack);
+
+    return this.dequeueStack.pop();
   }
 }
+
+const oddNums = new Queue();
+oddNums.enqueue(1);
+oddNums.enqueue(2);
+oddNums.enqueue(3);
+oddNums.dequeue(); // 1
+oddNums.enqueue(4);
