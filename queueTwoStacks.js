@@ -8,18 +8,30 @@
 
 const oddNums = new Queue();
 oddNums.enqueue(1);
-// oddNums.storage = 1
+/*
+  stack1 = [1]
+*/
 oddNums.enqueue(2);
-// oddNums.storage = 1, 2
+/*
+  stack1 = [1, 2]
+*/
 oddNums.enqueue(3);
-// oddNums.storage = 1, 2, 3
+/*
+  stack1 = [1, 2, 3]
+*/
 oddNums.dequeue();
-// oddNums.storage = 2, 3
+/*
+  stack2 = [3]
+  stack2 = [3, 2]
+  stack2 = [3, 2, 1]
+  stack1 = []
+  stack2 = [3, 2]
+*/
 
 /*
   Strategy
-    stack1
-    stack2
+    Queue made of 2 stacks
+    Stacks are last in first out 
 
   Constraints
     Constant enqueue and dequeue
