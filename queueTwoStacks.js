@@ -79,21 +79,25 @@ class Queue {
   }
 
   enqueue (val) {
-    const len = this.dequeueStack.length;
-    for (let i = 0; i < len; i += 1) {
-      this.enqueueStack.push(this.dequeueStack.pop());
-    }
     this.enqueueStack.push(val);
     console.log('enqueue', this.enqueueStack);
   }
 
   dequeue (val) {
-    const len = this.enqueueStack.length;
-    for (let i = 0; i < len; i += 1) {
-      this.dequeueStack.push(this.enqueueStack.pop());
+    if (this.dequeueStack.length === 0) {
+      while (this.enqueueStack.length > 0) {
+        this.dequeueStack.push(this.enqueueStack.pop());
+      }
+      if (this.dequeueStack.length === 0) {
+        return undefined;
+      }
     }
     console.log('dequeue', this.dequeueStack);
     return this.dequeueStack.pop();
+  }
+
+  size () {
+    return this.enqueueStack.length + this.dequeueStack.length;
   }
 }
 
@@ -101,5 +105,6 @@ const oddNums = new Queue();
 oddNums.enqueue(1);
 oddNums.enqueue(2);
 oddNums.enqueue(3);
-oddNums.dequeue(); // 1
+console.log(oddNums.dequeue()); // 1
 oddNums.enqueue(4);
+console.log(oddNums.dequeue()); // 2
