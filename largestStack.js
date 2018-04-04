@@ -59,6 +59,17 @@ MaxStack.prototype.getMax = function () {
   return this.maxesStack.peek();
 };
 
+const myStack = new MaxStack();
+myStack.push(1);
+myStack.push(2);
+myStack.push(3);
+myStack.push(4);
+console.log(myStack.getMax()); // 4
+console.log(myStack.pop()); // 4
+console.log(myStack.getMax()); // 3
+
+
+
 /*
   Initial Idea
   Time: Linear
