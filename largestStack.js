@@ -32,7 +32,7 @@ Stack.prototype.peek = function() {
 
 function MaxStack () {
   Stack.call(this); // get props set up by Stack
-  this.max = null;
+  this.maxesStack = new Stack();
 }
 
 MaxStack.prototype = Object.create(Stack.prototype); // set inheritance
@@ -42,11 +42,21 @@ MaxStack.prototype.constructor = MaxStack; // set MaxStack constructor func
 // push a new item to the last index
 MaxStack.prototype.push = function(item) {
   this.items.push(item);
-  this.max = Math.max(this.max, item);
+  if (!this.maxesStack.peek() || item >= this.maxesStack.peek()) {
+    this.maxesStack.push(item);
+  }
 };
 
+MaxStack.prototype.pop = function () {
+  let item = this.items.pop();
+  if (item === this.maxesStack.peek()) {
+    this.maxesStack.pop();
+  }
+  return item;
+}
+
 MaxStack.prototype.getMax = function () {
-  return this.max;
+  return this.maxesStack.peek();
 };
 
 /*
