@@ -31,25 +31,35 @@ Stack.prototype.peek = function() {
 };
 
 function MaxStack () {
-  Stack.call(); // get props set up by Stack
+  Stack.call(this); // get props set up by Stack
+  this.max = null;
 }
 
 MaxStack.prototype = Object.create(Stack.prototype); // set inheritance
 
 MaxStack.prototype.constructor = MaxStack; // set MaxStack constructor func
 
-MaxStack.prototype.getMax = function () {
-  let largest = null;
+// push a new item to the last index
+MaxStack.prototype.push = function(item) {
+  this.items.push(item);
+  this.max = Math.max(this.max, item);
+};
 
-  /*
-    Iterate thru this.items
-      If this.items[i] is largest, update it
-    Return largest
-  */
+MaxStack.prototype.getMax = function () {
+  return this.max;
+};
+
+/*
+  Initial Idea
+  Time: Linear
+  Space: Constant
+
+  Iterate thru this.items
+    If this.items[i] is largest, update it
+  Return largest
+
 
   this.items.forEach(item => {
     largest = Math.max(item, largest);
   });
-
-  return largest;
-};
+*/
