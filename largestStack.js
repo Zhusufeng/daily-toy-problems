@@ -39,5 +39,17 @@ MaxStack.prototype = Object.create(Stack.prototype); // set inheritance
 MaxStack.prototype.constructor = MaxStack; // set MaxStack constructor func
 
 MaxStack.prototype.getMax = function () {
+  let largest = null;
 
+  /*
+    Iterate thru this.items
+      If this.items[i] is largest, update it
+    Return largest
+  */
+
+  this.items.forEach(item => {
+    largest = Math.max(item, largest);
+  });
+
+  return largest;
 };
