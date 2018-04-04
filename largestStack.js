@@ -30,3 +30,14 @@ Stack.prototype.peek = function() {
   return this.items[this.items.length -1];
 };
 
+function MaxStack () {
+  Stack.call(); // get props set up by Stack
+}
+
+MaxStack.prototype = Object.create(Stack.prototype); // set inheritance
+
+MaxStack.prototype.constructor = MaxStack; // set MaxStack constructor func
+
+MaxStack.prototype.getMax = function () {
+
+};
