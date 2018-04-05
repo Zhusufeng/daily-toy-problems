@@ -22,14 +22,14 @@ deleteNode(b);
 
 /*
   Strategy
-  
+    Change b.value to this.next and b.next to this.next.next
 
   Constraints
-
+    You are only given a variable pointing to that node
   
-  Steps
-
   Skeleton
-
+    const deleteNode = node => {
+    
+    };
 */
 
