@@ -33,8 +33,18 @@ b.next = c;
 */
 
 const deleteNode = node => {
-  node.value = node.next.value;
-  node.next = node.next.next;
+  if (node.next) {
+    node.value = node.next.value;
+    node.next = node.next.next;
+  } else {
+    throw new Error ('Cannot delete the last node!');
+  }  
 };
 deleteNode(b);
 console.log(a); // 'A' -> 'C'
+
+/*
+  Important Note: By doing this (updating references), this 
+  can cause side effects. If someone uses var b, it is not b
+  any more but c.
+*/
