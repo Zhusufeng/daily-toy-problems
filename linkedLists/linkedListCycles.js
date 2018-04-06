@@ -35,7 +35,7 @@ const containsCycle = (node) => {
   let slow = node;
   let fast = node;
 
-  while (slow !== null) {
+  while (fast !== null) {
     if (counter !== 0 && slow.value === fast.value) {
       return true;
     }
@@ -65,4 +65,27 @@ b.next = c;
 c.next = d;
 d.next = c;
 
-containsCycle(a); // true
+console.log(containsCycle(a)); // true
+
+const one = new LinkedListNode('one');
+const two = new LinkedListNode('two');
+const three = new LinkedListNode('three');
+const four = new LinkedListNode('four');
+const five = new LinkedListNode('five');
+const six = new LinkedListNode('six');
+const seven = new LinkedListNode('seven');
+one.next = two;
+two.next = three;
+three.next = four;
+four.next = five;
+five.next = six;
+six.next = seven;
+seven.next = two;
+console.log(containsCycle(one)); // true
+
+const dog = new LinkedListNode('dog');
+const cat = new LinkedListNode('cat');
+const bird = new LinkedListNode('bird');
+dog.next = cat;
+cat.next = bird;
+console.log(containsCycle(dog)); // false
