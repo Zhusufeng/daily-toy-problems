@@ -30,7 +30,23 @@
       return false;
     };
 */
+const containsCycle = (node) => {
+  let counter = 0;
+  let slow = node;
+  let fast = node;
 
+  while (slow !== null) {
+    if (counter !== 0 && slow.value === fast.value) {
+      return true;
+    }
+    counter += 1;
+    fast = fast.next;
+    if (counter % 2 === 0) {
+      slow = slow.next;
+    }
+  }
+  return false;
+};
 /*
   Inputs & Outputs
 */
