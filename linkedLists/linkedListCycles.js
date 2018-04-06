@@ -4,6 +4,19 @@
 
 /*
   Strategy
+    Fast iteration & slow iteration through the linked list
+    If fast pointer eqls slow pointer return true
+
+  Steps
+    counter = 0, slow = null, fast = a
+    counter = 1, slow = null, fast = b
+    counter = 2, slow = a,    fast = c
+    counter = 3, slow = a,    fast = d
+    counter = 4, slow = b,    fast = c
+    counter = 5, slow = b,    fast = d
+    counter = 6, slow = c,    fast = c
+    return true
+ 
 */
 
 /*
