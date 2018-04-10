@@ -31,3 +31,29 @@ const output1 = {
     }
   }
 };
+
+
+/*
+  Strategy 1
+    Take in root
+    Set nodeToChange to root
+    While nodeToChange is not null
+      Save nodeToChange as currentNode
+      Save nodeToChange.next as nextNode
+      If nodeToChange is root, set currentNode's next as null
+      Update nextNode's next to currentNode
+      Update nodeToChange to nodeToChange.next
+
+  Constraints
+    Do it in place
+
+  Illustrative Steps
+    root = 1 -> 2 -> 3 -> null
+    nodeToChange = 1 -> 2 -> 3 -> null
+
+      currentNode = 1 -> 2 -> 3 -> null
+      nextNode = 2 -> 3 -> null
+      currentNode = 1 -> null
+      nextNode = 2 -> 1 -> null
+      nodeToChange = 
+*/
