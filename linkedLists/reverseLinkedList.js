@@ -97,9 +97,10 @@ const output1 = {
     Set prevNode to null
     Set nextNode to null
     While currentNode is not null
-      Copy pointer to next node
-      Reverse the next pointer
-      Step forward in the list
+      Save a copy first. Save nextNode as the next
+      Reverse the order. Save currentNode's next as prevNode
+      Step forward in the list. Save prevNode as currentNode
+      Save currentNode as next Node
 
   Illustrative Steps 3
     root = 1 -> 2 -> 3 -> null
@@ -127,6 +128,22 @@ const output1 = {
 
 */
 
+const reverse = (root) => {
+  let currentNode = root;
+  let prevNode = null;
+  let nextNode = null;
+
+  while (currentNode) {
+    nextNode = currentNode.next;
+    currentNode.next = prevNode;
+    prevNode = currentNode;
+    currentNode = nextNode;
+  }
+
+  return prevNode;
+};
+
+console.log(reverse(input1));
 
 
 
