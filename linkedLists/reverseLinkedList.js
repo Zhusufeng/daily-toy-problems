@@ -64,7 +64,7 @@ const output1 = {
     Set nodeToChange to root
     Set newList to LinkedListNode(null)
     While nodeToChange is not null
-      Set currentNode to LinkedListNode(nodeToChange.next)
+      Set currentNode to LinkedListNode(nodeToChange.value)
       Set currentNode.next to newList
       Update newList to currentNode
       Update nodeToChange to nodeToChange.next
@@ -92,7 +92,39 @@ const output1 = {
     
     root = newList
 
-  
+  Strategy 3
+    Set currentNode to root
+    Set prevNode to null
+    Set nextNode to null
+    While currentNode is not null
+      Copy pointer to next node
+      Reverse the next pointer
+      Step forward in the list
+
+  Illustrative Steps 3
+    root = 1 -> 2 -> 3 -> null
+    currentNode = 1 -> 2 -> 3 -> null
+    prevNode = null
+    nextNode = null
+
+      nextNode = 2 -> 3 -> null
+      currentNode.next = null
+      currentNode = 1 -> null
+      prevNode = 1 -> null
+      currentNode = 2 -> 3 -> null
+
+      nextNode = 3 -> null
+      currentNode.next = 1 -> null
+      currentNode = 2 -> 1 -> null
+      prevNode = 2 -> 1 -> null
+      currentNode = 3 -> null
+
+      nextNode = null
+      currentNode.next = 2 -> 1 -> null
+      currentNode = 3 -> 2 -> 1 -> null
+      prevNode = 3 -> 2 -> 1 -> null
+      currentNode = null
+
 */
 
 
