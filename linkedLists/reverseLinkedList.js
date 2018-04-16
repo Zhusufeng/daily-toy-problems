@@ -48,7 +48,7 @@ const output1 = {
   Constraints
     Do it in place
 
-  Illustrative Steps
+  Illustrative Steps 1
     root = 1 -> 2 -> 3 -> null
     nodeToChange = 1 -> 2 -> 3 -> null
 
@@ -58,6 +58,41 @@ const output1 = {
       currentNode = 1 -> null
       nextNode = 2 -> 1 -> null
       nodeToChange = 3 -> null
+
+  Strategy 2
+    Save root
+    Set nodeToChange to root
+    Set newList to LinkedListNode(null)
+    While nodeToChange is not null
+      Set currentNode to LinkedListNode(nodeToChange.next)
+      Set currentNode.next to newList
+      Update newList to currentNode
+      Update nodeToChange to nodeToChange.next
+    Set root to newList
+
+  Illustrative Steps 2
+    root = 1 -> 2 -> 3 -> null
+    nodeToChange = 1 -> 2 -> 3 -> null
+    newList = null
+
+      currentNode = 1 -> null
+      currentNode = 1 -> null
+      newList = 1 -> null
+      nodeToChange = 2 -> 3 -> null
+
+      currentNode = 2 -> null
+      currentNode = 2 -> 1 -> null
+      newList = 2 -> 1 -> null
+      nodeToChange = 3 -> null
+
+      currentNode = 3 -> null
+      currentNode = 3 -> 2 -> 1 -> null
+      newList = 3 -> 2 -> 1 -> null
+      nodeToChange = null
+    
+    root = newList
+
+  
 */
 
 
