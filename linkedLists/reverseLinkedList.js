@@ -40,9 +40,10 @@ const output1 = {
     While nodeToChange is not null
       Save nodeToChange as currentNode
       Save nodeToChange.next as nextNode
+      Save nextNode.next as nextNextNode
       If nodeToChange is root, set currentNode's next as null
       Update nextNode's next to currentNode
-      Update nodeToChange to nodeToChange.next
+      Update nodeToChange to nextNextNode
 
   Constraints
     Do it in place
@@ -53,7 +54,14 @@ const output1 = {
 
       currentNode = 1 -> 2 -> 3 -> null
       nextNode = 2 -> 3 -> null
+      nextNextNode = 3 -> null
       currentNode = 1 -> null
       nextNode = 2 -> 1 -> null
-      nodeToChange = 
+      nodeToChange = 3 -> null
 */
+
+
+
+
+
+
