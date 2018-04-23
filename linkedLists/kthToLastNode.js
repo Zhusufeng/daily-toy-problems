@@ -88,7 +88,33 @@ d.next = e;
     Find length of list. Check if k is less than length of list. Go down length of list until reach length - k and return that node
 */
 const kthToLastNode = (k, head) => {
+  if (k < 1) {
+    throw new Error ('k is invalid. k needs to be larger than 1');
+  }
+  let listLength = 1;
+  let currentNode = head;
+  let kthSpot = 0;
 
+  while (currentNode.next) {
+    listLength += 1;
+    currentNode = currentNode.next;
+  }
+
+  if (k > listLength) {
+    throw new Error ('k is larger than length of list');
+  }
+
+  console.log(listLength, k);
+  kthSpot = listLength - k;
+  console.log(kthSpot);
+
+  currentNode = head;
+
+  for (let i = 0; i < kthSpot; i += 1) {
+    currentNode = currentNode.next;
+  }
+
+  return currentNode;
 };
 /*
   Time Complexity: Linear
