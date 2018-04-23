@@ -42,39 +42,53 @@ d.next = e;
 
 // console.log(kthToLastNode(2, a)); // Works :)
 
+// /*
+//   Strategy 2
+//     Iterate thru entire linked list & making it a doubly linked list & walk back k nodes
+// */
+// const kthToLastNode = (k, head) => {
+//   let prev = null;
+//   let counter = 1;
+//   let last = null;
+//   let kthNode = null;
+//   while (head !== null) {
+//     // add new property to node to make it doubly linked
+//     head.prev = prev;
+
+//     // save node to be used in the next node
+//     prev = head;
+
+//     // if you are at last node, save it as last
+//     if (head.next === null) {
+//       last = head;
+//     }
+
+//     // go to next node
+//     head = head.next    
+//   }
+//   while (counter <= k && last.prev) {
+//     if (counter === k) {
+//       kthNode = last;
+//       break;
+//     }
+//     counter += 1;
+//     last = last.prev;
+//   }
+//   return kthNode;
+// };
+// /*
+//   Time Complexity: Linear
+//   Space Complexity: Constant
+// */
+
+// console.log(kthToLastNode(2, a)); 
+
 /*
-  Strategy 2
-    Iterate thru entire linked list & making it a doubly linked list & walk back k nodes
+  Strategy 3
+    Find length of list. Check if k is less than length of list. Go down length of list until reach length - k and return that node
 */
 const kthToLastNode = (k, head) => {
-  let prev = null;
-  let counter = 1;
-  let last = null;
-  let kthNode = null;
-  while (head !== null) {
-    // add new property to node to make it doubly linked
-    head.prev = prev;
 
-    // save node to be used in the next node
-    prev = head;
-
-    // if you are at last node, save it as last
-    if (head.next === null) {
-      last = head;
-    }
-
-    // go to next node
-    head = head.next    
-  }
-  while (counter <= k && last.prev) {
-    if (counter === k) {
-      kthNode = last;
-      break;
-    }
-    counter += 1;
-    last = last.prev;
-  }
-  return kthNode;
 };
 /*
   Time Complexity: Linear
