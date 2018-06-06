@@ -6,7 +6,7 @@
   Inputs & Outputs
 */
 const input1 = [3, -3, 4];
-const output1 = 4;
+const output1 = 7;
 
 const input2 = [-2, -3, -4];
 const output2 = 0;
@@ -22,3 +22,16 @@ const output3 = 3;
     #2
       Use reduce 
 */
+const positiveSum = (arr) => {
+  if (!arr.length) return 0;
+  return arr.reduce((sum, el) => {
+    if (el > 0) {
+      sum += el;
+    }
+    return sum;
+  }, 0);
+};
+
+console.log(positiveSum(input1));
+console.log(positiveSum(input2));
+console.log(positiveSum(input3));
