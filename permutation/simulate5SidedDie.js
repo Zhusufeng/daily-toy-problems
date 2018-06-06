@@ -35,3 +35,13 @@ console.log(rand5());
 console.log(rand5());
 console.log(rand5());
 console.log(rand5());
+
+// Actual Answer 
+const actualRand5 = () => {
+  let answer = 10;
+  // Keep running rand7 if the answer is larger than 5
+  while (answer > 5) {
+    answer = rand7();
+  }
+  return answer;
+};
