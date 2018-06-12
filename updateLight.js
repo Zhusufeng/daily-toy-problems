@@ -7,7 +7,7 @@
 */
 
 const input1 = 'green';
-const input1 = 'yellow';
+const output1 = 'yellow';
 
 const input2 = 'yellow';
 const output2 = 'red';
@@ -35,3 +35,21 @@ const output3 = 'green';
       If red, return green
       Else 'Bad input. Choose green, yellow or red'
 */
+
+const updateLightArr = (light) => {
+  const lights = ['green', 'yellow', 'red'];
+  const ind = lights.indexOf(light);
+
+  if (ind < 0) {
+    return 'Bad input. Choose green, yellow or red';
+  } else if (ind === 2) {
+    return lights[0];
+  } else {
+    return lights[ind + 1];
+  }
+};
+
+console.assert(updateLightArr('green')==='yellow', 'updateLightArr was given green, should return yellow');
+console.assert(updateLightArr('yellow')==='red', 'updateLightArr was given yellow, should return red');
+console.assert(updateLightArr('red')==='green', 'updateLightArr was given red, should return green');
+
