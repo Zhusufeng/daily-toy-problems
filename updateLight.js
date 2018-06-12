@@ -69,3 +69,19 @@ updateLightSwitch = (light) => {
 console.assert(updateLightSwitch('green')==='yellow', 'updateLightSwitch was given green, should return yellow');
 console.assert(updateLightSwitch('yellow')==='red', 'updateLightSwitch was given yellow, should return red');
 console.assert(updateLightSwitch('red')==='green', 'updateLightSwitch was given red, should return green');
+
+updateLightIf = light => {
+  if (light === 'green') {
+    return 'yellow';
+  } else if (light === 'yellow') {
+    return 'red';
+  } else if (light === 'red') {
+    return 'green';
+  } else {
+    return 'Bad input. Choose green, yellow or red';
+  }
+};
+
+console.assert(updateLightIf('green')==='yellow', 'updateLightIf was given green, should return yellow');
+console.assert(updateLightIf('yellow')==='red', 'updateLightIf was given yellow, should return red');
+console.assert(updateLightIf('red')==='green', 'updateLightIf was given red, should return green');
