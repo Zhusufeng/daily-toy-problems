@@ -14,4 +14,21 @@ var output1 = [ 's', 't', 'e', 'a', 'l', ' ',
 
 /*
   Strategy
+
+    #1 
+    Join 'cake pound steal'
+    Split on spaces ['cake', 'pound', 'steal']
+    Loop backwards on new array ['steal', 'pound', 'cake']
+    Join with spaces in between 'steal pound cake'
+    Split every char
 */
+
+const reverseMessage = (arr) => {
+  const backwards = arr.join('').split(' ');
+  const forwards = [];
+  for (let i = backwards.length - 1; i >= 0; i--) {
+    forwards.push(backwards[i]);
+  }
+  return forwards.join(' ').split('');
+};
+console.log(reverseMessage(input1));
